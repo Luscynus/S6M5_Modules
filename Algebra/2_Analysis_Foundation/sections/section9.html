@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9. Interactive Module</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <h2>9. Stationary Points Analysis and Second Derivative</h2>
+
+    <!-- Step Controls Nav Array -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="showSlide(1)">1. Conceptual Architecture &amp; Monotonicity</button>
+        <button class="tab-btn" onclick="showSlide(2)">2. The Second Derivative</button>
+        <button class="tab-btn" onclick="showSlide(3)">3. Worked Examples</button>
+        <button class="tab-btn" onclick="showSlide(4)">4. Practice Set</button>
+        <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(5)">🔑 5. Milestone Unlock</button>
+    </div>
+
+<!-- Slide 1: First Derivative Master Mapping -->
+<div class="slide-content active" id="slide-1">
+    <h3>First Derivative Master Mapping</h3>
+    <p>Calculus allows us to use derivative functions as sensors to trace the exact terrain profile of a curve without plotting hundreds of points manually.</p>
+
+    <!-- 🟥 THE SINGLE PRISTINE MASTER CARD -->
+    <div class="block-theorem" style="margin-top: 20px;">
+        <strong>First Derivative Mapping Principles</strong>
+        <p>Use the sign changes and critical values of the first derivative to systematically chart the movement of the function:</p>
+        
+        <div class="layout-stack" style="margin-top: 20px; gap: 20px;">
+            
+            <!-- PART 1: MONOTONICITY SIGN TRACKERS -->
+            <div>
+                <strong>📈 Increasing Intervals:</strong>
+                <div class="math-block" style="margin: 6px 0;"><strong class="math-inline">f'(x) &gt; 0</strong> &rArr; <span class="math-inline">f(x)</span> is increasing.</div>
+            </div>
+
+            <div>
+                <strong>📉 Decreasing Intervals:</strong>
+                <div class="math-block" style="margin: 6px 0;"><strong class="math-inline">f'(x) &lt; 0</strong> &rArr; <span class="math-inline">f(x)</span> is decreasing.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🟥 UNIFIED FERMAT & NEIGHBOR TEST THEOREM CARD -->
+    <div class="block-theorem" style="margin-top: 20px;">
+        <strong>Fermat's Theorem & The First Derivative Test</strong>
+        <p>To locate and classify local extrema, first establish critical stationary coordinates where the tangent line flattens completely horizontal:</p>
+        
+        <div class="math-block" style="margin: 15px 0; color: var(--neon-blue); font-weight: bold; text-align: center; font-size: 1.35rem; letter-spacing: 0.5px;">
+            <strong class="math-inline">f'(x<sub>0</sub>) = 0</strong>
+        </div>
+        
+        <p style="margin-bottom: 16px; color: var(--text-muted);">Once a stationary point is located, classify its geometric identity by tracking the directional slope transitions as inputs pass through the coordinate:</p>
+
+        <div class="layout-stack" style="gap: 16px; border-top: 1px dashed rgba(255, 255, 255, 0.08); padding-top: 16px;">
+            <div>
+                <strong style="color: var(--neon-cyan); display: block; margin-bottom: 4px;">⛰️ Local Maximum (Peak)</strong>
+                <p style="margin: 0; color: var(--text-muted);">The derivative flips from positive to negative: <span class="math-inline">(+)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(&minus;)</span></p>
+            </div>
+            
+            <div>
+                <strong style="color: var(--neon-amber); display: block; margin-bottom: 4px;">🕳️ Local Minimum (Valley)</strong>
+                <p style="margin: 0; color: var(--text-muted);">The derivative flips from negative to positive: <span class="math-inline">(&minus;)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(+)</span></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- THE ROBUST EXCEPTION PANEL (Kept completely flat & pristine to match your targets) -->
+    <div class="block-attention" style="margin-top: 20px;">
+        <div class="split-grid" style="grid-template-columns: 1.3fr 0.7fr; gap: 20px; align-items: center; margin: 0;">
+            <div>
+                <strong>⚠️ The One-Way Directional Trap (Stationary Inflection</strong>
+                <p style="margin: 6px 0 0 0;">
+                    Finding <span class="math-inline">f'(x) = 0</span> does not mean a turning point is guaranteed. Look at <span class="math-inline">f(x) = x<sup>3</sup></span>. Its derivative <span class="math-inline">f'(x) = 3x<sup>2</sup></span> equals <span class="math-inline">0</span> at the origin. But because squaring any number yields a positive result, the slope is positive before *and* after zero. It forms a temporary flat plateau, not a turning crest.
+                </p>
+            </div>
+            <div class="visual-wrapper" style="margin: 0; padding: 10px; display: flex; justify-content: center; align-items: center;">
+                <svg viewBox="0 0 120 120" style="width: 100%; max-width: 120px; height: auto; display: block; overflow: visible;">
+                    <g stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.5">
+                        <line x1="0" y1="30" x2="120" y2="30" /><line x1="0" y1="60" x2="120" y2="60" /><line x1="0" y1="90" x2="120" y2="90" />
+                        <line x1="30" y1="0" x2="30" y2="120" /><line x1="60" y1="0" x2="60" y2="120" /><line x1="90" y1="0" x2="90" y2="120" />
+                    </g>
+                    <line x1="60" y1="0" x2="60" y2="120" stroke="#475569" stroke-width="1.2"></line>
+                    <line x1="0" y1="60" x2="120" y2="60" stroke="#475569" stroke-width="1.2"></line>
+                    <path d="M 10,110 C 40,95 50,60 60,60 C 70,60 80,25 110,10" fill="none" stroke="var(--neon-pink)" stroke-width="2" stroke-linecap="round"></path>
+                    <line x1="35" y1="60" x2="85" y2="60" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"></line>
+                    <circle cx="60" cy="60" r="3" fill="#ffffff"></circle>
+                    <text x="15" y="20" fill="var(--text-muted)" font-size="7" font-family="monospace">y=x³</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- Slide 2: The Second Derivative & Curvature Test -->
+    <div class="slide-content" id="slide-2">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">The Second Derivative &amp; Curvature Test</h3>
+        <p>Instead of mapping neighbor points on a sign chart, you can look directly at how a curve bends. Differentiating a second time yields <span class="math-inline">f''(x)</span>, which detects structural curvature instantly using the <strong>Smile/Frown Law</strong>.</p>
+
+        <!-- 📐 PRISTINE SIDE-BY-SIDE SIDE COMPARISON ENGAGING SYSTEM -->
+        <div class="grid-2" style="margin-top: 20px;">
+            
+            <!-- Convex / Smile Card -->
+            <div class="block-theorem" style="margin: 0;">
+                <strong>📈 Concave Upward: The Smile 😃</strong>
+                <div class="math-block" style="margin: 12px 0; font-size: 1.25rem; font-weight: bold; text-align: center; color: var(--neon-green); width: 100%;">
+                    <span class="math-inline">f''(x) &gt; 0</span>
+                </div>
+                <p style="margin: 0; color: var(--text-muted);">Positive acceleration values force the function to curve upward. When a stationary point is locked inside a smile, it forms a <strong style="color: var(--neon-amber);">Local Minimum 🕳️</strong>.</p>
+            </div>
+
+            <!-- Concave / Frown Card -->
+            <div class="block-theorem" style="margin: 0;">
+                <strong>📉 Concave Downward: The Frown 🙁</strong>
+                <div class="math-block" style="margin: 12px 0; font-size: 1.25rem; font-weight: bold; text-align: center; color: var(--neon-pink); width: 100%;">
+                    <span class="math-inline">f''(x) &lt; 0</span>
+                </div>
+                <p style="margin: 0; color: var(--text-muted);">Negative acceleration values force the function to curve downward. When a stationary point is locked inside a frown, it forms a <strong style="color: var(--neon-cyan);">Local Maximum ⛰️</strong>.</p>
+            </div>
+
+        </div>
+
+        <!-- THE CRITICAL WARNING PLATEAU NOTIFICATION -->
+        <div class="block-attention" style="margin-top: 20px;">
+            <strong>⚠️ The Inconclusive Flat Line Treap</strong>
+            <p style="margin: 6px 0 0 0;">
+                If your second derivative evaluation returns <span class="math-inline">f''(x<sub>0</sub>) = 0</span>, the curvature at that point is perfectly flat. This test fails and tells you nothing! You must return to Slide 1's <strong>Neighbor Sign Test</strong> to find out what the curve is doing.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Slide 3: Verification Laboratories -->
+    <div class="slide-content" id="slide-3">
+        <h3>Verification Laboratories</h3>
+        <p>Analyze these step-by-step master problems to see how the First Derivative Sign Chart and Second Derivative profiles work together to identify structural landmarks.</p>
+
+        <!-- 🟦 EXAMPLE 9.1: CUBIC EXTREMA ANALYSIS -->
+        <div class="block-example" style="margin-bottom: 25px;">
+            <strong>Example 9.1 (Extrema Hunting Loop):</strong>
+            <p>Find and classify all local turning points (maximums and minimums) for the given cubic function:</p>
+            
+            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+                f(x) = <span class="frac"><span class="top">1</span><span class="bottom">3</span></span>x<sup>3</sup> + 3x<sup>2</sup> + 8x &minus; 6
+            </div>
+            
+            <div class="block-solution">
+                <strong>Solution Method:</strong>
+                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                    <li>
+                        <span>Compute the Derivative Function:</span> Apply standard power rules to isolate critical roots:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            f'(x) = x<sup>2</sup> + 6x + 8
+                        </div>
+                    </li>
+                    <li>
+                        <span>Isolate Stationary Roots:</span> Set the quadratic derivative to zero and solve via factoring:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            x<sup>2</sup> + 6x + 8 = 0 &rArr; (x + 4)(x + 2) = 0 &rArr; x = &minus;4, x = &minus;2
+                        </div>
+                    </li>
+                    <li style="list-style: none; margin-left: -20px;">
+                        <!-- 📊 DIGITAL SIGN VARIATION CHART GRID -->
+                        <span style="display: block; margin-bottom: 8px; margin-left: 20px;">Construct Sign Variation Chart:</span>
+                        <div class="visual-wrapper" style="max-width: 500px; margin: 12px auto; padding: 0; overflow: hidden;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85rem; color: var(--text-main);">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.02);">
+                                        <th style="padding: 10px; border-right: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); width: 20%;">x</th>
+                                        <th style="padding: 10px; color: var(--text-muted);">&minus;&infin;</th>
+                                        <th style="padding: 10px; font-weight: bold; color: var(--neon-cyan);">&minus;4</th>
+                                        <th style="padding: 10px; color: var(--text-muted);">&minus;3</th>
+                                        <th style="padding: 10px; font-weight: bold; color: var(--neon-amber);">&minus;2</th>
+                                        <th style="padding: 10px; color: var(--text-muted);">&plus;&infin;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                                        <td style="padding: 10px; border-right: 1px solid rgba(255, 255, 255, 0.08); font-weight: bold; color: var(--text-muted);">f'(x)</td>
+                                        <td style="color: var(--neon-cyan); font-weight: bold;">&plus;</td>
+                                        <td style="color: #ffffff;">0</td>
+                                        <td style="color: var(--neon-pink); font-weight: bold;">&minus;</td>
+                                        <td style="color: #ffffff;">0</td>
+                                        <td style="color: var(--neon-cyan); font-weight: bold;">&plus;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 10px; border-right: 1px solid rgba(255, 255, 255, 0.08); font-weight: bold; color: var(--text-muted);">f(x)</td>
+                                        <td style="vertical-align: middle;">&nearr;</td>
+                                        <td style="color: var(--neon-cyan); font-weight: bold; font-size: 0.75rem; line-height: 1.2;">⛰️ Max<br><span style="color:var(--text-muted); font-weight:normal;">-34/3</span></td>
+                                        <td style="vertical-align: middle;">&searr;</td>
+                                        <td style="color: var(--neon-amber); font-weight: bold; font-size: 0.75rem; line-height: 1.2;">🕳️ Min<br><span style="color:var(--text-muted); font-weight:normal;">-38/3</span></td>
+                                        <td style="vertical-align: middle;">&nearr;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Process Coordinates:</span> Substitute the critical factors back into the raw function <span class="math-inline">f(x)</span> to secure exact coordinates:
+                        <div class="math-block" style="font-size: 1.1rem; text-align: center; margin: 12px 0;">
+                            f(&minus;4) = <span class="frac"><span class="top">(&minus;4)<sup>3</sup></span><span class="bottom">3</span></span> + 3(&minus;4)<sup>2</sup> + 8(&minus;4) &minus; 6 = &minus;34/3
+                        </div>
+                        <div class="math-block" style="font-size: 1.1rem; text-align: center; margin: 12px 0;">
+                            f(&minus;2) = <span class="frac"><span class="top">(&minus;2)<sup>3</sup></span><span class="bottom">3</span></span> + 3(&minus;2)<sup>2</sup> + 8(&minus;2) &minus; 6 = &minus;38/3
+                        </div>
+                    </li>
+                    <li>
+                        <span>State Final Extrema Vectors:</span> Gather the coordinates to state the terminal resolution points:
+                        <!-- 🛠️ FAILSAFE TABLE ROUTE: Bypasses all aggressive global CSS rules and forces absolute mid-line alignment -->
+                        <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
+                            <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: var(--neon-cyan); font-size: 1.25rem;">
+                                <tr style="background: none; border: none; vertical-align: middle;">
+                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">Max = (&minus;4, &minus;</td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;"><span class="top" style="color: var(--neon-cyan)">34</span><span class="bottom" style="color: var(--neon-cyan)">3</span></span>
+                                    </td>
+                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">), &nbsp;&nbsp; Min = (&minus;2, &minus;</td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;"><span class="top" style="color: var(--neon-cyan)">38</span><span class="bottom" style="color: var(--neon-cyan)">3</span></span>
+                                    </td>
+                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+        <!-- 🟦 EXAMPLE 9.2: INFLECTION EXPLORER CARD -->
+        <div class="block-example" style="margin-bottom: 20px;">
+            <strong>Example 9.2 (Inflection Landmark Explorer):</strong>
+            <p>Find the intervals of curvature concavity and determine the exact coordinates of any inflection points for the function:</p>
+            
+            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+                f(x) = x<sup>3</sup> &minus; 6x<sup>2</sup> + 9x &minus; 10
+            </div>
+            
+            <div class="block-solution">
+                <strong>Solution Method:</strong>
+                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                    <li>
+                        <span>Run Consecutive Derivatives:</span> Differentiate twice to isolate acceleration vectors:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            f'(x) = 3x<sup>2</sup> &minus; 12x + 9 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f''(x) = 6x &minus; 12
+                        </div>
+                    </li>
+                    <li>
+                        <span>Isolate Inflection Boundaries:</span> Find where the curvature shifts by evaluating the terminal root condition <span class="math-inline">f''(x) = 0</span>:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            6x &minus; 12 = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; 6x = 12 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 2
+                        </div>
+                    </li>
+                    <li>
+                        <span>Map the Curvature Signs:</span> Evaluate boundary neighborhoods on either side of our candidate point:
+                        <div style="margin-top: 6px; padding-left: 8px; line-height: 1.6;">
+                            &bull; For <span class="math-inline">x &lt; 2</span>: <span class="math-inline">f''(x) &lt; 0</span> &rarr; <span style="color: var(--neon-cyan); font-weight: bold;">Concave Curve 🙁 (Frown Profile)</span><br>
+                            &bull; For <span class="math-inline">x &gt; 2</span>: <span class="math-inline">f''(x) &gt; 0</span> &rarr; <span style="color: var(--neon-amber); font-weight: bold;">Convex Curve 😃 (Smile Profile)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Calculate Landmark Position:</span> Plug the verified inflection variable root back into the raw function expression to extract the concrete spatial mapping:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            f(2) = (2)<sup>3</sup> &minus; 6(2)<sup>2</sup> + 9(2) &minus; 10 = 8 &minus; 24 + 18 &minus; 10 = &minus;8
+                        </div>
+                    </li>
+                    <li>
+                        <span>State Final Inversion Vector:</span> State the coordinate parameters where the geometric path profile alters orientation smoothly:
+                        <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                            (2, &minus;8)
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Slide 4: Practice Set / Lab Array Component -->
+    <div class="slide-content" id="slide-4">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+        <p>Solve these diagnostic checkpoints cleanly in your physical workbook sheets or digital canvas to verify your curve-mapping analytical skill level.</p>
+        
+        <!-- 🟨 EXERCISE 9.1 -->
+        <div class="block-exercise" style="margin-bottom: 20px;">
+            <div class="exercise-title">Exercise 9.1: Extrema Hunting Loops</div>
+            <p>Find the derivative function <span class="math-inline">f'(x)</span>, calculate all stationary points where <span class="math-inline">f'(x) = 0</span>, construct a formal sign variation chart for each, and extract the full coordinates for all local maximums and minimums:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a)&nbsp;<span class="math-inline">f(x) = x<sup>2</sup> &minus; 4x + 11</span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b)&nbsp;<span class="math-inline">f(x) = x<sup>3</sup> + 6x<sup>2</sup> + 9x &minus; 10</span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c)&nbsp;<span class="math-inline">f(x) = 12x &minus; x<sup>3</sup></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d)&nbsp;<span class="math-inline">f(x) = 3x<sup>4</sup> &minus; 4x<sup>3</sup> &minus; 12x<sup>2</sup> + 5</span></span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 🟨 EXERCISE 9.2 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 9.2: Monotonic Properties</div>
+            <p>Consider the cubic function defined by: <span class="math-inline">f(x) = <span class="frac"><span class="top">1</span><span class="bottom">3</span></span>x<sup>3</sup> + 9x</span></p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    <span>a) Find the derivative function and evaluate its sign:</span>
+                    <span class="item-detail">↳ Differentiate <span class="math-inline">f(x)</span> and prove algebraically that <span style="color: var(--neon-amber); font-weight: bold;">f'(x) &gt; 0</span> for all real numbers <span class="math-inline">x &in; &reals;</span>.</span>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item">
+                    <span>b) Deduce geometric characteristics:</span>
+                    <span class="item-detail">↳ Determine from the behavior of the derivative whether any turning points can exist on this curve.</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 🟨 EXERCISE 9.3 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 9.3: Linear Extrema Proof</div>
+            <p>Prove that a standard linear function (<span class="math-inline">f(x) = mx + p</span> where <span class="math-inline">m &ne; 0</span>) can never have a maximum or a minimum point. Justify your analytical answer strictly by evaluating the invariant property of its derivative.</p>
+        </div>
+
+        <!-- 🟨 EXERCISE 9.4 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 9.4: The Stationary Inflection Case</div>
+            <p>Consider the cubic function: <span class="math-inline">f(x) = x<sup>3</sup> &minus; 6x<sup>2</sup> + 12x &minus; 5</span></p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    <span>a) Find the derivative function and evaluate its roots:</span>
+                    <span class="item-detail">↳ Calculate the derivative formula <span class="math-inline">f'(x)</span> and solve the equation <span class="math-inline">f'(x) = 0</span>.</span>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item">
+                    <span>b) Construct structural monotonicity metrics:</span>
+                    <span class="item-detail">↳ Construct a sign variation chart across this root and use it to explain why this function does not possess any turning points.</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 🟨 EXERCISE 9.5 (ADVANCED CHALLENGE) -->
+        <div class="block-exercise" style="margin-bottom: 20px;">
+            <div class="exercise-title">Exercise 9.5: Advanced Optimization Challenge [Advanced Challenge]</div>
+            <p>A rectangular livestock field is built along a straight stone wall using exactly <strong>800 metres</strong> of wire fencing. Because the stone wall forms one full side of the rectangle, fencing is only required for the remaining three open faces.</p>
+            
+            <div class="layout-stack" style="margin-top: 12px; margin-bottom: 15px;">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    <span>a) Construct the mathematical target objective function:</span>
+                    <span class="item-detail">↳ Write down a formula for a single-variable function representing the total pasture area <span class="math-inline">A(x)</span> enclosed by the fence layout.</span>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item">
+                    <span>b) Perform absolute localized maxima verification:</span>
+                    <span class="item-detail">↳ Calculate the exact boundary dimensions of the rectangle that maximize the total area for the livestock.</span>
+                </div>
+            </div>
+
+            <!-- VECTOR BOUNDARY DRAWING MAP (EXPANDED CANVAS WIDE ALIGNMENT) -->
+            <div class="visual-wrapper" style="display: flex; justify-content: center; margin: 15px 0 0 0;">
+                <svg width="380" height="130" viewBox="0 0 380 130" style="max-width: 100%;">
+                    <!-- Stone Wall Base (Perfectly centered on the 380px canvas) -->
+                    <rect x="30" y="15" width="320" height="16" fill="#334155" rx="3" opacity="0.4"/>
+                    <rect x="30" y="15" width="320" height="16" fill="none" stroke="#475569" stroke-width="1.2"/>
+                    <text x="190" y="26" fill="#94a3b8" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" letter-spacing: 0.5px;">EXISTING STONE WALL BOUNDARY</text>
+                    
+                    <!-- Teal Fence Line (Centered: Width 180, left corner at 100, right corner at 280) -->
+                    <path d="M 100,31 L 100,100 L 280,100 L 280,31" fill="none" stroke="var(--neon-amber)" stroke-width="2" stroke-dasharray="4,3"/>
+                    
+                    <!-- Dimension Indicators -->
+                    <!-- Left Width x: Shifted out to 80 to leave a comfortable gap -->
+                    <line x1="80" y1="31" x2="80" y2="100" stroke="#64748b" stroke-width="0.8"/>
+                    <path d="M 77,35 L 80,31 L 83,35 M 77,96 L 80,100 L 83,96" fill="none" stroke="#64748b" stroke-width="0.8"/>
+                    <text x="68" y="70" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle;">x</text>
+                    
+                    <!-- Right Width x: Shifted out to 300 to give the text complete breathing room -->
+                    <line x1="300" y1="31" x2="300" y2="100" stroke="#64748b" stroke-width="0.8"/>
+                    <path d="M 297,35 L 300,31 L 303,35 M 297,96 L 300,100 L 303,96" fill="none" stroke="#64748b" stroke-width="0.8"/>
+                    <text x="312" y="70" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle;">x</text>
+                    
+                    <!-- Length 800 - 2x -->
+                    <line x1="100" y1="114" x2="280" y2="114" stroke="#64748b" stroke-width="0.8"/>
+                    <path d="M 104,111 L 100,114 L 104,117 M 276,111 L 280,114 L 276,117" fill="none" stroke="#64748b" stroke-width="0.8"/>
+                    <text x="190" y="125" fill="#94a3b8" font-size="9" font-family="monospace" text-anchor="middle;">800 - 2x</text>
+                    
+                    <!-- Pasture Label (Dead centered inside the fence framework box) -->
+                    <text x="130" y="70" fill="var(--neon-amber)" font-size="11" font-family: sans-serif; font-weight: bold; text-anchor: middle; opacity: 0.95;">Containment Pasture A(x)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Slide 5: Milestone Unlock Gateway Framework -->
+    <div class="slide-content" id="slide-5">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 9 Verification Check</h3>
+        <p>To finalize Section 9 and clear the next master gate lock, complete the target problem metrics analysis from the optimization lab. Gather your optimal dimensions code, then combine them directly back-to-back from left to right (Width followed by Length):</p>
+        
+        <div style="background: rgba(30, 41, 59, 0.2); border: 1px dashed #334155; padding: 15px; border-radius: 6px; margin: 15px 0;">
+            <span style="color: var(--text-main); font-weight: bold; font-size: 0.85rem; display: block; margin-bottom: 4px;">🧩 Target Metrics Checklist</span>
+            <ul style="font-size: 0.8rem; color: var(--text-muted); padding-left: 20px; line-height: 1.5; margin: 0;">
+                <li>Identify the width parameter <span class="math-inline">x</span> that maximizes the area function <span class="math-inline">A(x)</span>.</li>
+                <li>Calculate the corresponding open side landscape length vector <span class="math-inline">(800 - 2x)</span>.</li>
+                <li>Merge both integer solutions together into a single continuous code block.</li>
+            </ul>
+        </div>
+        
+        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces, commas, or characters (e.g., 100200).</p>
+        
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <input type="text" id="section9-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
+            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection9Key()">Submit Verification</button>
+        </div>
+        <div id="section9-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
+    </div>
+
+
+    <script>
+        function showSlide(slideIndex) {
+            document.querySelectorAll('.slide-content').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            const buttons = document.querySelectorAll('.tab-btn');
+            if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -212,7 +212,7 @@ window.verifySection7Key = function() {
 
 
 /* 🔐 SECTION 8: THE CHAIN RULE GATEWAY KEY VALIDATOR */
-window.verifySection9Key = function() {
+window.verifySection8Key = function() {
     const iframe = document.querySelector('.content-iframe');
     if (!iframe) return;
     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
@@ -237,4 +237,88 @@ window.verifySection9Key = function() {
         feedBox.textContent = "❌ Invalid verification key. Check your outer multiplier layers and inner polynomial component tracking coefficients.";
     }
 };
+
+/* 🔐 SECTION 9: STATIONARY POINTS & SECOND DERIVATIVE KEY VALIDATOR */
+window.verifySection9Key = function() {
+    const iframe = document.querySelector('.content-iframe');
+    if (!iframe) return;
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+    const inputVal = iframeDoc.getElementById('section9-key-input').value.trim();
+    const feedBox = iframeDoc.getElementById('section9-feedback-box');
+    
+    // 🎯 TARGET VALUE INTERCEPT PASSCODE (Set to "0" per instructions)
+    if (inputVal === "0") { 
+        feedBox.style.color = "var(--neon-green)";
+        feedBox.textContent = "✓ Key Validated! Section 9 Complete. Section 10 Unlocked.";
+        
+        if (!gameState.completedLevels.includes(9)) gameState.completedLevels.push(9);
+        gameState.highestUnlocked = Math.max(gameState.highestUnlocked, 10);
+        gameState.currentActiveLevel = 10;
+        
+        saveEngineState();
+        renderVerticalMapTrack();
+        setTimeout(() => { switchLevelView(10); }, 1500);
+    } else {
+        feedBox.style.color = "var(--neon-danger)";
+        feedBox.textContent = "❌ Invalid verification key. Evaluate all stationary extrema vectors and inflection test bounds.";
+    }
+};
+
+/* 🔐 SECTION 10: CURVE SKETCHING & ASYMPTOTES VALIDATOR */
+window.verifySection10Key = function() {
+    const iframe = document.querySelector('.content-iframe');
+    if (!iframe) return;
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+    const inputVal = iframeDoc.getElementById('section10-key-input').value.trim();
+    const feedBox = iframeDoc.getElementById('section10-feedback-box');
+    
+    // 🎯 TARGET SOLUTION INTERCEPT PASSCODE (Derived from Exercise 18.4 Asymptotes x=1, y=2)
+    if (inputVal === "0") { 
+        feedBox.style.color = "var(--neon-green)";
+        feedBox.textContent = "✓ Key Validated! Section 10 Complete. Section 11 Unlocked.";
+        
+        if (!gameState.completedLevels.includes(10)) gameState.completedLevels.push(10);
+        gameState.highestUnlocked = Math.max(gameState.highestUnlocked, 11);
+        gameState.currentActiveLevel = 11;
+        
+        saveEngineState();
+        renderVerticalMapTrack();
+        setTimeout(() => { switchLevelView(11); }, 1500);
+    } else {
+        feedBox.style.color = "var(--neon-danger)";
+        feedBox.textContent = "❌ Invalid verification key. Check boundary limits at exclusions and conditions at infinity.";
+    }
+};
+
+/* 🔐 SECTION 11 VERIFICATION SUBSYSTEM LAYER (FINAL MATRIX LOCK) */
+window.verifySection11Key = function() {
+    const iframe = document.querySelector('.content-iframe');
+    if (!iframe) return;
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+    const inputVal = iframeDoc.getElementById('section11-key-input').value.trim();
+    const feedBox = iframeDoc.getElementById('section11-feedback-box');
+    
+    // 🎯 TARGET SOLUTION 0
+    if (inputVal === "0") { 
+        feedBox.style.color = "var(--neon-green)";
+        feedBox.textContent = "🏆 Module Complete! Section 11 Validated. Analysis Foundation Module Fully Cleared.";
+        
+        if (!gameState.completedLevels.includes(11)) gameState.completedLevels.push(11);
+        // Cap the active engine indices to prevent boundary overflows
+        gameState.highestUnlocked = Math.max(gameState.highestUnlocked, 11);
+        gameState.currentActiveLevel = 11;
+        
+        saveEngineState();
+        renderVerticalMapTrack();
+    } else {
+        feedBox.style.color = "var(--neon-pink)";
+        feedBox.textContent = "❌ Verification Failure. Coordinate parameter sets mismatch.";
+    }
+};
+
+
+
 

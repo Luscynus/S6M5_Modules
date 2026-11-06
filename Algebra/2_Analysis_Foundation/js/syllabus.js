@@ -10,11 +10,11 @@ const nodeTitles = {
     2: "2. Composite & Inverse Functions",
     3: "3. Symmetry, Parity & Polynomials",
     4: "4. Introduction to Limits",
-    5: "5. Continuity Thresholds",
-    6: "6. Derivatives from First Principles",
-    7: "7. Power Rule Shortcuts",
-    8: "8. Product & Quotient Rules",
-    9: "9. The Chain Rule Protocol",
-    10: "10. Tangents & Normals Equations",
-    11: "11. Stationary Points Analysis"
+    5: "5. Derivatives and Tangents",
+    6: "6. Derivative Function and Rules",
+    7: "7. Product & Quotient Rules",
+    8: "8. The Chain Rule Protocol",
+    9: "9. Stationary Points Analysis and Second Derivative",
+    10: "10. Curve Sketching and Asymptotes",
+    11: "11. Reading Derivative Graphs"
 };

@@ -18,153 +18,195 @@
         <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(5)">🔑 5. Milestone Unlock</button>
     </div>
 
-    <!-- Slide 1: Composition -->
-    <div class="slide-content active" id="slide-1">
-        <h3>Function Composition: Chains of Operations</h3>
-        <p>Imagine passing a number into a machine, taking the output it spits out, and dropping it directly into a second machine. This pipeline is called <strong>Function Composition</strong>.</p>
+<!-- Slide 1: Composition -->
+<div class="slide-content active" id="slide-1">
+    <h3>Function Composition: Chains of Operations</h3>
+    <p>Imagine passing a number into a machine, taking the output it spits out, and dropping it directly into a second machine. This pipeline is called <strong>Function Composition</strong>.</p>
+    
+    <!-- 🟢 UPGRADED UNIFIED GREEN DEFINITION BLOCK -->
+    <div class="block-definition">
+        <strong>The Composite Notation:</strong>
+        <p>Given two functions, <span class="math-inline">f</span> and <span class="math-inline">g</span>, the combined operation is written as:</p>
         
-        <div class="box">
-            <strong>The Composite Notation:</strong>
-            <p>Given two functions, <span class="math-inline">f</span> and <span class="math-inline">g</span>, the combined operation is written as:</p>
-            <div class="math-block" style="color: var(--neon-cyan); font-weight: bold;">
-                (f &cir; g)(x) = f(g(x))
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">⚠️ <strong>Order Matters:</strong> You always evaluate from the inside out! Work out <span class="math-inline">g(x)</span> first, then substitute that entire algebraic result into <span class="math-inline">f</span>.</p>
+        <!-- Nested math container automatically styled via inner-card framework -->
+        <div class="inner-card" style="text-align: center; padding: 15px 0;">
+            <span class="math-block" style="color: var(--neon-green); font-weight: bold;">(f &cir; g)(x) = f(g(x))</span>
         </div>
+        
+        <p style="margin-top: 12px !important;"><strong>Order Matters:</strong> You always evaluate from the inside out! Work out <span class="math-inline">g(x)</span> first, then substitute that entire algebraic result into <span class="math-inline">f</span>.</p>
+    </div>
 
-        <div class="box" style="border-left: 3px solid var(--neon-amber);">
-            <strong>Domain Warning Constraint:</strong>
-            <p>For <span class="math-inline">f(g(x))</span> to exist, the input <span class="math-inline">x</span> must be valid for <span class="math-inline">g(x)</span>, AND the output value coming out of <span class="math-inline">g(x)</span> must sit cleanly inside the domain boundaries of the outer function <span class="math-inline">f</span>.</p>
+    <!-- 🟥 UPGRADED UNIFIED RED ATTENTION / WARNING BLOCK -->
+    <div class="block-attention" style="margin-top: 20px;">
+        <strong>🚨 Domain Warning Constraint:</strong>
+        <p>For <span class="math-inline">f(g(x))</span> to exist, the input <span class="math-inline">x</span> must be valid for <span class="math-inline">g(x)</span>, AND the output value coming out of <span class="math-inline">g(x)</span> must sit cleanly inside the domain boundaries of the outer function <span class="math-inline">f</span>.</p>
+    </div>
+</div>
+
+
+<!-- Slide 2: Inverse Functions -->
+<div class="slide-content" id="slide-2">
+    <h3>Inverse Functions: Reversing the Machine</h3>
+    <p>An <strong>Inverse Function</strong> acts as an undo operation. If the original function maps an input <span class="math-inline">x</span> to a height <span class="math-inline">y</span>, the inverse function takes that height <span class="math-inline">y</span> and tracks it back to the original starting input <span class="math-inline">x</span>.</p>
+    
+    <!-- 🟢 UPGRADED UNIFIED GREEN DEFINITION BLOCK -->
+    <div class="block-definition">
+        <strong>Core Identity Conditions:</strong>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <li>The inverse function notation is written as: <span class="math-inline">f<sup>&minus;1</sup>(x)</span></li>
+            <li style="margin-top: 8px;">Applying them back-to-back cancels out the algebra: <span class="math-inline">f(f<sup>&minus;1</sup>(x)) = x</span> and <span class="math-inline">f<sup>&minus;1</sup>(f(x)) = x</span></li>
+            <li style="margin-top: 8px;">
+                <strong>Domain &amp; Range Flip:</strong> The domain of the inverse matches the range of the original, and vice versa.
+                <div class="inner-card" style="text-align: center; padding: 12px 0; margin-top: 8px;">
+                    <span class="math-block" style="color: var(--neon-green); margin: 0; font-weight: bold;">D(f<sup>&minus;1</sup>) = R(f) &nbsp;&nbsp;&amp;&nbsp;&nbsp; R(f<sup>&minus;1</sup>) = D(f)</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 🟥 UPGRADED UNIFIED PINK THEOREM BLOCK FOR THE 3-STEP ALGEBRAIC PROCEDURE -->
+    <div class="block-theorem" style="margin-top: 20px;">
+        <strong>The 3-Step Algebraic Procedure to find <span class="math-inline" style="color: var(--neon-blue);">f<sup>&minus;1</sup>(x)</span>:</strong>
+        
+        <ol style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <li>Set the function expression equal to <span class="math-inline">y</span> &xrarr; <span class="math-inline">y = f(x)</span></li>
+            <li style="margin-top: 6px;">Rearrange and solve the entire equation strictly to isolate variable <span class="math-inline">x</span>.</li>
+            <li style="margin-top: 6px;">Swap your variable letters (<span class="math-inline">x</span> and <span class="math-inline">y</span>) to present the final formula.</li>
+        </ol>
+    </div>
+</div>
+
+
+<!-- Slide 3: Worked Examples -->
+<div class="slide-content" id="slide-3">
+    <h3>Demonstration Masterclass</h3>
+    
+    <!-- 📘 EXAMPLE 2.1: COMPOSITION -->
+    <div class="block-example">
+        <strong>Example 2.1 (Composition):</strong> Given <span class="math-inline">f(x) = x² + 3</span> and <span class="math-inline">g(x) = 2x &minus; 1</span>, evaluate <span class="math-inline">f(g(x))</span>.
+        
+        <!-- 🏙️ NESTED SOLUTION CARD ENGINE SWITCHED FROM INLINE PAD -->
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>Target the outer function frame: <span class="math-inline">f([&nbsp;]) = [&nbsp;]² + 3</span></li>
+                <li>Drop the entire expression for <span class="math-inline">g(x)</span> into the slot:
+                    <div class="math-block">f(g(x)) = (2x &minus; 1)² + 3</div>
+                </li>
+                <li>Expand the binomial identity square and collect numeric constants:
+                    <div class="math-block">f(g(x)) = (4x² &minus; 4x + 1) + 3</div>
+                    <div class="math-block" style="color: var(--neon-cyan); font-weight: bold;">f(g(x)) = 4x² &minus; 4x + 4</div>
+                </li>
+            </ol>
         </div>
     </div>
 
-    <!-- Slide 2: Inverse Functions -->
-    <div class="slide-content" id="slide-2">
-        <h3>Inverse Functions: Reversing the Machine</h3>
-        <p>An <strong>Inverse Function</strong> acts as an undo operation. If the original function maps an input <span class="math-inline">x</span> to a height <span class="math-inline">y</span>, the inverse function takes that height <span class="math-inline">y</span> and tracks it back to the original starting input <span class="math-inline">x</span>.</p>
+    <!-- 📘 EXAMPLE 2.2: FINDING AN INVERSE -->
+    <div class="block-example">
+        <strong>Example 2.2 (Finding an Inverse):</strong> Find the inverse formula for the fractional function <span class="math-inline">f(x) = <span class="frac"><span class="top">2x + 1</span><span class="bottom">x &minus; 3</span></span></span>.
         
-        <div class="box">
-            <strong>Core Identity Conditions:</strong>
-            <ul>
-                <li>The inverse function notation is written as: <span class="math-inline">f<sup>&minus;1</sup>(x)</span></li>
-                <li style="margin-top: 8px;">Applying them back-to-back cancels out the algebra: <span class="math-inline">f(f<sup>&minus;1</sup>(x)) = x</span> and <span class="math-inline">f<sup>&minus;1</sup>(f(x)) = x</span></li>
-                <li style="margin-top: 8px;"><strong>Domain &amp; Range Flip:</strong> The domain of the inverse matches the range of the original, and vice versa:<br>
-                    <div class="math-block"><span class="math-inline" style="color: var(--neon-cyan);">D(f<sup>&minus;1</sup>) = R(f)</span> &nbsp;&nbsp;and&nbsp;&nbsp; <span class="math-inline" style="color: var(--neon-cyan);">R(f<sup>&minus;1</sup>) = D(f)</span>
+        <!-- 🏙️ NESTED SOLUTION CARD ENGINE SWITCHED FROM INLINE PAD -->
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>Set expression equal to <span class="math-inline">y</span> and cross-multiply the denominator boundary:
+                    <div class="math-block">y = <span class="frac"><span class="top">2x + 1</span><span class="bottom">x &minus; 3</span></span> &xrarr; y(x &minus; 3) = 2x + 1</div>
+                    <div class="math-block">xy &minus; 3y = 2x + 1</div>
+                </li>
+                <li>Gather all terms with variable <span class="math-inline">x</span> on one side, and factor it out cleanly:
+                    <div class="math-block">xy &minus; 2x = 3y + 1</div>
+                    <div class="math-block">x(y &minus; 2) = 3y + 1</div>
+                </li>
+                <li>Divide across to isolate <span class="math-inline">x</span>, then swap variables for the terminal inverse answer:
+                    <div class="math-block">
+                        x = <span class="frac"><span class="top">3y + 1</span><span class="bottom">y &minus; 2</span></span> &xrarr; <span style="color: var(--neon-cyan);">f<sup> -1</sup>(x) =</span> <span class="frac" style="color: var(--neon-cyan);"><span style="color: var(--neon-cyan);" class="top">3x + 1</span><span style="color: var(--neon-cyan);" class="bottom">x &minus; 2</span></span>
                     </div>
                 </li>
-            </ul>
-        </div>
-
-        <div class="box" style="border-left: 3px solid var(--neon-cyan);">
-            <strong>The 3-Step Algebraic Procedure to find <span class="math-inline">f<sup>&minus;1</sup>(x)</span>:</strong>
-            <ol>
-                <li>Set the function expression equal to <span class="math-inline">y</span> &xrarr; <span class="math-inline">y = f(x)</span></li>
-                <li style="margin-top: 4px;">Rearrange and solve the entire equation strictly to isolate variable <span class="math-inline">x</span>.</li>
-                <li style="margin-top: 4px;">Swap your variable letters (<span class="math-inline">x</span> and <span class="math-inline">y</span>) to present the final formula.</li>
             </ol>
         </div>
     </div>
+</div>
 
-    <!-- Slide 3: Worked Examples -->
-    <div class="slide-content" id="slide-3">
-        <h3>Demonstration Masterclass</h3>
+
+
+<!-- Slide 4: Practice Set -->
+<div class="slide-content" id="slide-4">
+    <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+    <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+    
+    <!-- Exercise 2.1: 4-Column Balanced Grid -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 2.1: Function Operations &amp; Chains</div>
+        <p>Consider the functions defined by:&nbsp;&nbsp;<span class="math-inline">f(x) = 2x<sup>2</sup> − 3</span> &nbsp;&nbsp;and&nbsp;&nbsp; <span class="math-inline">g(x) = 3x + 2</span>.<br>Find the complete simplified formula for each of the given expressions:</p>
+        <div class="grid-2">
+            <div class="exercise-item">a)&nbsp;<span class="math-inline">(f + g)(x)</span></div>
+            <div class="exercise-item">b)&nbsp;<span class="math-inline">(g &sdot; f)(x)</span></div>
+            <div class="exercise-item">c)&nbsp;<span class="math-inline">(f &cir; g)(x)</span></div>
+            <div class="exercise-item">d)&nbsp;<span class="math-inline">(g &cir; f)(x)</span></div>
+        </div>
+    </div>
+
+    <!-- Exercise 2.2: 2-Column Balanced Block Grid -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 2.2: Composite Domains</div>
+        <p>Find the algebraic formula for the composite function <span class="math-inline">(f &cir; g)(x)</span>, and determine its exact domain <span class="math-inline">D<sub>f &cir; g</sub></span> using interval notation:</p>
+        <div class="grid-2">
+            <div class="exercise-item" style="padding: 18px 14px;">
+                a) &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">4</span><span class="bottom">x − 2</span></span></span> , &nbsp;&nbsp; <span class="math-inline">g(x) = <span class="frac"><span class="top">1</span><span class="bottom">x</span></span></span>
+            </div>
+            <div class="exercise-item" style="padding: 18px 14px;">
+                b) &nbsp;<span class="math-inline">f(x) = &radic;<span style="border-top:1px solid #fff;">x − 3</span></span> , &nbsp;&nbsp; <span class="math-inline">g(x) = x<sup>2</sup> + 2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 2.3: 4 items cleanly layout tracked -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 2.3: Inverse Function</div>
+        <p>Find the explicit formula for the inverse function <span class="math-inline">f<sup>−1</sup>(x)</span> for each parameter set. State any domain exclusions for the resulting inverse function:</p>
+        <div class="grid-2">
+            <div class="exercise-item" style="padding: 18px 14px;">
+                a) &nbsp;<span class="math-inline">f(x) = 4x − 7</span>
+            </div>
+            <div class="exercise-item" style="padding: 18px 14px;">
+                b) &nbsp;<span class="math-inline">f(x) = &radic;<span style="border-top:1px solid #fff;">x + 5</span></span>
+            </div>
+            <div class="exercise-item" style="padding: 18px 14px;">
+                c) &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">2</span><span class="bottom">x + 1</span></span></span>
+            </div>
+            <div class="exercise-item" style="padding: 18px 14px;">
+                d) &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">x − 5</span><span class="bottom">2x + 3</span></span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 2.4: [Advanced Challenge] Composite Matrix Engine -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 2.4: [Advanced Challenge] Composite Matrix Engine</div>
+        <p>Consider the two rational functions defined by:&nbsp;&nbsp;<span class="math-inline">f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">2x</span><span class="bottom">x − 1</span></span></span> &nbsp;&nbsp;and&nbsp;&nbsp; <span class="math-inline">g(x) = <span class="frac" style="vertical-align: middle;"><span class="top">3</span><span class="bottom">x + 2</span></span></span>.</p>
         
-        <div class="example">
-            <strong>Example 2.1 (Composition):</strong> Given <span class="math-inline">f(x) = x<sup>2</sup> + 3</span> and <span class="math-inline">g(x) = 2x &minus; 1</span>, evaluate <span class="math-inline">f(g(x))</span>.<br><br>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li>Target the outer function frame: <span class="math-inline">f([&nbsp;]) = [&nbsp;]<sup>2</sup> + 3</span></li>
-                <li>Drop the entire expression for <span class="math-inline">g(x)</span> into the slot: <br><span class="math-inline">f(g(x)) = (2x &minus; 1)<sup>2</sup> + 3</span></li>
-                <li>Expand the binomial identity square and collect numeric constants:<br>
-                    <span class="math-inline">f(g(x)) = (4x<sup>2</sup> &minus; 4x + 1) + 3</span><br>
-                    <span style="color: var(--neon-green); font-weight: bold;"><span class="math-inline">f(g(x)) = 4x<sup>2</sup> &minus; 4x + 4</span></span>
-                </li>
-            </ol>
-        </div>
-
-        <div class="example" style="border-left-color: var(--neon-cyan); background-color: #0c1e36;">
-            <strong>Example 2.2 (Finding an Inverse):</strong> Find the inverse formula for the fractional function <span class="math-inline">f(x) = <span class="frac"><span class="top">2x + 1</span><span class="bottom">x &minus; 3</span></span></span>.<br><br>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li>Set expression equal to <span class="math-inline">y</span> and cross-multiply the denominator boundary:<br>
-                    <span class="math-inline">y = <span class="frac"><span class="top">2x + 1</span><span class="bottom">x &minus; 3</span></span> &xrarr; y(x &minus; 3) = 2x + 1</span><br>
-                    <span class="math-inline">xy &minus; 3y = 2x + 1</span>
-                </li>
-                <li style="margin-top: 6px;">Gather all terms with variable <span class="math-inline">x</span> on one side, and factor it out cleanly:<br>
-                    <span class="math-inline">xy &minus; 2x = 3y + 1</span><br>
-                    <span class="math-inline">x(y &minus; 2) = 3y + 1</span>
-                </li>
-                <li style="margin-top: 6px;">Divide across to isolate <span class="math-inline">x</span>, then swap variables for the terminal inverse answer:<br>
-                    <span class="math-inline">x = <span class="frac"><span class="top">3y + 1</span><span class="bottom">y &minus; 2</span></span></span> &xrarr; <span style="color: var(--neon-cyan); font-weight: bold;"><span class="math-inline">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="top">3x + 1</span><span class="bottom">x &minus; 2</span></span></span></span>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <!-- Slide 4: Practice Set -->
-    <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-        <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
-        
-        <!-- Exercise 2.1 -->
-        <div class="exercise-block">
-            <div class="exercise-title">Exercise 2.1: Function Operations &amp; Chains</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Consider the functions defined by:&nbsp;&nbsp;<span class="math-inline">f(x) = 2x<sup>2</sup> − 3</span> &nbsp;&nbsp;and&nbsp;&nbsp; <span class="math-inline">g(x) = 3x + 2</span>.<br>Find the complete simplified formula for each of the given expressions:</p>
-            <div class="grid-2">
-                <div class="exercise-item">a)&nbsp;<span class="math-inline">(f + g)(x)</span></div>
-                <div class="exercise-item">b)&nbsp;<span class="math-inline">(g &sdot; f)(x)</span></div>
-                <div class="exercise-item">c)&nbsp;<span class="math-inline">(f &cir; g)(x)</span></div>
-                <div class="exercise-item">d)&nbsp;<span class="math-inline">(g &cir; f)(x)</span></div>
+        <div class="layout-stack">
+            <!-- Part A: Composition -->
+            <div class="exercise-item">
+                <span>a) Construct the composite function expression <span class="math-inline">h(x) = (g &cir; f)(x)</span> and reduce it cleanly into a single simplified rational fraction component.</span>
             </div>
-        </div>
-
-        <!-- Exercise 2.2 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-green);">
-            <div class="exercise-title">Exercise 2.2: Composite Domains</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Find the algebraic formula for the composite function <span class="math-inline">(f &cir; g)(x)</span>, and determine its exact domain <span class="math-inline">D<sub>f &cir; g</sub></span> using interval notation:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block; padding-top:18px; padding-bottom:18px;">
-                    <strong>a)</strong> &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">4</span><span class="bottom">x − 2</span></span></span> , &nbsp;&nbsp; <span class="math-inline">g(x) = <span class="frac"><span class="top">1</span><span class="bottom">x</span></span></span>
-                </div>
-                <div class="exercise-item" style="display:block; padding-top:18px; padding-bottom:18px;">
-                    <strong>b)</strong> &nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x − 3</span></span> , &nbsp;&nbsp; <span class="math-inline">g(x) = x<sup>2</sup> + 2</span>
-                </div>
+            
+            <!-- Part B: Composite Domain Intersection -->
+            <div class="exercise-item">
+                <span>b) Determine the complete valid domain interval <span class="math-inline">D<sub>g &cir; f</sub></span>.</span>
+                <span class="item-detail" style="font-style: italic;">↳ Hint: Analyze the restrictions of the inner function first, then track the outer system denominator boundaries.</span>
             </div>
-        </div>
-
-        <!-- Exercise 2.3 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-blue);">
-            <div class="exercise-title">Exercise 2.3: Inverse Function</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Find the explicit formula for the inverse function <span class="math-inline">f<sup>−1</sup>(x)</span> for each parameter set. State any domain exclusions for the resulting inverse function:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block;">
-                    <strong>a)</strong> &nbsp;<span class="math-inline">f(x) = 4x − 7</span>
-                </div>
-                <div class="exercise-item" style="display:block;">
-                    <strong>b)</strong> &nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x + 5</span></span>
-                </div>
-                <div class="exercise-item" style="display:block; padding-top:18px; padding-bottom:18px;">
-                    <strong>c)</strong> &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">2</span><span class="bottom">x + 1</span></span></span>
-                </div>
-                <div class="exercise-item" style="display:block; padding-top:18px; padding-bottom:18px;">
-                    <strong>d)</strong> &nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">x − 5</span><span class="bottom">2x + 3</span></span></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Exercise 2.4 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-pink);">
-            <div class="exercise-title">Exercise 2.4: [Advanced Challenge] Matrix Transformations</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Let the base parent parabola shape be defined by <span class="math-inline">f(x) = x<sup>2</sup></span>. Write down the complete new formula <span class="math-inline">g(x)</span> that represents the following combined geometric operations on <span class="math-inline">f(x)</span>:</p>
-            <div class="exercise-item" style="display: block; background: #0f172a;">
-                <ul style="margin: 0; padding-left: 15px; font-size: 0.9rem;">
-                    <li>A horizontal translation right by <strong>3 units</strong>.</li>
-                    <li style="margin-top: 6px;">A vertical stretch scaling factor of <strong>2</strong>.</li>
-                    <li style="margin-top: 6px;">A vertical translation downward shift by <strong>5 units</strong>.</li>
-                </ul>
+            
+            <!-- Part C: Isolate Complex Rational Inverse -->
+            <div class="exercise-item">
+                <span>c) Find the explicit formula for the inverse function <span class="math-inline">h<sup>−1</sup>(x)</span>. State any explicit domain constraints for this final inverse function.</span>
             </div>
         </div>
     </div>
+
+
+</div>
+
 
     <!-- Slide 5: Milestone Gatekeeper -->
     <div class="slide-content" id="slide-5">

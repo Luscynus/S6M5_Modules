@@ -18,269 +18,333 @@
         <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(5)">🔑 5. Milestone Unlock</button>
     </div>
 
-    <!-- Slide 1: Function Parity -->
-    <div class="slide-content active" id="slide-1">
-        <h3>Function Parity: Even vs. Odd Symmetry</h3>
-        <p>Parity describes how a function reacts when you flip the sign of its input variable. Testing this algebraically reveals core geometric symmetries instantly.</p>
+ <!-- Slide 1: Function Parity -->
+<div class="slide-content active" id="slide-1">
+    <h3>Function Parity: Even vs. Odd Symmetry</h3>
+    <p>Parity describes how a function reacts when you flip the sign of its input variable. Testing this algebraically reveals core geometric symmetries instantly.</p>
+    
+<!-- 🚀 ADVANCED CALCULUS PREVIEW / INSIGHT CARD (COLOR MATCHED) -->
+<div class="block-preview">
+    <strong>🚀 ADVANCED CALCULUS PREVIEW: WHY THIS MATTERS</strong>
+    <p>Mastering parity unlocks algebraic shortcuts down the road! For example, when calculating the <strong>area under a curve</strong> or <strong>volumes of solid rotations</strong> in integral calculus:</p>
+    <ul>
+        <li>Knowing that a function like <span class="math-inline">cos(x)</span> is strictly <strong>Even</strong> means integrating symmetric boundaries collapses into a simple shortcut: <span style="color: var(--neon-blue); font-weight: 600;">Total Area = Single Area &times; 2</span>.</li>
+        <li style="margin-top: 6px;">Conversely, integrating an <span style="color: #ff007f; font-weight: bold;">Odd</span> function over symmetric intervals instantly equals <span style="color: #ff007f; font-weight: 600;">0</span> because the positive and negative halves cancel each other out completely without needing a single calculation!</li>
+    </ul>
+</div>
+
+
+    
+    <!-- 📐 DUAL PARITY SYSTEM GRAPHICS WORKSPACE -->
+    <div class="visual-wrapper">
+        <div style="color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; letter-spacing: 0.5px;">📐 COMPARISON MATRIX: Y-AXIS VS. ORIGIN SYMMETRY</div>
         
-        <!-- 🚀 CALCULUS PREVIEW SCAFFOLDING CARD -->
-        <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--neon-blue); padding: 12px 15px; border-radius: 4px; margin: 15px 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-main);">
-            <strong style="color: var(--neon-blue); letter-spacing: 0.5px;">🚀 ADVANCED CALCULUS PREVIEW: WHY THIS MATTERS</strong><br>
-            Mastering parity unlocks algebraic shortcuts down the road! For example, when calculating the <strong>area under a curve</strong> or <strong>volumes of solid rotations</strong> in integral calculus:
-            <ul style="margin: 6px 0 0 0; padding-left: 15px; color: var(--text-muted);">
-                <li>Knowing that a function like <span class="math-inline" style="font-size:0.9rem;">cos(x)</span> is strictly <strong>Even</strong> means integrating symmetric boundaries collapses into a simple shortcut: <span style="color: var(--neon-cyan); font-weight: 600;">Total Area = Single Area &times; 2</span>.</li>
-                <li style="margin-top: 4px;">Conversely, integrating an <strong>Odd</strong> function over symmetric intervals instantly equals <span style="color: var(--neon-pink); font-weight: 600;">0</span> because the positive and negative halves cancel each other out completely without needing a single calculation!</li>
-            </ul>
-        </div>
-        
-        <!-- 📐 DUAL PARITY SYSTEM GRAPHICS WORKSPACE -->
-        <div style="background: #0b0f19; border: 1px solid var(--border-glow); padding: 15px; border-radius: 10px; margin: 15px 0; display: flex; flex-direction: column; align-items: center;">
-            <div style="color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 0.5px;">📐 COMPARISON MATRIX: Y-AXIS VS. ORIGIN SYMMETRY</div>
+        <svg viewBox="-110 -110 220 220" width="100%" style="max-width: 380px; overflow: visible;">
+            <!-- Mesh Backdrop Grid (Updated with premium translucent cyan) -->
+            <path d="M-110,-80 L110,-80 M-110,-60 L110,-60 M-110,-40 L110,-40 M-110,-20 L110,-20 M-110,20 L110,20 M-110,40 L110,40 M-110,60 L110,60 M-110,80 L110,80" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+            <path d="M-80,-110 L-80,110 M-60,-110 L-60,110 M-40,-110 L-40,110 M-20,-110 L-20,110 M20,-110 L20,110 M40,-110 L40,110 M60,-110 L60,110 M80,-110 L80,110" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+
+            <!-- Primary System Axes -->
+            <line x1="-105" y1="0" x2="105" y2="0" stroke="#475569" stroke-width="1.5" />
+            <line x1="0" y1="-105" x2="0" y2="105" stroke="#475569" stroke-width="1.5" />
+            <text x="98" y="12" fill="#64748b" font-size="8" font-weight="bold">x</text>
+            <text x="-10" y="-96" fill="#64748b" font-size="8" font-weight="bold">y</text>
+
+            <!-- 🔵 EVEN FUNCTION PARABOLA -->
+            <path d="M -85,-85 Q 0,150 85,-85" fill="none" stroke="var(--neon-blue)" stroke-width="1.5" stroke-linecap="round" />
             
-            <svg viewBox="-110 -110 220 220" width="100%" style="max-width: 380px; background: #090d16; border-radius: 6px; overflow: visible;">
-                <!-- Mesh Backdrop Grid -->
-                <path d="M-110,-80 L110,-80 M-110,-60 L110,-60 M-110,-40 L110,-40 M-110,-20 L110,-20 M-110,20 L110,20 M-110,40 L110,40 M-110,60 L110,60 M-110,80 L110,80" stroke="#111c30" stroke-width="0.5"/>
-                <path d="M-80,-110 L-80,110 M-60,-110 L-60,110 M-40,-110 L-40,110 M-20,-110 L-20,110 M20,-110 L20,110 M40,-110 L40,110 M60,-110 L60,110 M80,-110 L80,110" stroke="#111c30" stroke-width="0.5"/>
+            <!-- 💗 ODD FUNCTION CUBIC -->
+            <path d="M -65,75 Q -30,-100 0,0 Q 30,100 65,-75" fill="none" stroke="var(--neon-pink)" stroke-width="1.5" stroke-linecap="round" />
+            
+            <!-- Legend Pin Matrix (Updated background fill to match panel depth) -->
+            <rect x="-105" y="-105" width="85" height="32" fill="#111a36" stroke="rgba(255,255,255,0.05)" rx="4" />
+            <line x1="-100" y1="-97" x2="-85" y2="-97" stroke="var(--neon-blue)" stroke-width="2.5"/>
+            <text x="-80" y="-94" fill="#ffffff" font-size="7.5" font-weight="bold">Even Curve</text>
+            
+            <line x1="-100" y1="-85" x2="-85" y2="-85" stroke="#ff007f" stroke-width="2.5"/>
+            <text x="-80" y="-82" fill="#ffffff" font-size="7.5" font-weight="bold">Odd Curve</text>
+        </svg>
 
-                <!-- Primary System Axes -->
-                <line x1="-105" y1="0" x2="105" y2="0" stroke="#475569" stroke-width="1.5" />
-                <line x1="0" y1="-105" x2="0" y2="105" stroke="#475569" stroke-width="1.5" />
-                <text x="98" y="12" fill="#64748b" font-size="8" font-weight="bold">x</text>
-                <text x="-10" y="-96" fill="#64748b" font-size="8" font-weight="bold">y</text>
-
-                <!-- 🔵 EVEN FUNCTION PARABOLA: Shifted up away from the center to clear space -->
-                <path d="M -85,-85 Q 0,150 85,-85" fill="none" stroke="var(--neon-blue)" stroke-width="3" stroke-linecap="round" />
-                
-                <!-- 💗 ODD FUNCTION CUBIC: Deepened slopes to stretch across the center window clearly -->
-                <path d="M -65,75 Q -30,-100 0,0 Q 30,100 65,-75" fill="none" stroke="var(--neon-pink)" stroke-width="3" stroke-linecap="round" />
-                
-                <!-- Legend Pin Matrix -->
-                <rect x="-105" y="-105" width="85" height="32" fill="#0b0f19" stroke="#1e293b" rx="4" />
-                <line x1="-100" y1="-97" x2="-85" y2="-97" stroke="var(--neon-blue)" stroke-width="2.5"/>
-                <text x="-80" y="-94" fill="#ffffff" font-size="7.5" font-weight="bold">Even Curve</text>
-                
-                <line x1="-100" y1="-85" x2="-85" y2="-85" stroke="var(--neon-pink)" stroke-width="2.5"/>
-                <text x="-80" y="-82" fill="#ffffff" font-size="7.5" font-weight="bold">Odd Curve</text>
-            </svg>
-
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
-                💡 <em>Notice how the <strong>Even blue line</strong> mirrors across the Y-axis, while the <strong>Odd pink line</strong> rotates 180° through the central origin dot (0,0).</em>
-            </div>
-        </div>
-
-        <div class="box">
-            <strong>The Algebraic Rules Matrix:</strong>
-            <ul>
-                <li>
-                    <strong>Even Functions (Reflectional):</strong> Substituting <span class="math-inline">−x</span> preserves the exact original formula expression.
-                    <div class="math-block" style="color: var(--neon-blue); font-weight: bold; margin: 8px 0;">f(−x) = f(x)</div>
-                </li>
-                <li style="margin-top: 15px;">
-                    <strong>Odd Functions (Rotational):</strong> Substituting <span class="math-inline">−x</span> negates the entire absolute formula output.
-                    <div class="math-block" style="color: var(--neon-pink); font-weight: bold; margin: 8px 0;">f(−x) = −f(x)</div>
-                </li>
-            </ul>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; text-align: center; line-height: 1.4;">
+            💡 <em>Notice how the <strong>Even blue line</strong> mirrors across the Y-axis, while the <strong>Odd pink line</strong> rotates 180° through the central origin dot (0,0).</em>
         </div>
     </div>
+
+    <!-- 🟢 UPGRADED UNIFIED GREEN DEFINITION BLOCK -->
+    <div class="block-definition" style="margin-top: 20px;">
+        <strong>The Algebraic Rules Matrix:</strong>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <li>
+                <strong>Even Functions (Reflectional):</strong> Substituting <span class="math-inline">−x</span> preserves the exact original formula expression.
+                <div class="inner-card" style="text-align: center; padding: 12px 0; margin-top: 8px;">
+                    <span class="math-block" style="color: var(--neon-blue); margin: 0; font-weight: bold;">f(–x) = f(x)</span>
+                </div>
+            </li>
+            <li style="margin-top: 15px;">
+                <strong>Odd Functions (Rotational):</strong> Substituting <span class="math-inline">−x</span> negates the entire absolute formula output.
+                <div class="inner-card" style="text-align: center; padding: 12px 0; margin-top: 8px;">
+                    <span class="math-block" style="color: var(--neon-pink); margin: 0; font-weight: bold;">f(–x) = –f(x)</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
 
     <!-- Slide 2: Factoring Rules -->
     <div class="slide-content" id="slide-2">
         <h3>Finding Obvious Roots &amp; Synthetic Division</h3>
         <p>To factor higher-degree polynomials quickly without relying on long division, we can screen for an <strong>obvious root</strong> using three specific coefficient rules for <span class="math-inline">x &in; {0, 1, &minus;1}</span>:</p>
     
-
-        <div class="box" style="border-left: 4px solid var(--neon-cyan);">
+        <!-- 🟥 UPGRADED UNIFIED PINK THEOREM / CRITICAL PROCEDURES BLOCK -->
+        <div class="block-theorem">
             <strong>🎯 The 3 Rules for Obvious Roots:</strong>
-            <ul style="padding-left: 20px; margin-top: 10px;">
+            <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
                 <li>
-                    <strong>Rule 1: If <span class="math-inline">x = 0</span> is a root</strong> &xrarr; The polynomial has no constant number at the absolute end, meaning you can factor out <span class="math-inline">x</span> immediately.
+                    Rule 1: If <strong class="math-inline">x = 0</strong> is a root &xrarr; The polynomial has no constant number at the absolute end, meaning you can factor out <strong class="math-inline">x</strong> immediately.
                 </li>
                 <li style="margin-top: 12px;">
-                    <strong>Rule 2: If <span class="math-inline">x = 1</span> is a root</strong> &xrarr; The sum of all coefficients across the entire polynomial equals exactly zero (<span class="math-inline">&sum; Coefficients = 0</span>).
+                    Rule 2: If <strong class="math-inline">x = 1</strong> is a root &xrarr; The sum of all coefficients across the entire polynomial equals exactly zero (<strong class="math-inline">&sum; Coefficients = 0</strong>).
                 </li>
                 <li style="margin-top: 12px;">
-                    <strong>Rule 3: If <span class="math-inline">x = &minus;1</span> is a root</strong> &xrarr; The sum of the coefficients of the <strong>even powers</strong> equals the sum of the coefficients of the <strong>odd powers</strong>.
+                    Rule 3: If <strong class="math-inline">x = &minus;1</strong> is a root &xrarr; The sum of the coefficients of the <strong>even powers</strong> equals the sum of the coefficients of the <strong>odd powers</strong>.
                 </li>
             </ul>
 
-            <!-- 💡 PRO-TIP PEDAGOGICAL BRIDGE CARD -->
-            <div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed var(--border-glow); font-size: 0.85rem; color: var(--text-muted);">
+            <!-- 💡 PRO-TIP PEDAGOGICAL BRIDGE LAYER (Cleanly Integrated) -->
+            <div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.1); font-size: 0.85rem;">
                 💡 <strong>What if these shortcuts don't apply?</strong> You can always check <em>any</em> suspect number by directly substituting it into the polynomial expression. If evaluating the formula outputs exactly <strong>0</strong>, you have successfully found a root! For example: 
                 <span class="math-inline">P(c) = 0 &iff; x = c</span> is a root.
             </div>
-
         </div>
 
-        <div class="box">
-            <strong>The Factor Theorem Remainder Hook:</strong>
-            <p>Once an obvious root value <span class="math-inline">c</span> is discovered, it guarantees that <span class="math-inline">(x &minus; c)</span> divides perfectly into the polynomial, dropping your remaining expression's degree by one level through a quick synthetic division setup grid.</p>
+
+    <!-- Contained inside Slide 2 -->
+    <div class="block-theorem" style="margin-top: 20px;">
+        <strong>The Factor Theorem Remainder Hook:</strong>
+        <p>Once an obvious root value <span class="math-inline">c</span> is discovered, it guarantees that <span class="math-inline">(x &minus; c)</span> divides perfectly into the polynomial, dropping your remaining expression's degree by one level through a quick synthetic division setup grid.</p>
+        
+<!-- 📊 SCALED & OPTIMIZED SYNTHETIC DIVISION ALGORITHMIC BLUEPRINT (FULL WIDTH) -->
+<div class="visual-wrapper" style="width: 100%; margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
+    <div style="font-size: 0.85rem; color: var(--neon-cyan); margin-bottom: 14px; font-weight: 600; letter-spacing: 0.5px; text-align: center; width: 100%;">⚙️ SYNTHETIC DIVISION ALGORITHMIC BLUEPRINT</div>
+    
+    <!-- The SVG handles scaling automatically; wrapping it allows tight layout control -->
+    <div style="width: 100%; max-width: 520px; aspect-ratio: 480 / 150;">
+        <svg viewBox="0 0 480 150" width="100%" height="100%" style="overflow: visible; font-family: monospace;">
+            <!-- The Grid Lines -->
+            <line x1="55" y1="10" x2="55" y2="105" stroke="#475569" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="440" y2="75" stroke="#475569" stroke-width="1.5"/>
             
-            <!-- 📊 VISUAL ENGINE TEMPLATE FOR SYNTHETIC DIVISION -->
-            <div style="margin-top: 20px; background: #090d16; padding: 15px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; border: 1px solid #334155;">
-                <div style="font-size: 0.8rem; color: var(--neon-cyan); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.5px;">⚙️ SYNTHETIC DIVISION ALGORITHMIC BLUEPRINT</div>
-                
-                <svg viewBox="0 0 480 140" width="100%" style="max-width: 480px; overflow: visible; font-family: monospace;">
-                    <!-- The Grid Lines -->
-                    <line x1="55" y1="10" x2="55" y2="95" stroke="#475569" stroke-width="1.5"/>
-                    <line x1="20" y1="70" x2="440" y2="70" stroke="#475569" stroke-width="1.5"/>
-                    
-                    <!-- Labeled Parameters -->
-                    <!-- Root c -->
-                    <rect x="18" y="28" width="24" height="24" fill="#1e293b" stroke="var(--neon-amber)" stroke-width="1" rx="4"/>
-                    <text x="30" y="44" fill="var(--neon-amber)" font-size="12" text-anchor="middle" font-weight="bold">c</text>
-                    <text x="30" y="18" fill="var(--neon-amber)" font-size="8" text-anchor="middle" font-weight="bold">ROOT</text>
-                    
-                    <!-- Original Polynomial Coefficients (Spaced Out Significantly) -->
-                    <text x="100" y="42" fill="#ffffff" font-size="13" text-anchor="middle">a₃</text>
-                    <text x="190" y="42" fill="#ffffff" font-size="13" text-anchor="middle">a₂</text>
-                    <text x="280" y="42" fill="#ffffff" font-size="13" text-anchor="middle">a₁</text>
-                    <text x="370" y="42" fill="#ffffff" font-size="13" text-anchor="middle">a₀</text>
-                    <text x="235" y="14" fill="var(--text-muted)" font-size="8" text-anchor="middle" font-weight="bold" letter-spacing="1px">ORIGINAL COEFFICIENTS</text>
-                    
-                    <!-- The Inner Interactive Multiplication Row -->
-                    <text x="190" y="60" fill="var(--neon-pink)" font-size="12" text-anchor="middle">m₁</text>
-                    <text x="280" y="60" fill="var(--neon-pink)" font-size="12" text-anchor="middle">m₂</text>
-                    <text x="370" y="60" fill="var(--neon-pink)" font-size="12" text-anchor="middle">m₃</text>
-                    
-                    <!-- The Bottom Resulting Rows -->
-                    <text x="100" y="90" fill="var(--neon-green)" font-size="13" text-anchor="middle" font-weight="bold">a₃</text>
-                    <text x="190" y="90" fill="var(--neon-cyan)" font-size="13" text-anchor="middle">q₂</text>
-                    <text x="280" y="90" fill="var(--neon-cyan)" font-size="13" text-anchor="middle">q₁</text>
-                    
-                    <!-- Remainder Box Gateway -->
-                    <rect x="358" y="74" width="24" height="22" fill="#1b1424" stroke="var(--neon-pink)" stroke-width="1" rx="4"/>
-                    <text x="370" y="90" fill="var(--neon-pink)" font-size="12" text-anchor="middle" font-weight="bold">0</text>
-                    
-                    <text x="190" y="112" fill="var(--neon-cyan)" font-size="8" text-anchor="middle" font-weight="bold" letter-spacing="0.5px">QUOTIENT COEFFICIENTS</text>
-                    <text x="370" y="112" fill="var(--neon-pink)" font-size="8" text-anchor="middle" font-weight="bold" letter-spacing="0.5px">REMAINDER</text>
+            <!-- Labeled Parameters -->
+            <!-- Root c -->
+            <rect x="18" y="32" width="26" height="26" fill="#111a36" stroke="var(--neon-amber)" stroke-width="1.2" rx="4"/>
+            <text x="31" y="49" fill="var(--neon-amber)" font-size="13" text-anchor="middle" font-weight="bold">c</text>
+            <text x="31" y="22" fill="var(--neon-amber)" font-size="8.5" text-anchor="middle" font-weight="bold">ROOT</text>
+            
+            <!-- Original Polynomial Coefficients -->
+            <text x="100" y="46" fill="#ffffff" font-size="14" text-anchor="middle">a₃</text>
+            <text x="190" y="46" fill="#ffffff" font-size="14" text-anchor="middle">a₂</text>
+            <text x="280" y="46" fill="#ffffff" font-size="14" text-anchor="middle">a₁</text>
+            <text x="370" y="46" fill="#ffffff" font-size="14" text-anchor="middle">a₀</text>
+            <text x="235" y="16" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="bold" letter-spacing="1px">ORIGINAL COEFFICIENTS</text>
+            
+            <!-- The Inner Interactive Multiplication Row -->
+            <text x="190" y="65" fill="var(--neon-pink)" font-size="13" text-anchor="middle">m₁</text>
+            <text x="280" y="65" fill="var(--neon-pink)" font-size="13" text-anchor="middle">m₂</text>
+            <text x="370" y="65" fill="var(--neon-pink)" font-size="13" text-anchor="middle">m₃</text>
+            
+            <!-- The Bottom Resulting Rows -->
+            <text x="100" y="96" fill="var(--neon-green)" font-size="14" text-anchor="middle" font-weight="bold">a₃</text>
+            <text x="190" y="96" fill="var(--neon-cyan)" font-size="14" text-anchor="middle">q₂</text>
+            <text x="280" y="96" fill="var(--neon-cyan)" font-size="14" text-anchor="middle">q₁</text>
+            
+            <!-- Remainder Box Gateway -->
+            <rect x="356" y="80" width="28" height="24" fill="#111a36" stroke="var(--neon-pink)" stroke-width="1.2" rx="4"/>
+            <text x="370" y="97" fill="var(--neon-pink)" font-size="13" text-anchor="middle" font-weight="bold">0</text>
+            
+            <text x="190" y="122" fill="var(--neon-cyan)" font-size="9" text-anchor="middle" font-weight="bold" letter-spacing="0.5px">QUOTIENT COEFFICIENTS</text>
+            <text x="370" y="122" fill="var(--neon-pink)" font-size="9" text-anchor="middle" font-weight="bold" letter-spacing="0.5px">REMAINDER</text>
 
-                    <!-- CLEANED & ISOLATED DIRECTIONAL PATH VECTORS -->
-                    <!-- 1. Drop Down Green Channel Line -->
-                    <path d="M 100 48 L 100 76" stroke="var(--neon-green)" stroke-width="1.2" stroke-dasharray="2,2"/>
-                    <path d="M 100 78 L 97 73 L 103 73 Z" fill="var(--neon-green)"/>
-                    <text x="74" y="64" fill="var(--neon-green)" font-size="7" font-weight="bold">BRING DOWN</text>
-                    
-                    <!-- 2. Multiply & Slide Up Curved Amber Arrow -->
-                    <path d="M 112 90 Q 150 90 178 64" fill="none" stroke="var(--neon-amber)" stroke-width="1.5"/>
-                    <path d="M 180 62 L 174 65 L 178 69 Z" fill="var(--neon-amber)"/>
-                    <text x="146" y="100" fill="var(--neon-amber)" font-size="7" font-weight="bold" text-anchor="middle">MULTIPLY BY c</text>
-                    
-                    <!-- 3. Vertical Operational Sum Plus Indicator -->
-                    <text x="204" y="54" fill="var(--neon-cyan)" font-size="9" font-weight="bold">+</text>
-                </svg>
-
-                
-                <div style="width: 100%; border-top: 1px dashed #1e293b; padding-top: 10px; margin-top: 5px; font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
-                    🎯 <strong style="color:var(--neon-green);">1.</strong> Bring the leading coefficient down directly.<br>
-                    🔄 <strong style="color:var(--neon-amber);">2.</strong> Multiply that value by root <span class="math-inline" style="font-size:0.85rem;">c</span> and slide the result up into the next column.<br>
-                    ➕ <strong style="color:var(--neon-cyan);">3.</strong> Add the vertical column numbers together, then repeat the loop across the line.
-                </div>
-            </div>
-        </div>
-
+            <!-- DIRECTIONAL PATH VECTORS -->
+            <!-- 1. Drop Down Green Channel Line -->
+            <path d="M 100 54 L 100 81" stroke="var(--neon-green)" stroke-width="1.2" stroke-dasharray="2,2"/>
+            <path d="M 100 83 L 97 78 L 103 78 Z" fill="var(--neon-green)"/>
+            <text x="72" y="70" fill="var(--neon-green)" font-size="7.5" font-weight="bold">BRING DOWN</text>
+            
+            <!-- 2. Multiply & Slide Up Curved Amber Arrow -->
+            <path d="M 112 96 Q 150 96 178 70" fill="none" stroke="var(--neon-amber)" stroke-width="1.5"/>
+            <path d="M 180 68 L 174 71 L 178 75 Z" fill="var(--neon-amber)"/>
+            <text x="146" y="106" fill="var(--neon-amber)" font-size="7.5" font-weight="bold" text-anchor="middle">MULTIPLY BY c</text>
+            
+            <!-- 3. Vertical Operational Sum Plus Indicator -->
+            <text x="204" y="58" fill="var(--neon-cyan)" font-size="10" font-weight="bold">+</text>
+        </svg>
     </div>
 
-    <!-- Slide 3: Worked Examples -->
-    <div class="slide-content" id="slide-3">
-        <h3>Demonstration Masterclass</h3>
-        
-        <div class="example">
-            <strong>Example 3.1 (Parity):</strong> Prove algebraically whether <span class="math-inline">f(x) = 3x<sup>4</sup> − x<sup>2</sup> + 7</span> is Even, Odd, or Neither.<br><br>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li>Substitute every instance of <span class="math-inline">x</span> with an enclosed negative parameter <span class="math-inline">(−x)</span>:<br>
-                    <span class="math-inline">f(0) = 3(−x)<sup>4</sup> − (−x)<sup>2</sup> + 7</span>
-                </li>
-                <li style="margin-top: 4px;">Evaluate the powers. Since both exponents are even numbers, signs return positive:<br>
-                    <span class="math-inline">f(−x) = 3x<sup>4</sup> − x<sup>2</sup> + 7 = f(x)</span> &nbsp;&xrarr;&nbsp; <span style="color: var(--neon-blue); font-weight: bold;">Strictly Even.</span>
-                </li>
-            </ol>
-        </div>
+    <div style="width: 100%; border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 12px; margin-top: 16px; font-size: 0.75rem; line-height: 1.5; text-align: left;">
+        🎯 <strong style="color:var(--neon-green);">1.</strong> Bring the leading coefficient down directly.<br>
+        🔄 <strong style="color:var(--neon-amber);">2.</strong> Multiply that value by root <span class="math-inline">c</span> and slide the result up into the next column.<br>
+        ➕ <strong style="color:var(--neon-cyan);">3.</strong> Add the vertical column numbers together, then repeat the loop across the line.
+    </div>
+</div>
 
-        <div class="example" style="border-left-color: var(--neon-cyan); background-color: #0c1e36;">
-            <strong>Example 3.2 (Full Cubic Factoring):</strong> Factor the cubic polynomial completely:<br>
-            <div class="math-block">P(x) = 2x<sup>3</sup> − 4x<sup>2</sup> − 2x + 4</div>
+    </div>
+</div> <!-- Structural Slide Closing Div Frame -->
+
+
+<!-- Slide 3: Worked Examples -->
+<div class="slide-content" id="slide-3">
+    <h3>Demonstration Masterclass</h3>
+    
+    <!-- 📘 EXAMPLE 3.1: PARITY PROOF -->
+    <div class="block-example">
+        <strong>Example 3.1 (Parity):</strong> Prove algebraically whether <span class="math-inline">f(x) = 3x⁴ − x² + 7</span> is Even, Odd, or Neither.
+        
+        <!-- 🏙️ NESTED SOLUTION CARD HANDLES STEP LAYOUT AUTOMATICALLY -->
+        <div class="block-solution">
             <strong>Solution Steps:</strong>
             <ol>
                 <li>
-                    <strong>Step 1: Check for an obvious root</strong><br>
-                    Add up the absolute values of all coefficients: <br>
-                    <span class="math-inline">&sum; Coefficients = 2 + (&minus;4) + (&minus;2) + 4 = 2 &minus; 4 &minus; 2 + 4 = 0</span><br>
-                    Because the sum equals zero, <span class="math-inline">x = 1</span> is our first root, which means <span class="math-inline">(x &minus; 1)</span> is our first linear factor.
+                    <span>Substitute negative parameter:</span> Replace every instance of <span class="math-inline">x</span> with an enclosed negative parameter <span class="math-inline">(−x)</span>:
+                    <div class="math-block">f(−x) = 3(−x)⁴ − (−x)² + 7</div>
                 </li>
-                <li style="margin-top: 14px;">
-                    <strong>Step 2: Use synthetic division to reduce the polynomial degree</strong><br>
-                    Drop your root indicator 1 on the left side and frame the line channels:
-                    <div style="font-family: monospace; background: #090d16; padding: 15px; border-radius: 6px; margin: 10px 0; line-height: 1.5; color: var(--text-main); font-size: 1rem; width: fit-content;">
-                        &nbsp;&nbsp;1 │ &nbsp;2 &nbsp;&minus;4 &nbsp;&minus;2 &nbsp;&nbsp;4<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;│ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 &nbsp;&minus;2 &nbsp;&minus;4<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;└───┬───────────────────<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ &nbsp;2 &nbsp;&minus;2 &nbsp;&minus;4 &nbsp;&nbsp;0 &nbsp;&nbsp;&lt;-- Zero Remainder Check!
-                    </div>
-                    The bottom row coefficients generate our quadratic quotient: <br>
-                    <span class="math-inline">P(x) = (x &minus; 1)(2x<sup>2</sup> &minus; 2x &minus; 4)</span>
-                </li>
-                <li style="margin-top: 14px;">
-                    <strong>Step 3: Solve the remaining quadratic segment</strong><br>
-                    Factor out the leading constant factor 2 and break down the remaining quadratic: <br>
-                    <span class="math-inline">2x<sup>2</sup> &minus; 2x &minus; 4 = 2(x<sup>2</sup> &minus; x &minus; 2) = 2(x &minus; 2)(x + 1)</span><br>
-                    Combine all pieces together to get your final factored polynomial formula:<br>
-                    <span style="color: var(--neon-cyan); font-weight: bold;"><span class="math-inline">P(x) = 2(x &minus; 1)(x &minus; 2)(x + 1)</span></span>
+                <li>
+                    <span>Evaluate the powers:</span> Since both exponents are even numbers, signs return positive:
+                    <div class="math-block">f(−x) = 3x⁴ − x² + 7 = f(x) &nbsp;&xrarr;&nbsp; <span style="color: var(--neon-cyan);">Strictly Even.</span></div>
                 </li>
             </ol>
         </div>
     </div>
 
-
-    <!-- Slide 4: Practice Set -->
-    <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-        <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+    <!-- 📘 EXAMPLE 3.2: COMPLETE CUBIC FACTORING -->
+    <div class="block-example">
+        <strong>Example 3.2 (Full Cubic Factoring):</strong> Factor the cubic polynomial completely:
+        <div class="math-block">P(x) = 2x³ − 4x² − 2x + 4</div>
         
-        <!-- Exercise 3.1 -->
-        <div class="exercise-block">
-            <div class="exercise-title">Exercise 3.1: Parity Algebra Verification</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Prove whether each function is Even, Odd, or Neither by evaluating the algebraic condition <span class="math-inline">f(−x)</span>:</p>
-            <div class="grid-2">
-                <div class="exercise-item">a)&nbsp;<span class="math-inline">f(x) = x<sup>4</sup> − 5x<sup>2</sup> + 2</span></div>
-                <div class="exercise-item">b)&nbsp;<span class="math-inline">f(x) = 2x<sup>3</sup> − 7x</span></div>
-                <div class="exercise-item">c)&nbsp;<span class="math-inline">f(x) = x<sup>3</sup> + x<sup>2</sup></span></div>
-                <div class="exercise-item">d)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">3</span><span class="bottom">x<sup>2</sup> − 4</span></span></span></div>
+        <!-- 🏙️ NESTED SOLUTION CARD HANDLES STEP LAYOUT AUTOMATICALLY -->
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>
+                    <strong>Step 1: Check for an obvious root</strong>
+                    <p>Add up the absolute values of all coefficients:</p>
+                    <div class="math-block">&sum; Coefficients = 2 + (&minus;4) + (&minus;2) + 4 = 2 &minus; 4 &minus; 2 + 4 = 0</div>
+                    <p>Because the sum equals zero, <span class="math-inline">x = 1</span> is our first root, which means <span class="math-inline">(x &minus; 1)</span> is our first linear factor.</p>
+                </li>
+                
+                <li>
+                    <strong>Step 2: Use synthetic division to reduce the polynomial degree</strong>
+                    <p>Drop your root indicator 1 on the left side and perform the algorithmic step loops:</p>
+                    
+                    <!-- 📊 Standardized graphic container clears up raw inline margins -->
+                    <div class="visual-wrapper" style="max-width: fit-content;">
+                        <svg viewBox="0 0 240 70" width="320px" style="font-family: monospace; overflow: visible;">
+                            <!-- Grid dividers -->
+                            <line x1="30" y1="0" x2="30" y2="54" stroke="#475569" stroke-width="1.2"/>
+                            <line x1="10" y1="36" x2="230" y2="36" stroke="#475569" stroke-width="1.2"/>
+                            
+                            <!-- Root identifier slot -->
+                            <text x="18" y="18" fill="var(--neon-amber)" font-size="14" font-weight="bold" text-anchor="middle">1</text>
+                            
+                            <!-- Original coefficients -->
+                            <text x="54" y="18" fill="#ffffff" font-size="14" text-anchor="middle">2</text>
+                            <text x="100" y="18" fill="#ffffff" font-size="14" text-anchor="middle">-4</text>
+                            <text x="146" y="18" fill="#ffffff" font-size="14" text-anchor="middle">-2</text>
+                            <text x="192" y="18" fill="#ffffff" font-size="14" text-anchor="middle">4</text>
+                            
+                            <!-- Internal calculations multiplication rows -->
+                            <text x="100" y="31" fill="var(--neon-pink)" font-size="12" text-anchor="middle">2</text>
+                            <text x="146" y="31" fill="var(--neon-pink)" font-size="12" text-anchor="middle">-2</text>
+                            <text x="192" y="31" fill="var(--neon-pink)" font-size="12" text-anchor="middle">-4</text>
+                            
+                            <!-- Bottom Quotient Outputs -->
+                            <text x="54" y="51" fill="var(--neon-green)" font-size="14" font-weight="bold" text-anchor="middle">2</text>
+                            <text x="100" y="51" fill="var(--neon-cyan)" font-size="14" text-anchor="middle">-2</text>
+                            <text x="146" y="51" fill="var(--neon-cyan)" font-size="14" text-anchor="middle">-4</text>
+                            
+                            <!-- Terminal Zero block -->
+                            <rect x="181" y="39" width="22" height="15" fill="#111a36" stroke="var(--neon-pink)" stroke-width="1.2" rx="2"/>
+                            <text x="192" y="51" fill="var(--neon-pink)" font-size="12" font-weight="bold" text-anchor="middle">0</text>
+                            
+                            <!-- Small sub-labels -->
+                            <text x="218" y="50" fill="var(--neon-pink)" font-size="8" font-weight="bold">REM</text>
+                        </svg>
+                    </div>
+                    
+                    <p>The bottom row coefficients generate our quadratic quotient expression:</p>
+                    <div class="math-block">P(x) = (x &minus; 1)(2x² &minus; 2x &minus; 4)</div>
+                </li>
+                
+                <li>
+                    <strong>Step 3: Solve the remaining quadratic segment</strong>
+                    <p>Factor out the leading constant factor 2 and break down the remaining trinomial array:</p>
+                    <div class="math-block">2x² &minus; 2x &minus; 4 = 2(x² &minus; x &minus; 2) = 2(x &minus; 2)(x + 1)</div>
+                    <p>Combine all pieces together to state your final, completely factored polynomial formula:</p>
+                    <div class="math-block" style="color: var(--neon-cyan);">P(x) = 2(x &minus; 1)(x &minus; 2)(x + 1)</div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Slide 4: Practice Set -->
+<div class="slide-content" id="slide-4">
+    <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+    <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+    
+    <!-- Exercise 3.1: 4-Column Responsive Layout -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 3.1: Parity Algebra Verification</div>
+        <p>Prove whether each function is Even, Odd, or Neither by evaluating the algebraic condition <span class="math-inline">f(−x)</span>:</p>
+        <div class="grid-2">
+            <div class="exercise-item">a)&nbsp;<span class="math-inline">f(x) = x<sup>4</sup> − 5x<sup>2</sup> + 2</span></div>
+            <div class="exercise-item">b)&nbsp;<span class="math-inline">f(x) = 2x<sup>3</sup> − 7x</span></div>
+            <div class="exercise-item">c)&nbsp;<span class="math-inline">f(x) = x<sup>3</sup> + x<sup>2</sup></span></div>
+            <div class="exercise-item">d)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">3</span><span class="bottom">x<sup>2</sup> − 4</span></span></span></div>
+        </div>
+    </div>
+
+        <!-- Exercise 3.2: Balanced 2-Column Block Configuration (FIXED SPACING) -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 3.2: Factor Theorem Entry Verification</div>
+        <p>Use the Factor Theorem to evaluate if the given linear binomial is a valid factor of the polynomial expression:</p>
+        <div class="grid-2">
+            <div class="exercise-item" style="padding: 16px 14px; display: block;">
+                <span>a) Is&nbsp;<span class="math-inline">(x − 2)</span>&nbsp;a factor of:</span>
+                <div class="math-block" style="margin: 10px 0 0 0; font-size: 1rem; text-align: center;">P(x) = x<sup>3</sup> − 4x<sup>2</sup> + 5x − 2</div>
+            </div>
+            <div class="exercise-item" style="padding: 16px 14px; display: block;">
+                <span>b) Is&nbsp;<span class="math-inline">(x + 1)</span>&nbsp;a factor of:</span>
+                <div class="math-block" style="margin: 10px 0 0 0; font-size: 1rem; text-align: center;">P(x) = 2x<sup>3</sup> + 5x<sup>2</sup> − x − 4</div>
             </div>
         </div>
+    </div>
 
-        <!-- Exercise 3.2 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-green);">
-            <div class="exercise-title">Exercise 3.2: Factor Theorem Entry Verification</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Use the Factor Theorem to evaluate if the given linear binomial is a valid factor of the polynomial expression:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block;">
-                    <strong>a)</strong> Is <span class="math-inline">(x − 2)</span> a factor of:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1rem;">P(x) = x<sup>3</sup> − 4x<sup>2</sup> + 5x − 2</div>
-                </div>
-                <div class="exercise-item" style="display:block;">
-                    <strong>b)</strong> Is <span class="math-inline">(x + 1)</span> a factor of:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1rem;">P(x) = 2x<sup>3</sup> + 5x<sup>2</sup> − x − 4</div>
+
+    <!-- Exercise 3.3: Rational Remainders Matrix -->
+    <div class="block-exercise">
+        <div class="exercise-title">Exercise 3.3: Factoring &amp; Division Coefficients</div>
+        <p>Execute synthetic division or polynomial evaluation to find the final numerical remainder for each function:</p>
+        <div class="grid-2">
+            <div class="exercise-item" style="padding: 16px 14px;">
+                a) Find the remainder of:
+                <div class="math-block" style="margin: 10px 0 0 0; font-size: 1rem;">
+                    <span class="frac"><span class="top">x<sup>3</sup> − 2x<sup>2</sup> − 5x + 6</span><span class="bottom">x − 3</span></span>
                 </div>
             </div>
-        </div>
-
-                <!-- Exercise 3.3 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-blue);">
-            <div class="exercise-title">Exercise 3.3: Factoring</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Execute synthetic division or polynomial evaluation to find the final numerical remainder for each function:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block;">
-                    <strong>a) Find the remainder of:</strong><br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1rem;"><span class="frac"><span class="top">x<sup>3</sup> − 2x<sup>2</sup> − 5x + 6</span><span class="bottom">x − 3</span></span></div>
-                </div>
-                <div class="exercise-item" style="display:block;">
-                    <strong>b) Find the remainder of:</strong><br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1rem;"><span class="frac"><span class="top">3x<sup>3</sup> − 2x<sup>2</sup> + 4x − 1</span><span class="bottom">x − 1</span></span></div>
+            <div class="exercise-item" style="padding: 16px 14px;">
+                b) Find the remainder of:
+                <div class="math-block" style="margin: 10px 0 0 0; font-size: 1rem;">
+                    <span class="frac"><span class="top">3x<sup>3</sup> − 2x<sup>2</sup> + 4x − 1</span><span class="bottom">x − 1</span></span>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Slide 5: Milestone Gatekeeper -->
     <div class="slide-content" id="slide-5">

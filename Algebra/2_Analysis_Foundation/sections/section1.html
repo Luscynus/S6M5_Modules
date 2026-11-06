@@ -23,201 +23,278 @@
         <h3>Foundations of Functions</h3>
         <p>A function <span class="math-inline">f</span> is a mathematical rule or machine. It takes a horizontal input value <span class="math-inline">x</span> from a starting boundary set called the <strong>Domain</strong> (<span class="math-inline">D<sub>f</sub></span>), and maps it to exactly one unique vertical tracking position <span class="math-inline">y</span> inside an output set called the <strong>Range</strong> (<span class="math-inline">R<sub>f</sub></span>).</p>
 
-        <!-- 🗺️ NATIVE OFFLINE GEOMETRY ENGINE WORKSPACE -->
-        <div style="background: #0b0f19; border: 1px solid var(--border-glow); padding: 15px; border-radius: 10px; margin: 15px 0; display: flex; flex-direction: column; align-items: center;">
-            <div style="color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 0.5px;">📐 GRAPHICAL MATRIX DIAGRAM: TRACKING BOUNDARIES</div>
+<!-- 🗺️ NATIVE OFFLINE GEOMETRY ENGINE WORKSPACE (MATCHED TO PARABOLA STYLE) -->
+<div class="visual-wrapper" style="padding: 18px; margin: 15px 0;">
+    <div style="color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; letter-spacing: 0.5px;">📐 GRAPHICAL MATRIX DIAGRAM: TRACKING BOUNDARIES</div>
+    
+    <!-- Cleaned up: Removed the inline background color override from the SVG tag -->
+    <svg viewBox="-160 -140 320 270" width="100%" style="max-width: 420px; font-family: sans-serif; overflow: visible;">
+        <defs>
+            <!-- Premium Translucent Glowing Cyan Grid Mesh -->
+            <pattern id="grid-mesh-workspace" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+            </pattern>
+        </defs>
+        <!-- The background rectangle now acts as the clean canvas plate inside the wrapper -->
+        <rect x="-160" y="-140" width="320" height="270" fill="url(#grid-mesh-workspace)" />
+
+        <!-- Axes Line Channels -->
+        <line x1="-150" y1="0" x2="150" y2="0" stroke="#475569" stroke-width="1.5" />
+        <line x1="0" y1="-120" x2="0" y2="110" stroke="#475569" stroke-width="1.5" />
+        
+        <!-- Axis Direction Markers -->
+        <path d="M 150 0 L 144 -4 L 144 4 Z" fill="#475569" />
+        <path d="M 0 -120 L -4 -114 L 4 -114 Z" fill="#475569" />
+        <text x="142" y="15" fill="var(--text-muted)" font-size="10" font-weight="bold">x</text>
+        <text x="-15" y="-110" fill="var(--text-muted)" font-size="10" font-weight="bold">y</text>
+        <text x="-10" y="14" fill="#475569" font-size="10">0</text>
+
+        <!-- 🟠 HORIZONTAL DOMAIN SPAN (Inputs) -->
+        <line x1="-100" y1="-100" x2="60" y2="-100" stroke="var(--neon-amber)" stroke-width="4" stroke-linecap="round" />
+        <circle cx="-100" cy="-100" r="4" fill="#111a36" stroke="var(--neon-amber)" stroke-width="2" /> 
+        <circle cx="60" cy="-100" r="5" fill="var(--neon-amber)" /> 
+        <text x="-20" y="-108" fill="var(--neon-amber)" font-size="11" font-weight="bold" font-style="normal">Horizontal Domain Span (x)</text>
+
+        <!-- 🟢 VERTICAL RANGE SPAN (Outputs) -->
+        <line x1="120" y1="-40" x2="120" y2="80" stroke="var(--neon-green)" stroke-width="4" stroke-linecap="round" />
+        <circle cx="120" cy="-40" r="4" fill="#111a36" stroke="var(--neon-green)" stroke-width="2" /> 
+        <circle cx="120" cy="80" r="5" fill="var(--neon-green)" /> 
+        <text x="130" y="25" fill="var(--neon-green)" font-size="11" font-weight="bold" transform="rotate(90,130,25)" font-style="normal">Vertical Range Span (y)</text>
+
+        <!-- 🔵 THE CRITICAL GRAPH CURVE SKELETON -->
+        <path d="M -100,80 Q -40,-80 0,0 T 60,-40" fill="none" stroke="var(--neon-blue)" stroke-width="3" stroke-linecap="round" />
+        <circle cx="-100" cy="80" r="5" fill="var(--neon-blue)" />
+        <circle cx="60" cy="-40" r="4" fill="#111a36" stroke="var(--neon-blue)" stroke-width="2" /> 
+        <text x="25" y="-15" fill="var(--neon-blue)" font-size="12" font-weight="bold" font-family="serif">f(x)</text>
+
+        <!-- Tracking Projection Indicators -->
+        <line x1="-100" y1="80" x2="-100" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="60" y1="-40" x2="60" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="-100" y1="80" x2="120" y2="80" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="60" y1="-40" x2="120" y2="-40" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+    </svg>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
+        💡 <em>Moving left-to-right measures the <strong>Domain</strong> span. Moving bottom-to-top measures the <strong>Range</strong> height span.</em>
+    </div>
+</div>
+
+
+
+    <!-- 🟢 UPGRADED UNIFIED GREEN DEFINITION BLOCK CONTAINER -->
+    <div class="block-definition">
+        <strong>Standard Function Families &amp; Their Spans:</strong>
+        
+        <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <!-- Linear Functions Layer -->
+            <li>
+                <strong>Linear Functions:</strong> <span class="math-inline">f(x) = mx + p</span> 
+                <p>Forms an infinite straight line. It has no boundaries or breaks: <span class="math-inline">D<sub>f</sub> = ℝ</span> and <span class="math-inline">R<sub>f</sub> = ℝ</span>.</p>
+            </li>
             
-            <svg viewBox="-160 -140 320 270" width="100%" style="max-width: 420px; font-family: sans-serif; background: #090d16; border-radius: 6px; box-shadow: inset 0 0 15px rgba(0,0,0,0.6);">
-                <!-- Grid Mesh -->
-                <defs>
-                    <pattern id="grid-mesh" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5"/>
-                    </pattern>
-                </defs>
-                <rect x="-160" y="-140" width="320" height="270" fill="url(#grid-mesh)" />
-
-                <!-- Axes Line Channels -->
-                <line x1="-150" y1="0" x2="150" y2="0" stroke="#475569" stroke-width="1.5" />
-                <line x1="0" y1="-120" x2="0" y2="110" stroke="#475569" stroke-width="1.5" />
+            <!-- Quadratic Functions Layer -->
+            <li style="margin-top: 12px;">
+                <strong>Quadratic Functions:</strong> <span class="math-inline">f(x) = ax<sup>2</sup> + bx + c</span>
+                <p>Forms a curved parabola stretching infinitely left and right (<span class="math-inline">D<sub>f</sub> = ℝ</span>), but has a strict vertical turning peak called the <strong>Vertex</strong> at <span class="math-inline">x<sub>vertex</sub> = -<span class="frac"><span class="top">b</span><span class="bottom">2a</span></span></span>.</p>
                 
-                <!-- Axis Direction Markers -->
-                <path d="M 150 0 L 144 -4 L 144 4 Z" fill="#475569" />
-                <path d="M 0 -120 L -4 -114 L 4 -114 Z" fill="#475569" />
-                <text x="142" y="15" fill="var(--text-muted)" font-size="10" font-weight="bold">x</text>
-                <text x="-15" y="-110" fill="var(--text-muted)" font-size="10" font-weight="bold">y</text>
-                <text x="-10" y="14" fill="#475569" font-size="10">0</text>
-
-                <!-- 🟠 HORIZONTAL DOMAIN SPAN (Inputs) -->
-                <line x1="-100" y1="-100" x2="60" y2="-100" stroke="var(--neon-amber)" stroke-width="4" stroke-linecap="round" />
-                <circle cx="-100" cy="-100" r="4" fill="#090d16" stroke="var(--neon-amber)" stroke-width="2" /> <!-- Open boundary -->
-                <circle cx="60" cy="-100" r="5" fill="var(--neon-amber)" /> <!-- Closed boundary -->
-                <text x="-20" y="-108" fill="var(--neon-amber)" font-size="11" font-weight="bold" font-style="normal">Horizontal Domain Span (x)</text>
-
-                <!-- 🟢 VERTICAL RANGE SPAN (Outputs) -->
-                <line x1="120" y1="-40" x2="120" y2="80" stroke="var(--neon-green)" stroke-width="4" stroke-linecap="round" />
-                <circle cx="120" cy="-40" r="4" fill="#090d16" stroke="var(--neon-green)" stroke-width="2" /> <!-- Open boundary -->
-                <circle cx="120" cy="80" r="5" fill="var(--neon-green)" /> <!-- Closed boundary -->
-                <text x="130" y="25" fill="var(--neon-green)" font-size="11" font-weight="bold" transform="rotate(90,130,25)" font-style="normal">Vertical Range Span (y)</text>
-
-                <!-- 🔵 THE CRITICAL GRAPH CURVE SKELETON -->
-                <path d="M -100,80 Q -40,-80 0,0 T 60,-40" fill="none" stroke="var(--neon-blue)" stroke-width="3" stroke-linecap="round" />
-                <circle cx="-100" cy="80" r="5" fill="var(--neon-blue)" />
-                <circle cx="60" cy="-40" r="4" fill="#090d16" stroke="var(--neon-blue)" stroke-width="2" />
-                <text x="25" y="-15" fill="var(--neon-blue)" font-size="12" font-weight="bold" font-family="serif">f(x)</text>
-
-                <!-- Tracking Projection Indicators -->
-                <line x1="-100" y1="80" x2="-100" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
-                <line x1="60" y1="-40" x2="60" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
-                <line x1="-100" y1="80" x2="120" y2="80" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
-                <line x1="60" y1="-40" x2="120" y2="-40" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
-            </svg>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
-                💡 <em>Moving left-to-right measures the <strong>Domain</strong> span. Moving bottom-to-top measures the <strong>Range</strong> height span.</em>
-            </div>
-        </div>
-
-        <div class="box">
-            <strong>Standard Function Families &amp; Their Spans:</strong>
-            <ul>
-                <li style="margin-top: 8px;"><strong>Linear Functions:</strong> <span class="math-inline">f(x) = mx + p</span> <br><span style="color:var(--text-muted); font-size:0.85rem;">Forms an infinite straight line. It has no boundaries or breaks: <span class="math-inline">D<sub>f</sub> = ℝ</span> and <span class="math-inline">R<sub>f</sub> = ℝ</span>.</span></li>
-                <li style="margin-top: 14px;"><strong>Quadratic Functions:</strong> <span class="math-inline">f(x) = ax<sup>2</sup> + bx + c</span> <br>
-                    <span style="color:var(--text-muted); font-size:0.85rem;">Forms a curved parabola stretching infinitely left and right (<span class="math-inline">D<sub>f</sub> = ℝ</span>), but has a strict vertical turning peak called the <strong>Vertex</strong> at <span class="math-inline">x<sub>vertex</sub> = -<span class="frac"><span class="top">b</span><span class="bottom">2a</span></span></span>.</span>
-                    <ul style="margin-top: 6px; padding-left: 15px; font-size:0.85rem; color:var(--text-muted);">
-                        <li>If <span class="math-inline">a &gt; 0</span> (opens up), the vertex is a minimum: <span class="math-inline">R<sub>f</sub> = [y<sub>vertex</sub>, +&infin; )</span>.</li>
-                        <li style="margin-top: 4px;">If <span class="math-inline">a &lt; 0</span> (opens down), the vertex is a maximum: <span class="math-inline">R<sub>f</sub> = (-&infin;, y<sub>vertex</sub> ]</span>.</li>
-                    </ul>
-                </li>
-                <li style="margin-top: 14px;"><strong>The Reciprocal Function:</strong> <span class="math-inline">f(x) = <span class="frac"><span class="top">1</span><span class="bottom">x</span></span></span> <br><span style="color:var(--text-muted); font-size:0.85rem;">Forms a split hyperbola curve. It contains an absolute horizontal and vertical gap break at the origin where the denominators blow up to infinity: <span class="math-inline">D<sub>f</sub> = ℝ \ {0}</span> and <span class="math-inline">R<sub>f</sub> = ℝ \ {0}</span>.</span></li>
-            </ul>
-        </div>
+                <ul style="margin-top: 6px; padding-left: 15px;">
+                    <li>If <span class="math-inline">a &gt; 0</span> (opens up), the vertex is a minimum: <span class="math-inline">R<sub>f</sub> = [y<sub>vertex</sub>, +&infin; )</span>.</li>
+                    <li style="margin-top: 4px;">If <span class="math-inline">a &lt; 0</span> (opens down), the vertex is a maximum: <span class="math-inline">R<sub>f</sub> = (-&infin;, y<sub>vertex</sub> ]</span>.</li>
+                </ul>
+            </li>
+            
+            <!-- Reciprocal Function Layer -->
+            <li style="margin-top: 12px;">
+                <strong>The Reciprocal Function:</strong> <span class="math-inline">f(x) = <span class="frac"><span class="top">1</span><span class="bottom">x</span></span></span>
+                <p>Forms a split hyperbola curve. It contains an absolute horizontal and vertical gap break at the origin where the denominators blow up to infinity: <span class="math-inline">D<sub>f</sub> = ℝ \ {0}</span> and <span class="math-inline">R<sub>f</sub> = ℝ \ {0}</span>.</p>
+            </li>
+        </ul>
+    </div>
     </div>
 
     <!-- Slide 2: Domain Rules -->
-    <div class="slide-content" id="slide-2">
-        <h3>Finding Domain Constraints</h3>
-        <p>When a function is defined using real numbers, we find its domain by applying two main structural constraints systematically:</p>
-        <div class="box">
-            <ul style="padding-left: 20px;">
-                    <strong>1. Fractions and Denominators:</strong> The denominator of a fraction can never be equal to zero.
-                    <div class="math-block" style="color: var(--neon-cyan); font-weight: bold; margin: 15px 0;">
-                        <span class="frac"><span class="top">1</span><span class="bottom">g(x)</span></span> &rArr; g(x) &ne; 0
-                    </div>
+<div class="slide-content" id="slide-2">
+    <h3>Finding Domain Constraints</h3>
+    <p>When a function is defined using real numbers, we find its domain by applying three main structural constraints systematically:</p>
 
-                    <strong>2. Square Roots:</strong> The expression inside a square root radical layer must always be greater than or equal to zero.
-                    <div class="math-block" style="color: var(--neon-cyan); font-weight: bold; margin: 15px 0;">
-                        <span class="sqrt-sym">&radic;</span><span class="sqrt">g(x)</span> &rArr; g(x) &ge; 0
-                    </div>
-
-            </ul>
-        </div>
-    </div>
-
-
-    <!-- Slide 3: Worked Examples -->
-    <div class="slide-content" id="slide-3">
-        <h3>Demonstration Masterclass</h3>
+    <!-- 🟥 UNIFIED PINK THEOREM BLOCK FOR ALL DOMAIN CRITERIA -->
+    <div class="block-theorem">
+        <strong>⚙️ Essential Domain Restriction Principles</strong>
+        <p>To determine the valid real-number input values for any algebraic combination, verify that all three mathematical structures are satisfied simultaneously:</p>
         
-        <div class="example">
-            <strong>Example 8.1:</strong> Find the domain <span class="math-inline">D<sub>f</sub></span> for the given fraction function:
-            <div class="math-block">f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x + 4</span></span><span class="bottom">2x − 6</span></span></div>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li>Apply the square root constraint rule on the top numerator: <br><span class="math-inline">x + 4 &ge; 0 &rArr; x &ge; −4</span></li>
-                <li style="margin-top: 6px;">Apply the denominator constraint rule on the bottom: <br><span class="math-inline">2x − 6 &ne; 0 &rArr; 2x &ne; 6 &rArr; x &ne; 3</span></li>
-                <li style="margin-top: 6px;">Combine both boundaries into a single unified range: <br><span style="color: var(--neon-green); font-weight: bold;"><span class="math-inline">D<sub>f</sub> = [−4, 3) &cup; (3, +&infin;)</span></span></li>
-            </ol>
+        <ul style="list-style-type: none; padding-left: 0; margin-top: 15px;">
+            <!-- Constraint 1 -->
+            <li style="margin-bottom: 20px;">
+                <strong>1. Denominator Bounds:</strong>
+                <p>The denominator of an algebraic fraction can never equal zero.</p>
+                <div class="math-block" style="text-align: center; padding-left: 20px; margin: 10px 0;">
+                    <span class="frac"><span class="top">1</span><span class="bottom">g(x)</span></span><strong> &nbsp;&rArr;&nbsp; g(x) &ne; 0</strong>
+                </div>
+            </li>
 
-            <!-- 🟢 LIVE VISUAL NUMBER LINE REPRESENTATION -->
-            <div style="margin-top: 20px; background: #090d16; padding: 12px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; border: 1px solid #1e293b;">
-                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 600;">📊 VISUAL REAL NUMBER LINE REPRESETATION (Df)</div>
-                <svg viewBox="-140 -25 280 50" width="100%" style="max-width: 360px;">
-                    <!-- Base Axis Line -->
-                    <line x1="-120" y1="0" x2="120" y2="0" stroke="#475569" stroke-width="2" stroke-linecap="round" />
-                    <!-- Arrows at ends -->
-                    <path d="M -125 0 L -120 -4 L -120 4 Z" fill="#475569" />
-                    <path d="M 125 0 L 120 -4 L 120 4 Z" fill="#475569" />
-                    
-                    <!-- Tick Marks for Scale Alignment -->
-                    <!-- -4 Mark -->
-                    <line x1="-80" y1="-4" x2="-80" y2="4" stroke="#475569" stroke-width="1.5" />
-                    <text x="-80" y="18" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="bold">-4</text>
-                    
-                    <!-- 0 Reference Mark -->
-                    <line x1="-20" y1="-3" x2="-20" y2="3" stroke="#1e293b" stroke-width="1" />
-                    <text x="-20" y="16" fill="#334155" font-size="8" text-anchor="middle">0</text>
-                    
-                    <!-- +3 Mark -->
-                    <line x1="25" y1="-4" x2="25" y2="4" stroke="#475569" stroke-width="1.5" />
-                    <text x="25" y="18" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="bold">3</text>
+            <!-- Constraint 2 -->
+            <li style="margin-bottom: 20px;">
+                <strong>2. Even Radical Core:</strong>
+                <p>The expression nested inside a square root radical layer must be greater than or equal to zero.</p>
+                <div class="math-block" style="text-align: center; padding-left: 20px; margin: 10px 0;">
+                    &radic;<span style="border-top: 1px solid #ffffff; padding-top: 2px;">g(x)</span><strong> &nbsp;&rArr;&nbsp; g(x) &ge; 0</strong>
+                </div>
+            </li>
 
-                    <!-- 🟩 INTERVAL RAY PATHS (The Answer Graph) -->
-                    <!-- Zone 1: [-4, 3) -->
-                    <line x1="-80" y1="-8" x2="25" y2="-8" stroke="var(--neon-green)" stroke-width="3" />
-                    <!-- Zone 2: (3, +infinity) -->
-                    <line x1="25" y1="-8" x2="110" y2="-8" stroke="var(--neon-green)" stroke-width="3" />
-                    <path d="M 113 -8 L 107 -11 L 107 -5 Z" fill="var(--neon-green)" />
-                    
-                    <!-- Boundary Indicators -->
-                    <circle cx="-80" cy="-8" r="4" fill="var(--neon-green)" /> <!-- Included [-4] -->
-                    <circle cx="25" cy="-8" r="3.5" fill="#090d16" stroke="var(--neon-green)" stroke-width="2" /> <!-- Excluded (3) Hole -->
-                </svg>
-            </div>
-        </div>
+            <!-- Constraint 3 -->
+            <li style="margin-bottom: 0;">
+                <strong>3. Logarithmic Arguments:</strong>
+                <p>The value entering a natural or base log system must remain strictly positive.</p>
+                <div class="math-block" style="text-align: center; padding-left: 20px; margin: 10px 0;">
+                    <span class="math-inline">ln(g(x))</span> <span style="font-family: sans-serif; font-size: 0.9rem; color: var(--text-muted); font-style: normal; margin: 0 6px;">or</span> <span class="math-inline">log(g(x))</span>  <strong class="math-inline">&nbsp;&rArr;&nbsp; g(x) &gt; 0</strong>
+                </div>
 
-        <div class="example" style="border-left-color: var(--neon-cyan); background-color: #0c1e36;">
-            <strong>Example 8.2:</strong> A quadratic function is given by the formula <span class="math-inline">f(x) = x<sup>2</sup> − 6x + 5</span>. Find the coordinates of its vertex and determine its range <span class="math-inline">R<sub>f</sub></span>.<br><br>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li>Find the x-coordinate of the vertex using the axis formula: <br><span class="math-inline">x<sub>vertex</sub> = −<span class="frac"><span class="top">b</span><span class="bottom">2a</span></span> = −<span class="frac"><span class="top">−6</span><span class="bottom">2(1)</span></span> = 3</span></li>
-                <li style="margin-top: 6px;">Substitute x = 3 back into the parent formula to find the absolute minimum height: <br><span class="math-inline">f(3) = (3)<sup>2</sup> − 6(3) + 5 = 9 − 18 + 5 = −4</span></li>
-                <li style="margin-top: 6px;">Because the parabola opens upwards from its lowest terminal minimum, our range interval is: <br><span style="color: var(--neon-cyan); font-weight: bold;"><span class="math-inline">R<sub>f</sub> = [−4, +&infin;)</span></span></li>
-            </ol>
-
-            <!-- 📊 FIXED HIGH-COMPATIBILITY WIDE GRID PARABOLA MAP -->
-            <div style="margin-top: 20px; background: #090d16; padding: 18px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; border: 1px solid #1e293b;">
-                <div style="font-size: 0.85rem; color: var(--text-main); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.5px;">📐 PARABOLA VISUALIZATION &amp; VERTICAL RANGE TRACKING</div>
-                
-                <svg viewBox="-70 -105 220 200" width="100%" style="max-width: 440px; background: #0b0f19; border-radius: 6px; overflow: visible;">
-                    <!-- Extended Grid mesh system lines (1 unit = 15px spacing) -->
-                    <path d="M -70,-90 L 150,-90 M -70,-75 L 150,-75 M -70,-60 L 150,-60 M -70,-45 L 150,-45 M -70,-30 L 150,-30 M -70,-15 L 150,-15 M -70,0 L 150,0 M -70,15 L 150,15 M -70,30 L 150,30 M -70,45 L 150,45 M -70,60 L 150,60 M -70,75 L 150,75" stroke="#172554" stroke-width="0.4"/>
-                    <path d="M -60,-105 L -60,85 M -45,-105 L -45,85 M -30,-105 L -30,85 M -15,-105 L -15,85 M 0,-105 L 0,85 M 15,-105 L 15,85 M 30,-105 L 30,85 M 45,-105 L 45,85 M 60,-105 L 60,85 M 75,-105 L 75,85 M 90,-105 L 90,85 M 105,-105 L 105,85 M 120,-105 L 120,85 M 135,-105 L 135,85" stroke="#172554" stroke-width="0.4"/>
-
-                    <!-- Primary Axis Channels -->
-                    <line x1="-65" y1="0" x2="140" y2="0" stroke="#475569" stroke-width="1.5"/>
-                    <line x1="0" y1="-95" x2="0" y2="80" stroke="#475569" stroke-width="1.5"/>
-                    
-                    <!-- Axis Label Positions -->
-                    <text x="132" y="12" fill="#94a3b8" font-size="9" font-weight="bold">x</text>
-                    <text x="-12" y="-88" fill="#94a3b8" font-size="9" font-weight="bold">y</text>
-                    
-                    <!-- Axis Reference Marks -->
-                    <line x1="45" y1="-3" x2="45" y2="3" stroke="#e2e8f0" stroke-width="1.2"/>
-                    <text x="45" y="14" fill="#94a3b8" font-size="8" text-anchor="middle" font-weight="bold">3</text>
-                    <line x1="-3" y1="60" x2="3" y2="60" stroke="#e2e8f0" stroke-width="1.2"/>
-                    <text x="-8" y="63" fill="#94a3b8" font-size="8" text-anchor="end" font-weight="bold">-4</text>
-
-                    <!-- 🟢 THE VERTICAL RANGE BAR (Perfect Alignment Spanning Upwards) -->
-                    <line x1="-40" y1="60" x2="-40" y2="-90" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M -40,-95 L -44,-88 L -36,-88 Z" fill="var(--neon-cyan)"/> <!-- Top infinite arrow -->
-                    <circle cx="-40" cy="60" r="4.5" fill="var(--neon-cyan)"/> <!-- SOLID terminal point at y = -4 -->
-                    <text x="-48" y="-15" fill="var(--neon-cyan)" font-size="9" font-weight="bold" transform="rotate(-90,-48,-15)" font-family="sans-serif">Range [−4, +&infin;)</text>
-
-                    <!-- 🔵 MATHEMATICALLY ACCURATE PARABOLA CURVE -->
-                    <!-- Vertex is pinned perfectly at SVG center point (45, 60) -->
-                    <path d="M 0,-75 Q 22.5,60 45,60 Q 67.5,60 90,-75" fill="none" stroke="var(--neon-blue)" stroke-width="2" stroke-linecap="round"/>
-                    
-                    <!-- 🟠 THE SYMMETRICAL VERTEX DOT DETECTOR -->
-                    <circle cx="45" cy="60" r="4.5" fill="var(--neon-amber)" stroke="#090d16" stroke-width="1"/>
-                    <text x="55" y="64" fill="#ffffff" font-size="7.5" font-weight="bold" font-family="sans-serif">Vertex (3, −4)</text>
-                    
-                    <!-- Perpendicular Dotted Grid Guidelines -->
-                    <line x1="45" y1="60" x2="45" y2="0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
-                    <line x1="45" y1="60" x2="-40" y2="60" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
-                </svg>
-            </div>
-        </div>
-
+            </li>
+        </ul>
     </div>
+    </div>
+
+
+
+
+
+<!-- Slide 3: Worked Examples -->
+<div class="slide-content" id="slide-3">
+    <h3>Demonstration Masterclass</h3>
+    
+    <!-- 🟢 EXAMPLE 1.1: DOMAIN ELIMINATION CRITERIA -->
+    <div class="block-example">
+        <strong>Example 1.1:</strong> Find the domain <span class="math-inline">D<sub>f</sub></span> for the given fraction function:
+        <div class="math-block">
+            f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x + 4</span></span><span class="bottom">2x − 6</span></span>
+        </div>
+        
+        <!-- 🏙️ NESTED SEPARATE SOLUTION GRID CARD CONTAINER -->
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>
+                    <span>Apply the square root constraint rule on the top numerator:</span> To make sure the answer is a real number, the expression inside must be non-negative:
+                    <div class="math-block">x + 4 &ge; 0 &rArr; x &ge; −4</div>
+                </li>
+                <li>
+                    <span>Apply the denominator constraint rule on the bottom:</span> The denominator cannot be equal to zero. To avoid dividing by zero, we isolate the restricted point value:
+                    <div class="math-block">2x − 6 &ne; 0 &rArr; 2x &ne; 6 &rArr; x &ne; 3</div>
+                </li>
+                <li>
+                    <span>Combine both boundaries into a single unified range:</span> We combine both inequalities into a single interval with a gap at the number 3:
+                    <div class="math-block" style="color: var(--neon-cyan); font-weight: bold;">D<sub>f</sub> = [−4, 3) &cup; (3, +&infin;)</div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 🟢 LIVE VISUAL NUMBER LINE REPRESENTATION -->
+        <div class="visual-wrapper">
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 600;">📊 VISUAL REAL NUMBER LINE REPRESENTATION (Df)</div>
+            <svg viewBox="-140 -25 280 50" width="100%" style="max-width: 360px;">
+                <!-- Base Axis Line -->
+                <line x1="-120" y1="0" x2="120" y2="0" stroke="#475569" stroke-width="2" stroke-linecap="round" />
+                <!-- Arrows at ends -->
+                <path d="M -125 0 L -120 -4 L -120 4 Z" fill="#475569" />
+                <path d="M 125 0 L 120 -4 L 120 4 Z" fill="#475569" />
+                
+                <!-- Tick Marks for Scale Alignment -->
+                <!-- -4 Mark -->
+                <line x1="-80" y1="-4" x2="-80" y2="4" stroke="#475569" stroke-width="1.5" />
+                <text x="-80" y="18" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="bold">-4</text>
+                
+                <!-- 0 Reference Mark -->
+                <line x1="-20" y1="-3" x2="-20" y2="3" stroke="#1e293b" stroke-width="1" />
+                <text x="-20" y="16" fill="#334155" font-size="8" text-anchor="middle">0</text>
+                
+                <!-- +3 Mark -->
+                <line x1="25" y1="-4" x2="25" y2="4" stroke="#475569" stroke-width="1.5" />
+                <text x="25" y="18" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="bold">3</text>
+
+                <!-- INTERVAL RAY PATHS (The Answer Graph) -->
+                <!-- Zone 1: [-4, 3) -->
+                <line x1="-80" y1="-8" x2="25" y2="-8" stroke="var(--neon-cyan)" stroke-width="3" />
+                <!-- Zone 2: (3, +infinity) -->
+                <line x1="25" y1="-8" x2="110" y2="-8" stroke="var(--neon-cyan)" stroke-width="3" />
+                <path d="M 113 -8 L 107 -11 L 107 -5 Z" fill="var(--neon-cyan)" />
+                
+                <!-- Boundary Indicators -->
+                <circle cx="-80" cy="-8" r="4" fill="var(--neon-cyan)" /> <!-- Included [-4] -->
+                <circle cx="25" cy="-8" r="3.5" fill="#111a36" stroke="var(--neon-green)" stroke-width="2" /> <!-- Excluded (3) Hole -->
+            </svg>
+        </div>
+    </div>
+
+    <!-- 🟢 EXAMPLE 1.2: PARABOLA VERTEX MATRIX EXTREMA -->
+    <div class="block-example">
+        <strong>Example 1.2:</strong> A quadratic function is given by the formula <span class="math-inline">f(x) = x&sup2; − 6x + 5</span>. Find the coordinates of its vertex and determine its range <span class="math-inline">R<sub>f</sub></span>.
+        
+        <!-- 🏙️ NESTED SEPARATE SOLUTION GRID CARD CONTAINER -->
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>
+                    <span>Find the x-coordinate of the vertex using the axis formula:</span> We identify coefficients as $a=1, b=-6$. Because $a > 0$, the parabola opens upwards to a terminal minimum:
+                    <div class="math-block">
+                        x<sub>vertex</sub> = −<span class="frac"><span class="top">b</span><span class="bottom">2a</span></span> = −<span class="frac"><span class="top">−6</span><span class="bottom">2(1)</span></span> = <strong style="color: var(--neon-cyan);">3</strong>
+                    </div>
+                </li>
+                <li>
+                    <span>Substitute x = 3 back into the parent formula to find the absolute minimum height:</span>
+                    <div class="math-block">
+                        f(3) = (3)&sup2; − 6(3) + 5 = 9 − 18 + 5 = <strong style="color: var(--neon-cyan);">&minus;4</strong>
+                    </div>
+                </li>
+                <li>
+                    <span>State final boundary interval:</span> Because the parabola opens upwards from its lowest terminal minimum point, our range interval is:
+                    <div class="math-block" style="color: var(--neon-cyan); font-weight: bold;">R<sub>f</sub> = [−4, +&infin;)</div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 📊 HIGH-COMPATIBILITY MESH GRID PARABOLA CANVAS -->
+        <div class="visual-wrapper">
+            <div style="font-size: 0.85rem; color: var(--text-main); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.5px;">📐 PARABOLA VISUALIZATION &amp; VERTICAL RANGE TRACKING</div>
+            
+            <svg viewBox="-70 -105 220 200" width="100%" style="max-width: 440px; background: #111a36; border-radius: 6px; overflow: visible;">
+                <!-- Extended Grid mesh system lines -->
+                <path d="M -70,-90 L 150,-90 M -70,-75 L 150,-75 M -70,-60 L 150,-60 M -70,-45 L 150,-45 M -70,-30 L 150,-30 M -70,-15 L 150,-15 M -70,0 L 150,0 M -70,15 L 150,15 M -70,30 L 150,30 M -70,45 L 150,45 M -70,60 L 150,60 M -70,75 L 150,75" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+                <path d="M -60,-105 L -60,85 M -45,-105 L -45,85 M -30,-105 L -30,85 M -15,-105 L -15,85 M 0,-105 L 0,85 M 15,-105 L 15,85 M 30,-105 L 30,85 M 45,-105 L 45,85 M 60,-105 L 60,85 M 75,-105 L 75,85 M 90,-105 L 90,85 M 105,-105 L 105,85 M 120,-105 L 120,85 M 135,-105 L 135,85" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+
+                <!-- Primary Axis Channels -->
+                <line x1="-65" y1="0" x2="140" y2="0" stroke="#475569" stroke-width="1.5"/>
+                <line x1="0" y1="-95" x2="0" y2="80" stroke="#475569" stroke-width="1.5"/>
+                
+                <!-- Axis Label Positions -->
+                <text x="132" y="12" fill="#94a3b8" font-size="9" font-weight="bold">x</text>
+                <text x="-12" y="-88" fill="#94a3b8" font-size="9" font-weight="bold">y</text>
+                
+                <!-- Axis Reference Marks -->
+                <line x1="45" y1="-3" x2="45" y2="3" stroke="#e2e8f0" stroke-width="1.2"/>
+                <text x="45" y="14" fill="#94a3b8" font-size="8" text-anchor="middle" font-weight="bold">3</text>
+                <line x1="-3" y1="60" x2="3" y2="60" stroke="#e2e8f0" stroke-width="1.2"/>
+                <text x="-8" y="63" fill="#94a3b8" font-size="8" text-anchor="end" font-weight="bold">-4</text>
+
+                <!-- THE VERTICAL RANGE BAR (Spanning Upwards) -->
+                <line x1="-40" y1="60" x2="-40" y2="-90" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M -40,-95 L -44,-88 L -36,-88 Z" fill="var(--neon-cyan)"/> <!-- Top infinite arrow -->
+                <circle cx="-40" cy="60" r="4.5" fill="var(--neon-cyan)"/> <!-- SOLID terminal point at y = -4 -->
+                <text x="-48" y="-15" fill="var(--neon-cyan)" font-size="9" font-weight="bold" transform="rotate(-90,-48,-15)" font-family="sans-serif">Range [−4, +&infin;)</text>
+
+                <!-- MATHEMATICALLY ACCURATE PARABOLA CURVE -->
+                <path d="M 0,-75 Q 22.5,60 45,60 Q 67.5,60 90,-75" fill="none" stroke="var(--neon-blue)" stroke-width="2" stroke-linecap="round"/>
+                
+                <!-- THE SYMMETRICAL VERTEX DOT DETECTOR -->
+                <circle cx="45" cy="60" r="4.5" fill="var(--neon-amber)" stroke="#111a36" stroke-width="1"/>
+                <text x="55" y="64" fill="#ffffff" font-size="7.5" font-weight="bold" font-family="sans-serif">Vertex (3, −4)</text>
+                
+                <!-- Perpendicular Dotted Grid Guidelines -->
+                <line x1="45" y1="60" x2="45" y2="0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+                <line x1="45" y1="60" x2="-40" y2="60" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
 
 
     <!-- Slide 4: Practice Set -->
@@ -225,46 +302,51 @@
         <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
         <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
         
-        <!-- Exercise 1.1 -->
-        <div class="exercise-block">
-            <div class="exercise-title">Exercise 1.1</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Use domain criteria to find the exact interval notation.</p>
-            <div class="grid-2">
-                <div class="exercise-item">a)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">5</span><span class="bottom">3x − 12</span></span></span></div>
-                <div class="exercise-item">b)&nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">2x + 8</span></span></div>
-                <div class="exercise-item">c)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x − 2</span></span><span class="bottom">x − 5</span></span></span></div>
-                <div class="exercise-item">d)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">1</span><span class="bottom">x<sup>2</sup> − 9</span></span></span></div>
-                <div class="exercise-item">e)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">7</span><span class="bottom"><span class="sqrt-sym">&radic;</span><span class="sqrt">6 − 2x</span></span></span></span></div>
-                <div class="exercise-item">f)&nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x + 1</span> + <span class="sqrt-sym">&radic;</span><span class="sqrt">4 − x</span></span></div>
-            </div>
-        </div>
+<!-- Exercise 1.1 -->
+<div class="block-exercise">
+    <div class="exercise-title">Exercise 1.1</div>
+    <p>Use domain criteria to find the exact interval notation.</p>
+    <div class="grid-3">
+        <div class="exercise-item">a)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">5</span><span class="bottom">3x − 12</span></span></span></div>
+        <div class="exercise-item">b)&nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">2x + 8</span></span></div>
+        <div class="exercise-item">c)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x − 2</span></span><span class="bottom">x − 5</span></span></span></div>
+        <div class="exercise-item">d)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">1</span><span class="bottom">x<sup>2</sup> − 9</span></span></span></div>
+        <div class="exercise-item">e)&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top">7</span><span class="bottom"><span class="sqrt-sym">&radic;</span><span class="sqrt">6 − 2x</span></span></span></span></div>
+        <div class="exercise-item">f)&nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x + 1</span> + <span class="sqrt-sym">&radic;</span><span class="sqrt">4 − x</span></span></div>
+    </div>
+</div>
+
 
         <!-- Exercise 1.2 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-green);">
-            <div class="exercise-title" style="color: var(--text-main);">Exercise 1.2</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Find the complete vertex coordinates (x, y) and state the final range for each:</p>
+        <div class="block-exercise">
+            <div class="exercise-title">Exercise 1.2</div>
+            <p>Find the complete vertex coordinates (x, y) and state the final range for each:</p>
             <div class="grid-2">
-                <div class="exercise-item" style="border-color: var(--neon-green); display: block;">
-                    <strong>a)&nbsp;<span class="math-inline">f(x) = x<sup>2</sup> − 4x + 7</span></strong><br>
-                    <span style="font-size:0.8rem; color:var(--text-muted); display:inline-block; margin-top:5px;">Tip: Calculate and note down your final vertex y-value coordinate...
+                <div class="exercise-item">
+                    a)&nbsp;<span class="math-inline">f(x) = x<sup>2</sup> − 4x + 7</span>
                 </div>
-                <div class="exercise-item" style="border-color: var(--neon-green); display: block;">
-                    <strong>b)&nbsp;<span class="math-inline">f(x) = −x<sup>2</sup> − 2x + 3</span></strong><br>
-                    <span style="font-size:0.8rem; color:var(--text-muted); display:inline-block; margin-top:5px;">Tip: Calculate and note down your final vertex y-value coordinate...</span>
+                <div class="exercise-item">
+                    b)&nbsp;<span class="math-inline">f(x) = −x<sup>2</sup> − 2x + 3</span>
                 </div>
             </div>
         </div>
 
         <!-- Exercise 1.3 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-blue);">
-            <div class="exercise-title">Exercise 1.3</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Given the function formula:&nbsp;&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x + 2</span></span><span class="bottom">x − 1</span></span></span><br><br></p>
-            <div class="exercise-item" style="display: block;">
-                
-                <strong>a)</strong> Compute the complete valid domain interval <span class="math-inline">D<sub>f</sub></span>.<br>
-                <strong>b)</strong> Draw this final domain visually by plotting its boundaries directly onto your notebook grid line.
-            </div>
+<div class="block-exercise">
+    <div class="exercise-title">Exercise 1.3</div>
+    <p>Given the function formula:&nbsp;&nbsp;<span class="math-inline">f(x) = <span class="frac"><span class="top"><span class="sqrt-sym">&radic;</span><span class="sqrt">x + 2</span></span><span class="bottom">x − 1</span></span></span></p>
+    
+    <!-- Stacked Vertical Sub-Task Layout Container -->
+    <div class="layout-stack">
+        <div class="exercise-item">
+            <span>a) Compute the complete valid domain interval <span class="math-inline">D<sub>f</sub></span>.</span>
         </div>
+        <div class="exercise-item">
+            b) Draw this final domain visually by plotting its boundaries directly onto your notebook grid line.
+        </div>
+    </div>
+</div>
+
     </div>
 
         <!-- Slide 5: Milestone Gatekeeper -->

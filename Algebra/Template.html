@@ -17,6 +17,42 @@ Module Blueprint Reference Frame:
 • Tab 3: [Insert Tab 3 Title]
 • Tab 4: [Insert Tab 4 Title]
 • Tab 5: [Insert Tab 5 Title]
+
+### Component Layer Styling Architecture & Usage Rules
+
+When constructing slide content sections, do not use raw style overrides for box dimensions or backgrounds. Instead, strictly apply the matching native UI utility classes from the global framework:
+
+1. THEORETICAL PRIMERS & DEFINITIONS
+• Class: `.block-definition`
+• Border: Premium Emerald Green (`--neon-green`)
+• Usage: Use this as a flat, full-width container for static mathematical expressions, rules, theorems, or introductory dictionary context.
+
+2. WORKED MATHEMATICAL PROOFS
+• Class: `.block-theorem`
+• Border: Vibrant Pink/Crimson (`--neon-pink`)
+• Usage: Use this for multi-step equation derivations or deep-dive algebraic operations. 
+• Layout Isolation Rule: If multiple independent theorems/proofs are listed sequentially, stack them inside a flex-column wrapper. To prevent the browser's default flexbox spacing from breaking margin collapsing, explicitly set `margin: 0;` on the inner `.block-theorem` components.
+
+3. WORKED EXAMPLES WITH SOLUTIONS
+• Outer Class: `.block-example` (Holds the prompt/question statement)
+• Inner Card Class: `.block-solution` (Nested directly below the question statement)
+• Structural Template Rule: Wrap the steps inside a flat, standard HTML `<ol>` list. Math steps must sit inside a child `.math-block` element, and final answers or important landmark outputs should be highlighted using `color: var(--neon-cyan);`. 
+
+4. LAB SANDBOXES & INTERACTIVE SLIDERS
+• Class: `.block-preview`
+• Background: Semi-transparent Deep Purple
+• Layout Matrix: Houses side-by-side structures using a split grid (`.split-grid`). The left pane holds text instructions and interactive controllers (e.g., input range elements). The right pane holds graphic visuals enclosed in a `.visual-wrapper` card element (e.g., coordinate axis canvas matrices, live SVG curve paths, charts).
+• Interactive Element Tuning: All HTML range sliders (`<input type="range">`) placed inside the controller column must be natively accent-linked using the inline property `style="accent-color: var(--neon-cyan);"`. Labels/headings inside the preview box must match `var(--neon-purple)` or `var(--neon-cyan)`.
+
+5. STUDENT WORKBOOK PRACTICE FIELDS
+• Class: `.block-exercise`
+• Header Class: `.exercise-title`
+• Problem Matrix Grid: Sub-questions must be structured horizontally inside a `.grid-4` (or `.grid-2` depending on length) layout container. Each distinct problem cell must be wrapped inside a `<div class="exercise-item"><span>...</span></div>` tag sequence to ensure typography handles mathematical line breaks cleanly.
+
+6. EQUATION LINE BREAK ISOLATION RULES
+• Class: `.math-block`
+• Layout Safety Rule: Never let multi-component fractions or long equations collapse onto multiple rows. If a mathematical sequence features wide step calculations (e.g., cancellation layouts), wrap the lines inside an explicit grid layout matrix (`display: grid; grid-template-columns: 140px 1fr; row-gap: 12px; align-items: center; font-size: 1.15rem;`) to give expressions optimal horizontal breathing room.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

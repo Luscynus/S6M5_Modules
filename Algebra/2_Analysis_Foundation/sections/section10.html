@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18. Interactive Module</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <h2>10. Curve Sketching and Asymptotes</h2>
+
+    <!-- Step Controls Nav Array -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="showSlide(1)">1. The 4 Steps to Analysing a Curve</button>
+        <button class="tab-btn" onclick="showSlide(2)">2. Worked Example</button>
+        <button class="tab-btn" onclick="showSlide(3)">3. Practice Set</button>
+        <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(4)">🔑 4. Milestone Unlock</button>
+    </div>
+
+    <!-- Slide 1: The 4 Steps to Analysing a Curve -->
+    <div class="slide-content active" id="slide-1">
+        <h3>The 4 Steps to Analysing a Curve</h3>
+        <p>To sketch the complete graph of an unknown function systematically without a calculator, we follow an intentional four-stage mathematical breakdown. This shifts our focus away from long, point-by-point guessing tables and isolates the exact landmarks and boundary lines that govern coordinate behavior.</p>
+
+        <!-- 🟥 ONE SINGLE MASTER CORE METHODOLOGY BLOCK -->
+        <div class="block-theorem" style="margin-top: 20px;">
+            <strong>Standard Curve Analysis Protocol</strong>
+            <p>Execute these four analytical phases sequentially to map out the complete geometric blueprint of any continuous function architecture:</p>
+            
+            <div class="layout-stack" style="margin-top: 20px; gap: 24px;">
+                
+                <!-- STAGE 01 -->
+                <div>
+                    <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 01: Find the Domain Restrictions</strong>
+                    <p style="margin: 0 0 12px 0;">Isolate structural breaks in the curve. Before graphing, you must map where the function is legally allowed to exist by scanning for three core algebraic domain traps:</p>
+                    
+                    <div class="grid-3">
+                        <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
+                            <strong>⚠️ A: Denominators</strong>
+                            <div class="math-block" style="margin: 5px 0;"><span class="frac"><span class="top">1</span><span class="bottom">g(x)</span></span> &rArr; g(x) &ne; 0</div>
+                            <p>Bottom cannot equal zero. Pinpoints a permanent vertical asymptote break line.</p>
+                        </div>
+                        <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
+                            <strong>⚠️ B: Square Roots</strong>
+                            <div class="math-block" style="margin: 5px 0;">&radic;<span class="math-inline" style="border-top: 1px solid currentColor; padding-top: 1px;">g(x)</span> &rArr; g(x) &ge; 0</div>
+                            <p>Inside terms must be non-negative. Blanks out illegal imaginary territories.</p>
+                        </div>
+                        <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
+                            <strong>⚠️ C: Logarithms</strong>
+                            <div class="math-block" style="margin: 5px 0;">ln(g(x)) &rArr; g(x) &gt; 0</div>
+                            <p>Arguments must be strictly positive. Creates an open boundary drop cliff.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px dashed rgba(255, 255, 255, 0.08); width: 100%;"></div>
+
+                <!-- STAGE 02 -->
+                <div>
+                    <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 02: Locate Axis Intercepts</strong>
+                    <p style="margin: 0 0 12px 0;">Pin down where the curve anchors onto your coordinate canvas system. These intersections act as the literal physical nails holding your curve outline onto the structural grid:</p>
+
+                    <div class="grid-2" style="align-items: center;">
+                        <div>
+                            <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li><strong>x-Intercepts (Roots):</strong> Set the total output equation <strong class="math-inline" style="color: var(--neon-cyan);">f(x) = 0</strong>. This tells you exactly where the path slices horizontally across the horizon floor line.</li>
+                                <li style="margin-top: 8px;"><strong>y-Intercept (Initial Gate):</strong> Substitute input parameter <strong class="math-inline" style="color: var(--neon-amber);">x = 0</strong>. This reveals the standalone altitude point where the curve pierces the vertical spine wall.</li>
+                            </ul>
+                        </div>
+                        <div class="visual-wrapper" style="margin: 0; padding: 15px;">
+                            <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 0.3px; width: 100%; text-align: center;">📈 INTERCEPT ANCHOR SCHEMATIC</div>
+                            <svg viewBox="0 0 130 100" style="width: 100%; max-width: 160px; height: auto; display: block; font-family: monospace; overflow: visible;">
+                                <g stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.5">
+                                    <line x1="0" y1="25" x2="130" y2="25" /><line x1="0" y1="50" x2="130" y2="50" /><line x1="0" y1="75" x2="130" y2="75" />
+                                    <line x1="25" y1="0" x2="25" y2="100" /><line x1="50" y1="0" x2="50" y2="100" /><line x1="75" y1="0" x2="75" y2="100" /><line x1="100" y1="0" x2="100" y2="100" />
+                                </g>
+                                <line x1="0" y1="75" x2="125" y2="75" stroke="#475569" stroke-width="1.2"/>
+                                <line x1="50" y1="0" x2="50" y2="95" stroke="#475569" stroke-width="1.2"/>
+                                <text x="125" y="83" fill="#64748b" font-size="7" text-anchor="middle">x</text>
+                                <text x="42" y="8" fill="#64748b" font-size="7" text-anchor="middle">y</text>
+                                <path d="M 15,90 C 35,65 45,50 50,50 C 65,50 75,75 100,75 C 110,75 115,45 120,25" fill="none" stroke="var(--neon-blue)" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="50" cy="50" r="3.5" fill="var(--neon-amber)" />
+                                <circle cx="100" cy="75" r="3.5" fill="var(--neon-cyan)" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px dashed rgba(255, 255, 255, 0.08); width: 100%;"></div>
+
+                <!-- STAGE 03 -->
+                <div>
+                    <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 03: Determine Asymptotic Boundaries</strong>
+                    <p style="margin: 0 0 12px 0;">Track infinite behaviors at extreme edges. An asymptote acts as an invisible geometric boundary guideline that a curve approaches closer and closer but never actually touches or breaches:</p>
+                    
+                    <div class="grid-2">
+                        <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
+                            <strong>Vertical Asymptotes (VA)</strong>
+                            <div class="math-block" style="margin: 5px 0;">
+                                <span style="font-family: sans-serif; font-size: 0.9rem; color: var(--text-muted); font-style: normal; margin-right: 6px;">If</span> lim<sub>x &rarr; c<sup>&plusmn;</sup></sub> f(x) = &plusmn;&infin;
+                            </div>
+                            <p>Discovered at isolated values <strong class="math-inline">x = c</strong> where the denominator breaks, pushing outputs to spike instantly into infinity.</p>
+                        </div>
+                        <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
+                            <strong>Horizontal Asymptotes (HA)</strong>
+                            <div class="math-block" style="margin: 5px 0;">
+                                <span style="font-family: sans-serif; font-size: 0.9rem; color: var(--text-muted); font-style: normal; margin-right: 6px;">If</span> lim<sub>x &rarr; &plusmn;&infin;</sub> f(x) = L
+                            </div>
+                            <p>Discovered by tracking end-behaviors as inputs reach infinity. The graph flattens to a horizontal level <strong class="math-inline">y = L</strong>.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="border-top: 1px dashed rgba(255, 255, 255, 0.08); width: 100%;"></div>
+
+                <!-- STAGE 04 -->
+                <div>
+                    <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 04: Compile a Variation Table</strong>
+                    <p style="margin: 0;">Compute the derivatives <strong class="math-inline">f'(x)</strong> and <strong class="math-inline">f''(x)</strong> to evaluate their signs across each domain interval. Map these signs onto a master table to isolate exactly where the curve rises, falls, turns at stationary extrema points, or transitions its concavity.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slide 2: Rational Verification Laboratories -->
+    <div class="slide-content" id="slide-2">
+        <h3>Rational Verification Laboratories</h3>
+        <p>Synthesize all analytical steps into a single cohesive curve blueprint. Study this comprehensive master evaluation workflow to observe how algebra and derivatives lock together to dictate a curve's complete graphical profile.</p>
+        
+        <!-- 📘 VISUALLY REWORKED COMPREHENSIVE WORKED EXTREMUM CARD -->
+        <div class="block-example" style="margin-bottom: 20px;">
+            <strong>Worked Example: Global Geometric Analysis of a Rational Function</strong>
+            
+            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+                f(x) = <span class="frac"><span class="top">2x</span><span class="bottom">x &minus; 1</span></span>
+            </div>
+            
+            <div class="block-solution">
+                <strong>Solution Method:</strong>
+                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                    
+                    <!-- STEP 1 -->
+                    <li style="margin-bottom: 14px;">
+                        <span>Domain Restrictions:</span> Set the denominator expression equal to zero to isolate where division breaks down:
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            x &minus; 1 = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 1 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; D<sub>f</sub> = (&minus;&infin;, 1) &cup; (1, +&infin;)</span>
+                        </div>
+                    </li>
+                    
+                    <!-- STEP 2 -->
+                    <li style="margin-bottom: 0;">
+                        <span>Axis Intercepts:</span> Map where the path anchors onto the coordinate grid boundaries:
+                        
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            Horizontal (x-Int): &nbsp;&nbsp; 2x = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 0 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; (0, 0)</span>
+                        </div>
+                        
+                        <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
+                            <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
+                                <tr style="background: none; border: none; vertical-align: middle;">
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">Vertical (y-Int): &nbsp;&nbsp; f(0) = </td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;"><span class="top">2(0)</span><span class="bottom">0 &minus; 1</span></span>
+                                    </td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;"> = 0 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; (0, 0)</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+
+                
+                    <!-- STEP 3 -->
+                    <li style="margin-top: 14px; margin-bottom: 0;">
+                        <span>Asymptotic Boundaries:</span> Evaluate boundary threshold trends across local breaks and values at infinity:
+                        
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                            Vertical (VA): &nbsp;&nbsp; lim<sub>x&rarr;1<sup>&minus;</sup></sub> f(x) = &minus;&infin;, &nbsp;&nbsp; lim<sub>x&rarr;1<sup>+</sup></sub> f(x) = +&infin; <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 1</span>
+                        </div>
+                        
+                        <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
+                            <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
+                                <tr style="background: none; border: none; vertical-align: middle;">
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">Horizontal (HA): &nbsp;&nbsp; lim<sub>x&rarr;&plusmn;&infin;</sub> </td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;">
+                                            <span class="top">2</span>
+                                            <span class="bottom" style="padding-top: 2px;">1 &minus; <span class="frac" style="vertical-align: middle; font-size: 0.85em;"><span class="top">1</span><span class="bottom">x</span></span></span>
+                                        </span>
+                                    </td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;"> = 2 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; y = 2</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+
+                    <!-- STEP 4 -->
+                    <li style="margin-top: 14px; margin-bottom: 0;">
+                        <span>Variation Master Table Engine:</span> Compute derivatives to map exact velocity metrics and curve concavity shapes:
+                        
+                        <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
+                            <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
+                                <tr style="background: none; border: none; vertical-align: middle;">
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">First Derivative: &nbsp;&nbsp; f'(x) = </td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;"><span class="top">&minus;2</span><span class="bottom">(x&minus;1)<sup>2</sup></span></span>
+                                    </td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f'(x) &lt; 0 everywhere (Always Decreasing)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 15px; width: 100%;">
+                            <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
+                                <tr style="background: none; border: none; vertical-align: middle;">
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">Second Derivative: &nbsp;&nbsp; f''(x) = </td>
+                                    <td style="padding: 0; border: none; vertical-align: middle;">
+                                        <span class="frac" style="vertical-align: middle;"><span class="top">4</span><span class="bottom">(x&minus;1)<sup>3</sup></span></span>
+                                    </td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f''(x) &lt; 0 for x &lt; 1 (Down), &nbsp;&nbsp; f''(x) &gt; 0 for x &gt; 1 (Up)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- POPULATED MASTER VARIATION STRUCTURE MATRIX -->
+                        <div class="visual-wrapper" style="margin: 15px auto 0 auto; padding: 0; overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.85rem; text-align: center; color: var(--text-muted); min-width: 500px;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.08); color: #ffffff;">
+                                        <th style="padding: 8px; text-align: left; width: 80px; color: #94a3b8;">x</th>
+                                        <th style="padding: 8px; font-weight: normal; font-size: 0.75rem; color: #64748b;">&minus;&infin; &harr; 0</th>
+                                        <th style="padding: 8px; width: 50px; background: rgba(255,255,255,0.02); color: var(--neon-cyan); font-weight: bold;">0</th>
+                                        <th style="padding: 8px; font-weight: normal; font-size: 0.75rem; color: #64748b;">0 &harr; 1</th>
+                                        <th style="padding: 8px; width: 50px; background: rgba(255,255,255,0.02); color: var(--neon-pink); font-weight: bold;">1</th>
+                                        <th style="padding: 8px; font-weight: normal; font-size: 0.75rem; color: #64748b;">1 &harr; +&infin;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- FIRST DERIVATIVE SIGN LAYER -->
+                                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                                        <td style="padding: 10px; text-align: left; font-weight: bold; color: #ffffff;">f'(x)</td>
+                                        <td style="color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="background: rgba(255,255,255,0.02); color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="background: rgba(255,255,255,0.02); color: var(--neon-pink); font-size: 0.75rem;">&empty;</td>
+                                        <td style="color: #ef4444; font-weight: bold;">&minus;</td>
+                                    </tr>
+                                    <!-- SECOND DERIVATIVE CONCAVITY LAYER -->
+                                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                                        <td style="padding: 10px; text-align: left; font-weight: bold; color: #ffffff;">f''(x)</td>
+                                        <td style="color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="background: rgba(255,255,255,0.02); color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="color: #ef4444; font-weight: bold;">&minus;</td>
+                                        <td style="background: rgba(255,255,255,0.02); color: var(--neon-pink); font-size: 0.75rem;">&empty;</td>
+                                        <td style="color: var(--neon-green); font-weight: bold;">+</td>
+                                    </tr>
+                                    <!-- VISUAL GEOMETRIC DIRECTIONAL LAYER -->
+                                    <tr style="color: #ffffff;">
+                                        <td style="padding: 12px 10px; text-align: left; font-weight: bold; vertical-align: middle;">f(x)</td>
+                                        <!-- Decreasing Concave Down -->
+                                        <td style="vertical-align: middle; padding: 4px; font-size: 0.75rem; color: var(--text-muted);">
+                                            Drops from y=2<br><span style="font-size: 1.1rem; color: #ef4444; display: inline-block; transform: rotate(15deg);">&searrow;</span> <span style="color: #ef4444;">&cap;</span>
+                                        </td>
+                                        <!-- Root Crossways Coordinate Anchor -->
+                                        <td style="background: rgba(255,255,255,0.02); vertical-align: middle; padding: 6px 2px; font-size: 0.7rem; line-height: 1.2; color: var(--neon-cyan); font-weight: bold;">
+                                            Axis Root<br><span style="color: #fff;">(0, 0)</span>
+                                        </td>
+                                        <!-- Decreasing Concave Down to Abyss -->
+                                        <td style="vertical-align: middle; padding: 4px; font-size: 0.75rem; color: var(--text-muted);">
+                                            Plummets down<br><span style="font-size: 1.1rem; color: #ef4444; display: inline-block; transform: rotate(15deg);">&searrow;</span> <span style="color: #ef4444;">&cap;</span>
+                                        </td>
+                                        <!-- Vertical Barrier break wall line -->
+                                        <td style="background: rgba(255,255,255,0.02); vertical-align: middle; padding: 6px 2px; font-size: 0.7rem; line-height: 1.2; color: var(--neon-pink); font-weight: bold;">
+                                            Vertical Wall<br><span style="color: var(--neon-pink); font-size: 0.8rem;">&vellip; VA &vellip;</span>
+                                        </td>
+                                        <!-- Decreasing Concave Up stabilizing to horizontal limit -->
+                                        <td style="vertical-align: middle; padding: 4px; font-size: 0.75rem; color: var(--text-muted);">
+                                            Drops to y=2<br><span style="font-size: 1.1rem; color: #ef4444; display: inline-block; transform: rotate(15deg);">&searrow;</span> <span style="color: var(--neon-green);">&cup;</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+
+                                            <!-- VISUAL GRAPH COMPONENT -->
+                        <div class="visual-wrapper" style="margin: 20px auto 0 auto; max-width: 500px; padding: 15px; background: #050811; border: 1px solid #1e293b; border-radius: 6px;">
+                            <svg width="100%" height="280" viewBox="0 0 500 280" style="display: block; max-width: 100%;">
+                                <!-- Grid Lines Matrix (X: 50px increments, Y: 40px increments) -->
+                                <g stroke="#1e293b" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.5">
+                                    <line x1="50" y1="20" x2="50" y2="240" />
+                                    <line x1="100" y1="20" x2="100" y2="240" />
+                                    <line x1="150" y1="20" x2="150" y2="240" />
+                                    <line x1="200" y1="20" x2="200" y2="240" />
+                                    <line x1="250" y1="20" x2="250" y2="240" />
+                                    <line x1="300" y1="20" x2="300" y2="240" />
+                                    <line x1="350" y1="20" x2="350" y2="240" />
+                                    <line x1="400" y1="20" x2="400" y2="240" />
+                                    <line x1="450" y1="20" x2="450" y2="240" />
+                                    
+                                    <line x1="40" y1="40" x2="460" y2="40" />
+                                    <line x1="40" y1="80" x2="460" y2="80" />
+                                    <line x1="40" y1="120" x2="460" y2="120" />
+                                    <line x1="40" y1="160" x2="460" y2="160" />
+                                    <line x1="40" y1="200" x2="460" y2="200" />
+                                    <line x1="40" y1="240" x2="460" y2="240" />
+                                </g>
+
+                                <!-- Core Coordinate Frame Axes (Origin Center at X=200, Y=160) -->
+                                <line x1="40" y1="160" x2="460" y2="160" stroke="#475569" stroke-width="1.2" /> <!-- X-Axis -->
+                                <line x1="200" y1="20" x2="200" y2="250" stroke="#475569" stroke-width="1.2" /> <!-- Y-Axis -->
+                                
+                                <!-- Axis Labels Metrics -->
+                                <text x="455" y="175" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="end">x</text>
+                                <text x="212" y="32" fill="#94a3b8" font-size="10" font-family="monospace">y</text>
+
+                                <!-- Numerical Ticks & Scale Marks Matrix -->
+                                <g fill="#64748b" font-size="9" font-family="monospace" text-anchor="middle">
+                                    <!-- X Axis Ticks -->
+                                    <line x1="50" y1="157" x2="50" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="50" y="152">-3</text>
+                                    <line x1="100" y1="157" x2="100" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="100" y="152">-2</text>
+                                    <line x1="150" y1="157" x2="150" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="150" y="152">-1</text>
+                                    <line x1="300" y1="157" x2="300" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="300" y="152">2</text>
+                                    <line x1="350" y1="157" x2="350" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="350" y="152">3</text>
+                                    <line x1="400" y1="157" x2="400" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="400" y="152">4</text>
+                                    <line x1="450" y1="157" x2="450" y2="163" stroke="#475569" stroke-width="1" />
+                                    <text x="450" y="152">5</text>
+
+                                    <!-- Y Axis Ticks (20px vertical shift per unit value) -->
+                                    <line x1="197" y1="240" x2="203" y2="240" stroke="#475569" stroke-width="1" />
+                                    <text x="186" y="243" text-anchor="end">-4</text>
+                                    <line x1="197" y1="200" x2="203" y2="200" stroke="#475569" stroke-width="1" />
+                                    <text x="186" y="203" text-anchor="end">-2</text>
+                                    <line x1="197" y1="80" x2="203" y2="80" stroke="#475569" stroke-width="1" />
+                                    <text x="186" y="83" text-anchor="end">4</text>
+                                    <line x1="197" y1="40" x2="203" y2="40" stroke="#475569" stroke-width="1" />
+                                    <text x="186" y="43" text-anchor="end">6</text>
+                                </g>
+                                
+                                <!-- Horizontal Asymptote (HA: y = 2) scaled to Y=120 line layout -->
+                                <line x1="40" y1="120" x2="460" y2="120" stroke="var(--neon-cyan)" stroke-width="1.5" stroke-dasharray="5,4" />
+                                <text x="450" y="112" fill="var(--neon-cyan)" font-size="9" font-family="monospace" text-anchor="end">HA: y = 2</text>
+
+                                <!-- Vertical Asymptote (VA: x = 1) scaled to X=250 line layout -->
+                                <line x1="250" y1="20" x2="250" y2="250" stroke="var(--neon-pink)" stroke-width="1.5" stroke-dasharray="5,4" />
+                                <text x="256" y="35" fill="var(--neon-pink)" font-size="9" font-family="monospace">VA: x = 1</text>
+
+                                <!-- RATIONAL CURVE PATH TRACES (f(x) = 2x / (x - 1)) -->
+                                <!-- Left Branch (Smooth downward sweep asymptotically matching x=1 wall) -->
+                                <path d="M 40,129 C 100,135 170,145 200,160 C 220,170 230,200 235,250" fill="none" stroke="#ef4444" stroke-width="2.5" />
+                                
+                                <!-- Right Branch (Calculated Cubic Bezier path removing unnatural corner creases) -->
+                                <path d="M 268,20 C 275,100 310,115 460,118" fill="none" stroke="#ef4444" stroke-width="2.5" />
+
+                                <!-- Intercept Intersection Vector Node Anchor -->
+                                <circle cx="200" cy="160" r="4.5" fill="#00e676" />
+                                <text x="190" y="152" fill="#00e676" font-size="9" font-family="monospace" text-anchor="end">Root (0,0)</text>
+                            </svg>
+                        </div>
+                    </li>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Practice Set / Lab Array Component -->
+    <div class="slide-content" id="slide-3">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+        <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+        
+        <!-- 🟨 EXERCISE 10.1: RATIONAL INTERCEPTS -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 10.1: Rational Intercept Extractions</div>
+            <p>Find the exact coordinates of the horizontal <span class="math-inline">x</span>-intercept points (<span class="math-inline">f(x) = 0</span>) and the vertical <span class="math-inline">y</span>-intercept points (<span class="math-inline">x = 0</span>) for each rational function configuration:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">x &minus; 3</span><span class="bottom">2x + 4</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">x<sup>2</sup> &minus; 4</span><span class="bottom">x &minus; 3</span></span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🟨 EXERCISE 10.2: ASYMPTOTES MATRIX -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 10.2: Global Boundary Analysis Matrix</div>
+            <p>Find the domain of each function, calculate the limits at the boundaries, and write down the final equations for all vertical and horizontal asymptotes:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">4</span><span class="bottom">x + 3</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">3x &minus; 5</span><span class="bottom">x &minus; 2</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">x<sup>2</sup></span><span class="bottom">x<sup>2</sup> &minus; 9</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d)&nbsp;f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">2x + 1</span><span class="bottom">6 &minus; 2x</span></span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🟨 EXERCISE 10.3: COMPLETE RATIONAL MAPPING -->
+        <div class="block-exercise" style="margin-bottom: 15px;">
+            <div class="exercise-title">Exercise 10.3: Comprehensive Rational Mapping Check</div>
+            <p>Consider the rational function defined by: <span class="math-inline">f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">x + 1</span><span class="bottom">x &minus; 2</span></span></span> for <span class="math-inline">x &ne; 2</span>.</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <!-- Part a -->
+                <div class="exercise-item">
+                    <span>a) Coordinate axis intercept analysis:</span>
+                    <span class="item-detail">↳ Find all the coordinates where the graph crosses the horizontal and vertical axes.</span>
+                </div>
+                <!-- Part b -->
+                <div class="exercise-item">
+                    <span>b) Boundary threshold limit evaluation:</span>
+                    <span class="item-detail">↳ Find the limits at the boundaries to determine the equations for the horizontal and vertical asymptotes.</span>
+                </div>
+                <!-- Part c -->
+                <div class="exercise-item">
+                    <span>c) Quotient Rule verification mapping:</span>
+                    <span class="item-detail">↳ Differentiate using the Quotient Rule to show that f'(x) = &minus;<span class="frac" style="vertical-align: middle;"><span class="top">3</span><span class="bottom">(x &minus; 2)<sup>2</sup></span></span>. Use this derivative to create a complete variation table and confirm the curve is always decreasing.</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- Slide 4: Milestone Unlock Gateway Framework -->
+    <div class="slide-content" id="slide-4">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 18 Verification Check</h3>
+        <p>To finalize Section 10 and clear the next master gate lock, complete the target problem metrics analysis. Gather your target parameters, then combine them directly back-to-back from left to right:</p>
+        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces or commas.</p>
+        
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <input type="text" id="section10-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
+            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection10Key()">Submit Verification</button>
+        </div>
+        <div id="section10-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
+    </div>
+
+    <script>
+        function showSlide(slideIndex) {
+            document.querySelectorAll('.slide-content').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            const buttons = document.querySelectorAll('.tab-btn');
+            if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+        }
+    </script>
+</body>
+</html>

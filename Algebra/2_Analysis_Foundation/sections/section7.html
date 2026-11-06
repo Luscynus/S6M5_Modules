@@ -22,115 +22,119 @@
 <div class="slide-content active" id="slide-1">
     <h3 style="color: var(--neon-blue); margin-top: 0;">Core Theory: Working with Combined Functions</h3>
     
-    <!-- TOP ZONE: APPROACHABLE STUDENT OVERVIEW + SCALED GRAPHIC REALM -->
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; height: auto !important; overflow: visible !important; margin-bottom: 25px;">
+    <!-- TOP ZONE: CONVERTED NATIVELY TO PURPLE PREVIEW BLOCK FOR INTERACTIVE GUIDED DISCOVERY -->
+    <div class="block-preview" style="margin-bottom: 25px;">
+        <strong style="display: block; margin-bottom: 12px;">🕹️ Interactive Discovery: Product Space Growth</strong>
         
-        <!-- Left Column: Presentation Controls -->
-        <div style="line-height: 1.6; font-size: 0.9rem; height: auto !important; overflow: visible !important;">
-            <p style="margin-top: 0;">Imagine you have two different mathematical rules multiplied together, like a length times a width to find an area. If both sides are growing at the same time, you <strong>cannot</strong> just find their separate derivatives and multiply them!</p>
+        <div class="split-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center;">
             
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Why? Because as the shape grows, the changing length stretches across the width, and the changing width stretches across the length. They interact with each other.</p>
-            
-            <!-- 🎛️ LIVE INTERACTIVE SLIDER CONTROL -->
-            <div style="background: #0f172a; border: 1px solid #1e293b; padding: 12px; border-radius: 6px; margin: 15px 0;">
-                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 6px;">
-                    <span style="color: var(--neon-amber); font-weight: bold;">⚡ Drag the slider to expand the rectangle:</span>
-                    <span id="delta-val" style="font-family: monospace; color: var(--neon-blue);">0.30</span>
+            <!-- Left Column: Presentation Controls -->
+            <div>
+                <p>Imagine you have two different mathematical rules multiplied together, like a length times a width to find an area. If both sides are growing at the same time, you <strong>cannot</strong> just find their separate derivatives and multiply them!</p>
+                
+                <p>Why? Because as the shape grows, the changing length stretches across the width, and the changing width stretches across the length. They interact with each other.</p>
+                
+                <!-- 🎛️ LIVE INTERACTIVE SLIDER CONTROL -->
+                <div class="block-solution" style="margin: 15px 0; padding: 12px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                        <span style="color: var(--neon-purple); font-weight: bold;">⚡ Drag the slider to expand the rectangle:</span>
+                        <span id="delta-val" style="font-family: monospace; color: var(--neon-purple);">0.30</span>
+                    </div>
+                    <!-- Added accent-color to cleanly lock slider to application theme tokens -->
+                    <input type="range" id="delta-slider" min="0.05" max="0.50" step="0.01" value="0.30" style="width: 100%; cursor: pointer; accent-color: var(--neon-cyan);" oninput="updateDynamicProof(this.value)">
                 </div>
-                <input type="range" id="delta-slider" min="0.05" max="0.50" step="0.01" value="0.30" style="width: 100%; cursor: pointer;" oninput="updateDynamicProof(this.value)">
+                
+                <p>Look at the diagram on the right. When you change the size, see how the total extra area isn't just one block? It adds a new <strong>green bar</strong> and a new <strong>blue bar</strong>. This exact shape growth is why we need the shortcuts below.</p>
+            </div>
+
+            <!-- Right Column: Scaled-Up Area Accumulation Matrix mapped to clean Visual Wrapper -->
+            <div class="visual-wrapper" style="margin: 0; padding: 20px; height: 100%; justify-content: center;">
+                <div style=" color: var(--text-muted); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">📐 LIVE AREA GROWTH DIAGRAM</div>
+                
+                <svg viewBox="0 0 200 200" width="100%" style="max-width: 230px; display: block; font-family: monospace; overflow: visible;">
+                    <!-- Base Grid Matrix Layer -->
+                    <g stroke="rgba(255,255,255,0.02)" stroke-width="0.75">
+                        <line x1="20" y1="0" x2="20" y2="200" /><line x1="50" y1="0" x2="50" y2="200" />
+                        <line x1="80" y1="0" x2="80" y2="200" /><line x1="110" y1="0" x2="110" y2="200" />
+                        <line x1="140" y1="0" x2="140" y2="200" /><line x1="170" y1="0" x2="170" y2="200" />
+                        <line x1="0" y1="30" x2="200" y2="30" /><line x1="0" y1="60" x2="200" y2="60" />
+                        <line x1="0" y1="90" x2="200" y2="90" /><line x1="0" y1="120" x2="200" y2="120" />
+                        <line x1="0" y1="150" x2="200" y2="150" /><line x1="0" y1="180" x2="200" y2="180" />
+                    </g>
+
+                    <!-- Core Original Base Area: u * v -->
+                    <rect x="20" y="50" width="120" height="100" fill="rgba(30, 41, 59, 0.5)" stroke="#475569" stroke-width="1.5" />
+                    <text x="80" y="105" fill="#94a3b8" font-size="10" font-weight="bold" text-anchor="middle">Area (u &middot; v)</text>
+
+                    <!-- Horizontal Expansion Strip: v * du -->
+                    <rect id="rect-v-du" x="140" y="50" width="30" height="100" fill="rgba(16, 185, 129, 0.15)" stroke="var(--neon-green)" stroke-width="1.2" stroke-dasharray="2,1" />
+                    <text id="text-v-du" x="155" y="105" fill="var(--neon-green)" font-size="9" font-weight="bold" text-anchor="middle" transform="rotate(-90,155,105)">v &middot; &Delta;u</text>
+
+                    <!-- Vertical Expansion Strip: u * dv -->
+                    <rect id="rect-u-dv" x="20" y="20" width="120" height="30" fill="rgba(56, 189, 248, 0.15)" stroke="var(--neon-blue)" stroke-width="1.2" stroke-dasharray="2,1" />
+                    <text id="text-u-dv" x="80" y="38" fill="var(--neon-blue)" font-size="9" font-weight="bold" text-anchor="middle">u &middot; &Delta;v</text>
+
+                    <!-- Terminal Corner Error Box: du * dv -->
+                    <rect id="rect-du-dv" x="140" y="20" width="30" height="30" fill="rgba(244, 63, 94, 0.2)" stroke="#f43f5e" stroke-width="1.2" />
+                    <text id="text-du-dv" x="155" y="38" fill="#f43f5e" font-size="7" font-weight="bold" text-anchor="middle">&Delta;u&Delta;v</text>
+
+                    <!-- Outer Dimension Metrics Framework -->
+                    <line id="line-du" x1="140" y1="162" x2="170" y2="162" stroke="var(--neon-green)" stroke-width="1" />
+                    <text id="label-du" x="155" y="173" fill="var(--neon-green)" font-size="8" text-anchor="middle">&Delta;u</text>
+
+                    <line id="line-dv" x1="12" y1="20" x2="12" y2="50" stroke="var(--neon-blue)" stroke-width="1" />
+                    <text id="label-dv" x="5" y="35" fill="var(--neon-blue)" font-size="8" text-anchor="middle" transform="rotate(-90,5,35)">&Delta;v</text>
+
+                    <!-- Static Baseline Text Metrics -->
+                    <line x1="20" y1="162" x2="140" y2="162" stroke="#64748b" stroke-width="1" />
+                    <text x="80" y="173" fill="#64748b" font-size="8" text-anchor="middle">length (u)</text>
+                    <line x1="12" y1="50" x2="12" y2="150" stroke="#64748b" stroke-width="1" />
+                    <text x="5" y="103" fill="#64748b" font-size="8" text-anchor="middle" transform="rotate(-90,5,103)">width (v)</text>
+                </svg>
             </div>
             
-            <p style="margin-bottom: 0; font-size: 0.85rem;">Look at the diagram on the right. When you change the size, see how the total extra area isn't just one block? It adds a new <strong>green bar</strong> and a new <strong>blue bar</strong>. This exact shape growth is why we need the shortcuts below.</p>
-        </div>
-
-        <!-- Right Column: Scaled-Up Area Accumulation Matrix -->
-        <div style="background: #090d16; padding: 20px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; border: 1px solid #1e293b; min-width: 0;">
-            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">📐 LIVE AREA GROWTH DIAGRAM</div>
-            
-            <svg viewBox="0 0 200 200" width="100%" style="max-width: 230px; display: block; font-family: monospace;">
-                <!-- Base Grid Matrix Layer -->
-                <g stroke="rgba(255,255,255,0.02)" stroke-width="0.75">
-                    <line x1="20" y1="0" x2="20" y2="200" /><line x1="50" y1="0" x2="50" y2="200" />
-                    <line x1="80" y1="0" x2="80" y2="200" /><line x1="110" y1="0" x2="110" y2="200" />
-                    <line x1="140" y1="0" x2="140" y2="200" /><line x1="170" y1="0" x2="170" y2="200" />
-                    <line x1="0" y1="30" x2="200" y2="30" /><line x1="0" y1="60" x2="200" y2="60" />
-                    <line x1="0" y1="90" x2="200" y2="90" /><line x1="0" y1="120" x2="200" y2="120" />
-                    <line x1="0" y1="150" x2="200" y2="150" /><line x1="0" y1="180" x2="200" y2="180" />
-                </g>
-
-                <!-- Core Original Base Area: u * v -->
-                <rect x="20" y="50" width="120" height="100" fill="rgba(30, 41, 59, 0.5)" stroke="#475569" stroke-width="1.5" />
-                <text x="80" y="105" fill="#94a3b8" font-size="10" font-weight="bold" text-anchor="middle">Area (u &middot; v)</text>
-
-                <!-- Horizontal Expansion Strip: v * du -->
-                <rect id="rect-v-du" x="140" y="50" width="30" height="100" fill="rgba(16, 185, 129, 0.15)" stroke="var(--neon-green)" stroke-width="1.2" stroke-dasharray="2,1" />
-                <text id="text-v-du" x="155" y="105" fill="var(--neon-green)" font-size="9" font-weight="bold" text-anchor="middle" transform="rotate(-90,155,105)">v &middot; &Delta;u</text>
-
-                <!-- Vertical Expansion Strip: u * dv -->
-                <rect id="rect-u-dv" x="20" y="20" width="120" height="30" fill="rgba(56, 189, 248, 0.15)" stroke="var(--neon-blue)" stroke-width="1.2" stroke-dasharray="2,1" />
-                <text id="text-u-dv" x="80" y="38" fill="var(--neon-blue)" font-size="9" font-weight="bold" text-anchor="middle">u &middot; &Delta;v</text>
-
-                <!-- Terminal Corner Error Box: du * dv -->
-                <rect id="rect-du-dv" x="140" y="20" width="30" height="30" fill="rgba(244, 63, 94, 0.2)" stroke="#f43f5e" stroke-width="1.2" />
-                <text id="text-du-dv" x="155" y="38" fill="#f43f5e" font-size="7" font-weight="bold" text-anchor="middle">&Delta;u&Delta;v</text>
-
-                <!-- Outer Dimension Metrics Framework -->
-                <line id="line-du" x1="140" y1="162" x2="170" y2="162" stroke="var(--neon-green)" stroke-width="1" />
-                <text id="label-du" x="155" y="173" fill="var(--neon-green)" font-size="8" text-anchor="middle">&Delta;u</text>
-
-                <line id="line-dv" x1="12" y1="20" x2="12" y2="50" stroke="var(--neon-blue)" stroke-width="1" />
-                <text id="label-dv" x="5" y="35" fill="var(--neon-blue)" font-size="8" text-anchor="middle" transform="rotate(-90,5,35)">&Delta;v</text>
-
-                <!-- Static Baseline Text Metrics -->
-                <line x1="20" y1="162" x2="140" y2="162" stroke="#64748b" stroke-width="1" />
-                <text x="80" y="173" fill="#64748b" font-size="8" text-anchor="middle">length (u)</text>
-                <line x1="12" y1="50" x2="12" y2="150" stroke="#64748b" stroke-width="1" />
-                <text x="5" y="103" fill="#64748b" font-size="8" text-anchor="middle" transform="rotate(-90,5,103)">width (v)</text>
-            </svg>
         </div>
     </div>
 
-    <!-- BOTTOM ZONE: SIDE-BY-SIDE SHORTS REFERENCE FORMULAS -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: auto !important; overflow: visible !important;">
+
+
+
         
-        <!-- PRODUCT RULE PANEL -->
-        <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid #1e293b; padding: 15px; border-radius: 8px; height: auto !important; overflow: visible !important;">
-            <div style="font-weight: bold; color: var(--neon-green); font-size: 0.95rem; margin-bottom: 8px;">✖️ The Product Rule Shortcut</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">Use this when two functions are <strong>multiplied</strong>: <span class="math-inline">h(x) = u &middot; v</span></div>
+        <!-- PRODUCT RULE PANEL (Mapped Natively to Definition Block) -->
+        <div class="block-definition">
+            <strong>✖️ The Product Rule Shortcut</strong>
+            <p>Use this when two functions are <strong>multiplied</strong>: <span class="math-inline"">h(x) = u &middot; v</span></p>
             
-            <div class="math-block" style="background: #090d16; padding: 12px; border-radius: 6px; font-size: 1.1rem; text-align: center; border: 1px solid #334155; margin-bottom: 12px;">
-                (u &middot; v)' = u' &middot; v + u &middot; v'
+            <div class="math-block" style="text-align: center; margin: 15px 0;">
+                <strong  style="color: var(--neon-green);">(u &middot; v)' = u' &middot; v + u &middot; v'</strong>
             </div>
             
-            <div style="font-size: 0.8rem; line-height: 1.5; color: var(--text-main); margin-bottom: 12px;">
-                <strong>Out loud:</strong> <span style="color: var(--text-muted);">"Derivative of the 1st &times; Leave the 2nd alone + Leave the 1st alone &times; Derivative of the 2nd."</span>
-            </div>
+            <p><strong>Out loud:</strong> <span style="color: var(--text-muted);">"Derivative of the 1st &times; Leave the 2nd alone + Leave the 1st alone &times; Derivative of the 2nd."</span></p>
 
-            <div style="background: rgba(244, 63, 94, 0.1); border-left: 3px solid #f43f5e; padding: 10px; border-radius: 4px; font-size: 0.8rem; line-height: 1.4;">
-                <strong style="color: #f43f5e;">⚠️ The Trap:</strong> Never just multiply individual derivatives! <span class="math-inline">(u &middot; v)' &ne; u' &middot; v'</span>.
+            <!-- Inline trap transformed cleanly into your native block-attention style -->
+            <div class="block-attention" style="margin-top: 12px; padding: 10px; font-size: 0.8rem;">
+                <strong>⚠️ The Trap:</strong> Never just multiply individual derivatives! <span class="math-inline">(u &middot; v)' &ne; u' &middot; v'</span>.
             </div>
         </div>
 
-        <!-- QUOTIENT RULE PANEL -->
-        <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid #1e293b; padding: 15px; border-radius: 8px; height: auto !important; overflow: visible !important;">
-            <div style="font-weight: bold; color: var(--neon-blue); font-size: 0.95rem; margin-bottom: 8px;">➗ The Quotient Rule Shortcut</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">Use this when functions are <strong>divided (fractions)</strong>: <span class="math-inline">h(x) = <span class="frac"><span class="top">u</span><span class="bottom">v</span></span></span></div>
+        <!-- QUOTIENT RULE PANEL (Mapped Natively to Definition Block) -->
+        <div class="block-definition">
+            <strong>➗ The Quotient Rule Shortcut</strong>
+            <p>Use this when functions are <strong>divided (fractions)</strong>: <span class="math-inline">h(x) = <span class="frac"><span class="top">u</span><span class="bottom">v</span></span></span></p>
             
-            <div class="math-block" style="background: #090d16; padding: 10px; border-radius: 6px; font-size: 1.1rem; text-align: center; border: 1px solid #334155; margin-bottom: 12px;">
-                <span class="frac"><span class="top">u' &middot; v &minus; u &middot; v'</span><span class="bottom">v<sup>2</sup></span></span>
+            <div class="math-block" style="text-align: center; margin: 15px 0;">
+                <strong class="frac" style="color: var(--neon-green);"><strong class="top">u' &middot; v &minus; u &middot; v'</strong><strong class="bottom">v<sup>2</sup></strong></strong>
             </div>
             
-            <div style="font-size: 0.8rem; line-height: 1.5; color: var(--text-main); margin-bottom: 12px;">
-                <strong>Out loud:</strong> <span style="color: var(--text-muted);">"Derivative of Numerator &times; Denominator &minus; Numerator &times; Derivative of Denominator, all over Denominator squared."</span>
-            </div>
+            <p><strong>Out loud:</strong> <span style="color: var(--text-muted);">"Derivative of Numerator &times; Denominator &minus; Numerator &times; Derivative of Denominator, all over Denominator squared."</span></p>
 
-            <div style="background: rgba(251, 146, 60, 0.1); border-left: 3px solid var(--neon-amber); padding: 10px; border-radius: 4px; font-size: 0.8rem; line-height: 1.4;">
-                <strong style="color: var(--neon-amber);">⚠️ The Trap:</strong> You <strong>must</strong> differentiate the numerator first. Order matters for subtraction!
+            <!-- Inline trap transformed cleanly into your native block-attention style -->
+            <div class="block-attention" style="margin-top: 12px; padding: 10px; font-size: 0.8rem;">
+                <strong>⚠️ The Trap:</strong> You <strong>must</strong> differentiate the numerator first. Order matters for subtraction!
             </div>
         </div>
-
-    </div>
 </div>
+
 
 
 
@@ -140,48 +144,53 @@
         <p style="margin-top: 0; font-size: 0.9rem; color: var(--text-muted);">For curious minds: here is the step-by-step calculus machinery that proves our shortcuts always work.</p>
         
         <!-- MINIMALIST EXPANSION FRAMEWORK (NO MORE OUTER BOX BACKGROUNDS) -->
-        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px; height: auto !important; overflow: visible !important;">
+        <div style="display: flex; flex-direction: column; gap: 0; margin-top: 16px; height: auto !important; overflow: visible !important;">
+
             
-            <!-- PROOF 1: PRODUCT RULE -->
-            <div style="border-bottom: 1px solid #1e293b; padding-bottom: 16px;">
+            <!-- PROOF 1: PRODUCT RULE (Mapped Natively to Pink Theorem Protocol Layout) -->
+            <div class="block-theorem">
                 <details open style="cursor: pointer;">
-                    <summary style="font-weight: bold; color: var(--neon-green); font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px;">
-                        <span>📐 Proving the Product Rule (Limit Approach)</span>
+                    <summary style="font-weight: bold; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px;">
+                        <strong>📐 Proving the Product Rule (Limit Approach)</strong>
                         <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">[Click to toggle]</span>
                     </summary>
                     
                     <div style="margin-top: 12px; font-size: 0.9rem; line-height: 1.7; color: var(--text-main); cursor: default; padding-left: 4px;">
                         <p style="margin-top: 0;">Let's look at the extra area pieces from our dynamic rectangle on Slide 1 when the side lengths grow by <span class="math-inline">&Delta;u</span> and <span class="math-inline">&Delta;v</span>:</p>
                         
-                        <!-- CLEAN OPEN FORMULA DISPLAY -->
-                        <div style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; color: #cbd5e1; letter-spacing: 0.5px;">
+                        <!-- CLEAN OPEN FORMULA DISPLAY WITH SYSTEM FORMULA STYLING -->
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; letter-spacing: 0.5px;">
                             &Delta;Area = u &middot; &Delta;v + v &middot; &Delta;u + &Delta;u &middot; &Delta;v
                         </div>
                         
                         <p>To calculate the rate of change, we divide every single piece by the input step change <span class="math-inline">&Delta;x</span>:</p>
                         
-                        <div style="font-size: 1.15rem; text-align: center; margin: 20px 0; color: #cbd5e1;">
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 20px 0;">
                             <span class="frac"><span class="top">&Delta;Area</span><span class="bottom">&Delta;x</span></span> = u &middot; <span class="frac"><span class="top">&Delta;v</span><span class="bottom">&Delta;x</span></span> + v &middot; <span class="frac"><span class="top">&Delta;u</span><span class="bottom">&Delta;x</span></span> + &Delta;u &middot; <span class="frac"><span class="top">&Delta;v</span><span class="bottom">&Delta;x</span></span>
                         </div>
                         
                         <p>Now, we see what happens at the calculus limit as the step shrinks all the way to zero (<span class="math-inline">&Delta;x &rarr; 0</span>). The fraction steps transform into exact derivatives (<span class="math-inline">u'</span> and <span class="math-inline">v'</span>), and the leftover change value <span class="math-inline">&Delta;u</span> completely vanishes down to <strong>0</strong>:</p>
                         
-                        <div style="font-size: 1.2rem; text-align: center; margin: 20px 0; color: var(--neon-green); font-weight: bold;">
-                            Area' = u &middot; v' + v &middot; u' + (0 &middot; v') &mdash;&rarr; u &middot; v' + v &middot; u'
+                        <div class="math-block" style="font-size: 1.2rem; text-align: center; margin: 20px 0; font-weight: bold;">
+                            Area' = u &middot; v' + v &middot; u' + (0 &middot; v') <span style="color: var(--neon-blue);">&mdash;&rarr; u &middot; v' + v &middot; u'</span>
                         </div>
                         
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 12px; border-left: 2px solid #334155; padding-left: 10px;">
-                            ✨ Because that tiny corner box (<span class="math-inline">&Delta;u&Delta;v</span>) scales down in two directions at once, it completely disappears at the limit level!
+                        <!-- Visual structural footnote mapped to high-contrast nested wrapper layout -->
+                        <div class="block-solution" style="margin-top: 16px; padding: 12px 14px;">
+                            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin: 0; line-height: 1.5; text-align: left;">
+                                <strong style="color: var(--neon-blue); font-style: normal; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">✨ LIMIT OBSERVED COEFFICIENT:</strong>
+                                Because that tiny corner box (<span class="math-inline">&Delta;u&Delta;v</span>) scales down in two directions at once, it completely disappears at the limit level!
+                            </p>
                         </div>
                     </div>
                 </details>
             </div>
 
-            <!-- PROOF 2: QUOTIENT RULE -->
-            <div style="border-bottom: 1px solid #1e293b; padding-bottom: 16px;">
+            <!-- PROOF 2: QUOTIENT RULE (Mapped Natively to Pink Theorem Protocol Layout) -->
+            <div class="block-theorem">
                 <details style="cursor: pointer;">
-                    <summary style="font-weight: bold; color: var(--neon-blue); font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px;">
-                        <span>📐 Proving the Quotient Rule (Product Flip Approach)</span>
+                    <summary style="font-weight: bold; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px;">
+                        <strong>📐 Proving the Quotient Rule (Product Flip Approach)</strong>
                         <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">[Click to toggle]</span>
                     </summary>
                     
@@ -190,31 +199,32 @@
                         
                         <p>Let our function fraction be defined as <span class="math-inline">f(x) = <span class="frac"><span class="top">u</span><span class="bottom">v</span></span></span>. If we multiply both sides by the bottom value (<span class="math-inline">v</span>), we can rewrite it like this:</p>
                         
-                        <div style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; color: #cbd5e1;">
+                        <!-- CLEAN OPEN FORMULA DISPLAY WITH SYSTEM FORMULA STYLING -->
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; letter-spacing: 0.5px;">
                             u = f &middot; v
                         </div>
                         
                         <p>Now, let's use the **Product Rule shortcut** we just proved above to differentiate both sides cleanly:</p>
                         
-                        <div style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; color: #cbd5e1;">
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 16px 0; font-weight: bold; letter-spacing: 0.5px;">
                             u' = f' &middot; v + f &middot; v'
                         </div>
                         
                         <p>Our final goal is to isolate the fractional derivative term (<span class="math-inline">f'</span>). Let's swap the positions and substitute <span class="math-inline">f = <span class="frac"><span class="top">u</span><span class="bottom">v</span></span></span> right back into our formula sequence:</p>
                         
-                        <div style="font-size: 1.15rem; text-align: center; margin: 20px 0; color: #cbd5e1;">
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 20px 0;">
                             f' &middot; v = u' &minus; (<span class="frac"><span class="top">u</span><span class="bottom">v</span></span>) &middot; v'
                         </div>
                         
                         <p>To clean up the fractional subtraction on the right side, we bring them to a common denominator by multiplying <span class="math-inline">u'</span> by <span class="math-inline"><span class="frac"><span class="top">v</span><span class="bottom">v</span></span></span>:</p>
                         
-                        <div style="font-size: 1.15rem; text-align: center; margin: 20px 0; color: #cbd5e1;">
+                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 20px 0;">
                             f' &middot; v = <span class="frac"><span class="top">u' &middot; v &minus; u &middot; v'</span><span class="bottom">v</span></span>
                         </div>
                         
                         <p>Finally, divide both sides by the remaining <span class="math-inline">v</span> factor to isolate our final finished identity:</p>
                         
-                        <div style="font-size: 1.25rem; text-align: center; margin: 20px 0; color: var(--neon-blue); font-weight: bold;">
+                        <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 20px 0; font-weight: bold; color: var(--neon-blue);">
                             f' = <span class="frac"><span class="top">u' &middot; v &minus; u &middot; v'</span><span class="bottom">v<sup>2</sup></span></span>
                         </div>
                     </div>
@@ -225,134 +235,177 @@
     </div>
 
 
+
     <!-- Slide 3: Worked Examples -->
     <div class="slide-content" id="slide-3">
-        <h3>3. Worked Examples</h3>
+        <h3>Worked Examples</h3>
         <p style="margin-top: 0; font-size: 0.9rem; color: var(--text-muted);">Study these step-by-step applications to master the structural patterns of the Product and Quotient Rules.</p>
 
         <!-- 📘 EXAMPLE 7.1 CARD: PRODUCT RULE APPLICATION -->
-        <div class="example" style="margin-bottom: 20px;">
+        <div class="block-example" style="margin-bottom: 20px;">
             <strong>Example 7.1:</strong> Find the derivative function <span class="math-inline">f'(x)</span>:
-            <div class="math-block" style="margin: 10px 0; font-size: 1.05rem;">f(x) = x<sup>2</sup> &middot; sin(x)</div>
+            <div class="math-block" style="margin: 15px 0 10px 0; font-size: 1.05rem; text-align: center;">f(x) = x<sup>2</sup> &middot; sin(x)</div>
             
-            <strong>Solution Steps:</strong>
-            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
-                <li>Identify pieces and separate individual terms: <span class="math-inline">u = x<sup>2</sup> &rArr; u' = 2x</span> and <span class="math-inline">v = sin(x) &rArr; v' = cos(x)</span></li>
-                <li>Assemble into the Product Rule structure <span class="math-inline">u'v + uv'</span>: <br><span class="math-inline">(2x) &middot; sin(x) + x<sup>2</sup> &middot; cos(x)</span></li>
-                <li style="list-style: none; margin-left: -20px; margin-top: 6px;">
-                    <span style="color: var(--neon-green); font-weight: bold;">f'(x) = 2x&middot;sin(x) + x<sup>2</sup>&middot;cos(x)</span>
-                </li>
-            </ol>
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
+                    <li><span>Identify pieces:</span> Separate the individual terms: <span class="math-inline">u = x<sup>2</sup> &rArr; u' = 2x</span> and <span class="math-inline">v = sin(x) &rArr; v' = cos(x)</span></li>
+                    <li><span>Assemble terms:</span> Place into the Product Rule structure <span class="math-inline">u'v + uv'</span>: <br><span class="math-inline">(2x) &middot; sin(x) + x<sup>2</sup> &middot; cos(x)</span></li>
+                    <li>
+                        <span>State final derivative:</span> The terms are fully aligned:
+                        <div class="math-block" style="color: var(--neon-cyan); margin-top: 8px;">
+                            f'(x) = 2x&middot;sin(x) + x<sup>2</sup>&middot;cos(x)
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
 
         <!-- 📘 EXAMPLE 7.2 CARD: QUOTIENT RULE CONVERSION -->
-        <div class="example" style="border-left-color: var(--neon-cyan); background-color: #0c1e36;">
+        <div class="block-example" style="margin-bottom: 0;">
             <strong>Example 7.2:</strong> Differentiate the fractional quotient expression:
-            <div class="math-block" style="margin: 10px 0; font-size: 1.05rem;">
+            <div class="math-block" style="margin: 15px 0 10px 0; font-size: 1.05rem; text-align: center;">
                 g(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">x<sup>3</sup></span></span>
             </div>
             
-            <strong>Solution Steps:</strong>
-            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
-                <li>Identify components: <span class="math-inline">u = e<sup>x</sup> &rArr; u' = e<sup>x</sup></span> and <span class="math-inline">v = x<sup>3</sup> &rArr; v' = 3x<sup>2</sup></span></li>
-                <li>Apply Quotient Rule framework <span class="math-inline"><span class="frac"><span class="top">u'v &minus; uv'</span><span class="bottom">v<sup>2</sup></span></span></span>: <br><span class="math-inline">g'(x) = <span class="frac"><span class="top">e<sup>x</sup>(x<sup>3</sup>) &minus; e<sup>x</sup>(3x<sup>2</sup>)</span><span class="bottom">(x<sup>3</sup>)<sup>2</sup></span></span></span></li>
-                <li>Factor out shared expressions from numerator: <span class="math-inline">g'(x) = <span class="frac"><span class="top">x<sup>2</sup>e<sup>x</sup>(x &minus; 3)</span><span class="bottom">x<sup>6</sup></span></span></span></li>
-                <li style="list-style: none; margin-left: -20px; margin-top: 6px;">
-                    <span style="color: var(--neon-blue); font-weight: bold;">g'(x) = <span class="frac"><span class="top">e<sup>x</sup>(x &minus; 3)</span><span class="bottom">x<sup>4</sup></span></span></span>
-                </li>
-            </ol>
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
+                    <li><span>Identify components:</span> Track the numerator and denominator: <span class="math-inline">u = e<sup>x</sup> &rArr; u' = e<sup>x</sup></span> and <span class="math-inline">v = x<sup>3</sup> &rArr; v' = 3x<sup>2</sup></span></li>
+                    <li><span>Apply framework:</span> Map to Quotient Rule structure <span class="math-inline"><span class="frac"><span class="top">u'v &minus; uv'</span><span class="bottom">v<sup>2</sup></span></span></span>: <br><span class="math-inline">g'(x) = <span class="frac"><span class="top">e<sup>x</sup>(x<sup>3</sup>) &minus; e<sup>x</sup>(3x<sup>2</sup>)</span><span class="bottom">(x<sup>3</sup>)<sup>2</sup></span></span></span></li>
+                    <li><span>Factor numerator:</span> Pull out the shared expressions: <span class="math-inline">g'(x) = <span class="frac"><span class="top">x<sup>2</sup>e<sup>x</sup>(x &minus; 3)</span><span class="bottom">x<sup>6</sup></span></span></span></li>
+                    <li>
+                        <span>State final derivative:</span> Cancel out common base factors to solve:
+                        <div class="math-block" style="color: var(--neon-cyan); margin-top: 8px;">
+                            g'(x) = <span class="frac"><span style="color: var(--neon-cyan);" class="top">e<sup>x</sup>(x &minus; 3)</span><span style="color: var(--neon-cyan);" class="bottom">x<sup>4</sup></span></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
+
+
+
 
 
     <!-- Slide 4: Practice Lab -->
     <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-        <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+        <h3 style="color: var(--neon-amber); margin-top: 0; margin-bottom: 5px;">🏋️ Mandatory Written Exercises</h3>
+        <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
         
-        <!-- Exercise 7.1 -->
-        <div class="exercise-block">
-            <div class="exercise-title">Exercise 7.1</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Use the Product Rule to calculate the derivative function f'(x) for each mixed transcendental expression. Simplify your final expressions completely.</p>
-            <div class="grid-2">
-                <div class="exercise-item">a)&nbsp;<span class="math-inline">f(x) = x<sup>3</sup> &middot; e<sup>x</sup></span></div>
-                <div class="exercise-item">b)&nbsp;<span class="math-inline">f(x) = sin(x) &middot; cos(x)</span></div>
-                <div class="exercise-item">c)&nbsp;<span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x</span> &middot; ln(x)</span></div>
-                <div class="exercise-item">d)&nbsp;<span class="math-inline">f(x) = e<sup>x</sup> &middot; cos(x)</span></div>
+        <!-- 🟨 EXERCISE 7.1: PRODUCT RULE APPLICATION -->
+        <div class="block-exercise" style="margin-bottom: 20px;">
+            <div class="exercise-title">Exercise 7.1: Product Rule Mastery</div>
+            <p>Use the Product Rule to calculate the derivative function f'(x) for each mixed transcendental expression. Simplify your final expressions completely:</p>
+            <div class="grid-4">
+                <div class="exercise-item">
+                    <span>a) <span class="math-inline">f(x) = x<sup>3</sup> &middot; e<sup>x</sup></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) <span class="math-inline">f(x) = sin(x) &middot; cos(x)</span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) <span class="math-inline">f(x) = <span class="sqrt-sym">&radic;</span><span class="sqrt">x</span> &middot; ln(x)</span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d) <span class="math-inline">f(x) = e<sup>x</sup> &middot; cos(x)</span></span>
+                </div>
             </div>
         </div>
 
-        <!-- Exercise 7.2 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-green); background-color: #0c1e36; margin-top: 20px;">
-            <div class="exercise-title">Exercise 7.2</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Use the Quotient Rule to calculate the simplified formula for the derivative function g'(x).</p>
-            <div class="grid-2">
-                <div class="exercise-item">a)&nbsp;<span class="math-inline">g(x) = <span class="frac"><span class="top">ln(x)</span><span class="bottom">x<sup>2</sup></span></span></span></div>
-                <div class="exercise-item">b)&nbsp;<span class="math-inline">g(x) = <span class="frac"><span class="top">sin(x)</span><span class="bottom">e<sup>x</sup></span></span></span></div>
-                <div class="exercise-item">c)&nbsp;<span class="math-inline">g(x) = <span class="frac"><span class="top">x + 1</span><span class="bottom">tan(x)</span></span></span></div>
-                <div class="exercise-item">d)&nbsp;<span class="math-inline">g(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">ln(x)</span></span></span></div>
+        <!-- 🟨 EXERCISE 7.2: QUOTIENT RULE CONVERSION -->
+        <div class="block-exercise" style="margin-bottom: 20px;">
+            <div class="exercise-title">Exercise 7.2: Quotient Rule Foundations</div>
+            <p>Use the Quotient Rule to calculate the simplified formula for the derivative function g'(x):</p>
+            <div class="grid-4">
+                <div class="exercise-item">
+                    <span>a) <span class="math-inline">g(x) = <span class="frac"><span class="top">ln(x)</span><span class="bottom">x<sup>2</sup></span></span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) <span class="math-inline">g(x) = <span class="frac"><span class="top">sin(x)</span><span class="bottom">e<sup>x</sup></span></span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) <span class="math-inline">g(x) = <span class="frac"><span class="top">x + 1</span><span class="bottom">tan(x)</span></span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d) <span class="math-inline">g(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">ln(x)</span></span></span></span>
+                </div>
             </div>
         </div>
 
-        <!-- Exercise 7.3 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-blue); background-color: #0c1e36; margin-top: 20px;">
-            <div class="exercise-title">Exercise 7.3 [Advanced Challenge]</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">A mixed transcendental profile curve is defined by the function f(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">x − 1</span></span> for x &ne; 1.</p>
+        <!-- 🟨 EXERCISE 7.3: ADVANCED TRANSCENDENTAL CHALLENGE -->
+        <div class="block-exercise">
+            <div class="exercise-title">Exercise 7.3: Advanced Transcendental Profile Curve [Challenge]</div>
+            <p>A mixed transcendental profile curve is defined by the function f(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">x − 1</span></span> for x &ne; 1.</p>
             
-            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; margin-top: 12px; height: auto !important; overflow: visible !important;">
+            <div class="split-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: stretch; margin-top: 15px;">
                 
-                <!-- Left Column: Analytical Tasks -->
-                <div style="font-size: 0.85rem; line-height: 1.6; color: var(--text-main);">
-                    <div style="margin-bottom: 8px;"><strong>a)</strong> Use the Quotient Rule to find the simplified derivative function <span class="math-inline">f'(x)</span>.</div>
-                    <div><strong>b)</strong> Find the equation of the tangent line (<span class="math-inline">y = mx + p</span>) to this curve at the specific domain location where <span class="math-inline">x = 2</span>.</div>
+                <!-- Left Column: Analytical Tasks layout inside standard item array -->
+                <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
+                    <div class="exercise-item" style="width: 100%;">
+                        <span><strong>a)</strong> Use the Quotient Rule to find the simplified derivative function <span class="math-inline">f'(x)</span>.</span>
+                    </div>
+                    <div class="exercise-item" style="width: 100%;">
+                        <span><strong>b)</strong> Find the equation of the tangent line (<span class="math-inline">y = mx + p</span>) to this curve at the domain location where <span class="math-inline">x = 2</span>.</span>
+                    </div>
                 </div>
                 
                 <!-- STANDALONE TRANSCENDENTAL VECTOR GRID TERRAIN -->
-                <div style="background: #090d16; padding: 16px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; border: 1px solid #1e293b; min-width: 0;">
-                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">📊 TANGENT GEOMETRY LANDSCAPE</div>
+                <div class="visual-wrapper" style="margin: 0; padding: 16px; min-width: 0;">
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; width: 100%; text-align: center;">📊 TANGENT GEOMETRY LANDSCAPE</div>
                     
-                    <svg viewBox="-20 -20 180 180" width="100%" style="max-width: 240px; display: block; font-family: monospace;">
-                        <!-- Grid Layer -->
-                        <g stroke="rgba(255,255,255,0.03)" stroke-width="0.5">
-                            <line x1="0" y1="0" x2="160" y2="0" /><line x1="0" y1="25" x2="160" y2="25" />
-                            <line x1="0" y1="50" x2="160" y2="50" /><line x1="0" y1="75" x2="160" y2="75" />
-                            <line x1="0" y1="100" x2="160" y2="100" /><line x1="125" y1="125" x2="160" y2="125" />
-                            <line x1="0" y1="150" x2="160" y2="150" />
-                            <line x1="0" y1="0" x2="0" y2="160" /><line x1="25" y1="0" x2="25" y2="160" />
-                            <line x1="50" y1="0" x2="50" y2="160" /><line x1="75" y1="0" x2="75" y2="160" />
-                            <line x1="100" y1="0" x2="100" y2="160" /><line x1="125" y1="125" x2="125" y2="160" />
-                            <line x1="150" y1="0" x2="150" y2="160" />
+                    <svg viewBox="-20 -20 180 180" width="100%" style="max-width: 240px; display: block; font-family: monospace; margin: 0 auto;">
+                        <!-- Full Mathematical Mesh Alignment Grid (Continuous uniform 25px spans) -->
+                        <g stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.5">
+                            <!-- Horizontal Lines across the entire viewport width -->
+                            <line x1="0" y1="0" x2="150" y2="0" />
+                            <line x1="0" y1="25" x2="150" y2="25" />
+                            <line x1="0" y1="50" x2="150" y2="50" />
+                            <line x1="0" y1="75" x2="150" y2="75" />
+                            <line x1="0" y1="100" x2="150" y2="100" />
+                            <line x1="0" y1="125" x2="150" y2="125" />
+                            <line x1="0" y1="150" x2="150" y2="150" />
+                            
+                            <!-- Vertical Lines across the entire viewport height -->
+                            <line x1="0" y1="0" x2="0" y2="150" />
+                            <line x1="25" y1="0" x2="25" y2="150" />
+                            <line x1="50" y1="0" x2="50" y2="150" />
+                            <line x1="75" y1="0" x2="75" y2="150" />
+                            <line x1="100" y1="0" x2="100" y2="150" />
+                            <line x1="125" y1="0" x2="125" y2="150" />
+                            <line x1="150" y1="0" x2="150" y2="150" />
                         </g>
 
-                        <!-- Axes vectors -->
-                        <line x1="0" y1="140" x2="155" y2="140" stroke="#475569" stroke-width="1.2" />
-                        <line x1="20" y1="0" x2="20" y2="160" stroke="#475569" stroke-width="1.2" />
+                        <!-- Axes vectors adjusted to match the 25px integer mesh intersections perfectly -->
+                        <line x1="0" y1="125" x2="155" y2="125" stroke="#475569" stroke-width="1.2" /> <!-- Solid X-Axis aligned at Y=125 -->
+                        <line x1="25" y1="0" x2="25" y2="150" stroke="#475569" stroke-width="1.2" />  <!-- Solid Y-Axis aligned at X=25 -->
                         
-                        <text x="155" y="148" fill="#64748b" font-size="7" text-anchor="middle">x</text>
-                        <text x="12" y="8" fill="#64748b" font-size="7" text-anchor="middle">y</text>
+                        <text x="155" y="133" fill="#64748b" font-size="7" text-anchor="middle">x</text>
+                        <text x="17" y="8" fill="#64748b" font-size="7" text-anchor="middle">y</text>
                         
-                        <text x="45" y="148" fill="#475569" font-size="6" text-anchor="middle">1</text>
-                        <text x="70" y="148" fill="#475569" font-size="6" text-anchor="middle">2</text>
-                        <text x="12" y="33" fill="#475569" font-size="6" text-anchor="middle">e²</text>
+                        <!-- Mathematical Milestone Labels locked onto real grid intersection locations -->
+                        <text x="50" y="135" fill="#475569" font-size="6" text-anchor="middle" font-weight="bold">1</text>
+                        <text x="75" y="135" fill="#475569" font-size="6" text-anchor="middle" font-weight="bold">2</text>
 
-                        <!-- Asymptote indicator boundary line (x = 1) -->
-                        <line x1="45" y1="0" x2="45" y2="160" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3,2" />
+                        <!-- Asymptote indicator boundary line matched perfectly onto the X=50 coordinate line (x = 1) -->
+                        <line x1="50" y1="0" x2="50" y2="150" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3,2" />
 
                         <!-- Curve branch plot line representing e^x / (x-1) -->
-                        <path d="M 50 15 Q 55 70 70 85 T 150 10" fill="none" stroke="var(--neon-cyan)" stroke-width="1.8" stroke-linecap="round" />
-                        <text x="125" y="45" fill="var(--neon-cyan)" font-size="7" font-weight="bold">f(x)</text>
+                        <path d="M 55,15 Q 60,70 75,85 T 150,10" fill="none" stroke="var(--neon-amber)" stroke-width="1.8" stroke-linecap="round" />
+                        <text x="130" y="45" fill="var(--neon-amber)" font-size="7" font-weight="bold">f(x)</text>
 
-                        <!-- Highlight target point node (2, e²) -->
-                        <circle cx="70" cy="85" r="3" fill="#f43f5e" />
-                        <!-- 🏷️ SHIFTED CLEARLY BELOW THE DOT -->
-                        <text x="70" y="100" fill="#cbd5e1" font-size="6.5" font-weight="bold" text-anchor="middle">(2, e²)</text>
+                        <!-- Highlight target point node synced flawlessly at the intersection layout coordinate (2, e²) -->
+                        <circle cx="75" cy="85" r="3" fill="#f43f5e" />
                     </svg>
                 </div>
+
             </div>
         </div>
 
-
     </div>
+
+
 
 
     <!-- Slide 5: Milestone Gatekeeper -->

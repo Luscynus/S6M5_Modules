@@ -120,10 +120,15 @@ body {
     position: relative;
 }
 
-/* 🔄 SNAKE FLIP ENGINE: Reverses structural flex directions on alternate rows automatically */
+/* 🔄 SNAKE FLIP ENGINE: Reverses structural flex directions on alternate rows automatically 
 .map-track-row:nth-child(even) {
     flex-direction: row-reverse;
-}
+}*/
+
+/* 🔄 SNAKE FLIP ENGINE: Reverses structural flex directions on alternate rows automatically 
+.map-track-row:nth-child(even) {
+    flex-direction: row-reverse;
+}*/
 
 /* Ensure node layout frames stay cleanly centered */
 .map-node {
@@ -139,11 +144,6 @@ body {
     color: var(--text-muted);
 }
 
-
-/* 🔄 SNAKE FLIP ENGINE: Reverses structural flex directions on alternate rows automatically */
-.map-track-row:nth-child(even) {
-    flex-direction: row-reverse;
-}
 
 /* The item wrapper frame hosting the dot bubble and labels */
 .map-node-container {
@@ -261,6 +261,7 @@ body {
     --neon-amber: #f59e0b;
     --neon-pink: #f43f5e;
     --neon-danger: #ef4444;
+    --neon-purple: #a855f7;
     --border-glow: #1e293b;
 }
 
@@ -395,14 +396,142 @@ strong {
     color: var(--text-main); 
 }
 
-.example { 
-    border-left: 4px solid var(--neon-green); 
-    background-color: #0f2d22; 
-    padding: 15px; 
+/* ==========================================================================
+   📘 CYAN MODE: SHOWCASE / GUIDED EXAMPLES
+   ========================================================================== */
+.block-example { 
+    /* Deep neutralized navy-charcoal matching the dashboard canvas */
+    background-color: #0b132b !important; 
+    border-left: 4px solid var(--neon-cyan); 
+    padding: 20px; 
     border-radius: 4px; 
-    margin: 15px 0; 
+    margin: 20px 0; 
     color: var(--text-main); 
 }
+
+/* 📝 Unified Child Element: Instruction Sub-Text Description */
+.block-example p {
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+    line-height: 1.4 !important;
+}
+
+/* ==========================================================================
+   🟩 SOLUTION CONTENT BLOCKS (Nested Step Containers)
+   ========================================================================== */
+.block-solution {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-glow);
+    border-radius: 6px;
+    padding: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+
+/* Typography alignment resets for solution steps inside the block */
+.block-solution ol {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.block-solution li {
+    margin-top: 8px;
+}
+
+/* Ensure step headers inherit primary text contrast colors */
+.block-solution li span {
+    color: var(--text-main);
+}
+
+
+/* ==========================================================================
+   📊 UNIVERSAL GRAPHICS CARD WRAPPER (STANDALONE & GLOBAL)
+   ========================================================================== */
+.visual-wrapper {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    background-color: #111a36 !important;   /* Beautiful floating surface layer color */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Muted structural outer border line */
+    padding: 18px; 
+    border-radius: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* 🎨 OPTIONAL CONTEXT-AWARE RIM GLOWS */
+.block-example .visual-wrapper {
+    border-color: rgba(0, 243, 255, 0.2) !important; /* Low-opacity cyan glow inside examples */
+}
+
+.block-definition .visual-wrapper {
+    border-color: rgba(16, 185, 129, 0.2) !important; /* Low-opacity emerald glow inside definitions */
+}
+
+/* If a visual graphic sits inside a Neon Amber Exercise block */
+.block-exercise .visual-wrapper {
+    border-color: rgba(245, 158, 11, 0.22) !important;
+}
+
+/* If a visual graphic sits inside a Neon Pink Theorem block */
+.block-theorem .visual-wrapper {
+    border-color: rgba(59, 130, 246, 0.22) !important;
+}
+
+/* ==========================================================================
+   📊 GRAPHICS MASK ENGINE (GLOBAL FALLBACK ENHANCEMENT)
+   ========================================================================== */
+.visual-wrapper svg circle[fill="#090d16"] {
+    fill: #111a36 !important; /* Seamless backfield blending anywhere on the dashboard */
+}
+
+
+/* ==========================================================================
+   🚀 6. CALCULUS PREVIEWS / ADVANCED INSIGHTS (Electric Purple)
+   ========================================================================== */
+.block-preview {
+    background-color: rgba(168, 85, 247, 0.05) !important; /* Premium translucent purple fill */
+    border-left: 4px solid #a855f7; 
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+    color: var(--text-main);
+}
+
+.block-preview strong {
+    color: #a855f7;
+    letter-spacing: 0.5px;
+}
+
+.block-preview p {
+    font-size: 0.85rem !important;
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+    color: var(--text-main) !important;
+    line-height: 1.4 !important;
+}
+
+.block-preview ul {
+    margin: 8px 0 0 0; 
+    padding-left: 20px; 
+    font-size: 0.85rem; 
+    line-height: 1.5;
+}
+
+.block-preview li {
+    color: var(--text-muted);
+}
+
+
+
 
 /* 🧮 INTERACTIVE MATH ENGRAVED TEXT FORMATS */
 .math-inline { 
@@ -443,36 +572,121 @@ strong {
     line-height: 1; 
 }
 
-/* 🏋️ PRACTICE LAB & WRITTEN WORKBOOK EXERCISE CARDS */
-.exercise-block { 
-    background: #1e293b; 
+/* ==========================================================================
+   🟨 PRACTICE LAB & WRITTEN WORKBOOK EXERCISE CARDS
+   ========================================================================== */
+.block-exercise { 
+    background-color: #0b132b !important; 
     border-left: 4px solid var(--neon-amber); 
     padding: 15px; 
     border-radius: 4px; 
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    color: var(--text-main); 
 }
 
-.exercise-title { 
-    color: var(--text-main); 
+.block-exercise .exercise-title { 
+    color: var(--neon-amber) !important;      
     font-weight: 700; 
     margin-bottom: 12px; 
 }
 
-.exercise-item { 
-    background: #0f172a; 
-    border: 1px solid var(--border-glow); 
-    padding: 14px; 
-    border-radius: 6px; 
-    color: var(--text-main); 
-    display: flex; 
-    align-items: center; 
+.block-exercise p {
+    font-size: 0.85rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    color: var(--text-muted) !important;
+    line-height: 1.4 !important;
 }
 
+/* 🧮 1. GLOBAL WORKBOOK CARD CONTAINER (Works flawlessly anywhere) */
+.exercise-item { 
+    background-color: #111a36 !important; 
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; 
+    padding: 12px 14px !important; 
+    border-radius: 6px; 
+    color: var(--text-main); 
+    box-sizing: border-box !important; /* ⚡ STOPS EXPANSION OVERFLOWS */
+    
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+/* ✨ Interactive Hover Polish */
+.exercise-item:hover {
+    border-color: var(--neon-amber) !important;
+    background-color: rgba(255, 159, 67, 0.04) !important; 
+    transform: translateY(-1px);
+}
+
+/* 🥞 2. AUTOMATED MULTI-STEP STACK ENGINE */
+.layout-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* When an item lives inside a stack, reshape it cleanly to read vertically */
+.layout-stack .exercise-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 4px;
+}
+
+/* 📋 Clean Sub-Detail Hint Strings inside Stacks */
+.block-exercise .exercise-item .item-detail {
+    display: block;
+    font-size: 0.8rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 4px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+/* 🌐 GLOBAL CARD GRID CONTAINER */
 .grid-2 { 
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 12px; 
+    width: 100%;
 }
+
+/* 📐 BALANCED 3-COLUMN ENGINE (Perfect for 3 or 6 items) */
+.grid-3 {
+    display: grid;
+    /* Forces exactly 3 equal columns on desktop, automatically dropping to 2 or 1 columns on smaller viewports */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+/* 📐 SYMMETRICAL 2-COLUMN ENGINE (Perfect for pairs or clean 2-column stacks) */
+.grid-4 {
+    display: grid;
+    /* 🔄 Changed to repeat(2, 1fr) for a guaranteed side-by-side split on desktop sheets */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+/* 📱 Responsive override for smaller viewports (Tablets and Mobiles) */
+@media (max-width: 600px) {
+    .grid-4 {
+        /* Collapses into a single vertical stack so code components don't clip on small phones */
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* 🕹️ CONTROLS & READOUT INTERACTION COMPONENTS */
 .slider-control { 
@@ -502,3 +716,82 @@ strong {
     transition: background 0.2s;
 }
 .btn-action:hover { background: var(--neon-cyan); }
+
+
+/* 🟢 2. CORE DEFINITIONS / VOCABULARY (Emerald Green) */
+.block-definition {
+    background-color: #0b132b !important;
+    border-left: 4px solid #10b981; /* Premium Emerald Green */
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    color: var(--text-main);
+}
+
+/* Sub-text description wrapper formatting for Definitions (Green) */
+.block-definition p {
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+    line-height: 1.4 !important;
+}
+
+.block-definition strong {
+    color: #10b981;
+}
+
+
+/* 🟥 4. THEOREMS / CRITICAL FORMULAS (Neon Pink/Crimson) */
+.block-theorem {
+    background-color: #0b132b !important;
+    border-left: 4px solid #3b82f6; /* Vibrant Pink/Crimson */
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    color: var(--text-main);
+}
+
+/* Sub-text description wrapper formatting for Theorems (Pink) */
+.block-theorem p {
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+    line-height: 1.4 !important;
+}
+
+.block-theorem strong {
+    color: #3b82f6;
+}
+.block-theorem .inner-card {
+    background-color: #111a36 !important;
+    border: 1px solid rgba(59, 130, 246, 0.22) !important;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+/* 🚨 5. ATTENTION / WARNING / COMMON TRAPS (Vibrant Red) */
+.block-attention {
+    /* Subtle deep-red tint to make it feel dangerous without breaking the blue background theme */
+    background-color: #1a0f12 !important; 
+    border-left: 4px solid #ef4444; /* High-visibility Warning Red */
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    color: var(--text-main);
+}
+
+/* Sub-text description wrapper formatting for Attention/Warning Blocks (Red) */
+.block-attention p {
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+    line-height: 1.4 !important;
+}
+
+.block-attention strong {
+    color: #ef4444;
+}

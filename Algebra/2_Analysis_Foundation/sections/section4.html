@@ -18,334 +18,457 @@
     </div>
 
 
-    <!-- Slide 1: Limit Concept -->
-    <div class="slide-content active" id="slide-1">
-        <h3>The Limit of a Function</h3>
-        <p>A limit tracks the output trajectory of a function as its input value approaches a specific point <span class="math-inline">c</span>. It isolates behavior nearby without caring about the value at the exact spot:</p>
-        
-        <div class="math-block" style="color: var(--neon-cyan); font-weight: bold; font-size: 1.4rem; margin: 20px 0;">
+<!-- Slide 1: Limit Concept -->
+<div class="slide-content active" id="slide-1">
+    <h3>The Limit of a Function</h3>
+    <p>A limit tracks the output trajectory of a function as its input value approaches a specific point <span class="math-inline">c</span>. It isolates behavior nearby without caring about the value at the exact spot:</p>
+    
+    <!-- 📘 HARMONIZED CENTRAL MATHEMATICAL EQUATION FOCUS CARD -->
+    <div class="inner-card" style="text-align: center; padding: 12px 0; margin: 8px 0; border: 1px solid rgba(59, 130, 246, 0.1); background-color: rgba(59, 130, 246, 0.02);">
+        <span class="math-block" style="color: var(--neon-blue); font-weight: bold; font-size: 1.35rem; letter-spacing: 0.5px;">
             lim<sub>x &rarr; c</sub> f(x) = L
-        </div>
-        
-        <!-- Section A: Arithmetic Laws -->
-        <div class="box" style="border-left: 4px solid var(--neon-blue); margin-bottom: 20px;">
-            <strong>Linear Limit Distribution Laws:</strong>
-            <p style="font-size:0.85rem; margin-top:5px; color:var(--text-muted);">Provided limits exist independently, they distribute freely across standard arithmetic functions:</p>
-            <ul style="padding-left:15px; font-size:0.9rem;">
-                <li><strong>Sum Rule:</strong> lim [f(x) + g(x)] = lim f(x) + lim g(x)</li>
-                <li style="margin-top:8px;"><strong>Product Rule:</strong> lim [f(x) &middot; g(x)] = lim f(x) &middot; lim g(x)</li>
-                <li style="margin-top:8px;"><strong>Quotient Rule:</strong> lim [<span class="frac"><span class="top">f(x)</span><span class="bottom">g(x)</span></span>] = <span class="frac"><span class="top">lim f(x)</span><span class="bottom">lim g(x)</span></span> &nbsp; (if lim g &ne; 0)</li>
-            </ul>
-        </div>
-        
-        <!-- Section B: Expanded Indeterminate Forms -->
-        <div class="box" style="border-left: 4px solid var(--neon-pink);">
-            <strong>The 4 Algebraic Indeterminate Forms:</strong>
-            <p>Direct substitution frequently yields values that are mathematically undefined. These are <strong>indeterminate forms</strong>. They do not mean the limit doesn't exist, but rather that more structural work must be done to evaluate them:</p>
-            
-            <ul style="padding-left:15px; font-size:0.9rem; margin-top:12px;">
-                <li><strong>Cancellation Form (<span class="math-inline">0 &frasl; 0</span>):</strong> Indicates a removable hole. Resolved by factoring or rationalization.</li>
-                <li style="margin-top:8px;"><strong>Infinite Ratio (<span class="math-inline">&infin; &frasl; &infin;</span>):</strong> Arises when evaluating behaviors at infinity. Resolved by dividing by the highest denominator power.</li>
-                <li style="margin-top:8px;"><strong>Zero-Infinity Product (<span class="math-inline">0 &middot; &infin;</span>):</strong> Occurs when competing elements try to simultaneously ground out and explode. Resolved by rewriting as a fraction.</li>
-                <li style="margin-top:8px;"><strong>Infinite Difference (<span class="math-inline">&infin; &minus; &infin;</span>):</strong> Occurs when subtraction involves opposing values of indeterminate sizes. Resolved by finding common denominators.</li>
-            </ul>
-        </div>
+        </span>
     </div>
+    
+    <!-- 🟢 UPGRADED UNIFIED GREEN DEFINITION BLOCK -->
+    <div class="block-theorem">
+        <strong>Linear Limit Distribution Laws:</strong>
+        <p>Provided limits exist independently, they distribute freely across standard arithmetic functions:</p>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <li><strong>Sum Rule:</strong> lim [f(x) + g(x)] = lim f(x) + lim g(x)</li>
+            <li style="margin-top: 8px;"><strong>Product Rule:</strong> lim [f(x) &middot; g(x)] = lim f(x) &middot; lim g(x)</li>
+            <li style="margin-top: 8px;">
+                <strong>Quotient Rule:</strong> lim [<span class="frac"><span class="top">f(x)</span><span class="bottom">g(x)</span></span>] = <span class="frac"><span class="top">lim f(x)</span><span class="bottom">lim g(x)</span></span> &nbsp; <span style="color: var(--text-muted); font-size: 0.8rem;">(provided lim g(x) &ne; 0)</span>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- CRITICAL PROCEDURES BLOCK -->
+    <div class="block-definition" style="margin-top: 20px;">
+        <strong>The 4 Algebraic Indeterminate Forms:</strong>
+        <p>Direct substitution frequently yields values that are mathematically undefined. These are <strong>indeterminate forms</strong>. They do not mean the limit doesn't exist, but rather that more structural work must be done to evaluate them:</p>
+        
+        <ul style="margin: 12px 0 0 0; padding-left: 20px; line-height: 1.5;">
+            <li><strong>Cancellation Form (<span class="math-inline">0 &frasl; 0</span>):</strong> Indicates a removable hole. Resolved by factoring or rationalization.</li>
+            <li style="margin-top: 8px;"><strong>Infinite Ratio (<span class="math-inline">&infin; &frasl; &infin;</span>):</strong> Arises when evaluating behaviors at infinity. Resolved by dividing by the highest denominator power.</li>
+            <li style="margin-top: 8px;"><strong>Zero-Infinity Product (<span class="math-inline">0 &middot; &infin;</span>):</strong> Occurs when competing elements try to simultaneously ground out and explode. Resolved by rewriting as a fraction.</li>
+            <li style="margin-top: 8px;"><strong>Infinite Difference (<span class="math-inline">&infin; &minus; &infin;</span>):</strong> Occurs when subtraction involves opposing values of indeterminate sizes. Resolved by finding common denominators.</li>
+        </ul>
+    </div>
+</div>
+
 
 
     <!-- Slide 2: Piecewise Boundaries -->
     <div class="slide-content" id="slide-2">
-        <div class="split-grid">
-            <div>
-                <h3>One-Sided Paths &amp; Piecewise Continuity</h3>
+        <h3>One-Sided Paths &amp; Piecewise Continuity</h3>
                 <p>Piecewise functions shift formulas across specific boundary conditions. To trace these connections accurately, we evaluate independent directional limits:</p>
-                <ul style="padding-left: 20px; font-size: 0.95rem; line-height: 1.5; color: var(--text-muted);">
+                <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
                     <li><strong>Left-Hand Path (x &rarr; c<sup>&minus;</sup>):</strong> Limits computed utilizing values arriving from the lower left (x &lt; c).</li>
-                    <li style="margin-top:8px;"><strong>Right-Hand Path (x &rarr; c<sup>+</sup>):</strong> Limits computed utilizing values arriving from the upper right (x &gt; c).</li>
+                    <li style="margin-top: 8px;"><strong>Right-Hand Path (x &rarr; c<sup>+</sup>):</strong> Limits computed utilizing values arriving from the upper right (x &gt; c).</li>
                 </ul>
 
-                <div class="box" style="border-left: 4px solid var(--neon-pink); padding: 12px;">
-                    <strong>⚙️ Formal Continuity Verification Protocol:</strong>
-                    <p style="font-size: 0.85rem; margin-top: 4px;">A piecewise boundary achieves perfect geometric continuity if and only if it fulfills three conditions simultaneously:</p>
-                    <div style="font-family: monospace; font-size: 0.8rem; background: #090d16; padding: 8px; border-radius: 4px; color: var(--neon-green);">
-                        1. f(c) exists &nbsp;|&nbsp; 2. lim<sub>x&rarr;c</sub> f(x) exists &nbsp;|&nbsp; 3. lim<sub>x&rarr;c</sub> f(x) = f(c)
+                <!-- 🟥 UNIFIED PINK THEOREM / CRITICAL PROCEDURES BLOCK -->
+                <div class="block-theorem" style="margin-top: 20px;">
+                    <strong style="display: block; margin-bottom: 8px;">⚙️ Formal Continuity Verification Protocol:</strong>
+                    <p>A piecewise boundary achieves perfect geometric continuity if and only if it fulfills three conditions simultaneously:</p>
+                    
+                    <!-- 🥞 Clean vertical sequence with no extra container boxes or borders -->
+                    <div style="margin-top: 14px; padding-left: 8px; font-family: monospace; font-size: 0.9rem; line-height: 1.7; font-weight: bold;">
+                        <div style="color: var(--neon-blue);"><span style="color: var(--text-muted); font-weight: normal; margin-right: 8px;">1.</span> f(c) exists</div>
+                        <div style="color: var(--neon-blue); margin-top: 4px;"><span style="color: var(--text-muted); font-weight: normal; margin-right: 8px;">2.</span> lim<sub>x&rarr;c</sub> f(x) exists</div>
+                        <div style="color: var(--neon-blue); margin-top: 4px;"><span style="color: var(--text-muted); font-weight: normal; margin-right: 8px;">3.</span> lim<sub>x&rarr;c</sub> f(x) = f(c)</div>
                     </div>
                 </div>
-                
-                <!-- Upgraded Dashboard Readouts -->
-                <div class="box" style="background:#090d16; margin-bottom: 0;">
-                    <strong style="color:var(--neon-amber);">🕹️ Live Discontinuity Slider Control</strong>
-                    <div style="margin-top:12px; display: flex; flex-direction: column; gap: 8px;">
-                        <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-                            <span>Left-Hand Limit (LHL):</span>
-                            <span class="readout-badge" style="color:var(--neon-cyan);">f(x) &rarr; 1.00</span>
+
+                <div class="block-preview">
+                <div class="grid-2">
+                    <!-- Left Pane: Standardized Interactive Controller Column -->
+                    <div id="slide1-content-box" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; width: 100%;">
+                        <div>
+                            <!-- 🕹️ UPGRADED LIVE DISCONTINUITY CONTROLLER WORKSPACE (STABLE CENTERED CHANNELS) -->
+                            <strong style="color: var(--neon-purple); font-size: 0.9rem; letter-spacing: 0.5px;">🕹️ Live Discontinuity Slider Control</strong>
+                            
+                            <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px;">
+                                
+                                <!-- Row 1: Left-Hand Limit -->
+                                <div style="display: flex; align-items: center; font-size: 0.85rem; height: 32px;">
+                                    <span style="flex: 1;">Left-Hand Limit (LHL):</span>
+                                    <div style="width: 180px; display: flex; justify-content: flex-start; align-items: center;">
+                                        <span class="readout-badge" style="color: var(--neon-cyan); font-weight: bold; font-family: monospace; background: rgba(0,243,255,0.06); padding: 5px 12px; border-radius: 4px; min-width: 95px; text-align: center; display: inline-block; white-space: nowrap;">f(x) &rarr; 1.00</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 2: Right-Hand Limit -->
+                                <div style="display: flex; align-items: center; font-size: 0.85rem; height: 32px;">
+                                    <span style="flex: 1;">Right-Hand Limit (RHL):</span>
+                                    <div style="width: 180px; display: flex; justify-content: flex-start; align-items: center; gap: 8px;">
+                                        <span class="readout-badge" id="rhl-readout" style="color: var(--neon-pink); font-weight: bold; font-family: monospace; background: rgba(255, 0, 127, 0.06); padding: 5px 12px; border-radius: 4px; min-width: 95px; text-align: center; display: inline-block; white-space: nowrap;">f(x) &rarr; 0.72</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slider Row -->
+                                <div style="margin-top: 8px; width: 100%;">
+                                    <input type="range" min="-40" max="40" value="-28" class="slider-control" id="gap-slider" oninput="updateLimitSimulation()" style="width: 100%; cursor: pointer; accent-color: var(--neon-cyan);">
+                                </div>
+                            </div>
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-                            <span>Right-Hand Limit (RHL):</span>
-                            <span class="readout-badge" id="rhl-readout" style="color:var(--neon-green);">f(x) &rarr; 1.00</span>
-                        </div>
-                        <div style="margin-top: 4px;">
-                            <input type="range" min="-40" max="40" value="0" class="slider-control" id="gap-slider" oninput="updateLimitSimulation()">
+                        
+                        <!-- 🧱 DOCKS AUTOMATICALLY AT THE BOTTOM OF THE LEFT COLUMN -->
+                        <div class="block-solution" style="margin-top: 20px;">
+                            💡 Notice that when you line up the slider perfectly in the center, both limits match at <span style="color: var(--neon-purple);">1.00</span> making the boundary perfectly <strong style="color: var(--neon-purple);">continuous</strong>!
                         </div>
                     </div>
-                    <div style="margin-top:10px; font-size:0.75rem; color:var(--text-muted); line-height:1.4;">
-                        💡 <em>Notice that when you line up the slider perfectly in the center, both limits match at **1.00**, making the boundary perfectly continuous!</em>
+
+                    <!-- 📈 SCALED PIECEWISE BOUNDARY THRESHOLD VISUALIZER WRAPPER -->
+                    <div class="visual-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0;">
+                        <div style="color: var(--text-main); font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 0.5px;">📈 PIECEWISE BOUNDARY THRESHOLD VISUALIZER</div>
+                        
+                        <svg viewBox="-20 -10 230 160" width="100%" style="overflow: visible;">
+                            <!-- Grid Lines -->
+                            <path d="M0,20 L200,20 M0,70 L200,70 M0,120 L200,120" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5"/>
+                            <path d="M60,0 L60,140 M110,0 L110,140 M160,0 L160,140" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5"/>
+                            
+                            <!-- Main Coordinate Axes -->
+                            <line x1="0" y1="120" x2="200" y2="120" stroke="#475569" stroke-width="1.5"/> <!-- X-Axis -->
+                            <line x1="60" y1="0" x2="60" y2="140" stroke="#475569" stroke-width="1.5"/>  <!-- Y-Axis -->
+                            <text x="192" y="132" fill="#64748b" font-size="8" font-weight="bold">x</text>
+                            <text x="50" y="10" fill="#64748b" font-size="8" font-weight="bold">y</text>
+                            
+                            <!-- Axis Numeric Labels -->
+                            <text x="60" y="132" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">0</text>
+                            <text x="110" y="132" fill="var(--neon-purple)" font-size="7" font-weight="bold" text-anchor="middle">1</text>
+                            <text x="160" y="132" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">2</text>
+                            
+                            <text x="52" y="73" fill="var(--neon-green)" font-size="7" font-weight="bold" text-anchor="end">1</text>
+                            <text x="52" y="23" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">2</text>
+                            
+                            <!-- Target Boundary Vertical Alignment Line -->
+                            <line x1="110" y1="0" x2="110" y2="140" stroke="var(--neon-purple)" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+                            <text x="115" y="15" fill="var(--neon-purple)" font-size="7" font-weight="bold">Target c = 1</text>
+                            
+                            <!-- Left-Hand Vector Approach Curve -->
+                            <path d="M 15,110 Q 65,95 110,70" fill="none" stroke="var(--neon-cyan)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="110" cy="70" r="3.5" fill="#111a36" stroke="var(--neon-cyan)" stroke-width="2"/>
+                            
+                            <!-- Right-Hand Vector Approach Curve -->
+                            <path id="right-curve" d="M 110,70 Q 150,85 195,55" fill="none" stroke="var(--neon-pink)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle id="right-node" cx="110" cy="70" r="3.5" fill="var(--neon-pink)"/>
+                        </svg>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Upgraded Vector Canvas with Numbers -->
-            <div style="background:#0b0f19; border:1px solid var(--border-glow); border-radius:10px; padding:15px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                <div style="color:var(--text-main); font-weight:600; font-size:0.85rem; margin-bottom:10px; letter-spacing:0.5px;">📈 PIECEWISE BOUNDARY THRESHOLD VISUALIZER</div>
-                
-                <svg viewBox="-20 -10 230 160" width="100%" style="background:#090d16; border-radius:6px; overflow:visible;">
-                    <!-- Grid Lines (50px increments aligned to scale) -->
-                    <path d="M0,20 L200,20 M0,70 L200,70 M0,120 L200,120" stroke="#111c30" stroke-width="0.5"/>
-                    <path d="M60,0 L60,140 M110,0 L110,140 M160,0 L160,140" stroke="#111c30" stroke-width="0.5"/>
-                    
-                    <!-- Main Coordinate Axes -->
-                    <line x1="0" y1="120" x2="200" y2="120" stroke="#475569" stroke-width="1.5"/> <!-- X-Axis -->
-                    <line x1="60" y1="0" x2="60" y2="140" stroke="#475569" stroke-width="1.5"/>  <!-- Y-Axis -->
-                    <text x="192" y="132" fill="#64748b" font-size="8" font-weight="bold">x</text>
-                    <text x="50" y="10" fill="#64748b" font-size="8" font-weight="bold">y</text>
-                    
-                    <!-- Axis Numeric Labels -->
-                    <!-- X Marks -->
-                    <text x="60" y="132" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">0</text>
-                    <text x="110" y="132" fill="var(--neon-amber)" font-size="7" font-weight="bold" text-anchor="middle">1</text>
-                    <text x="160" y="132" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">2</text>
-                    
-                    <!-- Y Marks -->
-                    <text x="52" y="73" fill="var(--neon-green)" font-size="7" font-weight="bold" text-anchor="end">1</text>
-                    <text x="52" y="23" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">2</text>
-                    
-                    <!-- Target Boundary Vertical Alignment Line -->
-                    <line x1="110" y1="0" x2="110" y2="140" stroke="var(--neon-amber)" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
-                    <text x="115" y="15" fill="var(--neon-amber)" font-size="7" font-weight="bold">Target c = 1</text>
-                    
-                    <!-- Left-Hand Vector Approach Curve (Terminates at output y=1 / SVG y=70) -->
-                    <path d="M 15,110 Q 65,95 110,70" fill="none" stroke="var(--neon-cyan)" stroke-width="2.5" stroke-linecap="round"/>
-                    <circle cx="110" cy="70" r="3.5" fill="#090d16" stroke="var(--neon-cyan)" stroke-width="2"/>
-                    
-                    <!-- Right-Hand Vector Approach Curve -->
-                    <path id="right-curve" d="M 110,70 Q 150,85 195,55" fill="none" stroke="var(--neon-pink)" stroke-width="2.5" stroke-linecap="round"/>
-                    <circle id="right-node" cx="110" cy="70" r="3.5" fill="var(--neon-pink)"/>
-                </svg>
-            </div>
-        </div>
+                </div>
+
     </div>
+
+
 
           
     <!-- Slide 3: Worked Examples -->
     <div class="slide-content" id="slide-3">
         <h3>Limit Evaluation Masterclass</h3>
         
-        <div class="example">
+        <!-- 📘 EXAMPLE 4.1: INDETERMINATE ELIMINATION -->
+        <div class="block-example">
             <strong>Example 4.1 (Indeterminate Form Elimination):</strong> Evaluate the rational fraction limit:
-            <div class="math-block" style="font-size:1.15rem; margin:10px 0;">
-                lim<sub>x&rarr;2</sub> <span class="frac"><span class="top">x<sup>3</sup> &minus; 2x<sup>2</sup> &minus; x + 2</span><span class="bottom">x<sup>2</sup> &minus; 4</span></span>
+            
+            <div class="math-block">
+                lim <span class="frac"><span class="top">x³ &minus; 2x² &minus; x + 2</span><span class="bottom">x² &minus; 4</span></span>
             </div>
-            <strong>Solution Steps:</strong>
-            <ol>
-                <li><strong>Direct Substitution:</strong> Plugging in <span class="math-inline">x = 2</span> gives <span class="math-inline">0 &frasl; 0</span>. This indeterminate form alerts us to a hidden common factor.</li>
-                <li style="margin-top:6px;"><strong>Factorization Steps:</strong>
-                    <br>Numerator via grouping: <span class="math-inline">x<sup>2</sup>(x&minus;2) &minus; 1(x&minus;2) = (x&minus;2)(x<sup>2</sup>&minus;1)</span>
-                    <br>Denominator via difference of squares: <span class="math-inline">(x&minus;2)(x+2)</span>
-                </li>
-                <li style="margin-top:6px;"><strong>Cancel and Evaluate:</strong> Cancel out the zero-inducing binomial component <span class="math-inline">(x&minus;2)</span> safely:
-                    <div class="math-block" style="font-size:1.1rem; margin:8px 0;">
-                        lim<sub>x&rarr;2</sub> <span class="frac"><span class="top">x<sup>2</sup> &minus; 1</span><span class="bottom">x + 2</span></span> = <span class="frac"><span class="top">(2)<sup>2</sup> &minus; 1</span><span class="bottom">2 + 2</span></span> = <span class="frac"><span class="top">3</span><span class="bottom">4</span></span>
-                    </div>
-                </li>
-            </ol>
+            
+            <!-- 🏙️ NESTED SOLUTION CARD ENGINE SWITCHED FROM INLINE PAD -->
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol>
+                    <li>
+                        <strong>Direct Substitution:</strong> Plugging in <span class="math-inline">x = 2</span> gives <span class="frac"><span class="top">0</span><span class="bottom">0</span></span>. This indeterminate form alerts us to a hidden common factor hole.
+                    </li>
+                    <li>
+                        <strong>Factorization Steps:</strong>
+                        <div style="margin-top: 4px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+                            ↳ Numerator via grouping: <span class="math-inline" style="color: var(--text-main);">x²(x&minus;2) &minus; 1(x&minus;2) = (x&minus;2)(x²&minus;1)</span> <strong style="color: var(--neon-cyan);">(Factor Theorem Remainder from section 3 also works)</strong><br>
+                            ↳ Denominator via difference of squares: <span class="math-inline" style="color: var(--text-main);">(x&minus;2)(x+2)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Cancel and Evaluate:</strong> Cancel out the zero-inducing binomial component <span class="math-inline">(x&minus;2)</span> safely:
+                        <div class="math-block">
+                            lim <span class="frac"><span class="top">x² &minus; 1</span><span class="bottom">x + 2</span></span> = <span class="frac"><span class="top">(2)² &minus; 1</span><span class="bottom">2 + 2</span></span> = <span class="frac"><span style="color: var(--neon-cyan);" class="top">3</span><span style="color: var(--neon-cyan);" class="bottom">4</span></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
 
-        <div class="example" style="border-left-color: var(--neon-cyan); background-color: #0c1e36;">
+        <!-- 📘 EXAMPLE 4.2: PIECEWISE CONTINUITY VERIFICATION -->
+        <div class="block-example">
             <strong>Example 4.2 (Piecewise Continuity Verification):</strong> A function is defined across a boundary interface by:
-                        <div class="math-block" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; font-family: 'Times New Roman', Times, serif; font-style: italic;">
-                <span style="font-size: 1.25rem; color: #ffffff; margin-right: 8px; font-style: italic;">f(x) =</span>
+            
+            <!-- 🗜️ MASTER COUPLING BRACKET MATRIX CONTAINER -->
+            <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+                <span style="font-size: 1.25rem; color: #ffffff; margin-right: 8px;">f(x) =</span>
                 
-                <!-- 🗜️ THE MASTER COUPLING BRACKET CONTAINER -->
                 <div style="display: flex; align-items: center;">
                     <!-- Single giant left brace scaled dynamically -->
                     <span style="font-size: 3.2rem; font-weight: 300; font-family: system-ui, sans-serif; font-style: normal; line-height: 1; margin-right: 4px; transform: scaleY(1.15);"> { </span>
                     
                     <!-- Right stack container for conditional branches -->
-                    <div style="display: flex; flex-direction: column; gap: 0px; text-align: left; font-size: 1.15rem; color: #ffffff;">
+                    <div style="display: flex; flex-direction: column; text-align: left; font-size: 1.15rem; color: #ffffff; line-height: 1.5;">
                         <div>3x &minus; 1 <span style="margin-left: 15px; color: var(--text-muted); font-size: 1rem; font-style: normal;">if x &lt; 1</span></div>
-                        <div>k &middot; x<sup>2</sup> <span style="margin-left: 15px; color: var(--text-muted); font-size: 1rem; font-style: normal;">if x &ge; 1</span></div>
+                        <div>k &middot; x² <span style="margin-left: 15px; color: var(--text-muted); font-size: 1rem; font-style: normal;">if x &ge; 1</span></div>
                     </div>
                 </div>
             </div>
 
-            Find the constant parameter <span class="math-inline">k</span> that hooks up both paths continuously at <span class="math-inline">x = 1</span>.
-            <br><br><strong>Solution Steps:</strong>
-            <ol>
-                <li><strong>Left-Hand Path:</strong> lim<sub>x&rarr;1<sup>&minus;</sup></sub> (3x &minus; 1) = 3(1) &minus; 1 = <strong>2</strong></li>
-                <li><strong>Right-Hand Path:</strong> lim<sub>x&rarr;1<sup>+</sup></sub> (k &middot; x<sup>2</sup>) = k(1)<sup>2</sup> = <strong>k</strong></li>
-                <li><strong>Enforce Matching Law:</strong> Set left limit equal to right limit: <span class="math-inline">2 = k</span> &rArr; <strong style="color: var(--neon-green);">k = 2</strong>.</li>
-
-            </ol>
+            <p>Find the constant parameter <span class="math-inline">k</span> that hooks up both paths continuously at <span class="math-inline">x = 1</span>.</p>
+            
+            <!-- 🏙️ NESTED SOLUTION CARD ENGINE SWITCHED FROM INLINE PAD -->
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol>
+                    <li><strong>Left-Hand Path:</strong> lim (3x &minus; 1) as x &rarr; 1&minus; yields 3(1) &minus; 1 = <strong>2</strong></li>
+                    <li><strong>Right-Hand Path:</strong> lim (k &middot; x²) as x &rarr; 1+ yields k(1)² = <strong>k</strong></li>
+                    <li><strong>Enforce Matching Law:</strong> Set left limit equal to right limit to bridge the functional gap: <span class="math-inline">2 = k</span> &rArr; <strong style="color: var(--neon-cyan);">k = 2</strong>.</li>
+                </ol>
+            </div>
         </div>
-    </div>
+    </div> <!-- Structural Slide Content Block Closure -->
+
 
 
     <!-- Slide 4: Practice Set -->
     <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0; margin-bottom: 5px;">🏋️ Mandatory Written Exercises</h3>
-        <p style="margin-top: 0; color: var(--text-muted); font-size: 0.9rem;">Complete these core problems in your notebook to prepare for the milestone verification check.</p>
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+        <p>Complete these core problems in your notebook to prepare for the milestone verification check.</p>
         
-        <!-- Exercise 1 -->
-        <div class="exercise-block">
+        <!-- 🟨 UPGRADED UNIFIED EXERCISE LAB BLOCK -->
+        <div class="block-exercise">
             <div class="exercise-title">Exercise 4.1: Indeterminate Limit Evaluation</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Calculate the exact limit for each function. If direct substitution results in a zero in the denominator, use your factoring skills to simplify the fraction and find the limit:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block;">
-                    <strong>a)</strong> Determine:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1.05rem;">lim<sub>x&rarr;3</sub> <span class="frac"><span class="top">x<sup>2</sup> &minus; 9</span><span class="bottom">x &minus; 3</span></span></div>
-                </div>
-                <div class="exercise-item" style="display:block;">
-                    <strong>b)</strong> Determine:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1.05rem;">lim<sub>x&rarr;&minus;1</sub> <span class="frac"><span class="top">x<sup>2</sup> &minus; x &minus; 2</span><span class="bottom">x + 1</span></span></div>
-                </div>
-                <div class="exercise-item" style="display:block; margin-top: 8px;">
-                    <strong>c)</strong> Determine:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1.05rem;">lim<sub>x&rarr;2</sub> <span class="frac"><span class="top">2x<sup>2</sup> &minus; 4x</span><span class="bottom">x<sup>2</sup> &minus; 5x + 6</span></span></div>
-                </div>
-                <div class="exercise-item" style="display:block; margin-top: 8px;">
-                    <strong>d)</strong> Determine:<br>
-                    <div class="math-block" style="margin: 8px 0; font-size:1.05rem;">lim<sub>x&rarr;1</sub> <span class="frac"><span class="top">x<sup>3</sup> &minus; x<sup>2</sup> + 3x &minus; 3</span><span class="bottom">x &minus; 1</span></span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Exercise 2 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-green);">
-            <div class="exercise-title">Exercise 4.2: Enforcing Global Domain Continuity</div>
-            <p style="font-size:0.85rem; margin-top:0; color:var(--text-muted);">Find the exact value of the unknown constant (<span class="math-inline">a</span> or <span class="math-inline">k</span>) that makes each piecewise function continuous across its entire domain:</p>
-            <div class="grid-2">
-                <div class="exercise-item" style="display:block;">
-                    <strong>a) Determine constant <span class="math-inline">k</span>:</strong><br>
-                    <div class="math-block" style="display: flex; align-items: center; font-size: 0.95rem; margin: 10px 0;">
-                        <span>f(x) = </span>
-                        <span style="font-size: 2.2rem; font-family: system-ui; line-height: 1; margin: 0 4px 0 6px; color: var(--neon-blue);">{</span>
-                        <div style="text-align: left; line-height: 1.3;">
-                            <div>2x + 5 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 10px;">if x &lt; 2</span></div>
-                            <div>kx &minus; 1 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 10px;">if x &ge; 2</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="exercise-item" style="display:block;">
-                    <strong>b) Determine constant <span class="math-inline">a</span>:</strong><br>
-                    <div class="math-block" style="display: flex; align-items: center; font-size: 0.95rem; margin: 10px 0;">
-                        <span>g(x) = </span>
-                        <span style="font-size: 2.2rem; font-family: system-ui; line-height: 1; margin: 0 4px 0 6px; color: var(--neon-blue);">{</span>
-                        <div style="text-align: left; line-height: 1.3;">
-                            <div>x<sup>2</sup> &minus; a <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 10px;">if x &lt; 3</span></div>
-                            <div>2x + 1 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 10px;">if x &ge; 3</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Exercise 3 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-blue);">
-            <div class="exercise-title">Exercise 4.3: Intermediate Value Theorem (IVT Root Proof)</div>
-            <p style="font-size:0.85rem; line-height: 1.4; color:var(--text-main);">Let <span class="math-inline">f(x) = x<sup>3</sup> &minus; 3x &minus; 1</span> be a polynomial function that is continuous across the closed interval <span class="math-inline">[1, 3]</span>.</p>
-            <ul style="font-size: 0.85rem; padding-left: 15px; margin-top: 8px; color: var(--text-muted);">
-                <li><strong>a)</strong> Find the exact values at the boundaries of the interval: <span class="math-inline">f(1)</span> and <span class="math-inline">f(3)</span>.</li>
-                <li style="margin-top: 6px;"><strong>b)</strong> Use your calculated values to prove that there must be at least one real solution <span class="math-inline">c &isin; (1, 3)</span> such that <span class="math-inline">f(c) = 0</span>.</li>
-            </ul>
-        </div>
-
-        <!-- Exercise 4 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-pink);">
-            <div class="exercise-title">Exercise 4.4: Applied Piecewise Cost Structure</div>
-            <p style="font-size:0.85rem; line-height: 1.4; color:var(--text-main);">A shipping carrier calculates the delivery cost <span class="math-inline">C(x)</span> (in euros) as a function of the package weight <span class="math-inline">x</span> (in kilograms) using the following pricing structure:</p>
+            <p>Calculate the exact limit for each function. If direct substitution results in a zero in the denominator, use your factoring skills to simplify the fraction and find the limit:</p>
             
-            <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-size: 1rem; margin: 12px 0;">
-                <span>C(x) = </span>
-                <span style="font-size: 2.5rem; font-family: system-ui; line-height: 1; margin: 0 6px 0 8px; color: var(--neon-pink);">{</span>
-                <div style="text-align: left; line-height: 1.4;">
-                    <div>5x + 10 <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 15px;">if 0 &lt; x &le; 5</span></div>
-                    <div>4x + 20 <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 15px;">if x &gt; 5</span></div>
-                </div>
-            </div>
-
-            <ul style="font-size: 0.85rem; padding-left: 15px; color: var(--text-muted);">
-                <li><strong>a)</strong> Calculate the price limit as the weight approaches the boundary value from the left: <span class="math-inline">lim<sub>x &rarr; 5<sup>&minus;</sup></sub> C(x)</span>.</li>
-                <li style="margin-top: 5px;"><strong>b)</strong> Calculate the price limit as the weight approaches the boundary value from the right: <span class="math-inline">lim<sub>x &rarr; 5<sup>+</sup></sub> C(x)</span>.</li>
-                <li style="margin-top: 5px;"><strong>c)</strong> Determine if the pricing model is continuous at <span class="math-inline">x = 5</span>. Justify your answer using your one-sided limits.</li>
-            </ul>
-        </div>
-
-        <!-- Exercise 5 -->
-        <div class="exercise-block" style="border-left-color: var(--neon-cyan); margin-bottom: 0;">
-            <div class="exercise-title">Exercise 4.5: [Advanced Challenge] Visual Discontinuity Limits</div>
-            <div class="split-grid" style="margin: 0; grid-template-columns: 1.2fr 0.8fr;">
-                <div>
-                    <p style="font-size:0.85rem; line-height: 1.4; margin-top: 0; color:var(--text-main);">A piecewise function is shown on the graph dashboard panel layout below:</p>
-                    <div class="math-block" style="display: flex; align-items: center; font-size: 0.95rem; margin: 10px 0;">
-                        <span>f(x) = </span>
-                        <span style="font-size: 3rem; font-family: system-ui; line-height: 1; margin: 0 4px 0 6px; color: var(--neon-cyan);">{</span>
-                        <div style="text-align: left; line-height: 1.35;">
-                            <div>x + 2 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 12px;">if x &lt; 1</span></div>
-                            <div>1 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 12px;">if x = 1</span></div>
-                            <div>&minus;x + 4 <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: 12px;">if x &gt; 1</span></div>
-                        </div>
+            <div class="grid-4">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    <span style="width: 35%;">a) Determine:</span>
+                    <div class="math-block" style="margin: 10px 0 0 0; font-size: 1.05rem; text-align: center; width: 100%;">
+                        lim<sub>x&rarr;3</sub> <span class="frac"><span class="top">x<sup>2</sup> &minus; 9</span><span class="bottom">x &minus; 3</span></span>
                     </div>
-                    <ul style="font-size: 0.85rem; padding-left: 15px; color: var(--text-muted); margin-bottom: 0;">
-                        <li><strong>a)</strong> Find the exact values of the one-sided limits: <span class="math-inline">lim<sub>x &rarr; 1<sup>&minus;</sup></sub> f(x)</span> and <span class="math-inline">lim<sub>x &rarr; 1<sup>+</sup></sub> f(x)</span>.</li>
-                        <li style="margin-top: 5px;"><strong>b)</strong> Does the overall limit <span class="math-inline">lim<sub>x &rarr; 1</sub> f(x)</span> exist? Use your one-sided limits to prove your answer.</li>
-                    </ul>
                 </div>
                 
-                <!-- 📈 V0-NETWORK DEPENDENT TICKZ REPLACEMENT VECTOR CANVAS ENGINE -->
-                <div style="display: flex; justify-content: center; align-items: center; background: #090d16; border-radius: 8px; border: 1px solid var(--border-glow); padding: 15px;">
-                    <svg viewBox="-25 -15 210 190" width="100%" style="overflow: visible;">
-                        <!-- Grid Matrix Mesh Backdrop -->
-                        <path d="M0,30 L180,30 M0,60 L180,60 M0,90 L180,90 M0,120 L180,120 M0,150 L180,150" stroke="#111c30" stroke-width="0.5"/>
-                        <path d="M30,0 L30,180 M60,0 L60,180 M90,0 L90,180 M120,0 L120,180 M150,0 L150,180" stroke="#111c30" stroke-width="0.5"/>
-                        
-                        <!-- Main Structural Axis Coordinates -->
-                        <line x1="-15" y1="150" x2="195" y2="150" stroke="#475569" stroke-width="1.2"/> <!-- X Axis at SVG y=150 -->
-                        <line x1="30" y1="-10" x2="30" y2="190" stroke="#475569" stroke-width="1.2"/>  <!-- Y Axis at SVG x=30 -->
-                        <text x="188" y="162" fill="#64748b" font-size="8" font-weight="bold">x</text>
-                        <text x="20" y="2" fill="#64748b" font-size="8" font-weight="bold">y</text>
-                        
-                        <!-- Scale Tic Marks Parameters (X Axis) -->
-                        <text x="60" y="162" fill="#475569" font-size="7" text-anchor="middle">1</text>
-                        <text x="90" y="162" fill="#475569" font-size="7" text-anchor="middle">2</text>
-                        <text x="120" y="162" fill="#475569" font-size="7" text-anchor="middle">3</text>
-                        <text x="150" y="162" fill="#475569" font-size="7" text-anchor="middle">4</text>
-                        
-                        <!-- Scale Tic Marks Parameters (Y Axis) -->
-                        <text x="22" y="123" fill="#475569" font-size="7" text-anchor="end">1</text>
-                        <text x="22" y="93" fill="#475569" font-size="7" text-anchor="end">2</text>
-                        <text x="22" y="63" fill="#475569" font-size="7" text-anchor="end">3</text>
-                        <text x="22" y="33" fill="#475569" font-size="7" text-anchor="end">4</text>
-                        
-                        <!-- Left Curve Component vector line: f(x) = x + 2 approach paths -->
-                        <line x1="0" y1="120" x2="57" y2="63" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <!-- Right Curve Component vector line: f(x) = -x + 4 approach paths -->
-                        <line x1="63" y1="63" x2="120" y2="120" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round"/>
-                        
-                        <!-- Boundary Dropped Limit Dash Path Layer -->
-                        <line x1="60" y1="150" x2="60" y2="66" stroke="#475569" stroke-width="0.75" stroke-dasharray="2,2"/>
-                        
-                        <!-- Shared Approach Open Circle Destination Node Node at (1,3) -->
-                        <circle cx="60" cy="60" r="3.5" fill="#090d16" stroke="var(--neon-cyan)" stroke-width="1.5"/> 
-                        
-                        <!-- Standalone Point Mapping Frame f(1) = 1 Solution Space -->
-                        <circle cx="60" cy="120" r="3" fill="var(--neon-pink)"/>
-                        <text x="68" y="122" fill="var(--neon-pink)" font-size="6" font-weight="bold">f(1) = 1</text>
-                    </svg>
+                <!-- Part B -->
+                <div class="exercise-item">
+                    <span style="width: 35%;">b) Determine:</span>
+                    <div class="math-block" style="margin: 10px 0 0 0; font-size: 1.05rem; text-align: center; width: 100%;">
+                        lim<sub>x&rarr;&minus;1</sub> <span class="frac"><span class="top">x<sup>2</sup> &minus; x &minus; 2</span><span class="bottom">x + 1</span></span>
+                    </div>
                 </div>
+                
+                <!-- Part C -->
+                <div class="exercise-item">
+                    <span style="width: 35%;">c) Determine:</span>
+                    <div class="math-block" style="margin: 10px 0 0 0; font-size: 1.05rem; text-align: center; width: 100%;">
+                        lim<sub>x&rarr;2</sub> <span class="frac"><span class="top">2x<sup>2</sup> &minus; 4x</span><span class="bottom">x<sup>2</sup> &minus; 5x + 6</span></span>
+                    </div>
+                </div>
+                
+                <!-- Part D -->
+                <div class="exercise-item">
+                    <span style="width: 35%;">d) Determine:</span>
+                    <div class="math-block" style="margin: 10px 0 0 0; font-size: 1.05rem; text-align: center; width: 100%;">
+                        lim<sub>x&rarr;1</sub> <span class="frac"><span class="top">x<sup>3</sup> &minus; x<sup>2</sup> + 3x &minus; 3</span><span class="bottom">x &minus; 1</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🟨 UPGRADED UNIFIED EXERCISE LAB BLOCK: CONTINUITY CHECKS -->
+        <div class="block-exercise">
+            <div class="exercise-title">Exercise 4.2: Enforcing Global Domain Continuity</div>
+            <p>Find the exact value of the unknown constant (<span class="math-inline">a</span> or <span class="math-inline">k</span>) that makes each piecewise function continuous across its entire domain:</p>
+            
+            <div class="grid-2">
+                <!-- Part A -->
+                <div class="exercise-item" style="padding: 16px 14px;">
+                    <span style="width: 70%;">a) Determine constant <span class="math-inline">k</span>:</span>
+                    
+                    <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-size: 0.95rem; margin: 12px 0 0 0; width: 100%; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+                        <span style="color: #ffffff; margin-right: 4px;">f(x) =</span>
+                        <div style="display: flex; align-items: center;">
+                            <span style="font-size: 2.5rem; font-weight: 300; font-family: system-ui, sans-serif; font-style: normal; line-height: 1; margin-right: 4px; color: var(--neon-amber);"> { </span>
+                            <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.4;">
+                                <div>2x + 5 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &lt; 2</span></div>
+                                <div>kx &minus; 1 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &ge; 2</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item" style="padding: 16px 14px;">
+                    <span style="width: 70%;">b) Determine constant <span class="math-inline">a</span>:</span>
+                    
+                    <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-size: 0.95rem; margin: 12px 0 0 0; width: 100%; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+                        <span style="color: #ffffff; margin-right: 4px;">g(x) =</span>
+                        <div style="display: flex; align-items: center;">
+                            <span style="font-size: 2.5rem; font-weight: 300; font-family: system-ui, sans-serif; font-style: normal; line-height: 1; margin-right: 4px; color: var(--neon-amber);"> { </span>
+                            <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.4;">
+                                <div>x<sup>2</sup> &minus; a <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &lt; 3</span></div>
+                                <div>2x + 1 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &ge; 3</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 🟨 UPGRADED UNIFIED EXERCISE LAB BLOCK: THEOREM ROOT PROOFS -->
+        <div class="block-exercise">
+            <div class="exercise-title">Exercise 4.3: Intermediate Value Theorem (IVT Root Proof)</div>
+            <p style="color: var(--text-main) !important;">Let <span class="math-inline">f(x) = x<sup>3</sup> &minus; 3x &minus; 1</span> be a polynomial function that is continuous across the closed interval <span class="math-inline">[1, 3]</span>.</p>
+            
+            <div class="layout-stack">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    a) Find the exact values at the boundaries of the interval
+                    <span class="item-detail">↳ Compute the distinct numeric outputs for <span class="math-inline" style="color: var(--text-main);">f(1)</span> and <span class="math-inline" style="color: var(--text-main);">f(3)</span>.</span>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item">
+                    b) Prove the existence of a real root inside the domain
+                    <span class="item-detail">↳ Use the Intermediate Value Theorem to guarantee that there must be at least one real solution <span class="math-inline" style="color: var(--text-main);">c &isin; (1, 3)</span> such that <span class="math-inline" style="color: var(--text-main);">f(c) = 0</span>.</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 🟨 UPGRADED UNIFIED EXERCISE LAB BLOCK: APPLIED PIECEWISE COST STRUCTURE -->
+        <div class="block-exercise" style="margin-top: 25px;">
+            <div class="exercise-title">Exercise 4.4: Applied Piecewise Cost Structure</div>
+            <p style="color: var(--text-main) !important;">A shipping carrier calculates the delivery cost <span class="math-inline">C(x)</span> (in euros) as a function of the package weight <span class="math-inline">x</span> (in kilograms) using the following pricing structure:</p>
+            
+            <!-- 🗜️ MASTER COUPLING BRACKET MATRIX CONTAINER -->
+            <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-size: 1rem; margin: 15px 0; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+                <span style="color: #ffffff; margin-right: 4px;">C(x) = f(x) =</span>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-size: 2.8rem; font-weight: 300; font-family: system-ui, sans-serif; font-style: normal; line-height: 1; margin-right: 4px; color: var(--neon-amber);"> { </span>
+                    <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.4; font-size: 1.05rem;">
+                        <div>5x + 10 <span style="margin-left: 15px; color: var(--text-muted); font-size: 0.85rem; font-style: normal;">if 0 &lt; x &le; 5</span></div>
+                        <div>4x + 20 <span style="margin-left: 15px; color: var(--text-muted); font-size: 0.85rem; font-style: normal;">if x &gt; 5</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layout-stack">
+                <!-- Part A -->
+                <div class="exercise-item">
+                    a) Evaluate the left-hand cost threshold boundary approach
+                    <span class="item-detail">↳ Calculate the pricing progression trajectory as the weight values approach the threshold point: <span class="math-inline" style="color: var(--text-main);">lim<sub>x &rarr; 5<sup>&minus;</sup></sub> C(x)</span>.</span>
+                </div>
+                
+                <!-- Part B -->
+                <div class="exercise-item">
+                    b) Evaluate the right-hand cost threshold boundary approach
+                    <span class="item-detail">↳ Calculate the pricing progression trajectory as the weight values approach the threshold point: <span class="math-inline" style="color: var(--text-main);">lim<sub>x &rarr; 5<sup>+</sup></sub> C(x)</span>.</span>
+                </div>
+                
+                <!-- Part C -->
+                <div class="exercise-item">
+                    c) Perform formal operational mathematical model verification
+                    <span class="item-detail">↳ Determine if the carrier model is continuous at <span class="math-inline" style="color: var(--text-main);">x = 5</span>. Explicitly justify your mathematical conclusion using the calculated one-sided paths.</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- 🟨 UPGRADED UNIFIED EXERCISE LAB BLOCK: VISUAL DISCONTINUITY LIMITS -->
+    <div class="block-exercise" style="margin-top: 25px; margin-bottom: 0;">
+        <div class="exercise-title">Exercise 4.5: [Advanced Challenge] Visual Discontinuity Limits</div>
+        
+        <div class="split-grid" style="margin: 0; grid-template-columns: 1.2fr 0.8fr; gap: 20px;">
+            <div>
+                <p style="color: var(--text-main) !important;">A piecewise function is shown on the graph dashboard panel layout below:</p>
+                
+                <!-- 🗜️ MASTER COUPLING BRACKET MATRIX CONTAINER -->
+                <div class="math-block" style="display: flex; align-items: center; justify-content: center; font-size: 0.95rem; margin: 15px 0; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+                    <span style="color: #ffffff; margin-right: 4px;">f(x) =</span>
+                    <div style="display: flex; align-items: center;">
+                        <span style="font-size: 3.5rem; font-weight: 300; font-family: system-ui, sans-serif; font-style: normal; line-height: 1; margin-right: 4px; color: var(--neon-amber); transform: scaleY(1.1);"> { </span>
+                        <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.4; font-size: 1.05rem;">
+                            <div>x + 2 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &lt; 1</span></div>
+                            <div>1 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x = 1</span></div>
+                            <div>&minus;x + 4 <span style="margin-left: 12px; color: var(--text-muted); font-size: 0.8rem; font-style: normal;">if x &gt; 1</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layout-stack" style="margin-top: 15px;">
+                    <!-- Part A -->
+                    <div class="exercise-item">
+                        a) Find the exact values of the one-sided limits
+                        <span class="item-detail">↳ Compute and evaluate the distinct path outputs for <span class="math-inline" style="color: var(--text-main);">lim<sub>x &rarr; 1<sup>&minus;</sup></sub> f(x)</span> and <span class="math-inline" style="color: var(--text-main);">lim<sub>x &rarr; 1<sup>+</sup></sub> f(x)</span>.</span>
+                    </div>
+                    
+                    <!-- Part B -->
+                    <div class="exercise-item">
+                        b) Evaluate the existence of the overall limit
+                        <span class="item-detail">↳ State whether <span class="math-inline" style="color: var(--text-main);">lim<sub>x &rarr; 1</sub> f(x)</span> exists, using your calculated one-sided values to verify your mathematical conclusion.</span>
+                    </div>
+                </div>
+            </div>
+
+                
+            <!-- 📊 UPGRADED UNIFIED ADVANCED DISCONTINUITY GRAPH MATRIX WORKSPACE -->
+            <div class="visual-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                <svg viewBox="-25 -15 210 190" width="100%" style="overflow: visible;">
+                    <!-- Grid Matrix Mesh Backdrop (Updated with premium translucent cyan lines) -->
+                    <path d="M0,30 L180,30 M0,60 L180,60 M0,90 L180,90 M0,120 L180,120 M0,150 L180,150" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5"/>
+                    <path d="M30,0 L30,180 M60,0 L60,180 M90,0 L90,180 M120,0 L120,180 M150,0 L150,180" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5"/>
+                    
+                    <!-- Main Structural Axis Coordinates -->
+                    <line x1="-15" y1="150" x2="195" y2="150" stroke="#475569" stroke-width="1.2"/> <!-- X Axis at SVG y=150 -->
+                    <line x1="30" y1="-10" x2="30" y2="190" stroke="#475569" stroke-width="1.2"/>  <!-- Y Axis at SVG x=30 -->
+                    <text x="188" y="162" fill="#64748b" font-size="8" font-weight="bold">x</text>
+                    <text x="20" y="2" fill="#64748b" font-size="8" font-weight="bold">y</text>
+                    
+                    <!-- Scale Tic Marks Parameters (X Axis) -->
+                    <text x="60" y="162" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">1</text>
+                    <text x="90" y="162" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">2</text>
+                    <text x="120" y="162" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">3</text>
+                    <text x="150" y="162" fill="#475569" font-size="7" font-weight="bold" text-anchor="middle">4</text>
+                    
+                    <!-- Scale Tic Marks Parameters (Y Axis) -->
+                    <text x="22" y="123" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">1</text>
+                    <text x="22" y="93" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">2</text>
+                    <text x="22" y="63" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">3</text>
+                    <text x="22" y="33" fill="#475569" font-size="7" font-weight="bold" text-anchor="end">4</text>
+                    
+                    <!-- Left Curve Component vector line: f(x) = x + 2 approach paths -->
+                    <line x1="0" y1="120" x2="57" y2="63" stroke="var(--neon-amber)" stroke-width="2" stroke-linecap="round"/>
+                    
+                    <!-- Right Curve Component vector line: f(x) = -x + 4 approach paths -->
+                    <line x1="63" y1="63" x2="120" y2="120" stroke="var(--neon-amber)" stroke-width="2" stroke-linecap="round"/>
+                    
+                    <!-- Boundary Dropped Limit Dash Path Layer -->
+                    <line x1="60" y1="150" x2="60" y2="66" stroke="#475569" stroke-width="0.75" stroke-dasharray="2,2"/>
+                    
+                    <!-- Shared Approach Open Circle Destination Node Node at (1,3) -->
+                    <circle cx="60" cy="60" r="3.5" fill="#111a36" stroke="var(--neon-amber)" stroke-width="1.5"/> 
+                    
+                    <!-- Standalone Point Mapping Frame f(1) = 1 Solution Space -->
+                    <circle cx="60" cy="120" r="3" fill="var(--neon-pink)"/>
+                    <text x="68" y="122" fill="var(--neon-pink)" font-size="6" font-weight="bold">f(1) = 1</text>
+                </svg>
             </div>
         </div>
     </div>
+
+
+
 
     <!-- Slide 5: Milestone Gatekeeper -->
     <div class="slide-content" id="slide-5">
@@ -371,33 +494,54 @@
             window.scrollTo(0, 0);
         }
 
-        function updateLimitSimulation() {
-            const gapVal = parseInt(document.getElementById('gap-slider').value);
-            const rhlReadout = document.getElementById('rhl-readout');
-            
-            // Map the graphical gap layout to true mathematical output tracking units
-            // Every 50px vertical shift represents 1.0 mathematical coordinate units
-            const mathOffset = -(gapVal / 50);
-            const currentRHL = (1.00 + mathOffset).toFixed(2);
-            
-            if (gapVal === 0) {
-                // Using a direct Unicode arrow symbol avoids text escaping bugs entirely
-                rhlReadout.textContent = "f(x) → 1.00 (Continuous)";
-                rhlReadout.style.color = "var(--neon-green)";
-            } else {
-                rhlReadout.textContent = `f(x) → ${currentRHL}`;
-                rhlReadout.style.color = "var(--neon-pink)";
-            }
-            
-            // Target anchor alignment matches left path endpoint perfectly at SVG y=70
-            const rightCurveYStart = 70 + gapVal; 
-            
-            const rightCurve = document.getElementById('right-curve');
-            const rightNode = document.getElementById('right-node');
-            
-            rightCurve.setAttribute('d', `M 110,${rightCurveYStart} Q 150,${rightCurveYStart + 15} 195,${rightCurveYStart - 15}`);
-            rightNode.setAttribute('cy', rightCurveYStart);
+function updateLimitSimulation() {
+    const slider = document.getElementById('gap-slider');
+    const val = parseFloat(slider.value); // Tracks displacement value
+    const rhlReadout = document.getElementById('rhl-readout');
+    const label = document.getElementById('continuous-label');
+    
+    // 📐 SVG Visualizer Elements Mapping
+    const rightCurve = document.getElementById('right-curve');
+    const rightNode = document.getElementById('right-node');
+    
+    // Baseline calculations: Center point is at SVG coordinates (110, 70)
+    // Moving the slider down/up scales the height parameter dynamically
+    const baseSvgY = 70;
+    const newSvgY = baseSvgY - val; // Subtracting shifts it vertically upward/downward correctly
+    
+    if (val === 0) {
+        // 🟢 Continuous State Configuration
+        rhlReadout.style.color = 'var(--neon-green)';
+        rhlReadout.style.backgroundColor = 'rgba(0, 255, 127, 0.06)';
+        rhlReadout.innerText = 'f(x) → 1.00';
+        if (label) label.style.display = 'inline-block';
+        
+        // Snap graph back to a unified intersection node
+        if (rightCurve) rightCurve.setAttribute('d', 'M 110,70 Q 150,85 195,55');
+        if (rightNode) {
+            rightNode.setAttribute('cy', '70');
+            rightNode.setAttribute('fill', 'var(--neon-green)'); // Glow green at intersection!
         }
+    } else {
+        // 🚨 Discontinuous Displaced State Configuration
+        const calculatedPos = (1 + (val * 0.01)).toFixed(2);
+        rhlReadout.style.color = 'var(--neon-pink)';
+        rhlReadout.style.backgroundColor = 'rgba(255, 0, 127, 0.06)';
+        rhlReadout.innerText = `f(x) → ${calculatedPos}`;
+        if (label) label.style.display = 'none';
+        
+        // 🔄 Live Vector Recalculation Channel
+        // Modifies the starting point "M 110,[newSvgY]" of the right curve path
+        if (rightCurve) {
+            rightCurve.setAttribute('d', `M 110,${newSvgY} Q 150,85 195,55`);
+        }
+        // Shifts the right terminal node circle vertically down the line
+        if (rightNode) {
+            rightNode.setAttribute('cy', newSvgY.toString());
+            rightNode.setAttribute('fill', 'var(--neon-pink)'); // Returns to pink alert code
+        }
+    }
+}
 
 
         
