@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>3. Symmetry, Parity &amp; Polynomials</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
-    <h2>3. Symmetry, Parity &amp; Polynomials</h2>
+    <h2>3. Symmetry, Parity and Polynomials</h2>
     
     <!-- Step Controls -->
     <div class="tab-nav">
@@ -346,29 +346,37 @@
 </div>
 
 
-    <!-- Slide 5: Milestone Gatekeeper -->
-    <div class="slide-content" id="slide-5">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 3 Verification Check</h3>
-        <p>Execute your division calculations for <strong>Exercise 3.3</strong>. To unlock Section 4, combine your final <strong>numerical remainders</strong> from part (a) and part (b) back-to-back:</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section3-key-input" placeholder="Enter remainder code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #ffffff; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection3Key()">Submit Verification</button>
-        </div>
-        <div id="section3-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+        <!-- Slide 5: Milestone Gatekeeper -->
+<div class="slide-content dynamic-verification-slide" id="slide-5"
+    data-level="3" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
+
+
 
 
     <script>
         function showSlide(slideId) {
+            // 1. Toggle visibility of content blocks
             document.querySelectorAll('.slide-content').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById('slide-' + slideId).classList.add('active');
+            
+            // 2. Highlight current active tab button
             if (window.event && window.event.currentTarget) {
-            window.event.currentTarget.classList.add('active');
+                window.event.currentTarget.classList.add('active');
             }
+
+            // 3. 🚀 Instant auto-scroll back to the top of the module panel
             window.scrollTo(0, 0);
-        } 
+        }
+
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
     </script>
 </body>
 </html>

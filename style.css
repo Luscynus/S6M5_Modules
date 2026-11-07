@@ -96,8 +96,21 @@ body {
     margin-bottom: 6px;
 }
 .stats-row:last-child { margin-bottom: 0; }
-.stats-label { color: var(--text-muted); }
-.stats-value { font-weight: bold; color: var(--neon-cyan); }
+/* 🎴 HARMONIZED STATS BOX LABEL THEME */
+.stats-label {
+    color: #bfa38a; /* 🟢 Switches from cold gray to your beautiful warm parchment-gold! */
+    font-size: 0.85rem;
+    opacity: 0.85; /* Softens the label text slightly so the values look brighter */
+    font-weight: 500;
+}
+
+/* ⚡ KEEP THE DYNAMIC VALUES POPPING IN NEON CYAN */
+.stats-value {
+    color: var(--neon-cyan, #06b6d4);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
 
 /* 🗺️ THE SNAKE MAP ROADWAY TRACK CONTAINER */
 #vertical-map-track {
@@ -166,6 +179,7 @@ body {
     background-color: rgba(16, 185, 129, 0.1);
     color: var(--neon-green);
 }
+
 
 .node-label { 
     font-size: 0.75rem; 
@@ -241,13 +255,29 @@ body {
 .btn-reset { 
     background: transparent; 
     border: 1px solid #334155; 
-    color: var(--neon-danger); 
+    
+    /* 🎨 DEFAULT STATE: A soft, muted parchment-gold that matches the scroll icon color */
+    color: #bfa38a; 
+    
     font-size: 0.7rem; 
-    padding: 4px 8px; 
-    border-radius: 4px; 
+    padding: 4px 10px; 
+    border-radius: 6px; 
     cursor: pointer; 
     font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
 }
+
+/* ⚡ HOVER STATE: Explodes into your vibrant neon amber! */
+.btn-reset:hover {
+    color: var(--neon-amber, #f59e0b); 
+    border-color: rgba(245, 158, 11, 0.4);
+    background-color: rgba(245, 158, 11, 0.08);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.15); /* Adds a premium micro-glow on hover */
+}
+
+
 /* ─────────────────────────────────────────────────────────────────────────────
    📂 PART 2: INTERACTIVE SLIDE LESSON COMPONENT ARCHITECTURE SYSTEM
    ───────────────────────────────────────────────────────────────────────────── */

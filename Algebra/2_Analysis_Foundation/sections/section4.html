@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>4. Introduction to Limits</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
-    <h2>4. Introduction to Limits &amp; Continuity</h2>
+    <h2>4. Limits and Continuity</h2>
     
         <div class="tab-nav">
         <button class="tab-btn active" onclick="showSlide(1)">1. Limit Concept</button>
@@ -466,22 +466,18 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
 
-    <!-- Slide 5: Milestone Gatekeeper -->
-    <div class="slide-content" id="slide-5">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 4 Verification Check</h3>
-        <p>To finalize Module 4 and clear the next master gate lock, complete the domain continuity solutions in <strong>Exercise 4.2</strong>. Combine your missing constant parameters for <strong>part (a) [value of k]</strong> and <strong>part (b) [value of a]</strong> directly back-to-back:</p>
-        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces or commas (e.g., 34).</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section4-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection4Key()">Submit Verification</button>
-        </div>
-        <div id="section4-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+        <!-- Slide 5: Milestone Gatekeeper -->
+<div class="slide-content dynamic-verification-slide" id="slide-5"
+    data-level="4" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
 
     <script>
         function showSlide(slideId) {
@@ -494,7 +490,7 @@
             window.scrollTo(0, 0);
         }
 
-function updateLimitSimulation() {
+        function updateLimitSimulation() {
     const slider = document.getElementById('gap-slider');
     const val = parseFloat(slider.value); // Tracks displacement value
     const rhlReadout = document.getElementById('rhl-readout');
@@ -548,6 +544,11 @@ function updateLimitSimulation() {
         window.addEventListener('DOMContentLoaded', () => {
             updateLimitSimulation();
         });
+
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
     </script>
 </body>
 </html>

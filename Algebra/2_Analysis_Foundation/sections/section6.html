@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Section 6: Derivative Function &amp; Rules</title>
     <!-- Linked to your cleaned global stylesheet -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
     <!-- Unified Section Headline -->
-    <h2>6. Derivative Functions &amp; Rules</h2>
+    <h2>6. Derivative Function and Rules</h2>
 
     <!-- Optimized 4-Step Navigation Deck Layout -->
     <div class="tab-nav">
@@ -380,18 +380,13 @@
 
 </div>
 
-    <!-- Slide 4: Milestone Gatekeeper -->
-    <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 6 Verification Check</h3>
-        <p>To finalize Section 6 and clear the next master gate lock, complete the stationary optimization analysis in <strong>Exercise 6.4</strong>. Gather your target parameters from <strong>part (b) [the two x-coordinates of the turning points]</strong>, then combine them directly back-to-back from smallest to largest:</p>
-        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces or commas. For negative numbers, include the minus sign relative to that specific digit block (e.g., if answers were -9 and 22, you would enter -922).</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section6-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection6Key()">Submit Verification</button>
-        </div>
-        <div id="section6-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+        <!-- Slide 4: Milestone Gatekeeper -->
+<div class="slide-content dynamic-verification-slide" id="slide-4"
+    data-level="6" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
 
     <!-- Core State Control & Canvas Drawing Engines Logic -->
     <script>
@@ -417,186 +412,10 @@
             }
         }
 
-        // ==========================================
-        // 📊 SLIDE 1: DUAL-CANVAS INTERACTIVE PLOTTER
-        // ==========================================
-        const pCanvas = document.getElementById('parentCanvas');
-        const dCanvas = document.getElementById('derivCanvas');
-        const pCtx = pCanvas.getContext('2d');
-        const dCtx = dCanvas.getContext('2d');
-        const xSlider = document.getElementById('xSlider');
-        const xDisplay = document.getElementById('xValDisplay');
-        const slopeDisplay = document.getElementById('slopeValDisplay');
-
-        // Coordinate space mapping parameters
-        const scaleX = 45; 
-        const scaleY = 45; 
-        const centerX = pCanvas.width / 2;
-
-        // 🌟 DECOUPLED BASelines: Keep parent lower, pull derivative dead-center
-        const centerYParent = pCanvas.height - 40; 
-        const centerYDeriv  = dCanvas.height / 2;  
-
-        // Algebraic rule definitions (Matching Page 41 diagrams)
-        const f = (x) => 0.5 * x * x; 
-        const df = (x) => x;         
-
-        // Standard coordinate grid background decorator
-        function drawGrid(ctx, canvas, originY, activeX = null, activeY = null) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.strokeStyle = '#1e293b';
-            ctx.lineWidth = 0.5;
-            
-            // Vertical grid lines
-            for (let x = -4; x <= 4; x++) {
-                let px = centerX + x * scaleX;
-                ctx.beginPath();
-                ctx.moveTo(px, 0);
-                ctx.lineTo(px, canvas.height);
-                ctx.stroke();
-            }
-            // Horizontal grid lines (adjusted dynamically based on custom canvas origin)
-            const minGridY = Math.floor((originY - canvas.height) / scaleY);
-            const maxGridY = Math.ceil(originY / scaleY);
-            for (let y = minGridY; y <= maxGridY; y++) {
-                let py = originY - y * scaleY;
-                ctx.beginPath();
-                ctx.moveTo(0, py);
-                ctx.lineTo(canvas.width, py);
-                ctx.stroke();
-            }
-
-            // Core structural axes
-            ctx.strokeStyle = '#475569';
-            ctx.lineWidth = 1.5;
-            
-            // X-Axis Line
-            ctx.beginPath();
-            ctx.moveTo(0, originY);
-            ctx.lineTo(canvas.width, originY);
-            ctx.stroke();
-            
-            // Y-Axis Line
-            ctx.beginPath();
-            ctx.moveTo(centerX, 0);
-            ctx.lineTo(centerX, canvas.height);
-            ctx.stroke();
-
-            // Label coordinate axes boundaries
-            ctx.fillStyle = '#64748b';
-            ctx.font = '10px monospace';
-            ctx.fillText('x', canvas.width - 12, originY - 6);
-            ctx.fillText('y', centerX + 6, 12);
-
-            // Conditional crosshairs projection
-            if (activeX !== null && activeY !== null) {
-                ctx.strokeStyle = '#334155';
-                ctx.lineWidth = 1;
-                
-                let px = centerX + activeX * scaleX;
-                let py = originY - activeY * scaleY;
-
-                ctx.beginPath();
-                ctx.moveTo(px, originY);
-                ctx.lineTo(px, py);
-                ctx.lineTo(centerX, py);
-                ctx.stroke();
-            }
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
         }
-
-        // Live calculation engine and renderer
-        function renderVisualDiscovery() {
-            const currentX = parseFloat(xSlider.value);
-            const currentY = f(currentX);
-            const currentSlope = df(currentX);
-
-            // Update user interface text readouts
-            xDisplay.innerText = currentX.toFixed(1);
-            slopeDisplay.innerText = currentSlope.toFixed(1);
-
-            // ------------------------------------------
-            // DRAW CANVAS 1: PARENT CURVE WITH TANGENT
-            // ------------------------------------------
-            drawGrid(pCtx, pCanvas, centerYParent, currentX, currentY);
-            
-            pCtx.strokeStyle = '#38bdf8';
-            pCtx.lineWidth = 2.5;
-            pCtx.beginPath();
-            for (let x = -3.2; x <= 3.2; x += 0.1) {
-                let px = centerX + x * scaleX;
-                let py = centerYParent - f(x) * scaleY;
-                if (x === -3.2) pCtx.moveTo(px, py);
-                else pCtx.lineTo(px, py);
-            }
-            pCtx.stroke();
-
-            // Calculate and draw shifting linear tangent line segment
-            pCtx.strokeStyle = '#f43f5e';
-            pCtx.lineWidth = 1.75;
-            pCtx.beginPath();
-            const tLength = 1.2; 
-            let xStart = currentX - tLength;
-            let xEnd = currentX + tLength;
-            let yStart = currentSlope * (xStart - currentX) + currentY;
-            let yEnd = currentSlope * (xEnd - currentX) + currentY;
-            pCtx.moveTo(centerX + xStart * scaleX, centerYParent - yStart * scaleY);
-            pCtx.lineTo(centerX + xEnd * scaleX, centerYParent - yEnd * scaleY);
-            pCtx.stroke();
-
-            // Trace current tracking anchor dot
-            pCtx.fillStyle = '#f8fafc';
-            pCtx.beginPath();
-            pCtx.arc(centerX + currentX * scaleX, centerYParent - currentY * scaleY, 5, 0, 2 * Math.PI);
-            pCtx.fill();
-
-            // ------------------------------------------
-            // DRAW CANVAS 2: DERIVATIVE PATH (🌟 CENTERED)
-            // ------------------------------------------
-            drawGrid(dCtx, dCanvas, centerYDeriv, currentX, currentSlope);
-
-            dCtx.strokeStyle = '#10b981';
-            dCtx.lineWidth = 2.5;
-            dCtx.beginPath();
-            for (let x = -3.2; x <= 3.2; x += 0.1) {
-                let px = centerX + x * scaleX;
-                let py = centerYDeriv - df(x) * scaleY; // Evaluates nicely in negative quadrant fields now
-                if (x === -3.2) dCtx.moveTo(px, py);
-                else dCtx.lineTo(px, py);
-            }
-            dCtx.stroke();
-
-            // Place isolated coordinate snapshot pinpoint marker
-            dCtx.fillStyle = '#10b981';
-            dCtx.beginPath();
-            dCtx.arc(centerX + currentX * scaleX, centerYDeriv - currentSlope * scaleY, 5, 0, 2 * Math.PI);
-            dCtx.fill();
-        }
-
-        // Connect user interaction listeners to input elements
-        xSlider.addEventListener('input', renderVisualDiscovery);
-
-        function filterFormulaMatrixTable() {
-            const input = document.getElementById("formulaSearchInput");
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById("formulaLookupMatrixTable");
-            const tr = table.getElementsByTagName("tr");
-
-            // Loop through data rows and toggle visibility state based on search match
-            for (let i = 1; i < tr.length; i++) {
-                let rowText = tr[i].textContent || tr[i].innerText;
-                if (rowText.toLowerCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-        
-        // Safe operational trigger on initialization lifecycle hook
-        window.addEventListener('DOMContentLoaded', renderVisualDiscovery);
-
-
 
 
     </script>

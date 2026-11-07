@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Section 5: Introduction to Derivatives &amp; Tangents</title>
     <!-- Linked to your cleaned global stylesheet -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
     <!-- Unified Section Headline -->
-    <h2>5. Introduction to Derivatives &amp; Tangents</h2>
+    <h2>5. Derivatives and Tangents</h2>
 
     <!-- Optimized 6-Step Navigation Deck Layout -->
     <div class="tab-nav">
@@ -582,18 +582,13 @@
 
 
 
-    <!-- Slide 6: Milestone Gatekeeper -->
-    <div class="slide-content" id="slide-6">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 5 Verification Check</h3>
-        <p>To finalize section 5 and clear the next master gate lock, complete the instantaneous rate solutions in <strong>Exercise 5.1</strong> and <strong>Exercise 5.2</strong>. Calculate your target parameters for <strong>Exercise 5.1 part (b) [value of f'(1)]</strong> and the final y-intercept constant value for <strong>Exercise 5.2 part (a) [p-value]</strong>, then combine them directly back-to-back:</p>
-        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces or commas. For negative numbers, include the minus sign relative to that specific digit block (e.g., if answers were 4 and -25, you would enter 4-25).</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section5-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection5Key()">Submit Verification</button>
-        </div>
-        <div id="section5-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+        <!-- Slide 6: Milestone Gatekeeper -->
+<div class="slide-content dynamic-verification-slide" id="slide-6"
+    data-level="5" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
 
 
     <!-- MASTER DECK NAVIGATION ROUTER -->
@@ -617,6 +612,11 @@
             
             // Scroll frame back to top smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Inside showSlide(slideId)
+            if (slideId === 1) runUnifiedSkiSimulation();
+            if (slideId === 2) runLimitSimulation();
+            if (slideId === 3) runTangentSimulation();
         }
 
         function runUnifiedSkiSimulation() {
@@ -819,10 +819,10 @@
             runTangentSimulation();
         });
 
-        // Inside showSlide(slideId)
-        if (slideId === 1) runUnifiedSkiSimulation();
-        if (slideId === 2) runLimitSimulation();
-        if (slideId === 3) runTangentSimulation();
+        // 🚀 2. New Automation Trigger: Moved outside the comments so it runs on load!
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
     </script>
 </body>
 </html>

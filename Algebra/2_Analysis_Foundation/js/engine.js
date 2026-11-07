@@ -36,51 +36,126 @@ function resetEngineState() {
     }
 }
 
-/* 📡 CLEAN HORIZONTAL MATRIX GRID MAP RENDERER */
+/* 📡 ENGINE OPTIMIZED VERTICAL TIMELINE ROADMAP RENDERER */
 function renderVerticalMapTrack() {
     const trackContainer = document.getElementById("vertical-map-track");
     if (!trackContainer) return;
     trackContainer.innerHTML = "";
 
-    const modulesPerRow = 3; 
-    let currentScaleRow = [];
+    // 1. SETUP THE PARENT CONTAINER
+    trackContainer.style.setProperty("display", "flex", "important");
+    trackContainer.style.setProperty("flex-direction", "column", "important");
+    trackContainer.style.setProperty("gap", "6px", "important"); 
+    trackContainer.style.setProperty("justify-content", "flex-start", "important");
+    trackContainer.style.setProperty("position", "relative", "important");
+    trackContainer.style.setProperty("padding", "10px 0", "important");
 
-    for (let i = 1; i <= TOTAL_NODES; i++) {
-        currentScaleRow.push(i);
+    // DYNAMIC PROGRESS COLOR CALCULATION
+    const completedCount = gameState.completedLevels.length;
+    const completedPercent = Math.min(100, Math.round((completedCount / TOTAL_NODES) * 100));
+    const activePercent = Math.min(100, Math.round(((completedCount + 1) / TOTAL_NODES) * 100));
 
-        if (currentScaleRow.length === modulesPerRow || i === TOTAL_NODES) {
-            const rowDiv = document.createElement("div");
-            rowDiv.className = "map-track-row";
+    // 2. TIMELINE BACKGROUND LINE
+    const timelineLine = document.createElement("div");
+    timelineLine.style.position = "absolute";
+    timelineLine.style.left = "36px"; 
+    timelineLine.style.top = "20px";
+    timelineLine.style.bottom = "20px";
+    timelineLine.style.width = "2px";
+    
+    timelineLine.style.background = `linear-gradient(to bottom, 
+        var(--neon-green) 0%, 
+        var(--neon-green) ${completedPercent}%, 
+        var(--neon-cyan) ${completedPercent}%, 
+        var(--neon-cyan) ${activePercent}%, 
+        transparent ${activePercent}%, 
+        transparent 100%
+    )`; 
+    timelineLine.style.zIndex = "0"; 
+    trackContainer.appendChild(timelineLine);
 
-            currentScaleRow.forEach(levelNum => {
-                const nodeWrapper = document.createElement("div");
-                nodeWrapper.className = "map-node-container";
-                
-                if (levelNum === gameState.currentActiveLevel) nodeWrapper.classList.add("active");
-                if (gameState.completedLevels.includes(levelNum)) nodeWrapper.classList.add("completed");
-                
-                if (levelNum <= gameState.highestUnlocked) {
-                    nodeWrapper.onclick = () => { switchLevelView(levelNum); };
-                } else {
-                    nodeWrapper.style.opacity = "0.25";
-                    nodeWrapper.style.cursor = "not-allowed";
-                }
-
-                // 🟢 REMOVED THE ARROW SPAN COMPLETELY
-                nodeWrapper.innerHTML = `
-                    <div class="map-node">${levelNum}</div>
-                    <div class="node-label" style="font-size: 0.8rem; margin-top: 6px; text-align: center;">Section ${levelNum}</div>
-                `;
-                rowDiv.appendChild(nodeWrapper);
-            });
-
-            trackContainer.appendChild(rowDiv);
-            // 🟢 REMOVED THE PATH-DROP-ELBOW CONNECTORS GENERATOR COMPLETELY
-            currentScaleRow = [];
+    // 3. BUILD THE COMPACT TRACK LIST
+    for (let levelNum = 1; levelNum <= TOTAL_NODES; levelNum++) {
+        const nodeWrapper = document.createElement("div");
+        nodeWrapper.className = "map-node-container";
+        
+        // Progress State Formatting Flags
+        if (levelNum === gameState.currentActiveLevel) nodeWrapper.classList.add("active");
+        if (gameState.completedLevels.includes(levelNum)) nodeWrapper.classList.add("completed");
+        
+        const isUnlocked = levelNum <= gameState.highestUnlocked;
+        if (isUnlocked) {
+            nodeWrapper.onclick = () => { switchLevelView(levelNum); };
+        } else {
+            nodeWrapper.style.opacity = "0.3";
         }
+
+        const fullTitle = nodeTitles[levelNum] || `Section ${levelNum}`;
+        const cleanDisplayTitle = fullTitle.replace(/^\d+\.\s*/, '');
+
+        // PREMIUM SIDE-BY-SIDE SIDEBAR ALIGNMENT
+        nodeWrapper.style.setProperty("display", "flex", "important");
+        nodeWrapper.style.setProperty("flex-direction", "row", "important");
+        nodeWrapper.style.setProperty("align-items", "center", "important");
+        nodeWrapper.style.setProperty("justify-content", "flex-start", "important");
+        nodeWrapper.style.setProperty("margin", "0", "important");   
+        nodeWrapper.style.setProperty("padding", "6px 10px", "important"); 
+        nodeWrapper.style.gap = "16px";                                   
+        nodeWrapper.style.width = "100%";
+        nodeWrapper.style.position = "relative";
+        nodeWrapper.style.zIndex = "1"; 
+        nodeWrapper.style.borderRadius = "6px";
+        nodeWrapper.style.transition = "all 0.2s ease";
+        nodeWrapper.style.cursor = isUnlocked ? "pointer" : "not-allowed";
+
+        // INTERACTIVE LIST HOVER EFFECT
+        if (isUnlocked) {
+            nodeWrapper.onmouseenter = () => {
+                nodeWrapper.style.backgroundColor = "rgba(255, 255, 255, 0.03)";
+                nodeWrapper.style.transform = "translateX(2px)";
+            };
+            nodeWrapper.onmouseleave = () => {
+                nodeWrapper.style.backgroundColor = "transparent";
+                nodeWrapper.style.transform = "translateX(0)";
+            };
+        }
+
+        // 🚀 TIMELINE MAP DATA CONDITIONS
+        const isUncompletedTarget = (levelNum === gameState.highestUnlocked && !gameState.completedLevels.includes(levelNum));
+        const isCurrentlyViewed = (levelNum === gameState.currentActiveLevel); // This matches your selected active layout view check!
+
+        // Inject HTML
+        nodeWrapper.innerHTML = `
+            <div class="map-node" style="
+                flex-shrink: 0; 
+                transform: scale(0.85); 
+                margin: 0; 
+                position: relative; 
+                z-index: 2; 
+                background-color: #0d1321 !important;
+                
+                /* 🎯 BASE COLOR LAYER: Always cyan for the active progress milestone */
+                ${isUncompletedTarget ? 'border-color: #06b6d4 !important; color: #06b6d4 !important;' : ''}
+                
+                /* ⚡ GLOW SELECTION LAYER: Only applies neon ambient glow IF it is also selected/viewed! */
+                ${isUncompletedTarget && isCurrentlyViewed ? 'filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6)) !important;' : ''}
+            ">${levelNum}</div>
+            <div class="node-label" style="font-size: 0.82rem; text-align: left; color: var(--text-main); font-weight: 500; line-height: 1.3; margin: 0; padding: 0;">
+                ${cleanDisplayTitle}
+            </div>
+        `;
+        
+        trackContainer.appendChild(nodeWrapper);
     }
     syncSidebarInterface();
 }
+
+
+
+
+
+
+
 
 
 function syncSidebarInterface() {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>9. Interactive Module</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
@@ -420,28 +420,13 @@
 
 
 
-    <!-- Slide 5: Milestone Unlock Gateway Framework -->
-    <div class="slide-content" id="slide-5">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 9 Verification Check</h3>
-        <p>To finalize Section 9 and clear the next master gate lock, complete the target problem metrics analysis from the optimization lab. Gather your optimal dimensions code, then combine them directly back-to-back from left to right (Width followed by Length):</p>
-        
-        <div style="background: rgba(30, 41, 59, 0.2); border: 1px dashed #334155; padding: 15px; border-radius: 6px; margin: 15px 0;">
-            <span style="color: var(--text-main); font-weight: bold; font-size: 0.85rem; display: block; margin-bottom: 4px;">🧩 Target Metrics Checklist</span>
-            <ul style="font-size: 0.8rem; color: var(--text-muted); padding-left: 20px; line-height: 1.5; margin: 0;">
-                <li>Identify the width parameter <span class="math-inline">x</span> that maximizes the area function <span class="math-inline">A(x)</span>.</li>
-                <li>Calculate the corresponding open side landscape length vector <span class="math-inline">(800 - 2x)</span>.</li>
-                <li>Merge both integer solutions together into a single continuous code block.</li>
-            </ul>
-        </div>
-        
-        <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Format: Enter both integers next to each other with no spaces, commas, or characters (e.g., 100200).</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section9-key-input" placeholder="Enter constants code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection9Key()">Submit Verification</button>
-        </div>
-        <div id="section9-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+        <!-- Slide 5: Milestone Gatekeeper -->
+<div class="slide-content dynamic-verification-slide" id="slide-5"
+    data-level="9" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
 
 
     <script>
@@ -456,6 +441,11 @@
             if (targetSlide) targetSlide.classList.add('active');
             const buttons = document.querySelectorAll('.tab-btn');
             if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+        }
+        
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
         }
     </script>
 </body>

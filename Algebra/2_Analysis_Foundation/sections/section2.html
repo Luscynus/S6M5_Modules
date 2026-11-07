@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>2. Composite &amp; Inverse Functions</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 
-    <h2>2. Composite &amp; Inverse Functions</h2>
+    <h2>2. Composite and Inverse Functions</h2>
     
     <!-- Step Controls -->
     <div class="tab-nav">
@@ -209,28 +209,31 @@
 
 
     <!-- Slide 5: Milestone Gatekeeper -->
-    <div class="slide-content" id="slide-5">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section 2 Verification Check</h3>
-        <p>Complete your workbook exercises. To unlock Section 3, find the <strong>number constants inside the numerators</strong> of your final simplified answers in Exercise 2.2:</p>
-        
-        <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <input type="text" id="section2-key-input" placeholder="Enter composite code..." autocomplete="off" style="background: #0f172a; border: 1px solid #334155; color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 1rem; width: 220px;">
-            <button style="background: var(--neon-amber); color: #ffffff; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer;" onclick="parent.verifySection2Key()">Submit Verification</button>
-        </div>
-        <div id="section2-feedback-box" style="margin-top: 15px; font-weight: 700;"></div>
-    </div>
+<div class="slide-content dynamic-verification-slide" id="slide-5"
+    data-level="2" 
+    data-answer="0"
+    data-prompt="Complete your mandatory workbook exercises. To unlock the next milestone, submit your verified passcode check:"
+    data-fail="Check your simplified fractional terms and try again.">
+</div>
 
-
-    <script>
-        function showSlide(slideId) {
-            document.querySelectorAll('.slide-content').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('slide-' + slideId).classList.add('active');
-            if (window.event && window.event.currentTarget) {
+<script>
+    // 1. Existing Slide Swapping Logic
+    function showSlide(slideId) {
+        document.querySelectorAll('.slide-content').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('slide-' + slideId).classList.add('active');
+        if (window.event && window.event.currentTarget) {
             window.event.currentTarget.classList.add('active');
-            }
-            window.scrollTo(0, 0);
         }
-    </script>
+        window.scrollTo(0, 0);
+    }
+
+    // 🚀 2. New Automation Trigger: Paints the verification screen on load
+    if (parent && parent.initializeVerificationSlides) {
+        parent.initializeVerificationSlides(document);
+    }
+</script>
+    
+</script>
 </body>
 </html>
