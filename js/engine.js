@@ -10,7 +10,7 @@ let gameState = {
 };
 
 function initProgressEngine() {
-    const memory = localStorage.getItem("calculus_matrix_state");
+    const memory = localStorage.getItem(`gameState_${syllabusData.moduleID}`);
     if (memory) {
         try {
             gameState = JSON.parse(memory);
@@ -23,13 +23,23 @@ function initProgressEngine() {
 }
 
 function saveEngineState() {
-    localStorage.setItem("calculus_matrix_state", JSON.stringify(gameState));
-    syncSidebarInterface();
+    // 🚀 Combines with your newly defined module identifier
+    const saveKey = `gameState_${syllabusData.moduleID}`;
+    localStorage.setItem(saveKey, JSON.stringify(gameState));
+}
+
+function loadEngineState() {
+    const saveKey = `gameState_${syllabusData.moduleID}`;
+    const saved = localStorage.getItem(saveKey);
+    if (saved) {
+        gameState = JSON.parse(saved);
+    }
 }
 
 function resetEngineState() {
     if(confirm("Are you sure you want to clear your local dashboard memory checkpoint?")) {
-        localStorage.removeItem("calculus_matrix_state");
+        const saveKey = `gameState_${syllabusData.moduleID}`;
+        localStorage.removeItem(saveKey);
         gameState = { highestUnlocked: 1, currentActiveLevel: 1, completedLevels: [], xp: 0 };
         saveEngineState();
         location.reload();
@@ -52,8 +62,8 @@ function renderVerticalMapTrack() {
 
     // DYNAMIC PROGRESS COLOR CALCULATION
     const completedCount = gameState.completedLevels.length;
-    const completedPercent = Math.min(100, Math.round((completedCount / TOTAL_NODES) * 100));
-    const activePercent = Math.min(100, Math.round(((completedCount + 1) / TOTAL_NODES) * 100));
+    const completedPercent = Math.min(100, Math.round((completedCount / syllabusData.totalNodes) * 100));
+    const activePercent = Math.min(100, Math.round(((completedCount + 1) / syllabusData.totalNodes) * 100));
 
     // 2. TIMELINE BACKGROUND LINE
     const timelineLine = document.createElement("div");
@@ -75,7 +85,7 @@ function renderVerticalMapTrack() {
     trackContainer.appendChild(timelineLine);
 
     // 3. BUILD THE COMPACT TRACK LIST
-    for (let levelNum = 1; levelNum <= TOTAL_NODES; levelNum++) {
+    for (let levelNum = 1; levelNum <= syllabusData.totalNodes; levelNum++) {
         const nodeWrapper = document.createElement("div");
         nodeWrapper.className = "map-node-container";
         
@@ -90,7 +100,7 @@ function renderVerticalMapTrack() {
             nodeWrapper.style.opacity = "0.3";
         }
 
-        const fullTitle = nodeTitles[levelNum] || `Section ${levelNum}`;
+        const fullTitle = syllabusData.nodeTitles[levelNum] || `Section ${levelNum}`;
         const cleanDisplayTitle = fullTitle.replace(/^\d+\.\s*/, '');
 
         // PREMIUM SIDE-BY-SIDE SIDEBAR ALIGNMENT
@@ -122,7 +132,7 @@ function renderVerticalMapTrack() {
 
         // 🚀 TIMELINE MAP DATA CONDITIONS
         const isUncompletedTarget = (levelNum === gameState.highestUnlocked && !gameState.completedLevels.includes(levelNum));
-        const isCurrentlyViewed = (levelNum === gameState.currentActiveLevel); // This matches your selected active layout view check!
+        const isCurrentlyViewed = (levelNum === gameState.currentActiveLevel);
 
         // Inject HTML
         nodeWrapper.innerHTML = `
@@ -134,10 +144,10 @@ function renderVerticalMapTrack() {
                 z-index: 2; 
                 background-color: #0d1321 !important;
                 
-                /* 🎯 BASE COLOR LAYER: Always cyan for the active progress milestone */
+                /* 🎯 BASE COLOR LAYER */
                 ${isUncompletedTarget ? 'border-color: #06b6d4 !important; color: #06b6d4 !important;' : ''}
                 
-                /* ⚡ GLOW SELECTION LAYER: Only applies neon ambient glow IF it is also selected/viewed! */
+                /* ⚡ GLOW SELECTION LAYER */
                 ${isUncompletedTarget && isCurrentlyViewed ? 'filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6)) !important;' : ''}
             ">${levelNum}</div>
             <div class="node-label" style="font-size: 0.82rem; text-align: left; color: var(--text-main); font-weight: 500; line-height: 1.3; margin: 0; padding: 0;">
@@ -150,17 +160,9 @@ function renderVerticalMapTrack() {
     syncSidebarInterface();
 }
 
-
-
-
-
-
-
-
-
 function syncSidebarInterface() {
     document.getElementById("stat-xp").textContent = gameState.completedLevels.length * 150 + " XP";
-    document.getElementById("stat-nodes").textContent = gameState.completedLevels.length + " / " + TOTAL_NODES;
+    document.getElementById("stat-nodes").textContent = gameState.completedLevels.length + " / " + syllabusData.totalNodes;
     
     const containers = document.querySelectorAll(".map-node-container");
     containers.forEach((box, index) => {
@@ -180,14 +182,14 @@ function switchLevelView(levelId) {
     if (!viewport) return;
     viewport.innerHTML = "";
 
-    if (levelId <= TOTAL_NODES) {
+    if (levelId <= syllabusData.totalNodes) {
         viewport.innerHTML = `
             <iframe src="sections/section${levelId}.html" class="content-iframe" style="height: 100%; border: none;"></iframe>
         `;
     } else {
         viewport.innerHTML = `
             <div style="background:#111827; border:1px solid var(--border-glow); padding:40px; border-radius:12px; text-align:center; width:100%; box-sizing:border-box;">
-                <h3 style="color:var(--neon-blue); margin-top:0;">📚 ${nodeTitles[levelId]}</h3>
+                <h3 style="color:var(--neon-blue); margin-top:0;">📚 ${syllabusData.nodeTitles[levelId]}</h3>
                 <p style="color:var(--text-muted); max-width:400px; margin:15px auto;">This section template is ready in the directory timeline framework shell.</p>
             </div>
         `;

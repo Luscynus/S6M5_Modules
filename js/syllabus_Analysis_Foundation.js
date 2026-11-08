@@ -2,8 +2,6 @@
 // 📑 DATA MANAGEMENT REGISTRY & SYLLABUS
 // ==========================================
 
-const TOTAL_NODES = 11;
-
 // Complete 11-Node Syllabus Route Titles
 const nodeTitles = {
     1: "1. Functions: Domain & Range",
@@ -17,4 +15,12 @@ const nodeTitles = {
     9: "9. Stationary Points Analysis and Second Derivative",
     10: "10. Curve Sketching and Asymptotes",
     11: "11. Reading Derivative Graphs Graphically"
+};
+
+// 🚀 THE UNIFIED METADATA REGISTRY OBJECT
+const syllabusData = {
+    moduleID: "advanced_analysis_track",
+    nodeTitles: nodeTitles,
+    // Automatically calculates the total count directly inside the active profile
+    totalNodes: Object.keys(nodeTitles).length
 };

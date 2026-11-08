@@ -2,8 +2,6 @@
 // 📑 DATA MANAGEMENT REGISTRY & SYLLABUS
 // ==========================================
 
-const TOTAL_NODES = 17;
-
 // Complete 17-Node Syllabus Route Titles
 const nodeTitles = {
     1: "1. Tangents to Non-Polynomial Functions",
@@ -23,4 +21,12 @@ const nodeTitles = {
     15: "15. Solving Exponential Inequalities",
     16: "16. Sketching Graphs of Logarithmic Functions",
     17: "17. Sketching Graphs of Exponential Functions"
+};
+
+// 🚀 THE UNIFIED METADATA REGISTRY OBJECT
+const syllabusData = {
+    moduleID: "advanced_analysis_track",
+    nodeTitles: nodeTitles,
+    // Automatically calculates the total count directly inside the active profile
+    totalNodes: Object.keys(nodeTitles).length
 };
