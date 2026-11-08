@@ -17,7 +17,7 @@
         <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(4)">🔑 4. Milestone Unlock</button>
     </div>
 
-    <!-- Slide 1: The 4 Steps to Analysing a Curve -->
+<!-- Slide 1: The 4 Steps to Analysing a Curve -->
     <div class="slide-content active" id="slide-1">
         <h3>The 4 Steps to Analysing a Curve</h3>
         <p>To sketch the complete graph of an unknown function systematically without a calculator, we follow an intentional four-stage mathematical breakdown. This shifts our focus away from long, point-by-point guessing tables and isolates the exact landmarks and boundary lines that govern coordinate behavior.</p>
@@ -32,23 +32,23 @@
                 <!-- STAGE 01 -->
                 <div>
                     <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 01: Find the Domain Restrictions</strong>
-                    <p style="margin: 0 0 12px 0;">Isolate structural breaks in the curve. Before graphing, you must map where the function is legally allowed to exist by scanning for three core algebraic domain traps:</p>
+                    <p style="margin: 0 0 12px 0;">Isolate structural breaks in the curve. Before graphing, you must map where the function is legally allowed to exist by scanning for three core algebraic domain restrictions:</p>
                     
                     <div class="grid-3">
                         <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
-                            <strong>⚠️ A: Denominators</strong>
+                            <strong>A: Denominators</strong>
                             <div class="math-block" style="margin: 5px 0;"><span class="frac"><span class="top">1</span><span class="bottom">g(x)</span></span> &rArr; g(x) &ne; 0</div>
-                            <p>Bottom cannot equal zero. Pinpoints a permanent vertical asymptote break line.</p>
+                            <p>The denominator cannot equal zero. This pinpoints a vertical asymptote break line.</p>
                         </div>
                         <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
-                            <strong>⚠️ B: Square Roots</strong>
+                            <strong>B: Square Roots</strong>
                             <div class="math-block" style="margin: 5px 0;">&radic;<span class="math-inline" style="border-top: 1px solid currentColor; padding-top: 1px;">g(x)</span> &rArr; g(x) &ge; 0</div>
-                            <p>Inside terms must be non-negative. Blanks out illegal imaginary territories.</p>
+                            <p>Inside terms must be non-negative. This excludes values that lead to imaginary numbers.</p>
                         </div>
                         <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
-                            <strong>⚠️ C: Logarithms</strong>
+                            <strong>C: Logarithms</strong>
                             <div class="math-block" style="margin: 5px 0;">ln(g(x)) &rArr; g(x) &gt; 0</div>
-                            <p>Arguments must be strictly positive. Creates an open boundary drop cliff.</p>
+                            <p>Arguments must be strictly greater than zero. This creates an open domain boundary line.</p>
                         </div>
                     </div>
                 </div>
@@ -58,13 +58,13 @@
                 <!-- STAGE 02 -->
                 <div>
                     <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 02: Locate Axis Intercepts</strong>
-                    <p style="margin: 0 0 12px 0;">Pin down where the curve anchors onto your coordinate canvas system. These intersections act as the literal physical nails holding your curve outline onto the structural grid:</p>
+                    <p style="margin: 0 0 12px 0;">Pin down where the curve crosses the axes on your coordinate system. These intersection points act as explicit anchors holding your curve outline onto the grid layout:</p>
 
                     <div class="grid-2" style="align-items: center;">
                         <div>
                             <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
-                                <li><strong>x-Intercepts (Roots):</strong> Set the total output equation <strong class="math-inline" style="color: var(--neon-cyan);">f(x) = 0</strong>. This tells you exactly where the path slices horizontally across the horizon floor line.</li>
-                                <li style="margin-top: 8px;"><strong>y-Intercept (Initial Gate):</strong> Substitute input parameter <strong class="math-inline" style="color: var(--neon-amber);">x = 0</strong>. This reveals the standalone altitude point where the curve pierces the vertical spine wall.</li>
+                                <li><strong>x-Intercepts (Roots):</strong> Set the total output equation equal to zero: <strong class="math-inline" style="color: var(--neon-cyan);">f(x) = 0</strong>. This tells you exactly where the path crosses the horizontal axis line.</li>
+                                <li style="margin-top: 8px;"><strong>y-Intercept (Initial Gate):</strong> Substitute input parameter equal to zero: <strong class="math-inline" style="color: var(--neon-amber);">x = 0</strong>. This reveals the exact point where the curve crosses the vertical axis line.</li>
                             </ul>
                         </div>
                         <div class="visual-wrapper" style="margin: 0; padding: 15px;">
@@ -88,10 +88,11 @@
 
                 <div style="border-top: 1px dashed rgba(255, 255, 255, 0.08); width: 100%;"></div>
 
+
                 <!-- STAGE 03 -->
                 <div>
                     <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 03: Determine Asymptotic Boundaries</strong>
-                    <p style="margin: 0 0 12px 0;">Track infinite behaviors at extreme edges. An asymptote acts as an invisible geometric boundary guideline that a curve approaches closer and closer but never actually touches or breaches:</p>
+                    <p style="margin: 0 0 12px 0;">Track infinite behaviors at extreme edges. An asymptote acts as an invisible boundary line that a curve approaches closer and closer but never actually touches or crosses:</p>
                     
                     <div class="grid-2">
                         <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
@@ -99,14 +100,14 @@
                             <div class="math-block" style="margin: 5px 0;">
                                 <span style="font-family: sans-serif; font-size: 0.9rem; color: var(--text-muted); font-style: normal; margin-right: 6px;">If</span> lim<sub>x &rarr; c<sup>&plusmn;</sup></sub> f(x) = &plusmn;&infin;
                             </div>
-                            <p>Discovered at isolated values <strong class="math-inline">x = c</strong> where the denominator breaks, pushing outputs to spike instantly into infinity.</p>
+                            <p>Found at isolated values <strong class="math-inline">x = c</strong> where the denominator equals zero, causing the function values to grow to infinity.</p>
                         </div>
                         <div class="visual-wrapper" style="margin: 0; align-items: flex-start;">
                             <strong>Horizontal Asymptotes (HA)</strong>
                             <div class="math-block" style="margin: 5px 0;">
                                 <span style="font-family: sans-serif; font-size: 0.9rem; color: var(--text-muted); font-style: normal; margin-right: 6px;">If</span> lim<sub>x &rarr; &plusmn;&infin;</sub> f(x) = L
                             </div>
-                            <p>Discovered by tracking end-behaviors as inputs reach infinity. The graph flattens to a horizontal level <strong class="math-inline">y = L</strong>.</p>
+                            <p>Found by calculating what happens to the graph at the far ends as x goes to infinity. The curve flattens to a horizontal level <strong class="math-inline">y = L</strong>.</p>
                         </div>
                     </div>
 
@@ -117,34 +118,35 @@
                 <!-- STAGE 04 -->
                 <div>
                     <strong style="color: var(--neon-blue); display: block; margin-bottom: 6px;">STAGE 04: Compile a Variation Table</strong>
-                    <p style="margin: 0;">Compute the derivatives <strong class="math-inline">f'(x)</strong> and <strong class="math-inline">f''(x)</strong> to evaluate their signs across each domain interval. Map these signs onto a master table to isolate exactly where the curve rises, falls, turns at stationary extrema points, or transitions its concavity.</p>
+                    <p style="margin: 0;">Calculate the first derivative <strong class="math-inline">f'(x)</strong> and second derivative <strong class="math-inline">f''(x)</strong> to check their signs across each domain interval. We collect all of this information into a single, unified variation table to show exactly where the curve is increasing, decreasing, turning at stationary points, or changing its concavity.</p>
                 </div>
+
 
             </div>
         </div>
     </div>
 
 
-    <!-- Slide 2: Rational Verification Laboratories -->
+<!-- Slide 2: Rational Verification Laboratories -->
     <div class="slide-content" id="slide-2">
-        <h3>Rational Verification Laboratories</h3>
-        <p>Synthesize all analytical steps into a single cohesive curve blueprint. Study this comprehensive master evaluation workflow to observe how algebra and derivatives lock together to dictate a curve's complete graphical profile.</p>
+        <h3>Rational Function Analysis</h3>
+        <p>Combine all your analysis steps into a single curve blueprint. Follow this step-by-step example problem to see how basic algebra and derivatives work together to show the full shape of a curve.</p>
         
         <!-- 📘 VISUALLY REWORKED COMPREHENSIVE WORKED EXTREMUM CARD -->
         <div class="block-example" style="margin-bottom: 20px;">
-            <strong>Worked Example: Global Geometric Analysis of a Rational Function</strong>
+            <strong>Worked Example: Complete Analysis of a Rational Function</strong>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
                 f(x) = <span class="frac"><span class="top">2x</span><span class="bottom">x &minus; 1</span></span>
             </div>
             
             <div class="block-solution">
-                <strong>Solution Method:</strong>
+                <strong>Solution:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     
                     <!-- STEP 1 -->
                     <li style="margin-bottom: 14px;">
-                        <span>Domain Restrictions:</span> Set the denominator expression equal to zero to isolate where division breaks down:
+                        <span>Domain Restrictions:</span> Set the denominator expression equal to zero to find where the function is undefined:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             x &minus; 1 = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 1 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; D<sub>f</sub> = (&minus;&infin;, 1) &cup; (1, +&infin;)</span>
                         </div>
@@ -152,16 +154,16 @@
                     
                     <!-- STEP 2 -->
                     <li style="margin-bottom: 0;">
-                        <span>Axis Intercepts:</span> Map where the path anchors onto the coordinate grid boundaries:
+                        <span>Axis Intercepts:</span> Find where the curve crosses the axes on your coordinate grid layout:
                         
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            Horizontal (x-Int): &nbsp;&nbsp; 2x = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 0 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; (0, 0)</span>
+                            Horizontal (x-intercept): &nbsp;&nbsp; 2x = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 0 <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; (0, 0)</span>
                         </div>
                         
                         <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
                             <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
                                 <tr style="background: none; border: none; vertical-align: middle;">
-                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">Vertical (y-Int): &nbsp;&nbsp; f(0) = </td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;">Vertical (y-intercept): &nbsp;&nbsp; f(0) = </td>
                                     <td style="padding: 0; border: none; vertical-align: middle;">
                                         <span class="frac" style="vertical-align: middle;"><span class="top">2(0)</span><span class="bottom">0 &minus; 1</span></span>
                                     </td>
@@ -171,10 +173,11 @@
                         </div>
                     </li>
 
+
                 
                     <!-- STEP 3 -->
                     <li style="margin-top: 14px; margin-bottom: 0;">
-                        <span>Asymptotic Boundaries:</span> Evaluate boundary threshold trends across local breaks and values at infinity:
+                        <span>Asymptotic Boundaries:</span> Calculate the limits at the boundaries of the domain to check for asymptotes:
                         
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             Vertical (VA): &nbsp;&nbsp; lim<sub>x&rarr;1<sup>&minus;</sup></sub> f(x) = &minus;&infin;, &nbsp;&nbsp; lim<sub>x&rarr;1<sup>+</sup></sub> f(x) = +&infin; <span style="color: var(--neon-cyan);">&nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 1</span>
@@ -198,7 +201,7 @@
 
                     <!-- STEP 4 -->
                     <li style="margin-top: 14px; margin-bottom: 0;">
-                        <span>Variation Master Table Engine:</span> Compute derivatives to map exact velocity metrics and curve concavity shapes:
+                        <span>Variation Table Analysis:</span> Calculate the first and second derivatives to determine intervals of increasing, decreasing, and concavity:
                         
                         <div class="math-block" style="font-size: 1.15rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
                             <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: inherit; font-size: 1.15rem;">
@@ -207,7 +210,7 @@
                                     <td style="padding: 0; border: none; vertical-align: middle;">
                                         <span class="frac" style="vertical-align: middle;"><span class="top">&minus;2</span><span class="bottom">(x&minus;1)<sup>2</sup></span></span>
                                     </td>
-                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f'(x) &lt; 0 everywhere (Always Decreasing)</td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f'(x) &lt; 0 everywhere (The function is decreasing on its domain)</td>
                                 </tr>
                             </table>
                         </div>
@@ -219,10 +222,11 @@
                                     <td style="padding: 0; border: none; vertical-align: middle;">
                                         <span class="frac" style="vertical-align: middle;"><span class="top">4</span><span class="bottom">(x&minus;1)<sup>3</sup></span></span>
                                     </td>
-                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f''(x) &lt; 0 for x &lt; 1 (Down), &nbsp;&nbsp; f''(x) &gt; 0 for x &gt; 1 (Up)</td>
+                                    <td style="padding: 0 4px; border: none; white-space: nowrap; vertical-align: middle;color: var(--neon-cyan);"> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f''(x) &lt; 0 for x &lt; 1 (Concave down), &nbsp;&nbsp; f''(x) &gt; 0 for x &gt; 1 (Concave up)</td>
                                 </tr>
                             </table>
                         </div>
+
 
                         <!-- POPULATED MASTER VARIATION STRUCTURE MATRIX -->
                         <div class="visual-wrapper" style="margin: 15px auto 0 auto; padding: 0; overflow-x: auto;">
@@ -372,15 +376,15 @@
         </div>
     </div>
 
-    <!-- Slide 3: Practice Set / Lab Array Component -->
+<!-- Slide 3: Practice Set / Lab Array Component -->
     <div class="slide-content" id="slide-3">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-        <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Written Exercises</h3>
+        <p>Solve these target check points on your notebook pages or digital note screen to practice your curve-sketching steps and verify your answers:</p>
         
         <!-- 🟨 EXERCISE 10.1: RATIONAL INTERCEPTS -->
         <div class="block-exercise" style="margin-bottom: 25px;">
-            <div class="exercise-title">Exercise 10.1: Rational Intercept Extractions</div>
-            <p>Find the exact coordinates of the horizontal <span class="math-inline">x</span>-intercept points (<span class="math-inline">f(x) = 0</span>) and the vertical <span class="math-inline">y</span>-intercept points (<span class="math-inline">x = 0</span>) for each rational function configuration:</p>
+            <div class="exercise-title">Exercise 10.1: Finding Intercepts for Rational Functions</div>
+            <p>Find the exact coordinates of the horizontal <span class="math-inline">x</span>-intercepts (by setting <span class="math-inline">f(x) = 0</span>) and the vertical <span class="math-inline">y</span>-intercepts (by evaluating <span class="math-inline">f(0)</span>) for each rational function configuration:</p>
             
             <div class="grid-2">
                 <div class="exercise-item">
@@ -394,8 +398,8 @@
 
         <!-- 🟨 EXERCISE 10.2: ASYMPTOTES MATRIX -->
         <div class="block-exercise" style="margin-bottom: 25px;">
-            <div class="exercise-title">Exercise 10.2: Global Boundary Analysis Matrix</div>
-            <p>Find the domain of each function, calculate the limits at the boundaries, and write down the final equations for all vertical and horizontal asymptotes:</p>
+            <div class="exercise-title">Exercise 10.2: Global Asymptote Analysis Matrix</div>
+            <p>Find the domain of each function, calculate the limits at the boundaries of the domain, and determine the final equations for all vertical and horizontal asymptotes:</p>
             
             <div class="grid-2">
                 <div class="exercise-item">
@@ -415,7 +419,7 @@
 
         <!-- 🟨 EXERCISE 10.3: COMPLETE RATIONAL MAPPING -->
         <div class="block-exercise" style="margin-bottom: 15px;">
-            <div class="exercise-title">Exercise 10.3: Comprehensive Rational Mapping Check</div>
+            <div class="exercise-title">Exercise 10.3: Comprehensive Rational Curve Mapping</div>
             <p>Consider the rational function defined by: <span class="math-inline">f(x) = <span class="frac" style="vertical-align: middle;"><span class="top">x + 1</span><span class="bottom">x &minus; 2</span></span></span> for <span class="math-inline">x &ne; 2</span>.</p>
             
             <div class="layout-stack" style="margin-top: 12px;">
@@ -427,16 +431,17 @@
                 <!-- Part b -->
                 <div class="exercise-item">
                     <span>b) Boundary threshold limit evaluation:</span>
-                    <span class="item-detail">↳ Find the limits at the boundaries to determine the equations for the horizontal and vertical asymptotes.</span>
+                    <span class="item-detail">↳ Calculate the limits at the boundaries of the domain to determine the equations for the horizontal and vertical asymptotes.</span>
                 </div>
                 <!-- Part c -->
                 <div class="exercise-item">
                     <span>c) Quotient Rule verification:</span>
-                    <span class="item-detail">↳ Differentiate using the Quotient Rule to show that f'(x) = &minus;<span class="frac" style="vertical-align: middle;"><span class="top">3</span><span class="bottom">(x &minus; 2)<sup>2</sup></span></span>. Use this derivative to create a complete variation table and confirm the curve is always decreasing.</span>
+                    <span class="item-detail">↳ Differentiate using the Quotient Rule to show that f'(x) = &minus;<span class="frac" style="vertical-align: middle;"><span class="top">3</span><span class="bottom">(x &minus; 2)<sup>2</sup></span></span>. Use this derivative to create a complete variation table and confirm the curve is always decreasing on its domain.</span>
                 </div>
             </div>
         </div>
 </div>
+
 
 
     <!-- 🏁 Safe from comma conflicts using semicolon breaks! -->

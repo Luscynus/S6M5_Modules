@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S6M5 - Part III - Advanced Analysis</title>
+    <!-- 🟢 Clean external style link -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- 📡 LEFT COLUMN SIDEBAR CONTROL RADAR -->
+        <div class="sidebar">
+            <div class="header-title">
+                <span>📜 QUEST LOG</span>
+                <button class="btn-reset" onclick="resetEngineState()">Reset</button>
+            </div>
+
+            <!-- Stats Matrix Tracking Widget -->
+            <div class="stats-card">
+                <div class="stats-row">
+                    <span class="stats-label">XP Earned:</span>
+                    <span class="stats-value" id="stat-xp">0 XP</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label">Level Progress:</span>
+                    <span class="stats-value" id="stat-nodes">0 / 11</span>
+                </div>
+            </div>
+
+            <!-- 🚨 ADD THIS NEW INNER SCROLL VIEWPORT WRAPPER HERE -->
+            <div class="map-scroll-viewport">
+                <!-- Vertical Linear Waypoint Route -->
+                <div class="map-track" id="vertical-map-track">
+                    <!-- Nodes populate dynamically via JS -->
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- 🖥️ RIGHT COLUMN ACTIVE LESSON VIEWPORT FRAME -->
+        <div class="content-pane">
+            <div id="viewport-root">
+                <!-- Dynamic Iframe node target content inserts right here -->
+            </div>
+        </div>
+
+    </div>
+    <!-- 1. Load your modular architecture scripts first -->
+    <script src="../../js/syllabus_Advanced_Analysis.js"></script>
+    <script src="../../js/engine.js"></script>
+    <script src="../../js/validation.js"></script>
+
+    <script>
+        // Execute engine thread hooks immediately upon system mounting steps
+        window.onload = initProgressEngine;
+    </script>
+
+</body>
+</html>

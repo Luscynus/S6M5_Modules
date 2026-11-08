@@ -20,13 +20,13 @@
 
 <!-- Slide 1: First Derivative Master Mapping -->
 <div class="slide-content active" id="slide-1">
-    <h3>First Derivative Master Mapping</h3>
-    <p>Calculus allows us to use derivative functions as sensors to trace the exact terrain profile of a curve without plotting hundreds of points manually.</p>
+    <h3>Using the First Derivative to Map Graphs</h3>
+    <p>Calculus allows us to use derivative functions to determine the exact shape of a curve without needing to plot hundreds of points manually.</p>
 
     <!-- 🟥 THE SINGLE PRISTINE MASTER CARD -->
     <div class="block-theorem" style="margin-top: 20px;">
-        <strong>First Derivative Mapping Principles</strong>
-        <p>Use the sign changes and critical values of the first derivative to systematically chart the movement of the function:</p>
+        <strong>How the First Derivative Directs the Graph</strong>
+        <p>We can look at the sign changes and key values of the first derivative to see exactly how the graph moves up and down:</p>
         
         <div class="layout-stack" style="margin-top: 20px; gap: 20px;">
             
@@ -45,24 +45,24 @@
 
     <!-- 🟥 UNIFIED FERMAT & NEIGHBOR TEST THEOREM CARD -->
     <div class="block-theorem" style="margin-top: 20px;">
-        <strong>Fermat's Theorem & The First Derivative Test</strong>
-        <p>To locate and classify local extrema, first establish critical stationary coordinates where the tangent line flattens completely horizontal:</p>
+        <strong>Finding and Classifying Turning Points</strong>
+        <p>To find local maximums and minimums, we first look for stationary points where the tangent line becomes completely flat:</p>
         
         <div class="math-block" style="margin: 15px 0; color: var(--neon-blue); font-weight: bold; text-align: center; font-size: 1.35rem; letter-spacing: 0.5px;">
             <strong class="math-inline">f'(x<sub>0</sub>) = 0</strong>
         </div>
         
-        <p style="margin-bottom: 16px; color: var(--text-muted);">Once a stationary point is located, classify its geometric identity by tracking the directional slope transitions as inputs pass through the coordinate:</p>
+        <p style="margin-bottom: 16px; color: var(--text-muted);">Once you locate a stationary point, you can determine its shape by checking how the derivative changes signs as you pass through that point:</p>
 
         <div class="layout-stack" style="gap: 16px; border-top: 1px dashed rgba(255, 255, 255, 0.08); padding-top: 16px;">
             <div>
                 <strong style="color: var(--neon-cyan); display: block; margin-bottom: 4px;">⛰️ Local Maximum (Peak)</strong>
-                <p style="margin: 0; color: var(--text-muted);">The derivative flips from positive to negative: <span class="math-inline">(+)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(&minus;)</span></p>
+                <p style="margin: 0; color: var(--text-muted);">The derivative shifts from positive to negative: <span class="math-inline">(+)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(&minus;)</span></p>
             </div>
             
             <div>
                 <strong style="color: var(--neon-amber); display: block; margin-bottom: 4px;">🕳️ Local Minimum (Valley)</strong>
-                <p style="margin: 0; color: var(--text-muted);">The derivative flips from negative to positive: <span class="math-inline">(&minus;)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(+)</span></p>
+                <p style="margin: 0; color: var(--text-muted);">The derivative shifts from negative to positive: <span class="math-inline">(&minus;)</span> &rarr; <span class="math-inline">(0)</span> &rarr; <span class="math-inline">(+)</span></p>
             </div>
         </div>
     </div>
@@ -73,9 +73,9 @@
     <div class="block-attention" style="margin-top: 20px;">
         <div class="split-grid" style="grid-template-columns: 1.3fr 0.7fr; gap: 20px; align-items: center; margin: 0;">
             <div>
-                <strong>⚠️ The One-Way Directional Trap (Stationary Inflection</strong>
+                <strong>⚠️ The Flat Plateau Trap (Stationary Inflection Point)</strong>
                 <p style="margin: 6px 0 0 0;">
-                    Finding <span class="math-inline">f'(x) = 0</span> does not mean a turning point is guaranteed. Look at <span class="math-inline">f(x) = x<sup>3</sup></span>. Its derivative <span class="math-inline">f'(x) = 3x<sup>2</sup></span> equals <span class="math-inline">0</span> at the origin. But because squaring any number yields a positive result, the slope is positive before *and* after zero. It forms a temporary flat plateau, not a turning crest.
+                    Finding <span class="math-inline">f'(x) = 0</span> does not always guarantee a peak or a valley. Look at <span class="math-inline">f(x) = x<sup>3</sup></span>. Its derivative <span class="math-inline">f'(x) = 3x<sup>2</sup></span> equals <span class="math-inline">0</span> at the origin. But because squaring any number always yields a positive result, the slope is positive both before and after zero. It forms a temporary flat plateau, not a turning point.
                 </p>
             </div>
             <div class="visual-wrapper" style="margin: 0; padding: 10px; display: flex; justify-content: center; align-items: center;">
@@ -101,10 +101,11 @@
 
 
 
-    <!-- Slide 2: The Second Derivative & Curvature Test -->
+
+<!-- Slide 2: The Second Derivative & Curvature Test -->
     <div class="slide-content" id="slide-2">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">The Second Derivative &amp; Curvature Test</h3>
-        <p>Instead of mapping neighbor points on a sign chart, you can look directly at how a curve bends. Differentiating a second time yields <span class="math-inline">f''(x)</span>, which detects structural curvature instantly using the <strong>Smile/Frown Law</strong>.</p>
+        <h3>The Second Derivative and Concavity Test</h3>
+        <p>Instead of mapping multiple test numbers on a first derivative sign chart, we can look directly at how a curve bends. Differentiating a second time gives us the second derivative function <span class="math-inline">f''(x)</span>, which allows us to determine the concavity of the curve instantly using the <strong>Smile/Frown Analogy</strong>:</p>
 
         <!-- 📐 PRISTINE SIDE-BY-SIDE SIDE COMPARISON ENGAGING SYSTEM -->
         <div class="grid-2" style="margin-top: 20px;">
@@ -115,7 +116,7 @@
                 <div class="math-block" style="margin: 12px 0; font-size: 1.25rem; font-weight: bold; text-align: center; color: var(--neon-green); width: 100%;">
                     <span class="math-inline">f''(x) &gt; 0</span>
                 </div>
-                <p style="margin: 0; color: var(--text-muted);">Positive acceleration values force the function to curve upward. When a stationary point is locked inside a smile, it forms a <strong style="color: var(--neon-amber);">Local Minimum 🕳️</strong>.</p>
+                <p style="margin: 0; color: var(--text-muted);">When the second derivative is positive, the function is concave up. If a stationary point occurs where a curve forms a smile, that point forms a valid <strong style="color: var(--neon-amber);">Local Minimum 🕳️</strong>.</p>
             </div>
 
             <!-- Concave / Frown Card -->
@@ -124,54 +125,56 @@
                 <div class="math-block" style="margin: 12px 0; font-size: 1.25rem; font-weight: bold; text-align: center; color: var(--neon-pink); width: 100%;">
                     <span class="math-inline">f''(x) &lt; 0</span>
                 </div>
-                <p style="margin: 0; color: var(--text-muted);">Negative acceleration values force the function to curve downward. When a stationary point is locked inside a frown, it forms a <strong style="color: var(--neon-cyan);">Local Maximum ⛰️</strong>.</p>
+                <p style="margin: 0; color: var(--text-muted);">When the second derivative is negative, the function is concave down. If a stationary point occurs where a curve forms a frown, that point forms a valid <strong style="color: var(--neon-cyan);">Local Maximum ⛰️</strong>.</p>
             </div>
 
         </div>
 
         <!-- THE CRITICAL WARNING PLATEAU NOTIFICATION -->
         <div class="block-attention" style="margin-top: 20px;">
-            <strong>⚠️ The Inconclusive Flat Line Treap</strong>
+            <strong>⚠️ The Inconclusive Second Derivative Exception</strong>
             <p style="margin: 6px 0 0 0;">
-                If your second derivative evaluation returns <span class="math-inline">f''(x<sub>0</sub>) = 0</span>, the curvature at that point is perfectly flat. This test fails and tells you nothing! You must return to Slide 1's <strong>Neighbor Sign Test</strong> to find out what the curve is doing.
+                If your second derivative evaluation returns <span class="math-inline">f''(x<sub>0</sub>) = 0</span>, the curvature at that coordinate is perfectly flat. This means the Second Derivative Test fails and provides no information! To determine the behavior of the curve at this point, you must return to Slide 1's first derivative <strong>Neighbor Sign Test</strong>.
             </p>
         </div>
     </div>
 
 
 
+
     <!-- Slide 3: Verification Laboratories -->
     <div class="slide-content" id="slide-3">
-        <h3>Verification Laboratories</h3>
-        <p>Analyze these step-by-step master problems to see how the First Derivative Sign Chart and Second Derivative profiles work together to identify structural landmarks.</p>
+<h3>Verification Laboratories</h3>
+<p>Analyze these step-by-step master problems to see how the First Derivative Sign Chart and Second Derivative profiles work together to identify structural landmarks.</p>
 
-        <!-- 🟦 EXAMPLE 9.1: CUBIC EXTREMA ANALYSIS -->
+
+<!-- 🟦 EXAMPLE 9.1: CUBIC EXTREMA ANALYSIS -->
         <div class="block-example" style="margin-bottom: 25px;">
-            <strong>Example 9.1 (Extrema Hunting Loop):</strong>
-            <p>Find and classify all local turning points (maximums and minimums) for the given cubic function:</p>
+            <strong>Example 9.1 (Finding and Classifying Turning Points):</strong>
+            <p>Find and classify all local turning points (local maximums and local minimums) for the given cubic function:</p>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
                 f(x) = <span class="frac"><span class="top">1</span><span class="bottom">3</span></span>x<sup>3</sup> + 3x<sup>2</sup> + 8x &minus; 6
             </div>
             
             <div class="block-solution">
-                <strong>Solution Method:</strong>
+                <strong>Solution:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     <li>
-                        <span>Compute the Derivative Function:</span> Apply standard power rules to isolate critical roots:
+                        <span>Find the derivative function:</span> Apply the power rule to calculate the first derivative:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             f'(x) = x<sup>2</sup> + 6x + 8
                         </div>
                     </li>
                     <li>
-                        <span>Isolate Stationary Roots:</span> Set the quadratic derivative to zero and solve via factoring:
+                        <span>Find the stationary points:</span> Set the derivative equal to zero and solve the equation by factoring:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             x<sup>2</sup> + 6x + 8 = 0 &rArr; (x + 4)(x + 2) = 0 &rArr; x = &minus;4, x = &minus;2
                         </div>
                     </li>
                     <li style="list-style: none; margin-left: -20px;">
                         <!-- 📊 DIGITAL SIGN VARIATION CHART GRID -->
-                        <span style="display: block; margin-bottom: 8px; margin-left: 20px;">Construct Sign Variation Chart:</span>
+                        <span style="display: block; margin-bottom: 8px; margin-left: 20px;">Construct the derivative sign chart:</span>
                         <div class="visual-wrapper" style="max-width: 500px; margin: 12px auto; padding: 0; overflow: hidden;">
                             <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85rem; color: var(--text-main);">
                                 <thead>
@@ -206,7 +209,7 @@
                         </div>
                     </li>
                     <li>
-                        <span>Process Coordinates:</span> Substitute the critical factors back into the raw function <span class="math-inline">f(x)</span> to secure exact coordinates:
+                        <span>Calculate the y-coordinates:</span> Substitute the stationary x-values back into the original function <span class="math-inline">f(x)</span> to find the exact coordinates:
                         <div class="math-block" style="font-size: 1.1rem; text-align: center; margin: 12px 0;">
                             f(&minus;4) = <span class="frac"><span class="top">(&minus;4)<sup>3</sup></span><span class="bottom">3</span></span> + 3(&minus;4)<sup>2</sup> + 8(&minus;4) &minus; 6 = &minus;34/3
                         </div>
@@ -215,16 +218,16 @@
                         </div>
                     </li>
                     <li>
-                        <span>State Final Extrema Vectors:</span> Gather the coordinates to state the terminal resolution points:
+                        <span>State the turning points:</span> List the final localized maximum and minimum point coordinates:
                         <!-- 🛠️ FAILSAFE TABLE ROUTE: Bypasses all aggressive global CSS rules and forces absolute mid-line alignment -->
                         <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; margin-top: 12px; margin-bottom: 0; width: 100%;">
                             <table style="margin: 0 auto; border-collapse: collapse; border: none; background: none; color: var(--neon-cyan); font-size: 1.25rem;">
                                 <tr style="background: none; border: none; vertical-align: middle;">
-                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">Max = (&minus;4, &minus;</td>
+                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">Local Max = (&minus;4, &minus;</td>
                                     <td style="padding: 0; border: none; vertical-align: middle;">
                                         <span class="frac" style="vertical-align: middle;"><span class="top" style="color: var(--neon-cyan)">34</span><span class="bottom" style="color: var(--neon-cyan)">3</span></span>
                                     </td>
-                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">), &nbsp;&nbsp; Min = (&minus;2, &minus;</td>
+                                    <td style="padding: 0 2px; border: none; white-space: nowrap; vertical-align: middle;">), &nbsp;&nbsp; Local Min = (&minus;2, &minus;</td>
                                     <td style="padding: 0; border: none; vertical-align: middle;">
                                         <span class="frac" style="vertical-align: middle;"><span class="top" style="color: var(--neon-cyan)">38</span><span class="bottom" style="color: var(--neon-cyan)">3</span></span>
                                     </td>
@@ -239,45 +242,46 @@
         </div>
 
 
-        <!-- 🟦 EXAMPLE 9.2: INFLECTION EXPLORER CARD -->
+
+<!-- 🟦 EXAMPLE 9.2: INFLECTION EXPLORER CARD -->
         <div class="block-example" style="margin-bottom: 20px;">
-            <strong>Example 9.2 (Inflection Landmark Explorer):</strong>
-            <p>Find the intervals of curvature concavity and determine the exact coordinates of any inflection points for the function:</p>
+            <strong>Example 9.2 (Finding Inflection Points and Concavity Intervals):</strong>
+            <p>Find the intervals of concavity and determine the exact coordinates of any inflection points for the function:</p>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
                 f(x) = x<sup>3</sup> &minus; 6x<sup>2</sup> + 9x &minus; 10
             </div>
             
             <div class="block-solution">
-                <strong>Solution Method:</strong>
+                <strong>Solution:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     <li>
-                        <span>Run Consecutive Derivatives:</span> Differentiate twice to isolate acceleration vectors:
+                        <span>Find the first and second derivatives:</span> Differentiate the function twice in a row to find the second derivative function <span class="math-inline">f''(x)</span>:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             f'(x) = 3x<sup>2</sup> &minus; 12x + 9 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; f''(x) = 6x &minus; 12
                         </div>
                     </li>
                     <li>
-                        <span>Isolate Inflection Boundaries:</span> Find where the curvature shifts by evaluating the terminal root condition <span class="math-inline">f''(x) = 0</span>:
+                        <span>Find where the second derivative equals zero:</span> Set up the inflection point condition by solving the equation <span class="math-inline">f''(x) = 0</span>:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             6x &minus; 12 = 0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; 6x = 12 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; x = 2
                         </div>
                     </li>
                     <li>
-                        <span>Map the Curvature Signs:</span> Evaluate boundary neighborhoods on either side of our candidate point:
+                        <span>Determine the concavity intervals:</span> Check the sign of the second derivative on either side of our candidate point x = 2 to track how the curve bends:
                         <div style="margin-top: 6px; padding-left: 8px; line-height: 1.6;">
-                            &bull; For <span class="math-inline">x &lt; 2</span>: <span class="math-inline">f''(x) &lt; 0</span> &rarr; <span style="color: var(--neon-cyan); font-weight: bold;">Concave Curve 🙁 (Frown Profile)</span><br>
-                            &bull; For <span class="math-inline">x &gt; 2</span>: <span class="math-inline">f''(x) &gt; 0</span> &rarr; <span style="color: var(--neon-amber); font-weight: bold;">Convex Curve 😃 (Smile Profile)</span>
+                            &bull; For <span class="math-inline">x &lt; 2</span>: <span class="math-inline">f''(x) &lt; 0</span> &rarr; <span style="color: var(--neon-cyan); font-weight: bold;">The curve is concave down 🙁 (Frown Profile)</span><br>
+                            &bull; For <span class="math-inline">x &gt; 2</span>: <span class="math-inline">f''(x) &gt; 0</span> &rarr; <span style="color: var(--neon-amber); font-weight: bold;">The curve is concave up 😃 (Smile Profile)</span>
                         </div>
                     </li>
                     <li>
-                        <span>Calculate Landmark Position:</span> Plug the verified inflection variable root back into the raw function expression to extract the concrete spatial mapping:
+                        <span>Calculate the y-coordinate:</span> Substitute the verified x-value back into the original function expression to find the exact position of the inflection point:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             f(2) = (2)<sup>3</sup> &minus; 6(2)<sup>2</sup> + 9(2) &minus; 10 = 8 &minus; 24 + 18 &minus; 10 = &minus;8
                         </div>
                     </li>
                     <li>
-                        <span>State Final Inversion Vector:</span> State the coordinate parameters where the geometric path profile alters orientation smoothly:
+                        <span>State the inflection point:</span> Write down the final coordinates where the curve smoothly shifts its concavity:
                         <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
                             (2, &minus;8)
                         </div>
@@ -286,19 +290,20 @@
             </div>
         </div>
 
+
     </div>
 
 
 
-    <!-- Slide 4: Practice Set / Lab Array Component -->
+<!-- Slide 4: Practice Set / Lab Array Component -->
     <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-        <p>Solve these diagnostic checkpoints cleanly in your physical workbook sheets or digital canvas to verify your curve-mapping analytical skill level.</p>
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Written Exercises</h3>
+        <p>Solve these diagnostic checkpoints on your notebook pages or digital note screen to practice your curve-mapping steps and verify your answers.</p>
         
         <!-- 🟨 EXERCISE 9.1 -->
         <div class="block-exercise" style="margin-bottom: 20px;">
-            <div class="exercise-title">Exercise 9.1: Extrema Hunting Loops</div>
-            <p>Find the derivative function <span class="math-inline">f'(x)</span>, calculate all stationary points where <span class="math-inline">f'(x) = 0</span>, construct a formal sign variation chart for each, and extract the full coordinates for all local maximums and minimums:</p>
+            <div class="exercise-title">Exercise 9.1: Finding and Classifying Turning Points</div>
+            <p>Find the derivative function <span class="math-inline">f'(x)</span>, find all stationary points where <span class="math-inline">f'(x) = 0</span>, construct a first derivative sign chart for each, and determine the coordinates for all local maximums and local minimums:</p>
             
             <div class="grid-2">
                 <div class="exercise-item">
@@ -325,7 +330,7 @@
             <div class="layout-stack" style="margin-top: 12px;">
                 <!-- Part A -->
                 <div class="exercise-item">
-                    <span>a) Find the derivative function and evaluate its sign:</span>
+                    <span>a) Find the derivative function and check its sign behavior:</span>
                     <span class="item-detail">↳ Differentiate <span class="math-inline">f(x)</span> and prove algebraically that <span style="color: var(--neon-amber); font-weight: bold;">f'(x) &gt; 0</span> for all real numbers <span class="math-inline">x &in; &reals;</span>.</span>
                 </div>
                 
@@ -337,10 +342,11 @@
         </div>
 
 
+
         <!-- 🟨 EXERCISE 9.3 -->
         <div class="block-exercise" style="margin-bottom: 25px;">
             <div class="exercise-title">Exercise 9.3: Linear Extrema Proof</div>
-            <p>Prove that a standard linear function (<span class="math-inline">f(x) = mx + p</span> where <span class="math-inline">m &ne; 0</span>) can never have a maximum or a minimum point. Justify your analytical answer strictly by evaluating the invariant property of its derivative.</p>
+            <p>Prove that a standard linear function (<span class="math-inline">f(x) = mx + p</span> where <span class="math-inline">m &ne; 0</span>) can never have a local maximum or local minimum point. Justify your answer by evaluating the constant value of its derivative function.</p>
         </div>
 
         <!-- 🟨 EXERCISE 9.4 -->
@@ -351,14 +357,14 @@
             <div class="layout-stack" style="margin-top: 12px;">
                 <!-- Part A -->
                 <div class="exercise-item">
-                    <span>a) Find the derivative function and evaluate its roots:</span>
+                    <span>a) Find the derivative function and calculate its roots:</span>
                     <span class="item-detail">↳ Calculate the derivative formula <span class="math-inline">f'(x)</span> and solve the equation <span class="math-inline">f'(x) = 0</span>.</span>
                 </div>
                 
                 <!-- Part B -->
                 <div class="exercise-item">
-                    <span>b) Construct a sign variation chart across this root.</span>
-                    <span class="item-detail">↳ Use it to explain why this function does not possess any turning points.</span>
+                    <span>b) Construct a first derivative sign chart across this root:</span>
+                    <span class="item-detail">↳ Use your sign chart to explain why this function does not possess any local maximums or local minimums.</span>
                 </div>
             </div>
         </div>
@@ -367,19 +373,19 @@
         <!-- 🟨 EXERCISE 9.5 (ADVANCED CHALLENGE) -->
         <div class="block-exercise" style="margin-bottom: 20px;">
             <div class="exercise-title">Exercise 9.5: Advanced Optimization Challenge [Advanced Challenge]</div>
-            <p>A rectangular livestock field is built along a straight stone wall using exactly <strong>800 metres</strong> of wire fencing. Because the stone wall forms one full side of the rectangle, fencing is only required for the remaining three open faces.</p>
+            <p>A rectangular field is built along a straight stone wall using exactly <strong>800 metres</strong> of fencing. Because the stone wall forms one full side of the rectangle, fencing is only required for the remaining three open sides.</p>
             
             <div class="layout-stack" style="margin-top: 12px; margin-bottom: 15px;">
                 <!-- Part A -->
                 <div class="exercise-item">
-                    <span>a) Construct the mathematical target objective function:</span>
-                    <span class="item-detail">↳ Write down a formula for a single-variable function representing the total pasture area <span class="math-inline">A(x)</span> enclosed by the fence layout.</span>
+                    <span>a) Construct the single-variable objective function:</span>
+                    <span class="item-detail">↳ Write down a formula for a single-variable function representing the total enclosed area <span class="math-inline">A(x)</span>.</span>
                 </div>
                 
                 <!-- Part B -->
                 <div class="exercise-item">
-                    <span>b) Perform absolute localized maxima verification:</span>
-                    <span class="item-detail">↳ Calculate the exact boundary dimensions of the rectangle that maximize the total area for the livestock.</span>
+                    <span>b) Find and verify the absolute maximum value:</span>
+                    <span class="item-detail">↳ Calculate the exact dimensions of the rectangle that maximize the total area of the field.</span>
                 </div>
             </div>
 
@@ -389,7 +395,7 @@
                     <!-- Stone Wall Base (Perfectly centered on the 380px canvas) -->
                     <rect x="30" y="15" width="320" height="16" fill="#334155" rx="3" opacity="0.4"/>
                     <rect x="30" y="15" width="320" height="16" fill="none" stroke="#475569" stroke-width="1.2"/>
-                    <text x="190" y="26" fill="#94a3b8" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" letter-spacing: 0.5px;">EXISTING STONE WALL BOUNDARY</text>
+                    <text x="190" y="26" fill="#94a3b8" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" letter-spacing="0.5px;">EXISTING STONE WALL BOUNDARY</text>
                     
                     <!-- Teal Fence Line (Centered: Width 180, left corner at 100, right corner at 280) -->
                     <path d="M 100,31 L 100,100 L 280,100 L 280,31" fill="none" stroke="var(--neon-amber)" stroke-width="2" stroke-dasharray="4,3"/>
@@ -411,10 +417,11 @@
                     <text x="190" y="125" fill="#94a3b8" font-size="9" font-family="monospace" text-anchor="middle;">800 - 2x</text>
                     
                     <!-- Pasture Label (Dead centered inside the fence framework box) -->
-                    <text x="130" y="70" fill="var(--neon-amber)" font-size="11" font-family: sans-serif; font-weight: bold; text-anchor: middle; opacity: 0.95;">Containment Pasture A(x)</text>
+                    <text x="190" y="70" fill="var(--neon-amber)" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" opacity="0.95;">Enclosed Area A(x)</text>
                 </svg>
             </div>
         </div>
+
     </div>
 
 

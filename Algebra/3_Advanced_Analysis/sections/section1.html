@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 21: Tangents to Non-Polynomial Functions</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+    <h2>Section 21: Tangents to Non-Polynomial Functions</h2>
+
+    <!-- 📑 STICKY SLIDE DECK NAVIGATION TABS -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="showSlide(1)">1. Geometric Foundations</button>
+        <button class="tab-btn" onclick="showSlide(2)">2. Radian Limits & Primers</button>
+        <button class="tab-btn" onclick="showSlide(3)">3. Worked Examples</button>
+        <button class="tab-btn" onclick="showSlide(4)">4. Practice Set</button>
+        <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(5)">🔑 5. Milestone Unlock</button>
+    </div>
+
+    <!-- 📥 SLIDE 1: GEOMETRIC FOUNDATIONS (DEFINITIONS) -->
+    <div id="slide-1" class="slide-content active">
+        <h3>Geometric Foundations & Local Linearity</h3>
+        <p>
+            When working with exponential, logarithmic, and trigonometric curves, finding a tangent line uses the exact same ideas we used for basic polynomial curves. Even though these graphs bend and twist through space, if you zoom in close enough to any smooth point on the curve, the graph begins to look like a straight line. This property is called <strong>local linearity</strong>, and it means that the curve matches the straight tangent line at that exact spot.
+        </p>
+        
+        <div class="block-definition">
+            <strong>Core Definition: The Point-Slope Tangent Formula</strong>
+            <p>
+                To find the equation of a straight tangent line that touches a curve <span class="math-inline">y = f(x)</span> at a specific point where <span class="math-inline">x = c</span>, we use the standard point-slope formula. We just need to find the exact y-coordinate <span class="math-inline">f(c)</span> and the exact derivative slope <span class="math-inline">f'(c)</span> at that point, then plug them directly into the line formula:
+            </p>
+            <div class="math-block">
+                <strong>y - f(c) = f'(c) \cdot (x - c)</strong>
+            </div>
+            <p>
+                Here is what each part of this formula means when writing out your math steps:
+            </p>
+            <ul>
+                <li><strong class="math-inline">c</strong> — The specific x-value given in the problem where the line touches the curve.</li>
+                <li><strong class="math-inline">f(c)</strong> — The y-coordinate of the point, found by substituting <span class="math-inline">c</span> into the original function.</li>
+                <li><strong class="math-inline">f'(c)</strong> — The exact slope of the tangent line, found by substituting <span class="math-inline">c</span> into the derivative function.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- 📥 SLIDE 2: RADIAN LIMITS & PRIMERS (THEOREMS & WARNINGS) -->
+    <div id="slide-2" class="slide-content">
+        <h3>Continuous Limits & The Radian Constraint</h3>
+        <p>
+            Before calculating rates of change for trigonometric functions, we have to look at how angles are measured. In basic geometry, we use degrees to measure rotations. However, in calculus, the mathematical laws that prove derivatives only work if angles are measured in <strong>Radians</strong>.
+        </p>
+        
+<div class="block-definition">
+    <strong>The Calculus Trigonometric Derivative Axioms</strong>
+    <p>
+        When an angle x is measured continuously in radians, the fundamental trigonometric limit laws allow us to establish clean derivative matching formulas. If you differentiate a sine wave, it turns into a cosine wave. If you differentiate a cosine wave, it introduces a negative sign:
+    </p>
+    <div class="math-block">
+        <strong><span class="frac"><span class="top">d</span><span class="bottom">dx</span></span> [sin(x)] = cos(x)</strong>
+    </div>
+    <div class="math-block">
+        <strong><span class="frac"><span class="top">d</span><span class="bottom">dx</span></span> [cos(x)] = -sin(x)</strong>
+    </div>
+</div>
+
+
+
+        <div class="block-attention">
+            <strong>The Angle Measurement Mistake Warning</strong>
+            <p>
+                <strong>Critical Trap:</strong> When evaluating trigonometric values like sin(c) or derivative slopes like -sin(c) in calculus, your calculator <strong>must</strong> always be set to <strong>Radian Mode</strong>.
+            </p>
+            <p>
+                Using degree values (like plugging in 90 degrees instead of pi/2) completely breaks the underlying calculus limits. This is a very common student mistake that changes your numerical tangent slopes entirely and leads to incorrect final line equations.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- 📥 SLIDE 3: GUIDED PROOF MATRICES (WORKED EXAMPLES) -->
+    <div id="slide-3" class="slide-content">
+        <h3>3. Worked Analytical Operations</h3>
+        <p>Guided structural math walkthrough instances across transcendental types.</p>
+
+        <!-- Example 1 -->
+        <div class="block-example">
+            <strong>Worked Example: Tangent Line to an Exponential Function</strong>
+            <p>
+                Find the equation of the tangent line to the exponential function f(x) = (2x - 3) &middot; e<sup>x</sup> at the point where x = 0.
+            </p>
+
+            <div class="block-solution">
+                <strong>Solution:</strong>
+                
+                <ol>
+                    <li>
+                        <strong>Find the y-coordinate of the point</strong>
+                        <p>We substitute our given point c = 0 directly into the function to calculate the corresponding y-value:</p>
+                        <div class="math-block">
+                            f(0) = (2(0) - 3) &middot; e<sup>0</sup> = (-3) &middot; 1 = -3
+                        </div>
+                        <p>This gives us the point on the graph at the coordinates <strong>(0, -3)</strong>.</p>
+                    </li>
+                    <li>
+                        <strong>Differentiate and calculate the slope of the tangent line</strong>
+                        <p>We use the Product Rule to find the general derivative function f'(x):</p>
+                        <div class="math-block">
+                            f'(x) = (2) &middot; e<sup>x</sup> + (2x - 3) &middot; e<sup>x</sup> = e<sup>x</sup> &middot; [2 + 2x - 3] = e<sup>x</sup> &middot; (2x - 1)
+                        </div>
+                        <p>We substitute c = 0 into the derivative to find the exact slope at that point:</p>
+                        <div class="math-block">
+                            f'(0) = e<sup>0</sup> &middot; (2(0) - 1) = 1 &middot; (-1) = -1
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Simplify the equation into standard form</strong>
+                        <p>We substitute our calculated values into the tangent line formula and solve for y:</p>
+                        <div class="math-block">
+                            y - (-3) = -1 &middot; (x - 0) &rArr; y + 3 = -x &rArr; <span style="color: var(--neon-cyan); font-weight: bold;">y = -x - 3</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="block-example" style="margin-top: 2rem;">
+            <strong>Worked Example: Tangent Line to a Trigonometric Function</strong>
+            <p>
+                Find the equation of the tangent line to the function g(x) = 3cos(x) at the point where x = <span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>.
+            </p>
+
+            <div class="block-solution">
+                <strong>Solution:</strong>
+                
+                <ol>
+                    <li>
+                        <strong>Find the y-coordinate of the point</strong>
+                        <p>We evaluate the function directly at our given radian value:</p>
+                        <div class="math-block">
+                            g(<span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>) = 3cos(<span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>) = 3 &middot; 0 = 0
+                        </div>
+                        <p>This means the point lies exactly on the x-axis at the coordinates <strong>(<span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>, 0)</strong>.</p>
+                    </li>
+                    <li>
+                        <strong>Differentiate and calculate the slope</strong>
+                        <p>We use our standard trigonometric derivative rule to find the derivative function and evaluate it at our point to find the slope:</p>
+                        <div class="math-block">
+                            g'(x) = -3sin(x) &rArr; g'(<span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>) = -3sin(<span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>) = -3 &middot; 1 = -3
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Write down the final line equation</strong>
+                        <p>We substitute our values into the formula to complete the calculation:</p>
+                        <div class="math-block">
+                            y - 0 = -3 &middot; (x - <span class="frac"><span class="top">&pi;</span><span class="bottom">2</span></span>) &rArr; <span style="color: var(--neon-cyan); font-weight: bold;">y = -3x + <strong class="frac"><strong style="color: var(--neon-cyan)" class="top">3&pi;</strong><strong class="bottom" style="color: var(--neon-cyan)">2</strong></strong></span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 📥 SLIDE 4: DYNAMIC LAB SANDBOX (PREVIEWS & SLIDERS) -->
+    <div class="slide-content" id="slide-4">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+<p>Solve these diagnostic checkpoints cleanly in your physical workbook sheets or digital canvas to verify your curve-mapping analytical skill level.</p>
+
+<!-- Exercise 1 -->
+<div class="block-exercise" style="margin-bottom: 25px;">
+    <div class="exercise-title">Exercise 1: Tangents to Exponential Curves</div>
+    <p>Find the y-coordinate f(c) and calculate the slope to find the equation of the tangent line (y = mx + p) at the given point:</p>
+    
+    <div class="grid-4" style="margin-top: 12px;">
+        <div class="exercise-item">
+            <span>a) <span class="math-inline">f(x) = e<sup>x</sup></span>, &emsp; at c = 0</span>
+        </div>
+        <div class="exercise-item">
+            <span>b) <span class="math-inline">f(x) = x &middot; e<sup>x</sup></span>, &emsp; at c = 1</span>
+        </div>
+        <div class="exercise-item">
+            <span>c) <span class="math-inline">f(x) = e<sup>2x - 4</sup></span>, &emsp; at c = 2</span>
+        </div>
+        <div class="exercise-item">
+            <span>d) <span class="math-inline">f(x) = (3x + 1) &middot; e<sup>x</sup></span>, &emsp; at c = 0</span>
+        </div>
+    </div>
+</div>
+
+<!-- Exercise 2 -->
+<div class="block-exercise" style="margin-bottom: 25px;">
+    <div class="exercise-title">Exercise 2: Logarithmic Rates of Change</div>
+    <p>Differentiate to find the tangent line equation for each logarithmic curve. Write your answers using the exact constant e:</p>
+    
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="exercise-item">
+            <span>a) <span class="math-inline">f(x) = ln(x)</span>, &emsp; at c = e</span>
+        </div>
+        <div class="exercise-item">
+            <span>b) <span class="math-inline">f(x) = ln(2x - 5)</span>, &emsp; at c = 3</span>
+        </div>
+    </div>
+</div>
+
+<!-- Exercise 3 -->
+<div class="block-exercise" style="margin-bottom: 25px;">
+    <div class="exercise-title">Exercise 3: Trigonometric Slope Constraints</div>
+    <p>Use the trigonometric derivative rules to find the equation of each tangent line. Make sure your angles are measured in radians:</p>
+    
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="exercise-item">
+            <span>a) <span class="math-inline">f(x) = 2sin(x)</span>, &emsp; at c = 0</span>
+        </div>
+        <div class="exercise-item">
+            <span>b) <span class="math-inline">f(x) = cos(x)</span>, &emsp; at c = &pi;</span>
+        </div>
+    </div>
+</div>
+
+<!-- Exercise 4 -->
+<div class="block-exercise" style="margin-bottom: 25px;">
+    <div class="exercise-title">Exercise 4: Analyzing Polynomial-Exponential Growth</div>
+    <p>Consider the function defined by: <span class="math-inline">f(x) = e<sup>x</sup> &minus; x &minus; 2</span></p>
+    
+    <div class="layout-stack" style="margin-top: 12px;">
+        <div class="exercise-item">
+            <span>a) Find the derivative function and isolate horizontal slopes:</span>
+            <span class="item-detail">↳ Calculate the derivative formula <span class="math-inline">f'(x)</span> and determine the exact point where <span class="math-inline">f'(x) = 0</span>.</span>
+        </div>
+        <div class="exercise-item">
+            <span>b) Calculate the equation of the tangent line to this curve at the y-intercept.</span>
+            <span class="item-detail">↳ Evaluate the system constraints specifically where <span class="math-inline">x = 0</span>.</span>
+        </div>
+    </div>
+</div>
+
+<!-- Exercise 5 -->
+<div class="block-exercise" style="margin-bottom: 25px;">
+    <div class="exercise-title">Exercise 5: Advanced Graphing Challenge</div>
+    <p>The trigonometric function <span class="math-inline">f(x) = 2sin(x) + 1</span> is shown on the coordinate system mapping below.</p>
+    
+    <div class="layout-stack" style="margin-top: 12px; margin-bottom: 20px;">
+        <div class="exercise-item">
+            <span>a) Find the derivative function and calculate the target rate:</span>
+            <span class="item-detail">↳ Calculate <span class="math-inline">f'(x)</span> and evaluate the slope at the y-intercept where <span class="math-inline">x = 0</span>.</span>
+        </div>
+        <div class="exercise-item">
+            <span>b) Construct the geometric tangent line overlay.</span>
+            <span class="item-detail">↳ Find the line equation at the point <span class="math-inline">(0, 1)</span>, then complete the graph template below by plotting it.</span>
+        </div>
+    </div>
+
+    <!-- Inline SVG Vector Coordinate System Core Grid -->
+    <div style="text-align: center; margin: 15px 0;">
+        <svg width="400" height="300" viewBox="-50 -180 450 400" style="background: transparent; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+            <!-- Subtle Grid System Grid Lines -->
+            <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+                <line x1="-30" y1="-150" x2="380" y2="-150" />
+                <line x1="-30" y1="-100" x2="380" y2="-100" />
+                <line x1="-30" y1="-50"  x2="380" y2="-50" />
+                <line x1="-30" y1="50"   x2="380" y2="50" />
+                <line x1="-30" y1="100"  x2="380" y2="100" />
+                <line x1="-30" y1="150"  x2="380" y2="150" />
+                
+                <line x1="50"  y1="-170" x2="50"  y2="180" />
+                <line x1="100" y1="-170" x2="100" y2="180" />
+                <line x1="150" y1="-170" x2="150" y2="180" />
+                <line x1="200" y1="-170" x2="200" y2="180" />
+                <line x1="250" y1="-170" x2="250" y2="180" />
+                <line x1="300" y1="-170" x2="300" y2="180" />
+                <line x1="350" y1="-170" x2="350" y2="180" />
+            </g>
+
+            <!-- Coordinate Frame Axes -->
+            <g stroke="rgba(255,255,255,0.3)" stroke-width="1.5">
+                <!-- X-Axis -->
+                <line x1="-40" y1="0" x2="390" y2="0" />
+                <!-- Y-Axis -->
+                <line x1="0" y1="-170" x2="0" y2="170" />
+            </g>
+
+            <!-- Axis Labels & Tick Formatting -->
+            <g fill="rgba(255,255,255,0.6)" font-size="14" text-anchor="middle">
+                <!-- X Ticks -->
+                <text x="100" y="20">&pi;/2</text>
+                <text x="200" y="20">&pi;</text>
+                <text x="300" y="20">3&pi;/2</text>
+                <text x="385" y="-8" font-weight="bold">x</text>
+
+                <!-- Y Ticks -->
+                <text x="-15" y="-145">3</text>
+                <text x="-15" y="-95">2</text>
+                <text x="-15" y="-45">1</text>
+                <text x="-15" y="55">-1</text>
+                <text x="-15" y="105">-2</text>
+                <text x="-12" y="-160" font-weight="bold">y</text>
+                <text x="-12" y="18" font-size="12">0</text>
+            </g>
+
+            <!-- Mathematically Formatted Radian Plot Path f(x) = 2*sin(x) + 1 -->
+            <!-- Scaling mapping rules: 1 radian = 63.66px horizontally, 1 unit = 50px vertically -->
+            <path d="M 0,-50 
+                     C 35.3,-120.7 75.4,-150 100,-150 
+                     C 131.6,-150 167.3,-97.8 200,-50 
+                     C 232.7,-2.2 268.4,50 300,50 
+                     C 324.6,50 364.7,20.7 400,-50" 
+                  fill="none" stroke="var(--neon-green, #00f5d4)" stroke-width="2.5" />
+            <text x="235" y="-90" fill="var(--neon-green, #00f5d4)" font-size="14">f(x) = 2sin(x) + 1</text>
+
+            <!-- Anchor Intersection Vertex Highlight Node -->
+            <circle cx="0" cy="-50" r="4.5" fill="var(--neon-pink, #ff007f)" />
+            <text x="35" y="-45" fill="var(--neon-pink, #ff007f)" font-size="13" font-weight="bold">(0, 1)</text>
+        </svg>
+    </div>
+</div>
+
+    </div>
+
+    <!-- 🏁 Safe from comma conflicts using semicolon breaks! -->
+    <div class="slide-content dynamic-verification-slide" id="slide-5"
+        data-level="1"
+        data-labels="
+        Exercise 1.1: d) What is the tangent line equation?;
+        Exercise 1.2: b) What is the tangent line equation?;
+        Exercise 1.3: a) What is the slope of the tangent line?;
+        Exercise 1.4: a) What is the coordinate of the stationary point?;
+        Exercise 1.5: Find the slope at the y-intercept of f(x).
+        "
+        data-answers="
+        y=4x+1;
+        y=2x-6;
+        2;
+        (0,-1);
+        2
+        " 
+        data-prompt="Complete your Section 1 workbook exercises. Input your final analytical answers for the designated problems below to authorize milestone progression:"
+        data-fail="One or more values contain calculation mismatches. Double-check your continuous evaluation intervals, confirm your angle radian variables, and try again.">
+    </div>
+
+
+    <!-- 📡 STANDARD DECK NAVIGATION SYSTEM CONTROLLER -->
+    <script>
+        function showSlide(slideIndex) {
+            // Remove active status from all structural tab navigation points
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            // Hide all layout content panels securely
+            document.querySelectorAll('.slide-content').forEach(slide => slide.classList.remove('active'));
+            
+            // Set targets active based on click parameters
+            const buttons = document.querySelectorAll('.tab-nav .tab-btn');
+            if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+            
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if (targetSlide) targetSlide.classList.add('active');
+        }
+
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
+    </script>
+</body>
+</html>

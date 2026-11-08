@@ -398,64 +398,65 @@
     
     <!-- 🟢 EXAMPLE 4.1: SEMANTIC WORKED EXAMPLES ENTRY (FULL WIDTH LAYOUT) -->
     <div class="block-example">
-        <strong>Example 4.1 (Derivative at a Point):</strong>
-        <p>Use the formal <strong style="color: var(--neon-cyan);">Limit Definition of the Derivative</strong> to calculate the exact instantaneous value of <span class="math-inline">f'(3)</span> for the base quadratic curve function <span class="math-inline">f(x) = x&sup2;</span>.</p>
+        <strong>Example 4.1 (Evaluating a Derivative from the Limit Definition):</strong>
+        <p>Use the formal <strong style="color: var(--neon-cyan);">limit definition of the derivative</strong> to calculate the exact instantaneous value of the derivative <span class="math-inline">f'(3)</span> for the quadratic function <span class="math-inline">f(x) = x&sup2;</span>.</p>
         
         <!-- 🏙️ NESTED SOLUTION COMPONENT ELIMINATES OLD COGNITIVE MARGINS -->
         <div class="block-solution">
-            <strong>Solution Method:</strong>
+            <strong>Solution:</strong>
             <ol>
                 <li>
-                    <span>Set Up the Limit Formula:</span> We substitute our given coordinate target position <span class="math-inline">c = 3</span> directly into the structural limit definition mapping:
+                    <span>Set up the limit definition formula:</span> Substitute the targeted coordinate point <span class="math-inline">c = 3</span> directly into the formal limit definition:
                     <div class="math-block">
-                        f'(3) = lim <span class="frac"><span class="top">f(3 + h) &minus; f(3)</span><span class="bottom">h</span></span>
+                        f'(3) = lim<sub>h&rarr;0</sub> <span class="frac"><span class="top">f(3 + h) &minus; f(3)</span><span class="bottom">h</span></span>
                     </div>
-                    We evaluate our individual function output landmarks using our rule <span class="math-inline">f(x) = x&sup2;</span>:
+                    Calculate your individual function landmark values using the rule <span class="math-inline">f(x) = x&sup2;</span>:
                     <div class="math-block" style="color: var(--neon-cyan);">
                         f(3) = (3)&sup2; = 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f(3 + h) = (3 + h)&sup2; = 9 + 6h + h&sup2;
                     </div>
                 </li>
                 <li>
-                    <span>Expand and Simplify the Numerator:</span> We substitute these resolved polynomial segments back into our fraction boundary and combine terms on top:
+                    <span>Expand and simplify the numerator:</span> Substitute these expanded polynomial parts back into our fractional expression and cancel out matching constant terms:
                     <div class="math-block">
-                        f'(3) = lim <span class="frac"><span class="top">(9 + 6h + h&sup2;) &minus; 9</span><span class="bottom">h</span></span> = lim <span class="frac"><span class="top">6h + h&sup2;</span><span class="bottom">h</span></span>
+                        f'(3) = lim<sub>h&rarr;0</sub> <span class="frac"><span class="top">(9 + 6h + h&sup2;) &minus; 9</span><span class="bottom">h</span></span> = lim<sub>h&rarr;0</sub> <span class="frac"><span class="top">6h + h&sup2;</span><span class="bottom">h</span></span>
                     </div>
                 </li>
                 <li>
-                    <span>Simplify the Fraction and Evaluate the Limit:</span> Directly substituting <span class="math-inline">h = 0</span> triggers an indeterminate matrix collapse (<span class="math-inline">0 &frasl; 0</span>). We isolate <span class="math-inline">h</span> as a common scale factor to clear the zero gap:
+                    <span>Divide out common factors and evaluate the limit:</span> Since directly substituting <span class="math-inline">h = 0</span> creates an undefined indeterminate form (<span class="math-inline">0 &frasl; 0</span>), factor out <span class="math-inline">h</span> on top to cancel it safely with the denominator:
                     <div class="math-block">
-                        f'(3) = lim <span class="frac"><span class="top">h &middot; (6 + h)</span><span class="bottom">h</span></span> = lim(6 + h)
+                        f'(3) = lim<sub>h&rarr;0</sub> <span class="frac"><span class="top">h &middot; (6 + h)</span><span class="bottom">h</span></span> = lim<sub>h&rarr;0</sub> (6 + h)
                     </div>
-                    Evaluating the remaining limit path as spacer width <span class="math-inline">h &rarr; 0</span> delivers our final slope value: <span style="color: var(--neon-cyan);" class="math-inline">f'(3) = 6 + 0 = </span> <strong style="color: var(--neon-cyan);">6</strong>.
+                    Evaluate the remaining limit as the interval width <span class="math-inline">h</span> approaches zero to find the exact slope value: <span style="color: var(--neon-cyan);" class="math-inline">f'(3) = 6 + 0 = </span> <strong style="color: var(--neon-cyan);">6</strong>.
                 </li>
             </ol>
         </div>
     </div>
 
-    <!-- 🟢 EXAMPLE 4.2: SEMANTIC WORKED EXAMPLES ENTRY (FULL WIDTH LAYOUT) -->
+
+<!-- 🟢 EXAMPLE 4.2: SEMANTIC WORKED EXAMPLES ENTRY (FULL WIDTH LAYOUT) -->
     <div class="block-example">
-        <strong>Example 4.2 (Constructing a Tangent Equation):</strong>
-        <p>Find the complete geometric line equation of the <strong style="color: var(--neon-cyan);">Tangent Line</strong> tracking along the curve <span class="math-inline">f(x) = x&sup2;</span> at the exact point boundary where <span class="math-inline">x = 3</span>.</p>
+        <strong>Example 4.2 (Finding the Equation of a Tangent Line):</strong>
+        <p>Find the equation of the <strong style="color: var(--neon-cyan);">tangent line</strong> to the curve <span class="math-inline">f(x) = x&sup2;</span> at the point where <span class="math-inline">x = 3</span>.</p>
         
         <!-- 🏙️ NESTED SOLUTION COMPONENT ELIMINATES OLD COGNITIVE MARGINS -->
         <div class="block-solution">
-            <strong>Solution Method:</strong>
+            <strong>Solution:</strong>
             <ol>
                 <li>
-                    <span>Find the Coordinates of the Point and the Slope:</span> We collect our prerequisite parameters at our target anchor position <span class="math-inline">c = 3</span>:
+                    <span>Find the y-coordinate and the slope at the given point:</span> Collect the initial values at our targeted x-coordinate <span class="math-inline">c = 3</span>:
                     <div style="margin: 6px 0 0 12px; line-height: 1.5;">
-                        &bull; The vertical alignment y-coordinate: <span class="math-inline">f(3) = 3&sup2; = </span> <strong style="color: var(--neon-cyan);">9</strong><br>
-                        &bull; The target linear slope value (calculated in Example 4.1): <span class="math-inline">f'(3) = </span> <strong style="color: var(--neon-cyan);">6</strong>
+                        &bull; The vertical y-coordinate value: <span class="math-inline">f(3) = 3&sup2; = </span> <strong style="color: var(--neon-cyan);">9</strong><br>
+                        &bull; The tangent line slope value (calculated in Example 4.1): <span class="math-inline">f'(3) = </span> <strong style="color: var(--neon-cyan);">6</strong>
                     </div>
                 </li>
                 <li>
-                    <span>Substitute the Values into the Formula:</span> We anchor these properties into the classic point-slope equation structure:
+                    <span>Substitute the values into the point-slope formula:</span> Substitute these coordinates and slope into the standard straight line formula:
                     <div class="math-block">
                         y &minus; 9 = 6 &middot; (x &minus; 3)
                     </div>
                 </li>
                 <li>
-                    <span>Simplify Into Standard Form:</span> We expand the multiplier brackets and isolate our functional variable dependent coordinate <span class="math-inline">y</span>:
+                    <span>Simplify the equation into standard form:</span> Expand the brackets and isolate the variable <span class="math-inline">y</span>:
                     <div class="math-block">
                         y &minus; 9 = 6x &minus; 18
                     </div>
@@ -466,6 +467,7 @@
             </ol>
         </div>
     </div>
+
 </div>
 
 

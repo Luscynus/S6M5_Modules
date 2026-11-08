@@ -16,7 +16,7 @@
         <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(3)">🔑 3. Milestone Unlock</button>
     </div>
 
-    <!-- Slide 1: Protocol Synthesis & Worked Example -->
+<!-- Slide 1: Protocol Synthesis & Worked Example -->
     <div class="slide-content active" id="slide-1">
         <h3>The Complete Graphical Synthesis Protocol</h3>
         <p>When handed a raw derivative graph <span class="math-inline">f'(x)</span>, use this two-tier visual execution layout to systematically discover and plot every key landmark feature of the hidden parent function <span class="math-inline">f(x)</span>.</p>
@@ -30,7 +30,7 @@
                         <strong style="color: var(--neon-amber);">STEP 1: Locate the Axis Intersections (Roots)</strong>
                         <span style="background: rgba(0, 243, 255, 0.1); color: var(--neon-amber); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: monospace; font-weight: bold;">f'(x) = 0</span>
                     </div>
-                    <span class="item-detail">↳ Scan the horizontal axis to find where the derivative graph cuts through <span class="math-inline">y = 0</span>. These coordinates are the **Stationary Points** of your parent function. Crossing from below to above marks a local minimum; crossing from above to below marks a local maximum.</span>
+                    <span class="item-detail">↳ Scan the horizontal axis to find where the derivative graph cuts through <span class="math-inline">y = 0</span>. These coordinates are the stationary points of your parent function. Crossing from below to above marks a local minimum; crossing from above to below marks a local maximum.</span>
                 </div>
 
                 <!-- STEP 2 ITEM -->
@@ -39,7 +39,7 @@
                         <strong style="color: var(--neon-amber);">STEP 2: Extract Extrema from the Slopes (Peaks & Valleys)</strong>
                         <span style="background: rgba(0, 243, 255, 0.1); color: var(--neon-amber); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: monospace; font-weight: bold;">f''(x) = 0</span>
                     </div>
-                    <span class="item-detail">↳ Locate every local peak (maximum) and valley (minimum) directly on the derivative curve. Because these positions represent where the slope of the derivative is flat, they map directly to the **Inflection Points** of the parent function, signaling an exact shift in concavity geometry.</span>
+                    <span class="item-detail">↳ Locate every local peak (maximum) and valley (minimum) directly on the derivative curve. Because these positions represent where the slope of the derivative is flat, they map directly to the inflection points of the parent function, signaling an exact shift in concavity behavior.</span>
                 </div>
 
             </div>
@@ -48,10 +48,12 @@
 
 
 
-        <!-- 🟨 MAIN WORKED EXAMPLE CARD -->
+
+<!-- 🟨 MAIN WORKED EXAMPLE CARD -->
         <div class="block-example" style="margin-bottom: 20px;">
-            <strong>Worked Example: Global Geometric Reconstitution from a Derivative Profile</strong>
-            <p>The continuous graph of a derivative function <span class="math-inline">f'(x)</span> is a symmetric downward parabola cutting the horizontal axis at <span class="math-inline">x = -1</span> and <span class="math-inline">x = 3</span>, with its turning peak vertex locked at <span class="math-inline">(1, 4)</span>. Reconstruct the parent function <span class="math-inline">f(x)</span>.</p>
+            <strong>Worked Example: Finding a Parent Function from its Derivative Graph</strong>
+            <p>The continuous graph of a derivative function <span class="math-inline">f'(x)</span> is a symmetric downward parabola that crosses the horizontal axis at <span class="math-inline">x = -1</span> and <span class="math-inline">x = 3</span>, with its maximum peak vertex located at <span class="math-inline">(1, 4)</span>. Reconstruct the parent function <span class="math-inline">f(x)</span>.</p>
+
 
             <!-- GRAPH 1: THE INPUT DERIVATIVE VECTOR -->
             <div class="visual-wrapper" style="margin: 15px auto; max-width: 500px; padding: 10px;">
@@ -87,13 +89,13 @@
                 <strong>Solution Steps:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     <li style="margin-bottom: 14px;">
-                        <span>Isolate Stationary Coordinates:</span> Find where the derivative graph intersects the horizontal axis (<span class="math-inline">f'(x) = 0</span>). This occurs at <span class="math-inline">x = -1</span> and <span class="math-inline">x = 3</span>. Since the curve passes from negative to positive at <span class="math-inline">x = -1</span>, the parent function has a local minimum here. At <span class="math-inline">x = 3</span>, it switches from positive to negative, marking a local maximum.
+                        <span>Find the stationary points:</span> Find where the derivative graph intersects the horizontal axis (<span class="math-inline">f'(x) = 0</span>). This occurs at <span class="math-inline">x = -1</span> and <span class="math-inline">x = 3</span>. Since the derivative changes from negative to positive at <span class="math-inline">x = -1</span>, the parent function has a local minimum here. At <span class="math-inline">x = 3</span>, the derivative changes from positive to negative, marking a local maximum.
                     </li>
                     <li style="margin-bottom: 14px;">
-                        <span>Locate the Inflection Vertex Point:</span> Find the maximum peak point of the derivative curve. The turning vertex occurs at <span class="math-inline">x = 1</span>. At this point, the derivative curve stops climbing and begins falling, meaning the rate of change of the slope is zero (<span class="math-inline">f''(1) = 0</span>). This locates the precise point of inflection for the parent function.
+                        <span>Find the inflection point:</span> Find the maximum peak point of the derivative curve. This turning vertex occurs at <span class="math-inline">x = 1</span>. At this point, the derivative curve stops increasing and begins decreasing, which means the rate of change of the slope is zero (<span class="math-inline">f''(1) = 0</span>). This locates the exact point of inflection for the parent function.
                     </li>
                     <li style="margin-bottom: 0;">
-                        <span>Reconstruct the Parent Profile Geometry:</span> Synthesize the stationary intervals to sketch the path of the target cubic function \(f(x)\):
+                        <span>Sketch the parent function graph:</span> Combine these turning points and intervals to show the path of the parent function \(f(x)\):
                         
                         <!-- GRAPH 2: MATHEMATICALLY PERFECT RECONSTRUCTED PARENT SYSTEM CURVE -->
                         <!-- VISUAL GRAPH COMPONENT -->
@@ -126,7 +128,7 @@
 
                                 <!-- Inflection Point Coordinate (x = 1, y is center point) -->
                                 <circle cx="250" cy="120" r="4.5" fill="var(--neon-cyan)" />
-                                <text x="262" y="124" fill="var(--neon-cyan)" font-size="10" font-weight="bold">Inflection Midpoint (x = 1)</text>
+                                <text x="262" y="124" fill="var(--neon-cyan)" font-size="10" font-weight="bold">Inflection Point (x = 1)</text>
 
                                 <!-- Local Maximum Coordinate (x = 3, y is high) -->
                                 <circle cx="350" cy="60" r="4.5" fill="#00e676" />
@@ -136,6 +138,7 @@
                     </li>
                 </ol>
             </div>
+
         </div>
 
 
@@ -143,15 +146,16 @@
     </div>
 
 
-    <!-- Slide 2: Graphical Mastery Practice Set -->
+<!-- Slide 2: Graphical Mastery Practice Set -->
     <div class="slide-content" id="slide-2">
-            <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
-            <p>Solve these target check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+            <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Written Exercises</h3>
+            <p>Solve these target check points on your notebook pages or digital note screen to practice your curve-sketching steps and verify your answers:</p>
 
             <!-- 🟨 EXERCISE CARD 1: CUBIC DERIVATIVE (QUARTIC PARENT) -->
             <div class="block-exercise" style="margin-bottom: 25px;">
-                <div class="exercise-title">Exercise 11.1: Decoding a Multi-Root Derivative System</div>
-                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous function. Sketch the function f(x) by analysing its geometry to isolate all critical features: Extremum; Inflections; Roots.</p>
+                <div class="exercise-title">Exercise 11.1: Finding a Parent Function from its Derivative Graph</div>
+                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous parent function. Sketch the parent function graph for <span class="math-inline">f(x)</span> by analyzing its key geometric landmarks: local maximums, local minimums, and inflection points.</p>
+
 
                 <!-- HIGH-ACCURACY VISUAL GRAPH WITH EXTREMUM COORDINATES -->
                 <div class="visual-wrapper" style="margin: 15px auto; max-width: 500px; padding: 10px;">
@@ -201,8 +205,9 @@
 
             <!-- 🟨 EXERCISE CARD 2: TOUCH-AND-BOUNCE SYSTEM (STATIONARY INFLECTION) -->
             <div class="block-exercise" style="margin-bottom: 25px;">
-                <div class="exercise-title">Exercise 11.2: Decoding a Tangential Derivative System</div>
-                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous function. Analyze its geometry to isolate all critical features of its parent function: Extremum; Inflections; Roots.</p>
+                <div class="exercise-title">Exercise 11.2: Finding a Parent Function from a Tangential Derivative Graph</div>
+                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous parent function. Analyze its geometry to determine all key landmark features of the parent function <span class="math-inline">f(x)</span>: local maximums, local minimums, and inflection points.</p>
+
 
                 <!-- MATHEMATICALLY PERFECTED TOUCH-AND-BOUNCE GRAPH -->
                 <div class="visual-wrapper" style="margin: 15px auto; max-width: 500px; padding: 10px;">
@@ -248,7 +253,8 @@
             <!-- 🟨 EXERCISE CARD 3: THE CONSTANT SLOPE PLATEAU (LINEAR TRANSITION) -->
             <div class="block-exercise" style="margin-bottom: 25px;">
                 <div class="exercise-title">Exercise 11.3: Analyzing Flat Derivative Intervals (The Linear Plateau)</div>
-                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous function. Analyze its geometry to isolate all critical features of its parent function: Extremum; Inflections; Roots.</p>
+                <p>The graph below shows the first derivative <span class="math-inline">f'(x)</span> of a continuous parent function. Analyze the flat, horizontal segment on this derivative curve to determine all key landmark features of the parent function <span class="math-inline">f(x)</span>: local maximums, local minimums, and inflection points.</p>
+
 
                 <!-- HIGH-ACCURACY VISUAL PLOT: PERFECTLY SYMMETRIC PIECEWISE CURVE -->
                 <div class="visual-wrapper" style="margin: 15px auto; max-width: 500px; padding: 10px;">
@@ -297,7 +303,8 @@
             <!-- 🟨 EXERCISE CARD 4: GLOBAL VISUAL MATCHING CHALLENGE -->
             <div class="block-exercise" style="margin-bottom: 25px;">
                 <div class="exercise-title">Exercise 11.4: Visual Profile Matching (Global System Recognition)</div>
-                <p>The master graph below shows the first derivative <span class="math-inline">f'(x)</span> of an unknown function. Match this target derivative to its correct parent function profile from the options shown underneath by tracking landmark coordinates.</p>
+                <p>The master graph below shows the first derivative <span class="math-inline">f'(x)</span> of an unknown parent function. Match this target derivative curve to its correct parent function profile from the options shown underneath by tracking key geometric landmark coordinates like turning points and inflection points.</p>
+
 
                 <!-- MASTER GRAPH: THE TARGET DERIVATIVE f'(x) -->
                 <div class="visual-wrapper" style="margin: 15px auto; max-width: 500px; padding: 10px;">

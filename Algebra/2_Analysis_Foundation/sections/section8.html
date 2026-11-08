@@ -20,8 +20,8 @@
 
     <!-- Slide 1: Overview -->
     <div class="slide-content active" id="slide-1">
-        <h3 style="margin-top: 0;">Architectural Overview</h3>
-        <p>When computing rates of change for nested systems, you cannot find the overall derivative simply by differentiating the parts independently. Imagine a domino ripple effect: changing the deepest variable shifts the inner layer, which then forces the outer wrapper to change.</p>
+        <h3 style="margin-top: 0;">An Introduction to the Chain Rule</h3>
+        <p>When finding the rate of change for nested functions, you cannot find the overall derivative by simply differentiating the parts independently. Think of it like a chain reaction: changing the inside variable shifts the inner layer, which then forces the outer function to change as well.</p>
 
         <!-- 💡 THE INTUITIVE MENTAL MODEL ANALOGY -->
         <div class="block-preview" style="margin-bottom: 20px;">
@@ -37,7 +37,7 @@
         <div class="block-definition" style="margin: 20px 0;">
             <strong>The Chain Rule Definition</strong>
             <p style="margin-top: 6px; margin-bottom: 12px; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted);">
-                If a composite function is defined as <strong class="math-inline">h(x) = f(g(x))</strong>, its derivative is found by multiplying the rate of change of the outer layer by the rate of change of the inner layer:
+                If a composite function is defined as <strong class="math-inline">h(x) = f(g(x))</strong>, its derivative is found by multiplying the rate of change of the outer function by the rate of change of the inner function:
             </p>
             
             <div class="math-block" style="font-size: 1.5rem; text-align: center; margin: 5px 0; letter-spacing: 1px; width: 100%;">
@@ -79,8 +79,8 @@
 
         <!-- 🔮 LEIBNIZ MATRIX DERIVATION (STACKED SECOND FOR STRUCTURAL MATHEMATICAL PROOF) -->
         <div class="block-theorem" style="margin-top: 0; margin-bottom: 20px;">
-            <strong>🧮 Leibniz Derivation Proof</strong>
-            <p style="font-size: 0.9rem; margin-top: 0; line-height: 1.6;">Let <span class="math-inline">y = f(u)</span> and <span class="math-inline">u = g(x)</span>. A minor fractional step adjustment <span class="math-inline">&Delta;x</span> forces an immediate rate shift in the inner layer <span class="math-inline">&Delta;u</span>, which ripples directly into the final system output landmark <span class="math-inline">&Delta;y</span>:</p>
+            <strong>🧮 Leibniz Notation Proof</strong>
+            <p style="font-size: 0.9rem; margin-top: 0; line-height: 1.6;">Let <span class="math-inline">y = f(u)</span> and <span class="math-inline">u = g(x)</span>. A small change in x forces a change in the inner expression u, which then causes a change in the final output y:</p>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 18px 0; width: 100%;">
                 <span class="frac"><span class="top">&Delta;y</span><span class="bottom">&Delta;x</span></span> = 
@@ -88,7 +88,7 @@
                 <span class="frac"><span class="top">&Delta;u</span><span class="bottom">&Delta;x</span></span>
             </div>
             
-            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">Taking the limit at the calculus horizon as step spacing shrinks entirely to zero (<span class="math-inline">&Delta;x &rarr; 0</span>) transforms these delta step transformations into exact algebraic differential rate identities:</p>
+            <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">If we take the limit as the change in x approaches zero (&Delta;x &rarr; 0), these small steps turn into exact derivatives:</p>
             
             <div class="math-block" style="font-size: 1.3rem; color: var(--neon-blue); text-align: center; margin-top: 18px; margin-bottom: 0; width: 100%;">
                 <span class="frac"><span class="top">dy</span><span class="bottom">dx</span></span> = 
@@ -100,10 +100,11 @@
 
         <!-- ⚠️ CRITICAL COMPONENT ALERT BADGE CALLOUT (Mapped Natively to Theorem/Warning block) -->
         <div class="block-theorem" style="margin-top: 20px; border-left-color: var(--neon-danger) !important;">
-            <strong style="color: var(--neon-danger); display: block; margin-bottom: 4px;">🚨 The Composite Trap — Overlooking Inner Chains:</strong>
-            <p style="font-size: 0.85rem; margin: 0; line-height: 1.6;">The derivative of a nested function is <span style="color: var(--neon-danger); font-weight: bold;">never</span> equal to the derivative of the outside layer on its own: <span class="math-inline">[f(g(x))]' &ne; f'(g(x))</span>. Forgetting to multiply by the inner loop derivative multiplier <span class="math-inline">g'(x)</span> completely breaks your calculation velocity when finding physics optimizations or geometric tangent lines down the line.</p>
+            <strong style="color: var(--neon-danger); display: block; margin-bottom: 4px;">🚨 The Composite Trap — Forgetting the Inner Part:</strong>
+            <p style="font-size: 0.85rem; margin: 0; line-height: 1.6;">The derivative of a nested function is <span style="color: var(--neon-danger); font-weight: bold;">never</span> equal to just the derivative of the outside layer on its own: <span class="math-inline">[f(g(x))]' &ne; f'(g(x))</span>. Forgetting to multiply by the inner derivative <span class="math-inline">g'(x)</span> is a very common error that will lead to completely incorrect tangent lines and answers.</p>
         </div>
     </div>
+
 
 
 
@@ -112,13 +113,13 @@
     <!-- Slide 2: Core Concept / Rules Matrix -->
     <div class="slide-content" id="slide-2">
         <h3>Operational Formula Matrix</h3>
-        <p>In practice, calculating derivatives using the abstract composite formula can be tedious. Instead, we use optimized shortcut blueprints to handle standard algebraic profiles instantly.</p>
+        <p>In practice, calculating derivatives using the abstract composite formula can take a lot of time. Instead, we use optimized shortcut patterns to handle standard algebraic expressions instantly.</p>
 
         <!-- 🔮 THE UNIVERSAL NESTING LAW CALLOUT BANNER -->
         <div class="block-preview" style="margin-bottom: 25px;">
             <strong>🌍 THE UNIVERSAL NESTING PROTOCOL:</strong>
             <p style="font-size: 0.85rem; margin: 0; line-height: 1.6; color: var(--text-muted);">
-                While the two profiles below are the most common algebraic variants you will face, <strong >the Chain Rule works exactly the same for any nested function</strong>. Whether you have an algebraic expression trapped inside a trigonometric shell <span class="math-inline"; style="color: var(--neon-purple);">sin(g(x))</span>, an exponential layer <span class="math-inline"; style="color: var(--neon-purple);">e<sup>g(x)</sup></span>, or a logarithm <span class="math-inline"; style="color: var(--neon-purple);">ln(g(x))</span>, you always differentiate from the outside-in: derive the outer shell first, then multiply by the inner derivative <span class="math-inline"; style="color: var(--neon-purple);">g'(x)</span>.
+                While the two patterns below are the most common algebraic expressions you will face, <strong>the Chain Rule works exactly the same for any nested function</strong>. Whether you have an algebraic expression inside a trigonometric function <span class="math-inline" style="color: var(--neon-purple);">sin(g(x))</span>, an exponential layer <span class="math-inline" style="color: var(--neon-purple);">e<sup>g(x)</sup></span>, or a logarithm <span class="math-inline" style="color: var(--neon-purple);">ln(g(x))</span>, you always differentiate from the outside-in: find the derivative of the outer function first, then multiply by the inner derivative <span class="math-inline" style="color: var(--neon-purple);">g'(x)</span>.
             </p>
         </div>
 
@@ -128,15 +129,15 @@
             <!-- Pattern 1: Power of Brackets -->
             <div class="block-definition">
                 <strong>📦 PROFILE A: POWERS OF BRACKETS</strong>
-                <p>When a base polynomial expression is trapped inside an integer power exponent:</p>
+                <p>When an expression inside brackets is raised to a power:</p>
                 
-                <div class="math-block"; style="color: var(--neon-green);">
+                <div class="math-block" style="color: var(--neon-green);">
                     [(g(x))<sup>n</sup>]' = n &middot; (g(x))<sup>n-1</sup> &middot; g'(x)
                 </div>
                 
                 <ol style="font-size: 0.85rem; padding-left: 20px; margin-top: 12px; color: var(--text-muted); line-height: 1.6;">
-                    <li>Bring the master power exponent <strong>n</strong> to the very front.</li>
-                    <li>Decrease the bracket's power layer by exactly <strong >1</strong>.</li>
+                    <li>Bring the power exponent <strong>n</strong> to the very front.</li>
+                    <li>Decrease the bracket's power layer by exactly <strong>1</strong>.</li>
                     <li>Multiply everything by the internal derivative <strong>g'(x)</strong>.</li>
                 </ol>
             </div>
@@ -144,7 +145,7 @@
             <!-- Pattern 2: Derivatives of Square Roots -->
             <div class="block-definition">
                 <strong>🧪 PROFILE B: RADICAL RADIX CORES</strong>
-                <p>When a variable expression is nested securely underneath a classic square root sign:</p>
+                <p>When a variable expression is nested underneath a classic square root sign:</p>
                 
                 <div class="math-block" style="color: var(--neon-green);">
                     <span>&radic;</span><span style="border-top: 2px solid var(--neon-green); padding-top: 0px; margin-top: 4px; line-height: 1.0; display: inline-block;">g(x)</span>' = 
@@ -163,7 +164,8 @@
 
         </div>
 
-        <!-- ⚡ REFACTORED OPTIONAL DEEP DIVE: PROOF EXPLORER NATIVE DETAILS LAYER -->
+
+<!-- ⚡ REFACTORED OPTIONAL DEEP DIVE: PROOF EXPLORER NATIVE DETAILS LAYER -->
         <div class="block-theorem">
             <details style="cursor: pointer;">
                 <summary style="font-weight: bold; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; padding-bottom: 4px;">
@@ -175,12 +177,12 @@
                     <!-- Visual structural footnote mapped to high-contrast nested wrapper layout -->
                     <div class="block-solution" style="margin-top: 0; margin-bottom: 16px; padding: 12px 14px; background-color: #0d1527 !important; border: 1px solid rgba(255, 255, 255, 0.04) !important;">
                         <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin: 0; line-height: 1.5; text-align: left;">
-                            <strong style="color: var(--neon-blue); font-style: normal; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">⚠️ SYSTEM PARAMETER NOTE:</strong>
-                            This structural proof is completely optional for core exam completion, but highly recommended for observing Leibniz conversion thresholds.
+                            <strong style="color: var(--neon-blue); font-style: normal; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">⚠️ STUDY NOTE:</strong>
+                            This proof is completely optional for your exams, but it is highly recommended if you want to see how Leibniz notation works behind the scenes.
                         </p>
                     </div>
 
-                    <p>Let independent shift parameters approach zero bounds. We evaluate the dynamic conversion fractions step-by-step by multiplying the standard expansion array with a matching middle-variable fraction:</p>
+                    <p>Let the changes in our variables approach zero. We can evaluate these steps by multiplying our fraction by a matching fraction containing our middle variable, u:</p>
                     
                     <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 18px 0; width: 100%;">
                         <span class="frac"><span class="top">&Delta;y</span><span class="bottom">&Delta;x</span></span> = 
@@ -188,7 +190,7 @@
                         <span class="frac"><span class="top">&Delta;u</span><span class="bottom">&Delta;x</span></span>
                     </div>
                     
-                    <p>Because the inner function layer <span class="math-inline">g(x)</span> is perfectly continuous across its structural limits, forcing the baseline change to zero constraints (<span class="math-inline">&Delta;x &rarr; 0</span>) simultaneously locks the middle change array into immediate zero boundaries (<span class="math-inline">&Delta;u &rarr; 0</span>):</p>
+                    <p>Because the inner function layer <span class="math-inline">g(x)</span> is perfectly continuous, forcing the change in x to zero (<span class="math-inline">&Delta;x &rarr; 0</span>) automatically forces the change in the middle variable u to zero as well (<span class="math-inline">&Delta;u &rarr; 0</span>):</p>
                     
                     <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 18px 0; width: 100%;">
                         lim<sub>&Delta;x&rarr;0</sub> <span class="frac"><span class="top">&Delta;y</span><span class="bottom">&Delta;x</span></span> = 
@@ -197,7 +199,7 @@
                     </div>
 
                     
-                    <p style="margin-bottom: 0;">These distinct analytical limits convert smoothly into canonical differential equations, verifying why the external wrapper scale matches internal multiplier factors flawlessly:</p>
+                    <p style="margin-bottom: 0;">These individual limits turn smoothly into standard derivative formulas, proving exactly why the derivative of the outer wrapper multiplies by the inner derivative part:</p>
                     
                     <div class="math-block" style="font-size: 1.3rem; color: var(--neon-blue); text-align: center; margin-top: 18px; margin-bottom: 0; width: 100%;">
                         <span class="frac"><span class="top">dy</span><span class="bottom">dx</span></span> = 
@@ -208,6 +210,7 @@
             </details>
         </div>
 
+
     </div>
 
 
@@ -215,46 +218,46 @@
 
 <!-- Slide 3: Worked Examples Component -->
     <div class="slide-content" id="slide-3">
-        <h3>Chain Rule Masterclass</h3>
-        <p>Analyze how the Chain Rule operates when combined with structural product and quotient configurations. Master these multi-step derivations to handle compound operational layers cleanly.</p>
+        <h3>Chain Rule Examples</h3>
+        <p>Take a look at how the Chain Rule works when it is combined with the product and quotient rules. Following these problems step-by-step will help you handle functions with multiple layers clearly.</p>
         
         <!-- 🟢 EXAMPLE 8.1: PRODUCT RULE + CHAIN RULE (FULL WIDTH LAYOUT) -->
         <div class="block-example">
-            <strong>Example 8.1 (Product Protocol with Nested Chain Rule Layers):</strong>
-            <p>Differentiate the product function featuring a radical composite wrapper:</p>
+            <strong>Example 8.1 (Using the Product Rule and Chain Rule together):</strong>
+            <p>Find the derivative of this function containing an expression inside a square root:</p>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
                 h(x) = x &middot; <span>&radic;</span><span style="border-top: 2px solid; padding-top: 0px; margin-top: 4px; line-height: 1.0; display: inline-block;">2x + 1</span>
             </div>
             
             <div class="block-solution">
-                <strong>Solution Method:</strong>
+                <strong>Solution:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     <li>
-                        <span>Isolate Product Factors:</span> Let <span class="math-inline">u(x) = x</span> and <span class="math-inline">v(x) = &radic;<span style="border-top: 1px solid var(--text-muted);">2x + 1</span></span>. Differentiating <span class="math-inline">u(x)</span> yields <span class="math-inline">u'(x) = 1</span>.
+                        <span>Separate into two parts:</span> Let <span class="math-inline">u(x) = x</span> and <span class="math-inline">v(x) = &radic;<span style="border-top: 1px solid var(--text-muted);">2x + 1</span></span>. Finding the derivative of the first part gives <span class="math-inline">u'(x) = 1</span>.
                     </li>
                     <li>
-                        <span>Apply Chain Rule to the Radical Layer:</span> For <span class="math-inline">v(x)</span>, the inner function is <span class="math-inline">g(x) = 2x + 1 &rarr; g'(x) = 2</span>. Applying the root profile framework shortcut delivers:
+                        <span>Find the derivative of the square root part:</span> For <span class="math-inline">v(x)</span>, the inside function is <span class="math-inline">g(x) = 2x + 1</span>, which has a derivative of <span class="math-inline">g'(x) = 2</span>. Using our square root shortcut rule gives:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             v'(x) = <span class="frac"><span class="top">2</span><span class="bottom">2&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span> = <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span>
                         </div>
                     </li>
                     <li>
-                        <span>Execute Product Cross-Multiplication:</span> We assemble the segments via the structured framework path <span class="math-inline">[u'v + uv']</span>:
+                        <span>Combine using the Product Rule formula:</span> We put the parts together using the formula <span class="math-inline">u'v + uv'</span>:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             h'(x) = (1) &middot; &radic;<span style="border-top:1px solid #fff;">2x + 1</span> + x &middot; <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
                         </div>
                     </li>
                     <li>
-                        <span>Find Common Denominators to Simplify:</span> Multiply the first term by <span class="math-inline">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span> / &radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span> to combine fractions over a common divisor base:
+                        <span>Find a common denominator to add the terms:</span> Multiply the first term by <span class="math-inline">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span> / &radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span> to combine the fractions over a single bottom part:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             h'(x) = <span class="frac"><span class="top">(2x + 1) + x</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
                         </div>
                     </li>
                     <li>
-                        <span>State Final Derivative:</span> Combine matching variable parameters on the numerator layer to yield the terminal rate equation:
+                        <span>Write down the final derivative:</span> Add the like terms on top together to get your final answer formula:
                         <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
-                            h'(x) = <span class="frac"><span class="top"; style="color: var(--neon-cyan);">3x + 1</span><span class="bottom"; style="color: var(--neon-cyan);">&radic; 2x + 1</span></span>
+                            h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">3x + 1</span><span class="bottom" style="color: var(--neon-cyan);">&radic; 2x + 1</span></span>
                         </div>
                     </li>
                 </ol>
@@ -263,41 +266,41 @@
 
         <!-- 🟢 EXAMPLE 8.2: QUOTIENT RULE + CHAIN RULE (FULL WIDTH LAYOUT) -->
         <div class="block-example">
-            <strong>Example 8.2 (Quotient Protocol with Power-Bracket Chain Rule Layers):</strong>
-            <p>Differentiate the rational fraction featuring a composite exponent denominator base:</p>
+            <strong>Example 8.2 (Using the Quotient Rule and Chain Rule together):</strong>
+            <p>Find the derivative of this fraction containing brackets raised to a power in the denominator:</p>
             
             <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
                 h(x) = <span class="frac"><span class="top">x</span><span class="bottom">(3x - 2)<sup>2</sup></span></span>
             </div>
             
             <div class="block-solution">
-                <strong>Solution Method:</strong>
+                <strong>Solution:</strong>
                 <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
                     <li>
-                        <span>Identify Numerator and Denominator:</span> Let the top factor be defined as <span class="math-inline">u(x) = x &rarr; u'(x) = 1</span>, and let the denominator base be <span class="math-inline">v(x) = (3x - 2)<sup>2</sup></span>.
+                        <span>Identify the top and bottom parts:</span> Let the top expression be <span class="math-inline">u(x) = x &rarr; u'(x) = 1</span>, and let the bottom expression be <span class="math-inline">v(x) = (3x - 2)<sup>2</sup></span>.
                     </li>
                     <li>
-                        <span>Evaluate the Denominator Chain Rule:</span> Differentiate <span class="math-inline">v(x)</span> by drawing the power exponent forward and multiplying by the internal core polynomial derivative (<span class="math-inline">3</span>):
+                        <span>Find the derivative of the bottom part using the Chain Rule:</span> Differentiate <span class="math-inline">v(x)</span> by bringing the power to the front and multiplying by the derivative of the expression inside the brackets:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             v'(x) = 2(3x - 2)<sup>1</sup> &middot; (3) = 6(3x - 2)
                         </div>
                     </li>
                     <li>
-                        <span>Assemble the Quotient Formula Layer:</span> Substitute our structural components directly into the formal template layout <span class="math-inline"><span class="frac"><span class="top">u'v - uv'</span><span class="bottom">v<sup>2</sup></span></span></span>:
+                        <span>Substitute the parts into the Quotient Rule formula:</span> Place our expressions directly into the standard template <span class="math-inline"><span class="frac"><span class="top">u'v - uv'</span><span class="bottom">v<sup>2</sup></span></span></span>:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             h'(x) = <span class="frac"><span class="top">(1) &middot; (3x - 2)<sup>2</sup> - x &middot; [6(3x - 2)]</span><span class="bottom">[ (3x - 2)<sup>2</sup> ]<sup>2</sup></span></span>
                         </div>
                     </li>
                     <li>
-                        <span>Factor out Common Polynomial Elements:</span> Isolate and pull out the shared term <span class="math-inline">(3x - 2)</span> from the numerator expression to cancel cleanly against the expanding base factors:
+                        <span>Factor out shared terms to simplify:</span> Pull out the common term <span class="math-inline">(3x - 2)</span> from the top expression so it can cancel out cleanly with the bottom part:
                         <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
                             h'(x) = <span class="frac"><span class="top">(3x - 2) &middot; [ (3x - 2) - 6x ]</span><span class="bottom">(3x - 2)<sup>4</sup></span></span> = <span class="frac"><span class="top">(3x - 2) - 6x</span><span class="bottom">(3x - 2)<sup>3</sup></span></span>
                         </div>
                     </li>
                     <li>
-                        <span>State Final Derivative:</span> Combine like algebraic components on top to deliver the fully reduced output formula:
+                        <span>Write down the final derivative:</span> Combine the terms on top to find the fully simplified final formula:
                         <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
-                            h'(x) = <span class="frac"><span class="top"; style="color: var(--neon-cyan);">-3x - 2</span><span class="bottom"; style="color: var(--neon-cyan);">(3x - 2)<sup>3</sup></span></span>
+                            h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">-3x - 2</span><span class="bottom" style="color: var(--neon-cyan);">(3x - 2)<sup>3</sup></span></span>
                         </div>
                     </li>
                 </ol>
@@ -308,15 +311,16 @@
 
 
 
-    <!-- Slide 4: Practice Set / Lab Array Component -->
+
+<!-- Slide 4: Practice Set / Lab Array Component -->
     <div class="slide-content" id="slide-4">
-        <h3 style="color: var(--neon-amber); margin-top: 0; margin-bottom: 5px;">🏋️ Mandatory Written Exercises</h3>
-        <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Solve these multi-layered calculus check points cleanly on your physical workbook sheets or iPad note canvas:</p>
+        <h3 style="color: var(--neon-amber); margin-top: 0; margin-bottom: 5px;">🏋️ Written Exercises</h3>
+        <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Solve these multi-layer calculus problems on your notebook pages or iPad note screen:</p>
         
         <!-- 🟨 EXERCISE SET 1: COMPOUND PRODUCTS -->
         <div class="block-exercise" style="margin-bottom: 20px;">
-            <div class="exercise-title">Exercise 8.1: Composite Product Rule Array</div>
-            <p>Use the Product Rule in combination with Chain Rule properties. Simplify your final expressions completely:</p>
+            <div class="exercise-title">Exercise 8.1: Combining the Product Rule and Chain Rule</div>
+            <p>Use the Product Rule along with the Chain Rule to find the derivative. Simplify your final answers completely:</p>
             <div class="grid-2">
                 <div class="exercise-item">
                     <span>a) <span class="math-inline">f(x) = x<sup>2</sup> &middot; ln(3x - 5)</span></span>
@@ -335,8 +339,8 @@
 
         <!-- 🟨 EXERCISE SET 2: COMPOUND QUOTIENTS -->
         <div class="block-exercise" style="margin-bottom: 25px;">
-            <div class="exercise-title">Exercise 8.2: Composite Quotient Rule Array</div>
-            <p>Use the Quotient Rule in combination with Chain Rule properties to calculate the simplified formula for <span class="math-inline">g'(x)</span>:</p>
+            <div class="exercise-title">Exercise 8.2: Combining the Quotient Rule and Chain Rule</div>
+            <p>Use the Quotient Rule along with the Chain Rule to find a simplified formula for <span class="math-inline">g'(x)</span>:</p>
             <div class="grid-2">
                 <div class="exercise-item">
                     <span>a) <span class="math-inline">g(x) = <span class="frac"><span class="top">ln(x)</span><span class="bottom">x<sup>2</sup> + 2</span></span></span></span>
@@ -353,58 +357,78 @@
             </div>
         </div>
 
-        <!-- 🟨 EXERCISE SET 3: INTERACTIVE ADVANCED CHALLENGE PLOT GRAPHICS -->
+        <!-- 🟨 EXERCISE 8.3: TANGENT OPTIMIZATION CHALLENGE -->
         <div class="block-exercise">
-            <div class="exercise-title">Exercise 8.3: Tangent Optimization Challenges [Advanced Challenge]</div>
-            <p>A continuous curve model is defined by the following expression:</p>
+            <div class="exercise-title">Exercise 8.3: Tangent Line Linearity [Advanced Challenge]</div>
+            <p>A smooth curved model is defined by the following function <strong>f(x) = x &middot; e<sup>-2x</sup></strong> for all real numbers.</p>
             
             <div class="split-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: stretch; margin-top: 15px;">
                 
-                <!-- Question Tasks Left Side Layout Array -->
-                <div class="layout-stack" style="flex: 1.1; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
-                    <div class="math-block">
-                        f(x) = x &middot; e<sup>-2x</sup>
-                    </div>
-                    
-                    <!-- Part A -->
+                <!-- Left Column: Analytical Tasks layout inside standard item array -->
+                <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center;">
                     <div class="exercise-item" style="width: 100%;">
-                        <span>a) Prove the structural derivative identity target:</span>
-                        <span class="item-detail">↳ Apply a combined Product Rule and Chain Rule sequence to verify that 
-                            <div class="math-block"><span style="color: var(--neon-amber);">f'(x) = (1 - 2x)e<sup>-2x</sup></span>.</span></div>
+                        <span><strong>a)</strong> Use the Product Rule and Chain Rule together to show that the derivative simplifies to <span class="math-inline">f'(x) = (1 - 2x)e<sup>-2x</sup></span>.</span>
                     </div>
-                    
-                    <!-- Part B -->
                     <div class="exercise-item" style="width: 100%;">
-                        <span>b) Find the linear equation of the tangent line at (0, 0):</span>
+                        <span><strong>b)</strong> Find the equation of the straight tangent line (<span class="math-inline">y = mx + p</span>) to this curve at the point where <span class="math-inline">x = 0</span>.</span>
                     </div>
                 </div>
+                
+                <!-- STANDALONE TRANSCENDENTAL VECTOR GRID TERRAIN -->
+                <div class="visual-wrapper" style="margin: 0; padding: 16px; min-width: 0;">
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; width: 100%; text-align: center;">📊 TANGENT GEOMETRY LANDSCAPE</div>
+                    
+                    <svg viewBox="-20 -20 180 180" width="100%" style="max-width: 240px; display: block; font-family: monospace; margin: 0 auto;">
+                        <!-- Full Mathematical Mesh Alignment Grid (Continuous uniform 25px spans) -->
+                        <g stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.5">
+                            <!-- Horizontal Lines across the entire viewport width -->
+                            <line x1="0" y1="0" x2="150" y2="0" />
+                            <line x1="0" y1="25" x2="150" y2="25" />
+                            <line x1="0" y1="50" x2="150" y2="50" />
+                            <line x1="0" y1="75" x2="150" y2="75" />
+                            <line x1="0" y1="100" x2="150" y2="100" />
+                            <line x1="0" y1="125" x2="150" y2="125" />
+                            <line x1="0" y1="150" x2="150" y2="150" />
+                            
+                            <!-- Vertical Lines across the entire viewport height -->
+                            <line x1="0" y1="0" x2="0" y2="150" />
+                            <line x1="25" y1="0" x2="25" y2="150" />
+                            <line x1="50" y1="0" x2="50" y2="150" />
+                            <line x1="75" y1="0" x2="75" y2="150" />
+                            <line x1="100" y1="0" x2="100" y2="150" />
+                            <line x1="125" y1="0" x2="125" y2="150" />
+                            <line x1="150" y1="0" x2="150" y2="150" />
+                        </g>
 
+                        <!-- Axes vectors adjusted to match the 25px integer mesh intersections perfectly -->
+                        <line x1="0" y1="125" x2="155" y2="125" stroke="#475569" stroke-width="1.2" /> <!-- Solid X-Axis aligned at Y=125 -->
+                        <line x1="25" y1="0" x2="25" y2="150" stroke="#475569" stroke-width="1.2" />  <!-- Solid Y-Axis aligned at X=25 -->
+                        
+                        <text x="155" y="133" fill="#64748b" font-size="7" text-anchor="middle">x</text>
+                        <text x="17" y="8" fill="#64748b" font-size="7" text-anchor="middle">y</text>
+                        
+                        <!-- Mathematical Milestone Labels locked onto real grid intersection locations -->
+                        <text x="25" y="135" fill="#475569" font-size="6" text-anchor="middle" font-weight="bold">0</text>
+                        <text x="75" y="135" fill="#475569" font-size="6" text-anchor="middle" font-weight="bold">1</text>
 
-                <!-- Live Vector Geometry Simulator Representation Graph Right Side -->
-                <div class="visual-wrapper" style="margin: 0; padding: 16px; min-width: 0; display: flex; justify-content: center; align-items: center;">
-                    <div id="exercise-vector-canvas" style="width: 180px; height: 180px; border: 1px dashed rgba(255, 255, 255, 0.15); border-radius: 8px; background: #090d16; position: relative; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.8);">
-                        <!-- Grid Overlay -->
-                        <div style="position: absolute; width: 100%; height: 100%; background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px); background-size: 20px 20px; opacity: 0.25;"></div>
-                        <!-- Axis Lines -->
-                        <div style="position: absolute; left: 30px; top: 0; width: 1px; height: 100%; background: #475569;"></div>
-                        <div style="position: absolute; left: 0; top: 130px; width: 100%; height: 1px; background: #475569;"></div>
-                        <!-- Vector Mathematical Plot Representation -->
-                        <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
-                            <!-- Exponent Curve Path Trace -->
-                            <path d="M 30,130 Q 70,30 110,90 T 180,125" fill="none" stroke="var(--neon-amber)" stroke-width="2.5"></path>
-                            <!-- Linear Tangent Trace Line at x=0 -->
-                            <line x1="0" y1="160" x2="100" y2="60" stroke="var(--neon-danger)" stroke-width="1.5" stroke-dasharray="3,3"></line>
-                        </svg>
-                        <!-- Dynamic Point Node -->
-                        <div style="position: absolute; left: 27px; top: 127px; width: 7px; height: 7px; border-radius: 50%; background: var(--neon-danger); box-shadow: 0 0 8px var(--neon-danger);"></div>
-                        <span style="position: absolute; left: 42px; top: 115px; font-size: 0.7rem; color: #ffffff; font-family: monospace; font-weight: bold;">(0, 0)</span>
-                        <span style="position: absolute; right: 10px; bottom: 8px; font-size: 0.65rem; color: var(--neon-amber); font-family: monospace;">f(x)</span>
-                    </div>
+                        <!-- Curve branch plot line representing x * e^(-2x) -->
+                        <path d="M 25,125 Q 50,40 75,95 T 150,120" fill="none" stroke="var(--neon-amber)" stroke-width="1.8" stroke-linecap="round" />
+                        <text x="130" y="110" fill="var(--neon-amber)" font-size="7" font-weight="bold">f(x)</text>
+
+                        <!-- Linear Tangent Trace Line at x=0 -->
+                        <line x1="0" y1="150" x2="60" y2="90" stroke="var(--neon-danger)" stroke-width="1.2" stroke-dasharray="3,2" />
+
+                        <!-- Highlight target point node synced flawlessly at the origin (0, 0) grid position -->
+                        <circle cx="25" cy="125" r="3" fill="#f43f5e" />
+                        <text x="40" y="118" fill="#ffffff" font-size="7" font-weight="bold">(0,0)</text>
+                    </svg>
                 </div>
 
             </div>
         </div>
+
     </div>
+
 
 
 
