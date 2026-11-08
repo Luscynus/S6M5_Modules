@@ -11,36 +11,47 @@ window.verifySectionKey = function(buttonElement, currentLevel, correctAnswersAr
     const feedBox = container.querySelector('.feedback-box');
     if (!inputElements.length || !feedBox) return;
 
+    // 🔑 CONFIGURE YOUR SECRET MASTERCODE PASSPHRASE HERE
+    const MY_SECRET_MASTERCODE = "aaa";
+
+    // Check if the administrator typed the master override code into the hidden input slot
+    const bypassInput = container.querySelector('.master-bypass-input');
+    const isMastercodeActive = bypassInput && bypassInput.value.trim() === MY_SECRET_MASTERCODE;
+
     let allCorrect = true;
 
-    // 2. Loop through each input box and validate against its specific counterpart index position
-    inputElements.forEach((inputEl, index) => {
-        const userValue = inputEl.value.trim();
-        const targetValue = String(correctAnswersArray[index]).trim();
-        const checkIcon = inputEl.parentElement.querySelector('.field-status-icon');
+    // Only evaluate standard answer verification matrices if mastercode is not triggered
+    if (!isMastercodeActive) {
+        inputElements.forEach((inputEl, index) => {
+            const userValue = inputEl.value.trim();
+            const targetValue = String(correctAnswersArray[index]).trim();
+            const checkIcon = inputEl.parentElement.querySelector('.field-status-icon');
 
-        if (userValue === targetValue) {
-            // Field Specific Success Feedback Visuals
-            inputEl.style.borderColor = "var(--neon-green)";
-            if (checkIcon) {
-                checkIcon.textContent = "✓";
-                checkIcon.style.color = "var(--neon-green)";
+            if (userValue === targetValue) {
+                // Field Specific Success Feedback Visuals
+                inputEl.style.borderColor = "var(--neon-green)";
+                if (checkIcon) {
+                    checkIcon.textContent = "✓";
+                    checkIcon.style.color = "var(--neon-green)";
+                }
+            } else {
+                // Field Specific Failure Feedback Visuals
+                allCorrect = false;
+                inputEl.style.borderColor = "var(--neon-danger)";
+                if (checkIcon) {
+                    checkIcon.textContent = "❌";
+                    checkIcon.style.color = "var(--neon-danger)";
+                }
             }
-        } else {
-            // Field Specific Failure Feedback Visuals
-            allCorrect = false;
-            inputEl.style.borderColor = "var(--neon-danger)";
-            if (checkIcon) {
-                checkIcon.textContent = "❌";
-                checkIcon.style.color = "var(--neon-danger)";
-            }
-        }
-    });
+        });
+    }
 
     // 3. Overall Milestone Process Execution
-    if (allCorrect) {
+    if (isMastercodeActive || allCorrect) {
         feedBox.style.color = "var(--neon-green)";
-        feedBox.textContent = `✓ All Keys Validated! Section ${currentLevel} Complete. Section ${currentLevel + 1} Framework Unlocked.`;
+        feedBox.textContent = isMastercodeActive
+            ? `⚡ Mastercode Overrides Active! Section ${currentLevel} Complete.`
+            : `✓ All Keys Validated! Section ${currentLevel} Complete. Section ${currentLevel + 1} Framework Unlocked.`;
         
         // Progress State Automation
         const nextLevel = currentLevel + 1;
@@ -83,15 +94,10 @@ window.initializeVerificationSlides = function(targetDocument = document) {
         answersArray.forEach((ans, index) => {
             const exerciseTitle = labelsArray[index] || `Exercise Slot ${index + 1}`;
             inputsHTML += `
-                <!-- 🚀 justify-content: flex-start with explicit vertical alignment solves the spacing bug -->
                 <div style="display: flex; align-items: center; justify-content: flex-start; background: rgba(15, 23, 42, 0.4); border: 1px solid #1e293b; padding: 12px 14px; border-radius: 8px; gap: 20px; width: 100%; box-sizing: border-box;">
-                    
-                    <!-- 🚀 THE KEY CORRECTION: flex-grow lets the question fill all available text space, min-width: 0 forces wrapping, and white-space: nowrap is completely GONE -->
                     <span style="font-size: 0.85rem; color: #94a3b8; font-weight: 600; text-align: left; line-height: 1.4; flex-grow: 1; min-width: 0; word-wrap: break-word;">
                         ${exerciseTitle}
                     </span>
-                    
-                    <!-- Input wrapper stays anchored to the right margin wall with a fixed position -->
                     <div style="position: relative; display: inline-block; flex-shrink: 0; margin-left: auto;">
                         <input type="text" class="key-input" placeholder="Enter answer..." autocomplete="off" 
                                oninput="
@@ -119,24 +125,32 @@ window.initializeVerificationSlides = function(targetDocument = document) {
         
         inputsHTML += `</div>`;
 
-
-        // Inject combined modular component payload
+        // Inject combined modular component payload wrapped into an anchored relative box for the bypass slot
         slide.innerHTML = `
-            <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section ${level} Verification Check</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.4; margin: 0 0 16px 0;">${promptText}</p>
-            
-            ${inputsHTML}
-            
-            <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
-                <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 11px 26px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.9rem; transition: all 0.15s ease;"
-                        onclick="parent.verifySectionKey(this, ${level}, [${answersArray.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${failHint.replace(/'/g, "\\'")}')">
-                    Submit Verification
-                </button>
-                <div class="feedback-box" style="font-weight: 700; font-size: 0.9rem; min-height: 20px;"></div>
+            <div style="position: relative; width: 100%;">
+                
+                <!-- 🛠️ Discrete Mastercode Bypass Wrapper Control Panel -->
+                <div class="bypass-trigger-zone" style="position: absolute; top: -5px; right: 0; display: flex; align-items: center; gap: 6px; opacity: 0.15; transition: opacity 0.2s;" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.15'">
+                    <span style="font-size: 10px; color: #94a3b8; font-family: monospace; pointer-events: none;">&bull;</span>
+                    <input type="text" class="master-bypass-input" placeholder="..." autocomplete="off"
+                           style="width: 60px; background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; color: var(--text-main); font-size: 0.65rem; text-align: center; padding: 2px 4px; border-radius: 4px; outline: none; transition: border-color 0.15s;">
+                </div>
+                
+                <h3 style="color: var(--neon-amber); margin-top: 0;">🏁 Section ${level} Verification Check</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.4; margin: 0 0 16px 0;">${promptText}</p>
+                
+                ${inputsHTML}
+                
+                <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
+                    <button style="background: var(--neon-amber); color: #090d16; border: none; padding: 11px 26px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.9rem; transition: all 0.15s ease;"
+                            onclick="parent.verifySectionKey(this, ${level}, [${answersArray.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${failHint.replace(/'/g, "\\'")}')">
+                        Submit Verification
+                    </button>
+                    <div class="feedback-box" style="font-weight: 700; font-size: 0.9rem; min-height: 20px;"></div>
+                </div>
             </div>
         `;
     });
 };
 
-// Auto-run on the parent document if needed
 document.addEventListener("DOMContentLoaded", () => window.initializeVerificationSlides(document));

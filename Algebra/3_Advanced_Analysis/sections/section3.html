@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3. Interactive Module</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+    <h2>3. Optimisation with Non-Polynomial Functions</h2>
+
+    <!-- Step Controls Nav Array -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="showSlide(1)">1. Core Rules</button>
+        <button class="tab-btn" onclick="showSlide(2)">2. Worked Examples</button>
+        <button class="tab-btn" onclick="showSlide(3)">3. Practice Set</button>
+        <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(4)">🔑 4. Milestone Unlock</button>
+    </div>
+
+    <!-- 📥 SLIDE 1: OPTIMISATION ENGINE (DEFINITIONS) -->
+    <div id="slide-1" class="slide-content active">
+        <h3>Optimisation with Non-Polynomial Functions</h3>
+        <p>
+            We are extending our study of optimization by applying calculus rules to exponential and logarithmic curves. When finding where a non-polynomial function reaches its peak maximum value or lowest minimum value, we use the exact same foundational method as before: we calculate the derivative function and isolate its stationary turning points where the slope equals zero.
+        </p>
+        
+        <div class="block-definition">
+            <strong>Core Methodology: Isolating Turning Points</strong>
+            <p>
+                To calculate the precise location of local extrema on a non-polynomial curve, we set our simplified derivative to zero and solve for the valid input coordinates:
+            </p>
+            <div class="math-block">
+                <strong>f'(x) = 0</strong>
+            </div>
+            <p>
+                When working with combinations of exponential terms, this optimization step becomes much simpler by applying a critical algebraic property:
+            </p>
+            <ul>
+                <li>An exponential expression is strictly greater than zero for all real numbers (<strong class="math-inline">e<sup>x</sup> > 0</strong>).</li>
+                <li>Because it can never equal zero (<strong class="math-inline">e<sup>x</sup> &ne; 0</strong>), you can safely divide both sides of your optimization equation by the exponential term to isolate the remaining algebraic expression.</li>
+            </ul>
+        </div>
+
+        <div class="block-attention">
+            <strong>The Logarithm Domain Trap — Check Candidates Immediately</strong>
+            <p>
+                When solving optimization equations that include natural logarithms (<strong class="math-inline">ln(x)</strong>), any stationary point candidate you find by setting the derivative to zero <strong>must be cross-checked against the basic logarithmic domain restriction</strong>:
+            </p>
+            <div class="math-block">
+                <strong>x > 0</strong>
+            </div>
+            <p>
+                Because logarithms are undefined for negative numbers or zero, any calculated turning point value that is negative or equal to zero is physically impossible and must be rejected immediately from your solution set!
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Slide 2: Worked Examples Matrix -->
+    <div id="slide-2" class="slide-content">
+        <h3>2. Step-by-Step Optimization Solutions</h3>
+        <p>
+            Review these step-by-step solutions to see how we apply the Product and Quotient rules to locate and verify the exact peak or lowest points on non-polynomial curves.
+        </p>
+
+        <!-- Example 3.1 Card Wrapper -->
+        <div class="block-example">
+            <strong>Example 3.1.</strong> A function representing the efficiency of a system is given by the formula: 
+            <div class="math-block">
+                <span class="math-inline">f(x) = x<sup>2</sup> &middot; e<sup>&minus;x</sup></span> &nbsp;&nbsp; for all x > 0
+            </div>
+            Find the exact coordinates of the point where the function reaches its absolute maximum value.
+
+            <!-- 📥 Nested Solution Block -->
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol>
+                    <li>
+                        <span>Differentiate the Function using the Product and Chain Rules:</span>
+                        <p>We separate our function into its two factors and apply the Product Rule, keeping in mind that the derivative of e<sup>&minus;x</sup> is &minus;e<sup>&minus;x</sup>:</p>
+                        <div class="math-block">
+                            <span class="math-inline">f'(x) = (2x) &middot; e<sup>&minus;x</sup> + x<sup>2</sup> &middot; (&minus;e<sup>&minus;x</sup>)</span>
+                        </div>
+                        <p>Next, we simplify the expression by taking out the common exponential term as a factor:</p>
+                        <div class="math-block">
+                            <span class="math-inline">f'(x) = e<sup>&minus;x</sup> &middot; (2x &minus; x<sup>2</sup>) = x &middot; e<sup>&minus;x</sup> &middot; (2 &minus; x)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Find the Stationary Points by Setting the Derivative to Zero:</span>
+                        <p>To find our turning point candidates, we set the factored derivative formula equal to zero:</p>
+                        <div class="math-block">
+                            <span class="math-inline">x &middot; e<sup>&minus;x</sup> &middot; (2 &minus; x) = 0</span>
+                        </div>
+                        <p>We check each isolated multiplier component separately to find our valid solutions:</p>
+                        <ul>
+                            <li><span class="math-inline">x = 0</span> &rArr; This is the starting edge boundary of our open domain.</li>
+                            <li><span class="math-inline">e<sup>&minus;x</sup> = 0</span> &rArr; No solution exists, because an exponential term is strictly positive (<span class="math-inline">e<sup>&minus;x</sup> > 0</span>).</li>
+                            <li><span class="math-inline">2 &minus; x = 0</span> &rArr; <span style="color: var(--neon-cyan);"><span class="math-inline">x = 2</span></span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Calculate the Matching Peak Y-Coordinate:</span>
+                        <p>We substitute our verified stationary point back into the original curve function to find the exact peak height output:</p>
+                        <div class="math-block">
+                            <span class="math-inline">f(2) = (2)<sup>2</sup> &middot; e<sup>&minus;2</sup> = <span class="frac"><span class="top">4</span><span class="bottom">e<sup>2</sup></span></span></span>
+                        </div>
+                        <p>The system stability analysis confirms that the absolute maximum efficiency value occurs exactly at the coordinates: <strong style="color: var(--neon-cyan);">(2, <strong class="frac"><strong class="top" style="color: var(--neon-cyan);">4</strong><strong class="bottom" style="color: var(--neon-cyan);">e<sup>2</sup></strong></strong>)</strong>.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Example 3.2 Card Wrapper -->
+        <div class="block-example" style="margin-top: 24px;">
+            <strong>Example 3.2.</strong> A logarithmic curve is defined by the fractional formula:
+            <div class="math-block">
+                <span class="math-inline">g(x) = <span class="frac"><span class="top">x</span><span class="bottom">ln(x)</span></span></span> &nbsp;&nbsp; for all x > 1
+            </div>
+            Find the exact value of x where the function reaches its absolute minimum turning point.
+
+            <!-- 📥 Nested Solution Block -->
+            <div class="block-solution">
+                <strong>Solution Steps:</strong>
+                <ol>
+                    <li>
+                        <span>Calculate the Derivative using the Quotient Rule:</span>
+                        <p>We Differentiate our top and bottom functions using the fraction rule, squaring the denominator base:</p>
+                        <div class="math-block">
+                            <span class="math-inline">g'(x) = <span class="frac"><span class="top">(1) &middot; ln(x) &minus; x &middot; (<span class="frac"><span class="top">1</span><span class="bottom">x</span></span>)</span><span class="bottom">(ln(x))<sup>2</sup></span></span> = <span class="frac"><span class="top">ln(x) &minus; 1</span><span class="bottom">(ln(x))<sup>2</sup></span></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Isolate the Turning Point Candidate by Setting the Derivative to Zero:</span>
+                        <p>A fraction can only equal zero when its numerator is zero, so we solve for the upper expression:</p>
+                        <div class="math-block">
+                            <span class="math-inline">ln(x) &minus; 1 = 0 &rArr; ln(x) = 1</span>
+                        </div>
+                        <p>To eliminate the natural logarithm, we rewrite both sides using base e as an exponent:</p>
+                        <div class="math-block">
+                            <span class="math-inline">e<sup>ln(x)</sup> = e<sup>1</sup> &rArr; <span style="color: var(--neon-cyan);"><span class="math-inline">x = e</span></span></span>
+                        </div>
+                        <p>The system verification records confirm that the absolute minimum value occurs exactly at the point where <strong style="color: var(--neon-cyan);" class="math-inline" >x = e</strong>.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 3: Student Workbook Exercises -->
+    <div id="slide-3" class="slide-content">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+        <p>
+            Apply your rules for non-polynomial functions and limit operations to solve the workbook problems below.
+        </p>
+
+        <!-- Exercise 1 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 1: Stationary Points and Curve Turn Coordinates</div>
+            <p>Find the derivative function <span class="math-inline">f'(x)</span>, calculate all stationary points where <span class="math-inline">f'(x) = 0</span>, and find the full coordinates for any local maximums and minimums on the curve:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a) f(x) = <span class="math-inline">x &middot; e<sup>x</sup></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) f(x) = <span class="math-inline">(x &minus; 3) &middot; e<sup>x</sup></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) f(x) = <span class="math-inline">(2 &minus; x) &middot; e<sup>2x</sup></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d) f(x) = <span class="math-inline">(x<sup>2</sup> &minus; 4x) &middot; e<sup>x</sup></span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 2: Logarithmic Extremum Positioning Matrix</div>
+            <p>Use the Product Rule or the Quotient Rule to calculate the exact x-coordinate that minimizes or maximizes each logarithmic function across its domain:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a) g(x) = <span class="math-inline">x<sup>2</sup> &minus; 8ln(x)</span> &nbsp;&nbsp; for <span class="math-inline">x > 0</span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) g(x) = <span class="frac"><span class="top">ln(x)</span><span class="bottom">x</span></span> &nbsp;&nbsp; for <span class="math-inline">x > 0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 3: Trigonometric Wave Displacements</div>
+            <p>Consider the trigonometric function defined by <span class="math-inline">f(x) = sin(x) + cos(x)</span> over the interval <span class="math-inline">x &in; [0, &pi;]</span>:</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <div class="exercise-item">
+                    <span>a) Find the derivative function <span class="math-inline">f'(x)</span> and solve the equation <span class="math-inline">f'(x) = 0</span> to find your stationary point candidate.</span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) Convert your answer into an exact radian coordinate, and determine whether it represents a local maximum or a local minimum point.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 4: Fractional Derivative Proof Structures</div>
+            <p>A function is defined by the fractional formula: <span class="math-inline">f(x) = <span class="frac"><span class="top">10e<sup>x</sup></span><span class="bottom">e<sup>2x</sup> + 1</span></span></span>.</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <div class="exercise-item">
+                    <span>a) Use the Quotient Rule and the Chain Rule to prove that the derivative simplifies to: <span class="math-inline">f'(x) = <span class="frac"><span class="top">10e<sup>x</sup>(1 &minus; e<sup>2x</sup>)</span><span class="bottom">(e<sup>2x</sup> + 1)<sup>2</sup></span></span></span>.</span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) Set this derivative formula equal to zero to find the exact coordinates of the point where the function reaches its maximum value.</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Exercise 5 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 5 [Advanced Challenge]</div>
+            <p>A function representing the efficiency of a system is given by <span class="math-inline">f(x) = 4x &middot; e<sup>&minus;0.5x</sup></span>:</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <div class="exercise-item">
+                    <span>a) Use the Product Rule to find the derivative function <span class="math-inline">f'(x)</span>, simplifying your answer completely by taking out the common exponential term as a factor.</span>
+                </div>
+                <div class="exercise-item" style="margin-top: 10px;">
+                    <span>b) Solve the equation <span class="math-inline">f'(x) = 0</span> to find the coordinates of the maximum point.</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Slide 4: Automated Verification Milestone Progress Gate Hook -->
+    <!-- 🏁 Safe from comma conflicts using semicolon breaks! -->
+    <div class="slide-content dynamic-verification-slide" id="slide-4"
+        data-level="3"
+        data-labels="
+        Exercise 1: c) What is the exact x-coordinate of the stationary point?;
+        Exercise 2: a) What is the turning point coordinate that minimizes the curve?;
+        Exercise 3: b) What is the exact radian coordinate for the local maximum?;
+        Exercise 4: b) What is the exact x-coordinate where the function reaches its peak height?;
+        Exercise 5: b) What is the coordinate of the maximum point on the curve?
+        "
+        data-answers="
+        3/2;
+        x=2;
+        x=pi/4;
+        x=0;
+        x=2;
+        (2,8/e)
+        " 
+        data-prompt="Complete your Section 3 workbook exercises. Input your final analytical answers for the designated problems below to authorize milestone progression:"
+        data-fail="One or more values contain calculation mismatches. Double-check your factoring execution, confirm your radian boundaries, and try again.">
+    </div>
+
+
+    <!-- 📡 DECK NAVIGATION SYSTEM CONTROLLER -->
+    <script>
+        function showSlide(slideIndex) {
+            document.querySelectorAll('.slide-content').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            const buttons = document.querySelectorAll('.tab-btn');
+            if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+        }
+
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2. Interactive Module</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+    <h2>2. Asymptotes of Non-Polynomial Functions</h2>
+
+    <!-- Step Controls Nav Array -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="showSlide(1)">1. Core Rules</button>
+        <button class="tab-btn" onclick="showSlide(2)">2. Worked Examples</button>
+        <button class="tab-btn" onclick="showSlide(3)">3. Practice Set</button>
+        <button class="tab-btn" style="border-color: var(--neon-amber); color: var(--neon-amber);" onclick="showSlide(4)">🔑 4. Milestone Unlock</button>
+    </div>
+
+    <!-- 📥 SLIDE 1: ASYMPTOTES ENGINE (DEFINITIONS) -->
+    <div id="slide-1" class="slide-content active">
+        <h3>Asymptotes of Non-Polynomial Functions</h3>
+        <p>
+            We are continuing our study of graphs by looking at fractions that combine exponential, logarithmic, and trigonometric functions. When these different types of functions are mixed together, finding the domain breaks and the behavior of the graph at the far horizons requires combining basic limit rules with our Growth Hierarchy.
+        </p>
+        
+        <div class="block-definition">
+            <strong>Core Rules: Finding Vertical and Horizontal Asymptotes</strong>
+            <p>
+                Finding the vertical and horizontal asymptotes of a non-polynomial fraction follows the exact same basic rules used for rational functions, checked in two different ways:
+            </p>
+            
+            <ul style="margin: 10px 0 0 0; padding-left: 20px; line-height: 1.5;">
+                <li>
+                    <strong>Vertical Asymptotes (VA):</strong> Found at values where the denominator is equal to zero, causing the function values to grow to infinity.
+                    <div class="math-block" style="color: var(--neon-green);">
+                        x = c &rArr; limit as x approaches c from the left or right of f(x) = &plusmn;&infin;
+                    </div>
+                </li>
+                <li>
+                    <strong>Horizontal Asymptotes (HA):</strong> Found by calculating what happens to the graph at the far ends as x goes to infinity, approaching a single fixed number.
+                    <div class="math-block" style="color: var(--neon-green);">
+                        y = L &rArr; limit as x approaches &plusmn;&infin; of f(x) = L
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="block-attention">
+            <strong>The Exponential Difference — Always Check Both Ends Separately</strong>
+            <p>
+                Unlike polynomial fractions which have the same behavior at both ends of the graph, <strong>exponential functions work completely differently on the left and right sides</strong>. Because of the fundamental limits:
+            </p>
+            <div class="math-block"><strong>
+                limit as x approaches +&infin; of e^x = +&infin; &nbsp; and &nbsp; limit as x approaches -&infin; of e^x = 0</strong>
+            </div>
+            <p>
+                An exponential fraction can have completely different horizontal asymptotes on the left and right horizons. Forgetting to calculate both directions separately will cause you to miss entire boundary lines!
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Slide 2: Worked Examples Matrix -->
+    <div id="slide-2" class="slide-content">
+        <h3>Step-by-Step Proof Coordinates</h3>
+        <p>
+            Review these step-by-step solutions to see how we apply limit operations on both horizons and analyze domain breaks to find non-polynomial asymptote lines.
+        </p>
+
+        <!-- Example 2.1 Card Wrapper -->
+        <div class="block-example">
+            <strong>Example 2.1.</strong> Find all the horizontal and vertical asymptotes for the given exponential function:
+            <div class="math-block">
+                <span>f(x) = <span class="frac"><span class="top">4</span><span class="bottom">e<sup>x</sup> + 2</span></span></span>
+            </div>
+        
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>
+                    <span><strong>Scan for Vertical Asymptotes via Denominator Zeros:</strong></span>
+                    <p>We check for values of x that make the denominator equal to zero:</p>
+                    <div class="math-block">
+                        <span>e<sup>x</sup> + 2 = 0 &rArr; e<sup>x</sup> = -2</span>
+                    </div>
+                    <p>Because an exponential expression is always positive (e<sup>x</sup> > 0 for all real numbers), this equation has no real solutions. The denominator can never equal zero, meaning the function has no domain breaks and <span style="color: var(--neon-cyan);">no Vertical Asymptotes (VA) exist</span>.</p>
+                </li>
+                <li>
+                    <span><strong>Evaluate the Horizontal Boundary at Positive Infinity:</strong></span>
+                    <p>We check what happens to the graph on the far right side as x goes to infinity (x approaches +&infin;):</p>
+                    <div class="math-block">
+                        <span>lim<sub>x &rArr; +&infin;</sub> <span class="frac"><span class="top">4</span><span class="bottom">e<sup>x</sup> + 2</span></span> = <span class="frac"><span class="top">4</span><span class="bottom">+&infin; + 2</span></span> = 0</span>
+                    </div>
+                    <p>This shows that the horizontal line <span style="color: var(--neon-cyan);">y = 0</span> (the x-axis) is a Horizontal Asymptote (HA) as x approaches +&infin;.</p>
+                </li>
+                <li>
+                    <span><strong>Evaluate the Horizontal Boundary at Negative Infinity:</strong></span>
+                    <p>We check what happens to the graph on the far left side as x goes to negative infinity (x approaches -&infin;), using the rule that the limit as x approaches -&infin; of e<sup>x</sup> = 0:</p>
+                    <div class="math-block">
+                        <span>lim<sub>x &rArr; -&infin;</sub> <span class="frac"><span class="top">4</span><span class="bottom">e<sup>x</sup> + 2</span></span> = <span class="frac"><span class="top">4</span><span class="bottom">0 + 2</span></span> = 2</span>
+                    </div>
+                    <p>This shows that a second horizontal line <span style="color: var(--neon-cyan);">y = 2</span> is a Horizontal Asymptote (HA) as x approaches -&infin;.</p>
+                </li>
+            </ol>
+        </div>
+        </div>
+
+        <!-- Example 2.2 Card Wrapper -->
+        <div class="block-example" style="margin-top: 24px;">
+            <strong>Example 2.2.</strong> Find the equations of all the asymptotes for the given logarithmic fraction:
+            <div class="math-block">
+                <span>g(x) = <span class="frac"><span class="top">2x - 6</span><span class="bottom">ln(x)</span></span> &nbsp;&nbsp; for x > 0, x &ne; 1</span>
+            </div>
+        
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol>
+                <li>
+                    <span><strong>Evaluate Domain Discontinuities for Vertical Asymptotes:</strong></span>
+                    <p>The natural logarithm requires x to be strictly greater than zero (x > 0). Since it is in the denominator, we also cannot have ln(x) = 0, which gives the restriction x = 1. We find the one-sided limits as x approaches this break from the left and right sides:</p>
+                    
+                    <div class="math-block">
+                        <span>lim<sub>x &rArr; 1<sup>&minus;</sup></sub> <span class="frac"><span class="top">2x &minus; 6</span><span class="bottom">ln(x)</span></span> = <span class="frac"><span class="top">&minus;4</span><span class="bottom">0<sup>&minus;</sup></span></span> = +&infin;</span>
+                    </div>
+                    <div class="math-block">
+                        <span>lim<sub>x &rArr; 1<sup>+</sup></sub> <span class="frac"><span class="top">2x &minus; 6</span><span class="bottom">ln(x)</span></span> = <span class="frac"><span class="top">&minus;4</span><span class="bottom">0<sup>+</sup></span></span> = &minus;&infin;</span>
+                    </div>
+
+                    <!-- 📝 SIGNPOST INSIGHT CELL FOR INDEPENDENT PROJECTION -->
+                            <p>↳ Critical Step Visualisation:
+                                When x approaches 1 from the left side (like 0.99), the value of <span class="math-inline">ln(x)</span> is slightly negative (<span class="math-inline">0<sup>&minus;</sup></span>). Dividing a negative numerator (<span class="math-inline">&minus;4</span>) by a negative denominator (<span class="math-inline">0<sup>&minus;</sup></span>) creates a positive output trend (<span class="math-inline">+&infin;</span>). When x approaches 1 from the right side (like 1.01), <span class="math-inline">ln(x)</span> becomes slightly positive (<span class="math-inline">0<sup>+</sup></span>), keeping the final division trend negative (<span class="math-inline">&minus;&infin;</span>).
+                            </p>
+
+                </li>
+                <li>
+                    <span><strong>Evaluate Limits at Infinity using Growth Dominance Hierarchy:</strong></span>
+                    <p>We check what happens to the fraction on the far right end as x approaches +&infin;. According to our Growth Hierarchy, a polynomial function grows much faster than a logarithmic function (ln(x) &laquo; x). Because the numerator grows much faster than the denominator, the entire fraction grows larger and larger without bound:</p>
+                    <div class="math-block">
+                        <span>lim<sub>x &rArr; +&infin;</sub> <span class="frac"><span class="top">2x - 6</span><span class="bottom">ln(x)</span></span> = +&infin;</span>
+                    </div>
+                    <p>Since the values do not approach a single fixed number, <span style="color: var(--neon-cyan);">no Horizontal Asymptotes (HA) exist</span>.</p>
+                </li>
+            </ol>
+        </div>
+        </div>
+
+    </div>
+
+
+        <!-- Slide 3: Student Workbook Exercises -->
+    <div class="slide-content" id="slide-3">
+        <h3 style="color: var(--neon-amber); margin-top: 0;">🏋️ Mandatory Written Exercises</h3>
+        <p>
+            Apply your rules for non-polynomial functions and limit operations to solve the workbook problems below.
+        </p>
+
+        <!-- Exercise 1 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 1: Domain and Infinity Horizons</div>
+            <p>Find the domain of each function, calculate the limits at both <span class="math-inline">+&infin;</span> and <span class="math-inline">-&infin;</span>, and write down the equations for all horizontal and vertical asymptotes:</p>
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a) f(x) = <span class="frac"><span class="top">5</span><span class="bottom">e<sup>x</sup> + 1</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) f(x) = <span class="frac"><span class="top">e<sup>x</sup> &minus; 3</span><span class="bottom">e<sup>x</sup> + 2</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) f(x) = <span class="frac"><span class="top">2</span><span class="bottom">e<sup>&minus;x</sup> + 4</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d) f(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">e<sup>x</sup> &minus; 1</span></span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 2: Growth Hierarchy and Boundaries</div>
+            <p>Use your knowledge of domain restrictions and the Growth Hierarchy to find all the asymptote equations for each function below:<br><span class="item-detail">↳ Hint: Logarithmic terms are only defined for <span class="math-inline">x > 0</span>. Only state horizontal asymptotes for directions that exist in the function's domain.</span>
+            </p>
+
+            
+            <div class="grid-2">
+                <div class="exercise-item">
+                    <span>a) g(x) = <span class="frac"><span class="top">x<sup>2</sup></span><span class="bottom">ln(x)</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) g(x) = <span class="frac"><span class="top">6</span><span class="bottom">ln(x &minus; 2)</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) g(x) = <span class="frac"><span class="top">ln(x) + 4</span><span class="bottom">ln(x) &minus; 1</span></span></span>
+                </div>
+                <div class="exercise-item">
+                    <span>d) g(x) = <span class="frac"><span class="top">e<sup>x</sup></span><span class="bottom">x</span></span></span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Exercise 3 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 3: Exponential Fraction Properties</div>
+            <p>Consider the exponential fraction defined by: <span class="math-inline">f(x) = <span class="frac"><span class="top">3e<sup>x</sup> + 6</span><span class="bottom">e<sup>x</sup> &minus; 2</span></span></span> for x &ne; ln(2).</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <div class="exercise-item">
+                    <span>a) Find the exact coordinates where the graph crosses the vertical y-axis by calculating f(0).</span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) Find the equation for the vertical asymptote by checking where the denominator equals zero.</span>
+                </div>
+                <div class="exercise-item">
+                    <span>c) Calculate the two individual limits at infinity to determine the equations for both horizontal asymptotes.</span>
+                    <span class="item-detail">↳ Independently evaluate the behavior limits as <span class="math-inline">x &rArr; +&infin;</span> and <span class="math-inline">x &rArr; -&infin;</span>.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 4: Trigonometric Boundary Proofs</div>
+            <p>Consider the trigonometric function given by the formula: <span class="math-inline">f(x) = <span class="frac"><span class="top">4</span><span class="bottom">cos(x)</span></span></span> over the open interval x &in; (&minus;&pi;/2, &pi;/2).</p>
+            
+            <div class="layout-stack" style="margin-top: 12px;">
+                <div class="exercise-item">
+                    <span>a) Explain why this function cannot have any horizontal asymptotes.</span>
+                    <span class="item-detail">↳ Analyze the open interval boundary domain constraints and periodic wave behaviors.</span>
+                </div>
+                <div class="exercise-item">
+                    <span>b) Prove that the boundaries of this open interval form a pair of vertical asymptotes.</span>
+                    <span class="item-detail">↳ Calculate the two one-sided fractional boundary limit trends as <span class="math-inline">x &rArr; &minus;&pi;/2<sup>+</sup></span> and <span class="math-inline">x &rArr; &pi;/2<sup>&minus;</sup></span>.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="block-exercise" style="margin-bottom: 25px;">
+            <div class="exercise-title">Exercise 5 [Advanced Challenge]: Graphical Analysis</div>
+            <p>An exponential fraction function curve <span class="math-inline">f(x) = <span class="frac"><span class="top">e<sup>x</sup> + 4</span><span class="bottom">e<sup>x</sup> &minus; 1</span></span></span> is mapped on the coordinate canvas matrix below:</p>
+            
+            <!-- Two-Column Side-by-Side Split Matrix Grid -->
+            <div class="split-grid" style="align-items: center; margin-top: 15px;">
+                
+                <!-- Left Pane: Problem Steps Stack -->
+                <div class="layout-stack" style="margin-top: 0;">
+                    <div class="exercise-item">
+                        <span>a) Look at the graph to find the equations for all its asymptotes.</span>
+                        <span class="item-detail">↳ Identify the vertical break and locate the left/right horizon stabilization floors.</span>
+                    </div>
+                    <div class="exercise-item" style="margin-top: 10px;">
+                        <span>b) Identify the coordinates where the curve crosses the horizontal x-axis and vertical y-axis lines.</span>
+                        <span class="item-detail">↳ Verify system intercepts algebraically or visually trace the canvas intersection points.</span>
+                    </div>
+                </div>
+
+                <!-- Right Pane: Standalone Embedded Graphics Canvas Card -->
+                <div class="visual-wrapper" style="margin-top: 0; margin-bottom: 0;">
+                    <svg viewBox="-150 -150 300 300" width="100%" max-width="380px" style="background-color: #111a36; border-radius: 6px; font-family: sans-serif;">
+                        
+                        <!-- Coordinate Grid Matrices (Thin Muted Canvas Lines) -->
+                        <line x1="-120" y1="-130" x2="-120" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-90" y1="-130" x2="-90" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-60" y1="-130" x2="-60" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-30" y1="-130" x2="-30" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="30" y1="-130" x2="30" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="60" y1="-130" x2="60" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="90" y1="-130" x2="90" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="120" y1="-130" x2="120" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        
+                        <line x1="-130" y1="-120" x2="130" y2="-120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="-90" x2="130" y2="-90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="-60" x2="130" y2="-60" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="-30" x2="130" y2="-30" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="30" x2="130" y2="30" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="60" x2="130" y2="60" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="90" x2="130" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <line x1="-130" y1="120" x2="130" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+                        <!-- Primary Layout Axes -->
+                        <line x1="-135" y1="0" x2="135" y2="0" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="0" y1="-135" x2="0" y2="135" stroke="#94a3b8" stroke-width="1.5"/>
+                        <text x="140" y="4" fill="#94a3b8" font-size="10" font-weight="bold">x</text>
+                        <text x="-4" y="-138" fill="#94a3b8" font-size="10" font-weight="bold">y</text>
+
+                        <!-- Key Numerical Axis Labels & Ticks -->
+                        <text x="-10" y="12" fill="#94a3b8" font-size="8">0</text>
+                        <text x="-124" y="12" fill="#94a3b8" font-size="8">-4</text>
+                        <text x="-64" y="12" fill="#94a3b8" font-size="8">-2</text>
+                        <text x="56" y="12" fill="#94a3b8" font-size="8">2</text>
+                        <text x="116" y="12" fill="#94a3b8" font-size="8">4</text>
+                        
+                        <text x="6" y="-117" fill="#94a3b8" font-size="8">4</text>
+                        <text x="6" y="-57" fill="#94a3b8" font-size="8">2</text>
+                        <text x="6" y="63" fill="#94a3b8" font-size="8">-2</text>
+                        <text x="6" y="123" fill="#94a3b8" font-size="8">-4</text>
+
+                        <!-- Vertical Asymptote at x = 0 (Crimson Dashed Line) -->
+                        <line x1="0" y1="-130" x2="0" y2="130" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                        <!-- Continuous Vector Function Curve Paths -->
+                        <!-- Left Plunging Branch Vector -->
+                        <path d="M -135,-42.6 C -110,-43 -80,-45 -50,-53 C -30,-64 -15,-85 -7,-130" fill="none" stroke="#10b981" stroke-width="2.5"/>
+                        
+                        <!-- Right Collapsing Horizon Branch Vector -->
+                        <path d="M 7,130 C 15,60 30,42 50,36 C 80,31 110,30 135,30" fill="none" stroke="#10b981" stroke-width="2.5"/>
+                        
+                        <!-- Curve Context ID tag -->
+                        <text x="95" y="22" fill="#10b981" font-size="10" font-weight="bold">f(x)</text>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- 🏁 Safe from comma conflicts using semicolon breaks! -->
+    <div class="slide-content dynamic-verification-slide" id="slide-4"
+        data-level="2"
+        data-labels="
+        Exercise 1: c) Evaluate the curve limit floor as x approaches negative infinity;
+        Exercise 2: b) Find the exact structural line coordinate for the Vertical Asymptote;
+        Exercise 2: d) Determine the stabilizing Horizontal Asymptote boundary line;
+        Exercise 3: Calculate the individual left horizon limit as x approaches negative infinity;
+        Exercise 3: Identify the exact equation for the vertical asymptote.
+        "
+        data-answers="
+        y=0;
+        x=3;
+        y=0;
+        -3;
+        x=ln(2)
+        " 
+        data-prompt="Complete your Section 2 workbook exercises. Input your final analytical answers for the designated problems below to authorize milestone progression:"
+        data-fail="One or more values contain calculation mismatches. Double-check your continuous evaluation intervals, confirm your horizon limits, and try again.">
+    </div>
+
+
+    <script>
+        function showSlide(slideIndex) {
+            document.querySelectorAll('.slide-content').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            const buttons = document.querySelectorAll('.tab-btn');
+            if (buttons[slideIndex - 1]) buttons[slideIndex - 1].classList.add('active');
+        }
+
+        // 🚀 2. New Automation Trigger: Paints the verification screen on load
+        if (parent && parent.initializeVerificationSlides) {
+            parent.initializeVerificationSlides(document);
+        }
+    </script>
+</body>
+</html>
