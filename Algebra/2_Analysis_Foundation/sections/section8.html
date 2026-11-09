@@ -217,133 +217,170 @@
 
 
 <!-- Slide 3: Worked Examples Component -->
-    <div class="slide-content" id="slide-3">
-        <h3>Chain Rule Examples</h3>
-        <p>Take a look at how the Chain Rule works on its own, and then see how it combines with the product and quotient rules. Following these problems step-by-step will help you handle functions with multiple layers clearly.</p>
+<div class="slide-content" id="slide-3">
+    <h3>Chain Rule Examples</h3>
+    <p>Take a look at how the Chain Rule handles basic nested expressions, and how it scales up when combined with the product and quotient rules. Following these problems step-by-step will help you identify the inside and outside layers clearly.</p>
+    
+    <!-- 🟢 EXAMPLE 8.1: CORE CHAIN RULE (UPGRADED TO MATCH THE NOTES) -->
+    <div class="block-example">
+        <strong>Example 8.1:</strong>
+        <p>Differentiate the following composite function using the Chain Rule:</p>
         
-        <!-- 🟢 NEW EXAMPLE 8.1: PURE CHAIN RULE (INTRODUCTORY STEP) -->
-        <div class="block-example">
-            <strong>Example 8.1 (Using the Pure Chain Rule):</strong>
-            <p>Find the derivative of this function where an expression is raised to a power:</p>
-            
-            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
-                h(x) = (2x + 1)<sup>3</sup>
-            </div>
-            
-            <div class="block-solution">
-                <strong>Solution Steps:</strong>
-                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>
-                        <span>Identify the layers:</span> Think of this function like a box. The outer layer is the power of 3: <span class="math-inline">f(u) = u<sup>3</sup></span>. The inner layer inside the brackets is <span class="math-inline">g(x) = 2x + 1</span>.
-                    </li>
-                    <li>
-                        <span>Differentiate the inside layer:</span> Take the derivative of the expression inside the brackets:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            g'(x) = 2
-                        </div>
-                    </li>
-                    <li>
-                        <span>Differentiate the outer layer:</span> Bring the power of 3 to the front and subtract 1 from the exponent, keeping the inside exactly the same:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            3(2x + 1)<sup>2</sup>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Multiply the layers together:</span> Combine the outer derivative and the inner derivative to get your final answer:
-                        <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
-                            h'(x) = 3(2x + 1)<sup>2</sup> &middot; 2 = <span style="color: var(--neon-cyan);">6(2x + 1)<sup>2</sup></span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
+        <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+            h(x) = <span>&radic;</span><span style="border-top: 2px solid; padding-top: 0px; margin-top: 4px; line-height: 1.0; display: inline-block;">3x<sup>2</sup> - 5x + 2</span>
         </div>
-
-        <!-- 🟢 ORIGINAL EXAMPLE 8.1 RE-NUMBERED TO 8.2: PRODUCT RULE + CHAIN RULE -->
-        <div class="block-example" style="margin-top: 30px;">
-            <strong>Example 8.2 (Using the Product Rule and Chain Rule together):</strong>
-            <p>Find the derivative of this function containing an expression inside a square root:</p>
-            
-            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
-                h(x) = x &middot; <span>&radic;</span><span style="border-top: 2px solid; padding-top: 0px; margin-top: 4px; line-height: 1.0; display: inline-block;">2x + 1</span>
-            </div>
-            
-            <div class="block-solution">
-                <strong>Solution Steps:</strong>
-                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>
-                        <span>Separate into two parts:</span> Let <span class="math-inline">u(x) = x</span> and <span class="math-inline">v(x) = &radic;<span style="border-top: 1px solid var(--text-muted);">2x + 1</span></span>. Finding the derivative of the first part gives <span class="math-inline">u'(x) = 1</span>.
-                    </li>
-                    <li>
-                        <span>Find the derivative of the square root part:</span> For <span class="math-inline">v(x)</span>, the inside function is <span class="math-inline">g(x) = 2x + 1</span>, which has a derivative of <span class="math-inline">g'(x) = 2</span>. Using our square root shortcut rule gives:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            v'(x) = <span class="frac"><span class="top">1</span><span class="bottom">2&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span> &middot; 2 = <span class="frac"><span class="top">2</span><span class="bottom">2&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span> = <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Combine using the Product Rule formula:</span> We put the parts together using the formula <span class="math-inline">u'v + uv'</span>:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            h'(x) = (1) &middot; &radic;<span style="border-top:1px solid #fff;">2x + 1</span> + x &middot; <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Find a common denominator to add the terms:</span> Multiply the first term by <span class="math-inline">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span> / &radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span> to combine the fractions over a single bottom part:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            h'(x) = <span class="frac"><span class="top">(2x + 1) + x</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Write down the final derivative:</span> Add the like terms on top together to get your final answer formula:
-                        <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
-                            h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">3x + 1</span><span class="bottom" style="color: var(--neon-cyan);">&radic; 2x + 1</span></span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </div>
-
-                <!-- 🟢 EXAMPLE 8.3: QUOTIENT RULE + CHAIN RULE -->
-        <div class="block-example" style="margin-top: 30px;">
-            <strong>Example 8.3 (Challenge Level - Quotient Rule and Chain Rule together):</strong>
-            <p>Find the derivative of this fraction containing brackets raised to a power in the denominator:</p>
-            
-            <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
-                h(x) = <span class="frac"><span class="top">x</span><span class="bottom">(3x - 2)<sup>2</sup></span></span>
-            </div>
-            
-            <div class="block-solution">
-                <strong>Solution Steps:</strong>
-                <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
-                    <li>
-                        <span>Identify the top and bottom parts:</span> Let the top expression be <span class="math-inline">u(x) = x &rarr; u'(x) = 1</span>, and let the bottom expression be <span class="math-inline">v(x) = (3x - 2)<sup>2</sup></span>.
-                    </li>
-                    <li>
-                        <span>Find the derivative of the bottom part using the Chain Rule:</span> Differentiate <span class="math-inline">v(x)</span> by bringing the power to the front and multiplying by the derivative of the expression inside the brackets:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            v'(x) = 2(3x - 2)<sup>1</sup> &middot; (3) = 6(3x - 2)
-                        </div>
-                    </li>
-                    <li>
-                        <span>Substitute the parts into the Quotient Rule formula:</span> Place our expressions directly into the standard template <span class="math-inline"><span class="frac"><span class="top">u'v - uv'</span><span class="bottom">v<sup>2</sup></span></span></span>:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            h'(x) = <span class="frac"><span class="top">(1) &middot; (3x - 2)<sup>2</sup> - x &middot; [6(3x - 2)]</span><span class="bottom">[ (3x - 2)<sup>2</sup> ]<sup>2</sup></span></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Factor out shared terms to simplify:</span> Pull out the common term <span class="math-inline">(3x - 2)</span> from the top expression so it can cancel out cleanly with one of the powers on the bottom part:
-                        <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
-                            h'(x) = <span class="frac"><span class="top">(3x - 2) &middot; [ (3x - 2) - 6x ]</span><span class="bottom">(3x - 2)<sup>4</sup></span></span> = <span class="frac"><span class="top">(3x - 2) - 6x</span><span class="bottom">(3x - 2)<sup>3</sup></span></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Write down the final derivative:</span> Combine the like terms on top to find the fully simplified final formula:
-                        <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
-                            h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">-3x - 2</span><span class="bottom" style="color: var(--neon-cyan);">(3x - 2)<sup>3</sup></span></span>
-                        </div>
-                    </li>
-                </ol>
-            </div>
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                <li>
+                    <strong>Step 1: Identify and differentiate the inner and outer functions</strong><br>
+                    We separate our nested function into its two parts, identifying the inside function <span class="math-inline">g(x)</span> and the outside function <span class="math-inline">f(u)</span>:
+                    <div style="margin: 8px 0; padding-left: 10px;">
+                        Inside function: <span class="math-inline">g(x) = 3x<sup>2</sup> - 5x + 2 &rarr; g'(x) = 6x - 5</span><br>
+                        Outside function: <span class="math-inline">f(u) = &radic;u = u<sup>1/2</sup> &rarr; f'(u) = <span class="frac"><span class="top">1</span><span class="bottom">2&radic;u</span></span></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 2: Multiply the derivatives together</strong><br>
+                    We substitute our parts directly into the Chain Rule formula, keeping the original inside function <span class="math-inline">g(x)</span> inside the outside derivative. Then we multiply by the inside derivative <span class="math-inline">g'(x)</span>:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        h'(x) = f'(g(x)) &middot; g'(x) = <span class="frac"><span class="top">1</span><span class="bottom">2&radic;<span style="border-top:1px solid var(--text-muted);">3x<sup>2</sup> - 5x + 2</span></span></span> &middot; (6x - 5)
+                    </div>
+                    Write down the final derivative as a single combined fraction expression:
+                    <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                        h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">6x - 5</span><span class="bottom" style="color: var(--neon-cyan);">2&radic;<span style="border-top:1px solid var(--neon-cyan);"><span style="color: var(--neon-cyan);">3x<sup>2</sup> - 5x + 2</span></span></span></span>
+                    </div>
+                </li>
+            </ol>
         </div>
     </div>
+
+        <!-- 🟢 EXAMPLE 8.2: PURE CHAIN RULE (BRACKET/POWER WRAPPER) -->
+    <div class="block-example" style="margin-top: 30px;">
+        <strong>Example 8.2:</strong>
+        <p>Find the derivative function <span class="math-inline">f'(x)</span> for the given bracket function:</p>
+        
+        <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+            f(x) = (4x<sup>3</sup> - 7)<sup>5</sup>
+        </div>
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                <li>
+                    <strong>Step 1: Identify the inside and outside parts</strong><br>
+                    We find our inside expression and our outside power layer:
+                    <div style="margin: 8px 0; padding-left: 10px;">
+                        Inside function part: <span class="math-inline">g(x) = 4x<sup>3</sup> - 7 &rarr; g'(x) = 12x<sup>2</sup></span><br>
+                        Outside power part: <span class="math-inline">u<sup>5</sup> &rarr; 5u<sup>4</sup></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 2: Apply the power rule to the bracket and multiply</strong><br>
+                    We bring the main exponent forward, decrease its power by one, and multiply the expression directly by the inside derivative:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        f'(x) = 5 &middot; (g(x))<sup>4</sup> &middot; g'(x) = 5 &middot; (4x<sup>3</sup> - 7)<sup>4</sup> &middot; (12x<sup>2</sup>)
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 3: Multiply the numbers to simplify the answer</strong><br>
+                    We multiply our front numbers together to finish our final algebraic answer:
+                    <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                        f'(x) = (5 &middot; 12x<sup>2</sup>) &middot; (4x<sup>3</sup> - 7)<sup>4</sup> = <span style="color: var(--neon-cyan);">60x<sup>2</sup> &middot; (4x<sup>3</sup> - 7)<sup>4</sup></span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 🟢 EXAMPLE 8.3: PRODUCT RULE + CHAIN RULE (RE-CONFIGURED TO NOTE STYLE) -->
+    <div class="block-example" style="margin-top: 30px;">
+        <strong>Example 8.3:</strong>
+        <p>Find the derivative of this function containing an expression inside a square root using the Product Rule and Chain Rule together:</p>
+        
+        <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+            h(x) = x &middot; <span>&radic;</span><span style="border-top: 2px solid; padding-top: 0px; margin-top: 4px; line-height: 1.0; display: inline-block;">2x + 1</span>
+        </div>
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                <li>
+                    <strong>Step 1: Separate the function and apply the Chain Rule to the nested part</strong><br>
+                    Identify the two main product parts: <span class="math-inline">u(x) = x</span> and the nested root part <span class="math-inline">v(x) = &radic;2x + 1</span>. Differentiate both:
+                    <div style="margin: 8px 0; padding-left: 10px;">
+                        First part: <span class="math-inline">u(x) = x &rarr; u'(x) = 1</span><br>
+                        Second part (Chain Rule): Inside is <span class="math-inline">g(x) = 2x + 1 &rarr; g'(x) = 2</span>. Outside is <span class="math-inline">f(w) = &radic;w</span>.<br>
+                        <span class="math-inline">v'(x) = <span class="frac"><span class="top">1</span><span class="bottom">2&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span> &middot; 2 = <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid var(--text-muted);">2x + 1</span></span></span></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 2: Substitute components into the Product Rule formula</strong><br>
+                    Assemble the fragments using the structure <span class="math-inline">u'v + uv'</span>:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        h'(x) = (1) &middot; &radic;<span style="border-top:1px solid #fff;">2x + 1</span> + x &middot; <span class="frac"><span class="top">1</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 3: Find a common denominator to simplify the final fraction</strong><br>
+                    Multiply the first term by <span class="math-inline">&radic;2x + 1 / &radic;2x + 1</span> to combine them into a single unified term:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        h'(x) = <span class="frac"><span class="top">(2x + 1) + x</span><span class="bottom">&radic;<span style="border-top:1px solid #fff;">2x + 1</span></span></span>
+                    </div>
+                    <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                        h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">3x + 1</span><span class="bottom" style="color: var(--neon-cyan);">&radic; 2x + 1</span></span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <!-- 🟢 EXAMPLE 8.4: QUOTIENT RULE + CHAIN RULE (NOTE STYLE CONFIGURATION) -->
+    <div class="block-example" style="margin-top: 30px;">
+        <strong>Example 8.4:</strong>
+        <p>Find the derivative of this fraction containing brackets raised to a power in the denominator using the Quotient Rule and Chain Rule together:</p>
+        
+        <div class="math-block" style="font-size: 1.25rem; text-align: center; margin: 15px 0;">
+            h(x) = <span class="frac"><span class="top">x</span><span class="bottom">(3x - 2)<sup>2</sup></span></span>
+        </div>
+        
+        <div class="block-solution">
+            <strong>Solution Steps:</strong>
+            <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.7;">
+                <li>
+                    <strong>Step 1: Separate the top and bottom parts and apply the Chain Rule</strong><br>
+                    We let our top numerator expression be <span class="math-inline">u(x) = x</span> and our bottom denominator expression be the nested power function <span class="math-inline">v(x) = (3x - 2)<sup>2</sup></span>. We find their derivatives separately:
+                    <div style="margin: 8px 0; padding-left: 10px;">
+                        Numerator part: <span class="math-inline">u(x) = x &rarr; u'(x) = 1</span><br>
+                        Denominator part (Chain Rule): Inside expression is <span class="math-inline">g(x) = 3x - 2 &rarr; g'(x) = 3</span>. Outside power layer is <span class="math-inline">w<sup>2</sup> &rarr; 2w<sup>1</sup></span>.<br>
+                        <span class="math-inline">v'(x) = 2 \cdot (3x - 2)<sup>1</sup> \cdot g'(x) = 2(3x - 2) \cdot (3) = 6(3x - 2)</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 2: Substitute the components into the Quotient Rule template</strong><br>
+                    We assemble our pieces directly into the standard template formula <span class="math-inline"><span class="frac"><span class="top">u'v - uv'</span><span class="bottom">v<sup>2</sup></span></span></span>:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        h'(x) = <span class="frac"><span class="top">(1) &middot; (3x - 2)<sup>2</sup> - x &middot; [6(3x - 2)]</span><span class="bottom">[ (3x - 2)<sup>2</sup> ]<sup>2</sup></span></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Step 3: Factor out shared binomial terms to simplify the answer</strong><br>
+                    Instead of expanding everything out, we pull out the common binomial layer <span class="math-inline">(3x - 2)</span> from both terms in the numerator so we can cancel it cleanly with the denominator:
+                    <div class="math-block" style="font-size: 1.15rem; text-align: center; margin: 12px 0;">
+                        h'(x) = <span class="frac"><span class="top">(3x - 2) &middot; [ (3x - 2) - 6x ]</span><span class="bottom">(3x - 2)<sup>4</sup></span></span> = <span class="frac"><span class="top">(3x - 2) - 6x</span><span class="bottom">(3x - 2)<sup>3</sup></span></span>
+                    </div>
+                    We combine our like terms on top to find our final simplified algebraic answer:
+                    <div class="math-block" style="color: var(--neon-cyan); font-size: 1.25rem; text-align: center; margin-top: 12px; margin-bottom: 0;">
+                        h'(x) = <span class="frac"><span class="top" style="color: var(--neon-cyan);">-3x - 2</span><span class="bottom" style="color: var(--neon-cyan);">(3x - 2)<sup>3</sup></span></span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</div>
 
 
 
