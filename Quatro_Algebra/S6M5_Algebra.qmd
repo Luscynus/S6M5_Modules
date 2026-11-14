@@ -1,0 +1,150 @@
+---
+title: "Mathematics — S6M5: Algebra & Analysis"
+format:
+  html:
+    theme: none
+    html-math-method: mathjax
+    toc: true
+    toc-depth: 2
+    toc-title: "Course Contents"
+    embed-resources: true
+    css: ../style.css
+---
+::: {.hidden}
+$$
+\let\oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\class{math-bold}{\oldmathbf{#1}}}
+$$
+:::
+
+```{=html}
+<div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem;">
+  <a href="S6M5_Algebra.html" download="S6M5_Algebra.html" class="back-toc">⬇ Download Offline Interactive Notes</a>
+  <button type="button" onclick="window.print()" class="back-toc" style="cursor: pointer; font-family: inherit;">🖨️ Print / Save as PDF</button>
+</div>
+```
+# Part II: Analysis Foundations
+
+{{< include 2_Analysis_Foundation/s1_AnalysisFunctions.qmd >}}
+{{< include 2_Analysis_Foundation/s2_Test.qmd >}}
+
+```{=html}
+<aside id="active-section-nav"></aside>
+
+<script>
+(function() {
+  const sections = [];
+  const h2List = Array.from(document.querySelectorAll("h2")).filter(h => !h.closest("#TOC"));
+
+  function printSingleSection(nodes) {
+    const toHide = [];
+    const toc = document.getElementById("TOC");
+    const header = document.getElementById("title-block-header");
+    if (toc) toHide.push(toc);
+    if (header) toHide.push(header);
+
+    const parent = nodes.at(0).parentElement;
+    Array.from(parent.children).forEach(child => {
+      if (!nodes.includes(child)) toHide.push(child);
+    });
+
+    toHide.forEach(el => el.classList.add("print-hide"));
+    window.print();
+    setTimeout(() => {
+      toHide.forEach(el => el.classList.remove("print-hide"));
+    }, 500);
+  }
+
+  h2List.forEach((h2) => {
+    const sectionNodes = [h2];
+    const subLinks = [];
+    let el = h2.nextElementSibling;
+    let lastEl = h2;
+
+    while (el && el.tagName !== "H2" && el.tagName !== "H1") {
+      sectionNodes.push(el);
+      if (el.tagName === "H3" && el.id) {
+        subLinks.push({ id: el.id, text: el.textContent });
+      }
+      lastEl = el;
+      el = el.nextElementSibling;
+    }
+
+    const footer = document.createElement("div");
+    footer.className = "section-footer";
+    footer.style.gap = "0.75rem";
+
+    const printBtn = document.createElement("button");
+    printBtn.type = "button";
+    printBtn.className = "back-toc";
+    printBtn.style.cursor = "pointer";
+    printBtn.style.fontFamily = "inherit";
+    printBtn.textContent = "🖨️ Print Section PDF";
+    printBtn.addEventListener("click", () => printSingleSection(sectionNodes));
+
+    const backLink = document.createElement("a");
+    backLink.href = "#TOC";
+    backLink.className = "back-toc";
+    backLink.textContent = "↑ Back to Contents";
+
+    footer.appendChild(printBtn);
+    footer.appendChild(backLink);
+    lastEl.insertAdjacentElement("afterend", footer);
+
+    sections.push({ h2, subLinks, nodes: sectionNodes });
+  });
+
+  const sideNav = document.getElementById("active-section-nav");
+  let activeSection = null;
+
+  function updateSideNav() {
+    if (!sections.length) return;
+
+    if (sections.at(0).h2.getBoundingClientRect().top > 220) {
+      sideNav.style.opacity = "0";
+      sideNav.style.pointerEvents = "none";
+      return;
+    }
+
+    let current = sections.at(0);
+    const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 40);
+
+    if (atBottom) {
+      current = sections.at(-1);
+    } else {
+      for (const sec of sections) {
+        if (sec.h2.getBoundingClientRect().top <= 220) {
+          current = sec;
+        }
+      }
+    }
+
+    activeSection = current;
+
+    if (current.subLinks.length) {
+      const items = current.subLinks
+        .map(l => '<a href="#' + l.id + '">' + l.text + '</a>')
+        .join("");
+      sideNav.innerHTML = '<div class="side-title">In This Section</div>' + items +
+        '<div style="margin-top:0.6rem; padding-top:0.5rem; border-top:1px solid #1e293b; display:flex; flex-direction:column; gap:0.4rem;">' +
+        '<a href="#TOC" style="color:var(--neon-blue); font-weight:600; margin:0;">↑ Course Contents</a>' +
+        '<a href="#" id="side-print-btn" style="color:#10b981; font-weight:600; margin:0;">🖨️ Print Section PDF</a>' +
+        '</div>';
+      sideNav.style.opacity = "1";
+      sideNav.style.pointerEvents = "auto";
+
+      document.getElementById("side-print-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (activeSection) printSingleSection(activeSection.nodes);
+      });
+    } else {
+      sideNav.style.opacity = "0";
+      sideNav.style.pointerEvents = "none";
+    }
+  }
+
+  window.addEventListener("scroll", updateSideNav, { passive: true });
+  updateSideNav();
+})();
+</script>
+```

@@ -1,0 +1,9 @@
+## 2. Function Composition and Inverses
+
+### Composite Functions
+
+Test content for section 2.
+
+### Practice
+
+Test exercises for section 2.

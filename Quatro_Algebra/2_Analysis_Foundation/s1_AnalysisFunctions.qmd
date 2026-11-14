@@ -1,0 +1,268 @@
+## 1. Introduction to Functions, Domain and Range {#sec-analysis-functions}
+
+We begin our calculus module by studying the basic properties of functions...
+
+
+We begin our calculus module by studying the basic properties of functions. A function $f$ is a mathematical rule that links each element $x$ from a starting set, called the <span class="kw-inline">Domain</span> ($\mathcal{D}_f$), to exactly one element $y$ inside a final set, called the <span class="kw-inline">Range</span> ($\mathcal{R}_f$). This is represented as:
+$$
+f: \mathcal{D}_f \to \mathcal{R}_f, \qquad x \mapsto y = f(x)
+$$
+
+```{=html}
+<!-- 🗺️ NATIVE OFFLINE GEOMETRY ENGINE WORKSPACE (MATCHED TO PARABOLA STYLE) -->
+<div class="visual-wrapper" style="padding: 18px; margin: 15px 0;">
+    <div style="color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; letter-spacing: 0.5px;">📐 GRAPHICAL DIAGRAM: TRACKING BOUNDARIES</div>
+    
+    <!-- Cleaned up: Removed the inline background color override from the SVG tag -->
+    <svg viewBox="-160 -140 320 270" width="100%" style="max-width: 420px; font-family: sans-serif; overflow: visible;">
+        <defs>
+            <!-- Premium Translucent Glowing Cyan Grid Mesh -->
+            <pattern id="grid-mesh-workspace" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 243, 255, 0.18)" stroke-width="0.5"/>
+            </pattern>
+        </defs>
+        <!-- The background rectangle now acts as the clean canvas plate inside the wrapper -->
+        <rect x="-160" y="-140" width="320" height="270" fill="url(#grid-mesh-workspace)" />
+
+        <!-- Axes Line Channels -->
+        <line x1="-150" y1="0" x2="150" y2="0" stroke="#475569" stroke-width="1.5" />
+        <line x1="0" y1="-120" x2="0" y2="110" stroke="#475569" stroke-width="1.5" />
+        
+        <!-- Axis Direction Markers -->
+        <path d="M 150 0 L 144 -4 L 144 4 Z" fill="#475569" />
+        <path d="M 0 -120 L -4 -114 L 4 -114 Z" fill="#475569" />
+        <text x="142" y="15" fill="var(--text-muted)" font-size="10" font-weight="bold">x</text>
+        <text x="-15" y="-110" fill="var(--text-muted)" font-size="10" font-weight="bold">y</text>
+        <text x="-10" y="14" fill="#475569" font-size="10">0</text>
+
+        <!-- 🟠 HORIZONTAL DOMAIN SPAN (Inputs) -->
+        <line x1="-100" y1="-100" x2="60" y2="-100" stroke="var(--neon-amber)" stroke-width="4" stroke-linecap="round" />
+        <circle cx="-100" cy="-100" r="4" fill="#111a36" stroke="var(--neon-amber)" stroke-width="2" /> 
+        <circle cx="60" cy="-100" r="5" fill="var(--neon-amber)" /> 
+        <text x="-90" y="-108" fill="var(--neon-amber)" font-size="11" font-weight="bold" font-style="normal">Horizontal Domain Span (x)</text>
+
+        <!-- 🟢 VERTICAL RANGE SPAN (Outputs) -->
+        <line x1="120" y1="-40" x2="120" y2="80" stroke="var(--neon-green)" stroke-width="4" stroke-linecap="round" />
+        <circle cx="120" cy="-40" r="4" fill="#111a36" stroke="var(--neon-green)" stroke-width="2" /> 
+        <circle cx="120" cy="80" r="5" fill="var(--neon-green)" /> 
+        <text x="60" y="25" fill="var(--neon-green)" font-size="11" font-weight="bold" transform="rotate(90,130,25)" font-style="normal">Vertical Range Span (y)</text>
+
+        <!-- 🔵 THE CRITICAL GRAPH CURVE SKELETON -->
+        <path d="M -100,80 Q -40,-80 0,0 T 60,-40" fill="none" stroke="var(--neon-blue)" stroke-width="3" stroke-linecap="round" />
+        <circle cx="-100" cy="80" r="5" fill="var(--neon-blue)" />
+        <circle cx="60" cy="-40" r="4" fill="#111a36" stroke="var(--neon-blue)" stroke-width="2" /> 
+        <text x="25" y="-15" fill="var(--neon-blue)" font-size="12" font-weight="bold" font-family="serif">f(x)</text>
+
+        <!-- Tracking Projection Indicators -->
+        <line x1="-100" y1="80" x2="-100" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="60" y1="-40" x2="60" y2="-100" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="-100" y1="80" x2="120" y2="80" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="60" y1="-40" x2="120" y2="-40" stroke="#334155" stroke-width="1" stroke-dasharray="3,3" />
+    </svg>
+    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
+        💡 <em>Moving left-to-right measures the <strong>Domain</strong> span. Moving bottom-to-top measures the <strong>Range</strong> height span.</em>
+    </div>
+</div>
+```
+
+### The Main Types of Functions
+
+Before studying advanced calculus changes, we review the properties of our standard function families:
+
+::: {.block-definition}
+<strong>Standard Types of Functions</strong>
+
+* **Linear Functions:** $f(x) = mx + p$  
+  Forms a straight line with a slope $m$ and a vertical $y$-intercept at $(0,p)$. The domain and range include all real numbers: $\mathcal{D}_f = \mathbb{R}$, $\mathcal{R}_f = \mathbb{R}$.
+* **Quadratic Functions:** $f(x) = ax^2 + bx + c$  
+  Forms a symmetrical parabola opening upwards if $a > 0$ or downwards if $a < 0$. The turning point or vertex is located at the position: $x_{\text{vertex}} = -\frac{b}{2a}$.
+* **The Reciprocal Function:** $f(x) = \frac{1}{x}$ 
+  Forms a hyperbola with a break at $x = 0$, meaning that $x$ cannot be zero.
+:::
+
+
+### Finding the Domain and Range of a Function
+
+To determine the valid real-number input values for any algebraic combination, verify that all three mathematical structures are satisfied simultaneously:
+
+:::{.block-theorem}
+**⚙️ Essential Domain Restriction Principles**
+
+To determine the valid real-number input values for any algebraic combination, verify that all three mathematical structures are satisfied simultaneously:
+
+1. **Fractions and Denominators:** The denominator of a fraction can never be equal to zero. 
+$$\frac{1}{g(x)} \implies \mathbf{g(x) \neq 0}.$$
+2. **Square Roots:** The expression inside a square root must always be greater than or equal to zero $$\sqrt{g(x)} \implies \mathbf{g(x) \geq 0}.$$
+3. **Logarithmic Arguments:** The value entering a natural or base log system must remain strictly positive $$\ln(g(x)) \implies \mathbf{g(x) > 0}.$$
+:::
+
+
+
+
+
+
+
+::: {.block-example}
+**Example 1: Domain with Roots and Fractions**
+
+Find the domain $\mathcal{D}_f$ for the given function:
+$$
+f(x) = \frac{\sqrt{x+4}}{2x - 6}
+$$
+
+::: {.block-solution}
+**Solution Steps:**
+
+**Step 1: Apply the square root rule**  
+The numerator contains a square root. To make sure the answer is a real number, the expression inside must be non-negative:
+$$
+x + 4 \geq 0 \implies x \geq -4
+$$
+
+**Step 2: Apply the denominator rule**  
+The denominator cannot be equal to zero. To avoid dividing by zero, we find the restricted value:
+$$
+2x - 6 \neq 0 \implies 2x \neq 6 \implies x \neq 3
+$$
+
+**Step 3: Combine the rules to write the final domain**  
+We combine both inequalities into a single interval. The values must start at $-4$ and go to infinity, with a break at the number $3$:
+$$
+\mathcal{D}_f = [-4, \; 3) \cup (3, \; +\infty)
+$$
+:::
+:::
+
+::: {.block-example}
+**Example 2: Vertex and Range of a Quadratic Function**
+
+A quadratic function is given by the formula $f(x) = x^2 - 6x + 5$. Find the coordinates of its vertex (turning point) and determine its range $\mathcal{R}_f$.
+
+::: {.block-solution}
+**Solution Steps:**
+
+**Step 1: Find the $x$-coordinate of the vertex**  
+We identify the coefficients as $a = 1, b = -6, c = 5$. Because $a = 1 > 0$, the parabola opens upwards, which means the vertex is the absolute lowest point of the function. We calculate its position:
+$$
+x_{\text{vertex}} = -\frac{b}{2a} = -\frac{-6}{2(1)} = \frac{6}{2} = \mathbf{3}
+$$
+
+**Step 2: Find the $y$-coordinate of the vertex**  
+We substitute $x = 3$ back into the function to find the lowest value of the range:
+$$
+f(3) = (3)^2 - 6(3) + 5 = 9 - 18 + 5 = \mathbf{-4}
+$$
+
+**Step 3: Write down the final range**  
+Because the parabola opens upwards from its lowest point at $y = -4$ and goes to infinity, our range is:
+$$
+\mathcal{R}_f = [-4, \; +\infty)
+$$
+
+:::
+:::
+
+### Practice
+
+::: {.block-exercise}
+<span class="block-label" style="color: var(--neon-amber);">Exercise 1</span>
+
+Use the algebraic domain rules to find the exact domain $\mathcal{D}_f$ for each of the given functions. Write your final answers using interval notation.
+
+::: {.grid-2}
+1. $f(x) = \dfrac{5}{3x - 12}$
+2. $f(x) = \sqrt{2x + 8}$
+3. $f(x) = \dfrac{\sqrt{x - 2}}{x - 5}$
+4. $f(x) = \dfrac{1}{x^2 - 9}$
+5. $f(x) = \dfrac{7}{\sqrt{6 - 2x}}$
+6. $f(x) = \sqrt{x+1} + \sqrt{4-x}$
+:::
+:::
+
+::: {.block-exercise}
+<span class="block-label" style="color: var(--neon-amber);">Exercise 2</span>
+
+Find the coordinates of the vertex (turning point) for each quadratic function, state whether it is a minimum or maximum point, and write down its final range $\mathcal{R}_f$.
+
+::: {.two-col-alpha}
+1. $f(x) = x^2 - 4x + 7$
+2. $f(x) = -x^2 - 2x + 3$
+:::
+:::
+
+::: {.block-exercise}
+<span class="block-exercise" style="border: none; padding: 0; margin: 0;">
+<span class="block-label" style="color: var(--neon-amber);">Exercise 3</span>
+
+A function is defined by the following formula:
+$$
+f(x) = \frac{\sqrt{x+2}}{x - 1}
+$$
+
+::: {.alpha-list}
+1. Find the complete domain interval $\mathcal{D}_f$.
+2. Show this domain visually on the number line below (click the buttons to toggle solid endpoints and open holes):
+:::
+
+```{=html}
+<div class="visual-wrapper">
+  <span class="visual-title">Interactive Number Line Domain Sketchpad</span>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+    <button id="btn-left" style="background: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;">Endpoint at x = -2: Closed [●]</button>
+    <button id="btn-hole" style="background: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;">Break at x = 1: Open Hole (○)</button>
+    <button id="btn-check" style="background: #10b981; color: #090d16; font-weight: 700; border: none; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;">Check Domain</button>
+  </div>
+  <div id="nl-feedback" style="margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;"></div>
+  <svg id="nl-svg" width="100%" height="90" viewBox="-4 -1 9 2" style="background: #090d16; border: 1px solid #334155; border-radius: 6px;"></svg>
+</div>
+
+<script>
+(function() {
+  let closedLeft = false;
+  let openHole = false;
+  const btnLeft = document.getElementById("btn-left");
+  const btnHole = document.getElementById("btn-hole");
+  const btnCheck = document.getElementById("btn-check");
+  const feedback = document.getElementById("nl-feedback");
+  const svg = document.getElementById("nl-svg");
+
+  function renderNL() {
+    btnLeft.textContent = `Endpoint at x = -2: ${closedLeft ? "Closed [●]" : "Open (○)"}`;
+    btnHole.textContent = `Break at x = 1: ${openHole ? "Open Hole (○)" : "Solid [●]"}`;
+
+    let ticks = "";
+    for (let x = -3; x <= 4; x++) {
+      ticks += `<line x1="${x}" y1="-0.12" x2="${x}" y2="0.12" stroke="#64748b" stroke-width="0.04"/>
+                <text x="${x}" y="0.45" fill="#94a3b8" font-size="0.32" text-anchor="middle">${x}</text>`;
+    }
+
+    const holeFill = openHole ? "#090d16" : "#10b981";
+    const leftFill = closedLeft ? "#10b981" : "#090d16";
+
+    svg.innerHTML = `
+      <line x1="-3.8" y1="0" x2="4.6" y2="0" stroke="#475569" stroke-width="0.05"/>
+      ${ticks}
+      <line x1="-2" y1="0" x2="4.5" y2="0" stroke="#10b981" stroke-width="0.12"/>
+      <circle cx="-2" cy="0" r="0.15" fill="${leftFill}" stroke="#10b981" stroke-width="0.06"/>
+      <circle cx="1" cy="0" r="0.15" fill="${holeFill}" stroke="#10b981" stroke-width="0.06"/>
+    `;
+  }
+
+  btnLeft.addEventListener("click", () => { closedLeft = !closedLeft; feedback.textContent = ""; renderNL(); });
+  btnHole.addEventListener("click", () => { openHole = !openHole; feedback.textContent = ""; renderNL(); });
+  btnCheck.addEventListener("click", () => {
+    if (closedLeft && openHole) {
+      feedback.style.color = "#10b981";
+      feedback.textContent = "✅ Correct! x ≥ -2 includes -2 (solid dot), and x ≠ 1 excludes 1 (open hole): [-2, 1) ∪ (1, +∞).";
+    } else {
+      feedback.style.color = "#f59e0b";
+      feedback.textContent = "⚠️ Check the rules: √(x+2) allows x = -2 (solid dot), while x - 1 ≠ 0 excludes x = 1 (open hole).";
+    }
+  });
+
+  renderNL();
+})();
+</script>
+```
+:::
+

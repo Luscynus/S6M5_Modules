@@ -439,6 +439,10 @@ strong {
     color: var(--text-main); 
 }
 
+.block-example strong {
+    color: #06b6d4;
+}
+
 /* 📝 Unified Child Element: Instruction Sub-Text Description */
 .block-example p {
     font-size: 0.85rem !important;
@@ -515,6 +519,34 @@ strong {
 .block-theorem .visual-wrapper {
     border-color: rgba(59, 130, 246, 0.22) !important;
 }
+
+/* Match \mathbf{...} color to **bold** text across all blocks */
+.math-bold,
+.math-bold * {
+  color: var(--text-main) !important;
+}
+
+.block-definition .math-bold,
+.block-definition .math-bold * {
+  color: var(--neon-green) !important;
+}
+
+.block-theorem .math-bold,
+.block-theorem .math-bold * {
+  color: var(--neon-blue) !important;
+}
+
+.block-example .math-bold,
+.block-example .math-bold * {
+  color: var(--neon-cyan) !important;
+}
+
+.block-exercise .math-bold,
+.block-exercise .math-bold * {
+  color: var(--neon-amber) !important;
+}
+
+
 
 /* ==========================================================================
    📊 GRAPHICS MASK ENGINE (GLOBAL FALLBACK ENHANCEMENT)
@@ -691,6 +723,29 @@ strong {
     width: 100%;
 }
 
+.grid-2 > ol,
+.grid-2 > ul {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.1rem 3.5rem;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  /* Vertical divider line down the center (like LaTeX multicols) */
+  background: linear-gradient(to right, transparent calc(50% - 0.5px), #1e293b calc(50% - 0.5px), #1e293b calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+
+/* Stack cleanly on small mobile screens */
+@media (max-width: 650px) {
+  .grid-2 > ol,
+  .grid-2 > ul {
+    grid-template-columns: 1fr;
+    background: none;
+  }
+}
+
+
 /* 📐 BALANCED 3-COLUMN ENGINE (Perfect for 3 or 6 items) */
 .grid-3 {
     display: grid;
@@ -825,3 +880,219 @@ strong {
 .block-attention strong {
     color: #ef4444;
 }
+
+/* Quarto Centered Layout (No Sidebar Clutter) */
+html, body {
+  background-color: #090d16 !important;
+  color: var(--text-main) !important;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.quarto-title h1.title {
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-glow);
+  padding-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+/* Master Table of Contents at Top */
+#TOC {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-left: 4px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+#TOC h2,
+#TOC #toc-title {
+  color: var(--neon-blue);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+  border: none;
+}
+
+#TOC ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#TOC > ul > li {
+  margin-bottom: 0.75rem;
+}
+
+#TOC > ul > li > a {
+  color: var(--text-main);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#TOC ul ul {
+  padding-left: 1.25rem;
+  margin-top: 0.35rem;
+  border-left: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+#TOC a,
+#TOC a:visited {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+#TOC a:hover {
+  color: var(--neon-blue);
+  text-decoration: underline;
+}
+
+
+/* Bottom "Back to Contents" button at the end of each section */
+.section-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5rem 0 3rem 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #1e293b;
+}
+
+.back-toc {
+  background-color: #0f172a;
+  color: var(--neon-blue);
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.back-toc:hover {
+  border-color: var(--neon-blue);
+  transform: translateY(-2px);
+}
+
+/* Floating Right-Side Nav (shows ONLY current section's subheadings) */
+#active-section-nav {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  #active-section-nav {
+    display: block;
+    position: fixed;
+    top: 3rem;
+    right: max(1.5rem, calc((100vw - 920px) / 2 - 240px));
+    width: 210px;
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-left: 3px solid var(--neon-blue);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    z-index: 50;
+  }
+
+  #active-section-nav .side-title {
+    color: var(--neon-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+  }
+
+  #active-section-nav a {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.83rem;
+    line-height: 1.35;
+    text-decoration: none;
+    margin-bottom: 0.45rem;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  #active-section-nav a:hover {
+    color: var(--text-main);
+    transform: translateX(3px);
+  }
+}
+
+
+/* Clean Black-on-White Layout When Students Print or Save as PDF */
+@media print {
+  :root {
+    --bg-deep: #ffffff !important;
+    --bg-card: #f8fafc !important;
+    --text-main: #0f172a !important;
+    --text-muted: #1e293b !important;
+  }
+
+  * {
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #TOC,
+  .block-definition,
+  .block-theorem,
+  .block-example,
+  .block-solution,
+  .block-exercise,
+  .visual-wrapper {
+    background-color: #f8fafc !important;
+    border-color: #94a3b8 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  /* Hide interactive buttons and floating nav on paper */
+  #active-section-nav,
+  .section-footer,
+  .back-toc,
+  input[type="range"],
+  button {
+    display: none !important;
+  }
+
+  /* Make SVG diagrams print cleanly on white paper */
+  svg {
+    background-color: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+  }
+
+    /* Clear dark backgrounds inside grids & lists when printing */
+  .grid-2,
+  .grid-3,
+  ol,
+  ul {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .grid-2 > ol,
+  .grid-2 > ul {
+    background: linear-gradient(to right, transparent calc(50% - 0.5px), #cbd5e1 calc(50% - 0.5px), #cbd5e1 calc(50% + 0.5px), transparent calc(50% + 0.5px)) !important;
+  }
+
+    /* Hide other sections when printing a single section */
+  .print-hide {
+    display: none !important;
+  }
+}
+
